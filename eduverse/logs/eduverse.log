@@ -1,0 +1,28 @@
+2024-05-06T17:03:46.527+07:00  INFO 74113 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 20.0.1 with PID 74113 (/Users/zaymaungmaungmyint/zay/Git/EduVerse/eduverse/target/classes started by zaymaungmaungmyint in /Users/zaymaungmaungmyint/zay/Git/EduVerse/eduverse)
+2024-05-06T17:03:46.528+07:00 DEBUG 74113 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-06T17:03:46.529+07:00  INFO 74113 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-06T17:03:48.784+07:00  INFO 74113 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 2.461 seconds (process running for 2.763)
+2024-05-06T17:03:57.198+07:00 DEBUG 74113 --- [EduVerse] [http-nio-8080-exec-1] d.b.e.controller.WelcomeController       : Debug level - Hello Logback
+2024-05-06T17:03:57.198+07:00  INFO 74113 --- [EduVerse] [http-nio-8080-exec-1] d.b.e.controller.WelcomeController       : Info level - Hello Logback
+2024-05-06T17:03:57.198+07:00 ERROR 74113 --- [EduVerse] [http-nio-8080-exec-1] d.b.e.controller.WelcomeController       : Error level - Hello Logback
+2024-05-06T17:05:26.403+07:00  INFO 74132 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 20.0.1 with PID 74132 (/Users/zaymaungmaungmyint/zay/Git/EduVerse/eduverse/target/classes started by zaymaungmaungmyint in /Users/zaymaungmaungmyint/zay/Git/EduVerse/eduverse)
+2024-05-06T17:05:26.404+07:00 DEBUG 74132 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-06T17:05:26.405+07:00  INFO 74132 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-06T17:05:28.831+07:00  INFO 74132 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 2.638 seconds (process running for 2.934)
+2024-05-06T17:05:32.526+07:00 DEBUG 74132 --- [EduVerse] [http-nio-8080-exec-1] d.b.e.controller.WelcomeController       : Debug level - Hello Log back
+2024-05-06T17:05:32.526+07:00  INFO 74132 --- [EduVerse] [http-nio-8080-exec-1] d.b.e.controller.WelcomeController       : Info level - Hello Log back
+2024-05-06T17:05:32.526+07:00 ERROR 74132 --- [EduVerse] [http-nio-8080-exec-1] d.b.e.controller.WelcomeController       : Error level - Hello Log back
+2024-05-06T17:07:19.896+07:00  INFO 74362 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 20.0.1 with PID 74362 (/Users/zaymaungmaungmyint/zay/Git/EduVerse/eduverse/target/classes started by zaymaungmaungmyint in /Users/zaymaungmaungmyint/zay/Git/EduVerse/eduverse)
+2024-05-06T17:07:19.897+07:00 DEBUG 74362 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-06T17:07:19.897+07:00  INFO 74362 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-06T17:07:21.984+07:00  INFO 74362 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 2.255 seconds (process running for 2.42)
+2024-05-06T17:07:29.437+07:00 DEBUG 74362 --- [EduVerse] [http-nio-8080-exec-1] d.b.e.controller.WelcomeController       : Debug level - Hello Log back
+2024-05-06T17:07:29.437+07:00  INFO 74362 --- [EduVerse] [http-nio-8080-exec-1] d.b.e.controller.WelcomeController       : Info level - Hello Log back
+2024-05-06T17:07:29.437+07:00 ERROR 74362 --- [EduVerse] [http-nio-8080-exec-1] d.b.e.controller.WelcomeController       : Error level - Hello Log back
+2024-05-06T17:09:06.571+07:00  INFO 74458 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 20.0.1 with PID 74458 (/Users/zaymaungmaungmyint/zay/Git/EduVerse/eduverse/target/classes started by zaymaungmaungmyint in /Users/zaymaungmaungmyint/zay/Git/EduVerse/eduverse)
+2024-05-06T17:09:06.572+07:00 DEBUG 74458 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-06T17:09:06.572+07:00  INFO 74458 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-06T17:09:08.710+07:00  INFO 74458 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 2.31 seconds (process running for 2.481)
+2024-05-06T17:09:19.809+07:00 DEBUG 74458 --- [EduVerse] [http-nio-8080-exec-8] d.b.e.controller.WelcomeController       : Debug level - Hello Log back
+2024-05-06T17:09:19.809+07:00  INFO 74458 --- [EduVerse] [http-nio-8080-exec-8] d.b.e.controller.WelcomeController       : Info level - Hello Log back
+2024-05-06T17:09:19.810+07:00 ERROR 74458 --- [EduVerse] [http-nio-8080-exec-8] d.b.e.controller.WelcomeController       : Error level - Hello Log back
