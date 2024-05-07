@@ -1,0 +1,7 @@
+2024-05-08T01:05:20.824+06:30  INFO 81512 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 21.0.2 with PID 81512 (/Users/kyawzinthant/Documents/Java Project/EduVerse/eduverse/target/classes started by kyawzinthant in /Users/kyawzinthant/Documents/Java Project/EduVerse)
+2024-05-08T01:05:20.825+06:30 DEBUG 81512 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-08T01:05:20.826+06:30  INFO 81512 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-08T01:05:24.536+06:30  INFO 81512 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 4.05 seconds (process running for 4.398)
+2024-05-08T01:05:54.365+06:30 DEBUG 81512 --- [EduVerse] [http-nio-8080-exec-1] d.b.e.controller.WelcomeController       : Debug level - Hello Log back
+2024-05-08T01:05:54.365+06:30  INFO 81512 --- [EduVerse] [http-nio-8080-exec-1] d.b.e.controller.WelcomeController       : Info level - Hello Log back
+2024-05-08T01:05:54.365+06:30 ERROR 81512 --- [EduVerse] [http-nio-8080-exec-1] d.b.e.controller.WelcomeController       : Error level - Hello Log back
