@@ -1,9 +1,6 @@
 package dev.backend.eduverse.model;
 
-
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Max;
-import jakarta.validation.constraints.Min;
 import lombok.*;
 
 @Entity
@@ -14,17 +11,17 @@ import lombok.*;
 @Builder
 @Table(name = "admin_role")
 public class AdminRole {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private long id;
 
-    @Column(length= 4, nullable = false)
-    private String code;
+  @Column(length = 4, nullable = false)
+  private String code;
 
-    @Column(length=20)
-    private String roleName;
+  @Column(length = 20)
+  private String roleName;
 
-    @ManyToOne
-    @JoinColumn(name = "admin_id", referencedColumnName = "id")
-    private Admin admin;
+  @ManyToOne
+  @JoinColumn(name = "admin_id", referencedColumnName = "id")
+  private Admin admin;
 }

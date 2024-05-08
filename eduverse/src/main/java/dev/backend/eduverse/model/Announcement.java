@@ -2,10 +2,9 @@ package dev.backend.eduverse.model;
 
 import dev.backend.eduverse.util.NotificationType;
 import jakarta.persistence.*;
-import lombok.*;
-
 import java.time.LocalDate;
 import java.util.List;
+import lombok.*;
 
 @Entity
 @Getter
@@ -14,27 +13,29 @@ import java.util.List;
 @NoArgsConstructor
 @Builder
 public class Announcement {
-    // Suggestion : Decide whether we should add a new column with value 'System Level' and 'Course Level'.
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
-    @Column(length = 30, nullable = false)
-    private String title;
+  // Suggestion : Decide whether we should add a new column with value 'System Level' and 'Course
+  // Level'.
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private long id;
 
-    @Column(length = 100)
-    private String content;
+  @Column(length = 30, nullable = false)
+  private String title;
 
-    @Temporal(TemporalType.DATE)
-    private LocalDate createAt;
+  @Column(length = 100)
+  private String content;
 
-    @Enumerated(EnumType.STRING)
-    @Column(name = "noti_type")
-    private NotificationType notificationType;
+  @Temporal(TemporalType.DATE)
+  private LocalDate createAt;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name = "admin_id", referencedColumnName = "id")
-    private Admin admin;
+  @Enumerated(EnumType.STRING)
+  @Column(name = "noti_type")
+  private NotificationType notificationType;
 
-    @OneToMany(mappedBy = "announcement")
-    private List<Course> course;
+  @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+  @JoinColumn(name = "admin_id", referencedColumnName = "id")
+  private Admin admin;
+
+  @OneToMany(mappedBy = "announcement")
+  private List<Course> course;
 }

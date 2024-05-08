@@ -3,12 +3,9 @@ package dev.backend.eduverse.model;
 import dev.backend.eduverse.util.Gender;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Positive;
-import lombok.*;
-import org.hibernate.annotations.Check;
-import org.springframework.beans.factory.annotation.Value;
-
 import java.time.LocalDate;
 import java.util.Random;
+import lombok.*;
 
 @Entity
 @Getter
@@ -17,41 +14,39 @@ import java.util.Random;
 @NoArgsConstructor
 @Builder
 public class User {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
 
-    @Column(length = 20, nullable = false)
-    private String name;
+  @Id
+  @Column(unique = true)
+  private Integer id;
 
-    @Column(length = 50, nullable = false, unique = true)
-    private String email;
+  @Column(length = 20, nullable = false)
+  private String name;
 
-    @Column(length = 50, nullable = false)
-    private String password;
+  @Column(length = 50, nullable = false, unique = true)
+  private String email;
 
-    @Column(length = 12, nullable = false, unique = true)
-    private String phoneNumber;
+  @Column(length = 50, nullable = false)
+  private String password;
 
-    @Positive
-    private int age;
+  @Column(length = 12, nullable = false, unique = true)
+  private String phoneNumber;
 
-    @Temporal(TemporalType.DATE)
-    private LocalDate dob;
+  @Positive private int age;
 
-    @Enumerated(EnumType.STRING)
-    private Gender gender;
+  @Temporal(TemporalType.DATE)
+  private LocalDate dob;
 
-    @Column(length = 80)
-    private String address;
+  @Enumerated(EnumType.STRING)
+  private Gender gender;
 
-    @PrePersist
-    @PreUpdate
-    public void generateUserId(){
-        Random random = new Random();
-        int r1 = random.nextInt();
-        int r2 = random.nextInt();
-        id = (long) r1 * r2;
-    }
+  @Column(length = 80)
+  private String address;
+
+  @PrePersist
+  public void generateUserId() {
+    Random random = new Random();
+    int r1 = random.nextInt(10, 99) + 1;
+    int r2 = random.nextInt(10, 99) + 1;
+    id = r1 * 100 + r2;
+  }
 }
-

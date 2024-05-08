@@ -1,7 +1,405 @@
-2024-05-08T01:05:20.824+06:30  INFO 81512 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 21.0.2 with PID 81512 (/Users/kyawzinthant/Documents/Java Project/EduVerse/eduverse/target/classes started by kyawzinthant in /Users/kyawzinthant/Documents/Java Project/EduVerse)
-2024-05-08T01:05:20.825+06:30 DEBUG 81512 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
-2024-05-08T01:05:20.826+06:30  INFO 81512 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
-2024-05-08T01:05:24.536+06:30  INFO 81512 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 4.05 seconds (process running for 4.398)
-2024-05-08T01:05:54.365+06:30 DEBUG 81512 --- [EduVerse] [http-nio-8080-exec-1] d.b.e.controller.WelcomeController       : Debug level - Hello Log back
-2024-05-08T01:05:54.365+06:30  INFO 81512 --- [EduVerse] [http-nio-8080-exec-1] d.b.e.controller.WelcomeController       : Info level - Hello Log back
-2024-05-08T01:05:54.365+06:30 ERROR 81512 --- [EduVerse] [http-nio-8080-exec-1] d.b.e.controller.WelcomeController       : Error level - Hello Log back
+2024-05-08T00:30:54.683+02:00  INFO 73832 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 22 with PID 73832 (/Users/swanhtetmac/intern/Dev01/eduverse/target/classes started by swanhtetmac in /Users/swanhtetmac/intern/Dev01)
+2024-05-08T00:30:54.694+02:00 DEBUG 73832 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-08T00:30:54.695+02:00  INFO 73832 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-08T00:31:03.525+02:00  INFO 73832 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 9.489 seconds (process running for 10.638)
+2024-05-08T00:31:31.186+02:00  INFO 73832 --- [EduVerse] [http-nio-8080-exec-5] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-08T00:31:31.269+02:00  INFO 73832 --- [EduVerse] [http-nio-8080-exec-5] d.b.eduverse.Services.UserServicesImpl   : Exit the saving Process
+2024-05-08T00:31:44.223+02:00  INFO 73832 --- [EduVerse] [http-nio-8080-exec-6] d.b.eduverse.Services.UserServicesImpl   : Enter the read process
+2024-05-08T00:31:44.372+02:00  INFO 73832 --- [EduVerse] [http-nio-8080-exec-6] d.b.eduverse.Services.UserServicesImpl   : Exit the read Process
+2024-05-08T00:53:03.134+02:00  INFO 74448 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 22 with PID 74448 (/Users/swanhtetmac/intern/Dev01/eduverse/target/classes started by swanhtetmac in /Users/swanhtetmac/intern/Dev01)
+2024-05-08T00:53:03.135+02:00 DEBUG 74448 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-08T00:53:03.135+02:00  INFO 74448 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-08T00:53:07.482+02:00  INFO 74448 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 4.624 seconds (process running for 5.471)
+2024-05-08T00:54:25.169+02:00  INFO 74448 --- [EduVerse] [http-nio-8080-exec-8] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-08T00:54:25.267+02:00  INFO 74448 --- [EduVerse] [http-nio-8080-exec-8] d.b.eduverse.Services.UserServicesImpl   : Exit the saving Process
+2024-05-08T00:54:25.753+02:00  INFO 74448 --- [EduVerse] [http-nio-8080-exec-9] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-08T00:54:25.763+02:00  INFO 74448 --- [EduVerse] [http-nio-8080-exec-9] d.b.eduverse.Services.UserServicesImpl   : Exit the saving Process
+2024-05-08T00:54:50.141+02:00  INFO 74448 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 22 with PID 74448 (/Users/swanhtetmac/intern/Dev01/eduverse/target/classes started by swanhtetmac in /Users/swanhtetmac/intern/Dev01)
+2024-05-08T00:54:50.141+02:00 DEBUG 74448 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-08T00:54:50.142+02:00  INFO 74448 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-08T00:54:51.943+02:00  INFO 74448 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 1.829 seconds (process running for 109.936)
+2024-05-08T00:54:53.390+02:00  INFO 74448 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 22 with PID 74448 (/Users/swanhtetmac/intern/Dev01/eduverse/target/classes started by swanhtetmac in /Users/swanhtetmac/intern/Dev01)
+2024-05-08T00:54:53.390+02:00 DEBUG 74448 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-08T00:54:53.390+02:00  INFO 74448 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-08T00:54:54.553+02:00  INFO 74448 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 1.177 seconds (process running for 112.546)
+2024-05-08T00:55:58.124+02:00  INFO 74448 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 22 with PID 74448 (/Users/swanhtetmac/intern/Dev01/eduverse/target/classes started by swanhtetmac in /Users/swanhtetmac/intern/Dev01)
+2024-05-08T00:55:58.124+02:00 DEBUG 74448 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-08T00:55:58.125+02:00  INFO 74448 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-08T00:55:59.484+02:00  INFO 74448 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 1.375 seconds (process running for 177.48)
+2024-05-08T00:56:01.005+02:00  INFO 74448 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 22 with PID 74448 (/Users/swanhtetmac/intern/Dev01/eduverse/target/classes started by swanhtetmac in /Users/swanhtetmac/intern/Dev01)
+2024-05-08T00:56:01.006+02:00 DEBUG 74448 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-08T00:56:01.006+02:00  INFO 74448 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-08T00:56:02.201+02:00  INFO 74448 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 1.222 seconds (process running for 180.198)
+2024-05-08T00:56:23.956+02:00  INFO 74448 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 22 with PID 74448 (/Users/swanhtetmac/intern/Dev01/eduverse/target/classes started by swanhtetmac in /Users/swanhtetmac/intern/Dev01)
+2024-05-08T00:56:23.957+02:00 DEBUG 74448 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-08T00:56:23.957+02:00  INFO 74448 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-08T00:56:25.127+02:00  INFO 74448 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 1.193 seconds (process running for 203.124)
+2024-05-08T00:56:43.932+02:00  INFO 74531 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 22 with PID 74531 (/Users/swanhtetmac/intern/Dev01/eduverse/target/classes started by swanhtetmac in /Users/swanhtetmac/intern/Dev01)
+2024-05-08T00:56:43.933+02:00 DEBUG 74531 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-08T00:56:43.934+02:00  INFO 74531 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-08T00:56:48.322+02:00  INFO 74531 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 4.643 seconds (process running for 5.303)
+2024-05-08T00:57:00.736+02:00  INFO 74531 --- [EduVerse] [http-nio-8080-exec-7] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-08T00:57:00.799+02:00  INFO 74531 --- [EduVerse] [http-nio-8080-exec-7] d.b.eduverse.Services.UserServicesImpl   : Exit the saving Process
+2024-05-08T00:58:21.051+02:00  INFO 74531 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 22 with PID 74531 (/Users/swanhtetmac/intern/Dev01/eduverse/target/classes started by swanhtetmac in /Users/swanhtetmac/intern/Dev01)
+2024-05-08T00:58:21.051+02:00 DEBUG 74531 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-08T00:58:21.052+02:00  INFO 74531 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-08T00:58:23.004+02:00  INFO 74531 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 2.01 seconds (process running for 99.989)
+2024-05-08T00:58:24.456+02:00  INFO 74531 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 22 with PID 74531 (/Users/swanhtetmac/intern/Dev01/eduverse/target/classes started by swanhtetmac in /Users/swanhtetmac/intern/Dev01)
+2024-05-08T00:58:24.456+02:00 DEBUG 74531 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-08T00:58:24.456+02:00  INFO 74531 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-08T00:58:25.528+02:00  INFO 74531 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 1.086 seconds (process running for 102.513)
+2024-05-08T00:58:37.925+02:00  INFO 74531 --- [EduVerse] [http-nio-8080-exec-1] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-08T00:58:37.945+02:00  INFO 74531 --- [EduVerse] [http-nio-8080-exec-1] d.b.eduverse.Services.UserServicesImpl   : Exit the saving Process
+2024-05-08T00:59:47.410+02:00  INFO 74598 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 22 with PID 74598 (/Users/swanhtetmac/intern/Dev01/eduverse/target/classes started by swanhtetmac in /Users/swanhtetmac/intern/Dev01)
+2024-05-08T00:59:47.411+02:00 DEBUG 74598 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-08T00:59:47.412+02:00  INFO 74598 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-08T00:59:51.605+02:00  INFO 74598 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 4.489 seconds (process running for 5.181)
+2024-05-08T01:00:45.420+02:00  INFO 74652 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 22 with PID 74652 (/Users/swanhtetmac/intern/Dev01/eduverse/target/classes started by swanhtetmac in /Users/swanhtetmac/intern/Dev01)
+2024-05-08T01:00:45.421+02:00 DEBUG 74652 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-08T01:00:45.421+02:00  INFO 74652 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-08T01:00:49.427+02:00  INFO 74652 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 4.312 seconds (process running for 4.883)
+2024-05-08T01:00:56.858+02:00  INFO 74652 --- [EduVerse] [http-nio-8080-exec-7] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-08T01:00:56.931+02:00  INFO 74652 --- [EduVerse] [http-nio-8080-exec-7] d.b.eduverse.Services.UserServicesImpl   : Exit the saving Process
+2024-05-08T01:01:07.106+02:00  INFO 74652 --- [EduVerse] [http-nio-8080-exec-9] d.b.eduverse.Services.UserServicesImpl   : Enter the read process
+2024-05-08T01:01:07.222+02:00  INFO 74652 --- [EduVerse] [http-nio-8080-exec-9] d.b.eduverse.Services.UserServicesImpl   : Exit the read Process
+2024-05-08T01:02:42.237+02:00  INFO 74695 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 22 with PID 74695 (/Users/swanhtetmac/intern/Dev01/eduverse/target/classes started by swanhtetmac in /Users/swanhtetmac/intern/Dev01)
+2024-05-08T01:02:42.238+02:00 DEBUG 74695 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-08T01:02:42.239+02:00  INFO 74695 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-08T01:02:47.102+02:00  INFO 74695 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 5.262 seconds (process running for 6.06)
+2024-05-08T01:03:34.445+02:00  INFO 74695 --- [EduVerse] [http-nio-8080-exec-9] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-08T01:03:34.529+02:00  INFO 74695 --- [EduVerse] [http-nio-8080-exec-9] d.b.eduverse.Services.UserServicesImpl   : Exit the saving Process
+2024-05-08T08:45:52.715+02:00  INFO 76796 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 22 with PID 76796 (/Users/swanhtetmac/intern/Dev01/eduverse/target/classes started by swanhtetmac in /Users/swanhtetmac/intern/Dev01)
+2024-05-08T08:45:52.717+02:00 DEBUG 76796 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-08T08:45:52.718+02:00  INFO 76796 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-08T08:45:57.268+02:00  INFO 76796 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 5.009 seconds (process running for 5.8)
+2024-05-08T08:47:12.679+02:00  INFO 76796 --- [EduVerse] [http-nio-8080-exec-7] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-08T08:47:12.750+02:00  INFO 76796 --- [EduVerse] [http-nio-8080-exec-7] d.b.eduverse.Services.UserServicesImpl   : Exit the saving Process
+2024-05-08T08:47:26.712+02:00  INFO 76796 --- [EduVerse] [http-nio-8080-exec-8] d.b.eduverse.Services.UserServicesImpl   : Enter the read process
+2024-05-08T08:47:26.818+02:00  INFO 76796 --- [EduVerse] [http-nio-8080-exec-8] d.b.eduverse.Services.UserServicesImpl   : Exit the read Process
+2024-05-08T08:51:15.576+02:00  INFO 76796 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 22 with PID 76796 (/Users/swanhtetmac/intern/Dev01/eduverse/target/classes started by swanhtetmac in /Users/swanhtetmac/intern/Dev01)
+2024-05-08T08:51:15.576+02:00 DEBUG 76796 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-08T08:51:15.576+02:00  INFO 76796 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-08T08:51:16.800+02:00  INFO 76796 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 1.245 seconds (process running for 325.346)
+2024-05-08T08:51:40.186+02:00  INFO 76796 --- [EduVerse] [http-nio-8080-exec-6] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-08T08:51:40.197+02:00  INFO 76796 --- [EduVerse] [http-nio-8080-exec-6] d.b.eduverse.Services.UserServicesImpl   : Exit the saving Process
+2024-05-08T08:51:48.206+02:00  INFO 76796 --- [EduVerse] [http-nio-8080-exec-7] d.b.eduverse.Services.UserServicesImpl   : Enter the read process
+2024-05-08T08:51:48.214+02:00  INFO 76796 --- [EduVerse] [http-nio-8080-exec-7] d.b.eduverse.Services.UserServicesImpl   : Exit the read Process
+2024-05-08T08:51:50.276+02:00  INFO 76796 --- [EduVerse] [http-nio-8080-exec-8] d.b.eduverse.Services.UserServicesImpl   : Enter the read process
+2024-05-08T08:51:50.285+02:00  INFO 76796 --- [EduVerse] [http-nio-8080-exec-8] d.b.eduverse.Services.UserServicesImpl   : Exit the read Process
+2024-05-08T08:52:27.360+02:00  INFO 76976 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 22 with PID 76976 (/Users/swanhtetmac/intern/Dev01/eduverse/target/classes started by swanhtetmac in /Users/swanhtetmac/intern/Dev01)
+2024-05-08T08:52:27.361+02:00 DEBUG 76976 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-08T08:52:27.362+02:00  INFO 76976 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-08T08:52:31.219+02:00  INFO 76976 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 4.147 seconds (process running for 4.808)
+2024-05-08T08:52:59.899+02:00  INFO 76976 --- [EduVerse] [http-nio-8080-exec-5] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-08T08:52:59.959+02:00  INFO 76976 --- [EduVerse] [http-nio-8080-exec-5] d.b.eduverse.Services.UserServicesImpl   : Exit the saving Process
+2024-05-08T08:53:06.693+02:00  INFO 76976 --- [EduVerse] [http-nio-8080-exec-6] d.b.eduverse.Services.UserServicesImpl   : Enter the read process
+2024-05-08T08:53:06.792+02:00  INFO 76976 --- [EduVerse] [http-nio-8080-exec-6] d.b.eduverse.Services.UserServicesImpl   : Exit the read Process
+2024-05-08T08:55:09.126+02:00  INFO 76976 --- [EduVerse] [http-nio-8080-exec-10] d.b.eduverse.controller.UserController   : Update Controller called 
+2024-05-08T08:55:09.127+02:00  INFO 76976 --- [EduVerse] [http-nio-8080-exec-10] d.b.eduverse.Services.UserServicesImpl   : Enter the update process
+2024-05-08T08:55:09.162+02:00  INFO 76976 --- [EduVerse] [http-nio-8080-exec-10] d.b.eduverse.Services.UserServicesImpl   : Exit the update Process
+2024-05-08T08:55:20.588+02:00  INFO 76976 --- [EduVerse] [http-nio-8080-exec-1] d.b.eduverse.Services.UserServicesImpl   : Enter the read process
+2024-05-08T08:55:20.594+02:00  INFO 76976 --- [EduVerse] [http-nio-8080-exec-1] d.b.eduverse.Services.UserServicesImpl   : Exit the read Process
+2024-05-08T09:11:37.317+02:00  INFO 77246 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 22 with PID 77246 (/Users/swanhtetmac/intern/Dev01/eduverse/target/classes started by swanhtetmac in /Users/swanhtetmac/intern/Dev01)
+2024-05-08T09:11:37.318+02:00 DEBUG 77246 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-08T09:11:37.319+02:00  INFO 77246 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-08T09:11:41.691+02:00  INFO 77246 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 4.708 seconds (process running for 5.348)
+2024-05-08T09:11:47.801+02:00  INFO 77246 --- [EduVerse] [http-nio-8080-exec-5] d.b.eduverse.Services.UserServicesImpl   : Enter the read process
+2024-05-08T09:11:47.929+02:00  INFO 77246 --- [EduVerse] [http-nio-8080-exec-5] d.b.eduverse.Services.UserServicesImpl   : Exit the read Process
+2024-05-08T09:11:49.018+02:00  INFO 77246 --- [EduVerse] [http-nio-8080-exec-6] d.b.eduverse.Services.UserServicesImpl   : Enter the read process
+2024-05-08T09:11:49.025+02:00  INFO 77246 --- [EduVerse] [http-nio-8080-exec-6] d.b.eduverse.Services.UserServicesImpl   : Exit the read Process
+2024-05-08T09:12:30.069+02:00  INFO 77246 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 22 with PID 77246 (/Users/swanhtetmac/intern/Dev01/eduverse/target/classes started by swanhtetmac in /Users/swanhtetmac/intern/Dev01)
+2024-05-08T09:12:30.069+02:00 DEBUG 77246 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-08T09:12:30.070+02:00  INFO 77246 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-08T09:12:31.274+02:00  INFO 77246 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 1.224 seconds (process running for 54.935)
+2024-05-08T09:12:54.580+02:00  INFO 77246 --- [EduVerse] [http-nio-8080-exec-1] d.b.eduverse.Services.UserServicesImpl   : Enter the read process
+2024-05-08T09:12:54.590+02:00  INFO 77246 --- [EduVerse] [http-nio-8080-exec-1] d.b.eduverse.Services.UserServicesImpl   : Exit the read Process
+2024-05-08T09:13:05.683+02:00  INFO 77246 --- [EduVerse] [http-nio-8080-exec-2] d.b.eduverse.Services.UserServicesImpl   : Entering the Delete process
+2024-05-08T09:13:05.734+02:00  INFO 77246 --- [EduVerse] [http-nio-8080-exec-2] d.b.eduverse.Services.UserServicesImpl   : Exit the Delete Process
+2024-05-08T09:13:06.677+02:00  INFO 77246 --- [EduVerse] [http-nio-8080-exec-3] d.b.eduverse.Services.UserServicesImpl   : Entering the Delete process
+2024-05-08T09:13:06.684+02:00 ERROR 77246 --- [EduVerse] [http-nio-8080-exec-3] d.b.eduverse.Services.UserServicesImpl   : Error occurred during user deletion
+2024-05-08T09:13:06.684+02:00 ERROR 77246 --- [EduVerse] [http-nio-8080-exec-3] d.b.eduverse.Services.UserServicesImpl   : User not found
+2024-05-08T09:13:45.055+02:00  INFO 77280 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 22 with PID 77280 (/Users/swanhtetmac/intern/Dev01/eduverse/target/classes started by swanhtetmac in /Users/swanhtetmac/intern/Dev01)
+2024-05-08T09:13:45.056+02:00 DEBUG 77280 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-08T09:13:45.057+02:00  INFO 77280 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-08T09:13:48.795+02:00  INFO 77280 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 4.068 seconds (process running for 4.756)
+2024-05-08T09:14:38.511+02:00  INFO 77280 --- [EduVerse] [http-nio-8080-exec-6] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-08T09:14:38.583+02:00  INFO 77280 --- [EduVerse] [http-nio-8080-exec-6] d.b.eduverse.Services.UserServicesImpl   : Exit the saving Process
+2024-05-08T09:14:45.032+02:00  INFO 77280 --- [EduVerse] [http-nio-8080-exec-7] d.b.eduverse.Services.UserServicesImpl   : Enter the read process
+2024-05-08T09:14:45.140+02:00  INFO 77280 --- [EduVerse] [http-nio-8080-exec-7] d.b.eduverse.Services.UserServicesImpl   : Exit the read Process
+2024-05-08T09:15:04.482+02:00  INFO 77280 --- [EduVerse] [http-nio-8080-exec-8] d.b.eduverse.Services.UserServicesImpl   : Entering the Delete process
+2024-05-08T09:15:04.526+02:00 ERROR 77280 --- [EduVerse] [http-nio-8080-exec-8] d.b.eduverse.Services.UserServicesImpl   : Error occurred during user deletion
+2024-05-08T09:15:04.527+02:00 ERROR 77280 --- [EduVerse] [http-nio-8080-exec-8] d.b.eduverse.Services.UserServicesImpl   : User not found
+2024-05-08T09:15:06.307+02:00  INFO 77280 --- [EduVerse] [http-nio-8080-exec-9] d.b.eduverse.Services.UserServicesImpl   : Entering the Delete process
+2024-05-08T09:15:06.311+02:00 ERROR 77280 --- [EduVerse] [http-nio-8080-exec-9] d.b.eduverse.Services.UserServicesImpl   : Error occurred during user deletion
+2024-05-08T09:15:06.312+02:00 ERROR 77280 --- [EduVerse] [http-nio-8080-exec-9] d.b.eduverse.Services.UserServicesImpl   : User not found
+2024-05-08T09:15:25.171+02:00  INFO 77280 --- [EduVerse] [http-nio-8080-exec-10] d.b.eduverse.Services.UserServicesImpl   : Entering the Delete process
+2024-05-08T09:15:25.181+02:00 ERROR 77280 --- [EduVerse] [http-nio-8080-exec-10] d.b.eduverse.Services.UserServicesImpl   : Error occurred during user deletion
+2024-05-08T09:15:25.182+02:00 ERROR 77280 --- [EduVerse] [http-nio-8080-exec-10] d.b.eduverse.Services.UserServicesImpl   : User not found
+2024-05-08T09:15:25.656+02:00  INFO 77280 --- [EduVerse] [http-nio-8080-exec-1] d.b.eduverse.Services.UserServicesImpl   : Entering the Delete process
+2024-05-08T09:15:25.664+02:00 ERROR 77280 --- [EduVerse] [http-nio-8080-exec-1] d.b.eduverse.Services.UserServicesImpl   : Error occurred during user deletion
+2024-05-08T09:15:25.664+02:00 ERROR 77280 --- [EduVerse] [http-nio-8080-exec-1] d.b.eduverse.Services.UserServicesImpl   : User not found
+2024-05-08T09:16:09.841+02:00  INFO 77310 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 22 with PID 77310 (/Users/swanhtetmac/intern/Dev01/eduverse/target/classes started by swanhtetmac in /Users/swanhtetmac/intern/Dev01)
+2024-05-08T09:16:09.843+02:00 DEBUG 77310 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-08T09:16:09.844+02:00  INFO 77310 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-08T09:16:13.764+02:00  INFO 77310 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 4.246 seconds (process running for 4.899)
+2024-05-08T09:16:24.197+02:00  INFO 77310 --- [EduVerse] [http-nio-8080-exec-5] d.b.eduverse.Services.UserServicesImpl   : Enter the read process
+2024-05-08T09:16:24.323+02:00  INFO 77310 --- [EduVerse] [http-nio-8080-exec-5] d.b.eduverse.Services.UserServicesImpl   : Exit the read Process
+2024-05-08T09:16:35.948+02:00  INFO 77310 --- [EduVerse] [http-nio-8080-exec-6] d.b.eduverse.Services.UserServicesImpl   : Entering the Delete process
+2024-05-08T09:16:35.996+02:00  INFO 77310 --- [EduVerse] [http-nio-8080-exec-6] d.b.eduverse.Services.UserServicesImpl   : Exit the Delete Process
+2024-05-08T09:16:50.018+02:00  INFO 77310 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 22 with PID 77310 (/Users/swanhtetmac/intern/Dev01/eduverse/target/classes started by swanhtetmac in /Users/swanhtetmac/intern/Dev01)
+2024-05-08T09:16:50.018+02:00 DEBUG 77310 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-08T09:16:50.018+02:00  INFO 77310 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-08T09:16:51.175+02:00  INFO 77310 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 1.176 seconds (process running for 42.312)
+2024-05-08T09:16:52.816+02:00  INFO 77310 --- [EduVerse] [http-nio-8080-exec-1] d.b.eduverse.Services.UserServicesImpl   : Entering the Delete process
+2024-05-08T09:16:52.824+02:00  INFO 77310 --- [EduVerse] [http-nio-8080-exec-1] d.b.eduverse.Services.UserServicesImpl   : Exit the Delete Process
+2024-05-08T12:16:18.710+02:00  INFO 77617 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 22 with PID 77617 (/Users/swanhtetmac/intern/Dev01/eduverse/target/classes started by swanhtetmac in /Users/swanhtetmac/intern/Dev01)
+2024-05-08T12:16:18.711+02:00 DEBUG 77617 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-08T12:16:18.712+02:00  INFO 77617 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-08T12:16:23.180+02:00  INFO 77617 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 4.73 seconds (process running for 5.492)
+2024-05-08T12:16:43.793+02:00  INFO 77617 --- [EduVerse] [http-nio-8080-exec-5] d.b.eduverse.Services.UserServicesImpl   : Enter the read process
+2024-05-08T12:16:43.926+02:00  INFO 77617 --- [EduVerse] [http-nio-8080-exec-5] d.b.eduverse.Services.UserServicesImpl   : Exit the read Process
+2024-05-08T12:17:34.760+02:00  INFO 77617 --- [EduVerse] [http-nio-8080-exec-7] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-08T12:17:34.796+02:00  INFO 77617 --- [EduVerse] [http-nio-8080-exec-7] d.b.eduverse.Services.UserServicesImpl   : Exit the saving Process
+2024-05-08T12:17:38.857+02:00  INFO 77617 --- [EduVerse] [http-nio-8080-exec-8] d.b.eduverse.Services.UserServicesImpl   : Enter the read process
+2024-05-08T12:17:38.874+02:00  INFO 77617 --- [EduVerse] [http-nio-8080-exec-8] d.b.eduverse.Services.UserServicesImpl   : Exit the read Process
+2024-05-08T12:18:02.758+02:00 ERROR 77617 --- [EduVerse] [http-nio-8080-exec-9] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.IllegalStateException: Ambiguous handler methods mapped for '/users/read/john%40example.com': {public org.springframework.http.ResponseEntity dev.backend.eduverse.controller.UserController.readByIdController(java.lang.Long), public org.springframework.http.ResponseEntity dev.backend.eduverse.controller.UserController.readByEmailController(java.lang.String)}] with root cause
+
+java.lang.IllegalStateException: Ambiguous handler methods mapped for '/users/read/john%40example.com': {public org.springframework.http.ResponseEntity dev.backend.eduverse.controller.UserController.readByIdController(java.lang.Long), public org.springframework.http.ResponseEntity dev.backend.eduverse.controller.UserController.readByEmailController(java.lang.String)}
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.lookupHandlerMethod(AbstractHandlerMethodMapping.java:431) ~[spring-webmvc-6.1.6.jar:6.1.6]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.getHandlerInternal(AbstractHandlerMethodMapping.java:382) ~[spring-webmvc-6.1.6.jar:6.1.6]
+	at org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.getHandlerInternal(RequestMappingInfoHandlerMapping.java:127) ~[spring-webmvc-6.1.6.jar:6.1.6]
+	at org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.getHandlerInternal(RequestMappingInfoHandlerMapping.java:68) ~[spring-webmvc-6.1.6.jar:6.1.6]
+	at org.springframework.web.servlet.handler.AbstractHandlerMapping.getHandler(AbstractHandlerMapping.java:507) ~[spring-webmvc-6.1.6.jar:6.1.6]
+	at org.springframework.web.servlet.DispatcherServlet.getHandler(DispatcherServlet.java:1283) ~[spring-webmvc-6.1.6.jar:6.1.6]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1065) ~[spring-webmvc-6.1.6.jar:6.1.6]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.6.jar:6.1.6]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.6.jar:6.1.6]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.1.6.jar:6.1.6]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[tomcat-embed-core-10.1.20.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.6.jar:6.1.6]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.20.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:206) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.20.jar:10.1.20]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.6.jar:6.1.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.6.jar:6.1.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.6.jar:6.1.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.6.jar:6.1.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:109) ~[spring-web-6.1.6.jar:6.1.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.6.jar:6.1.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.6.jar:6.1.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.6.jar:6.1.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1736) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at java.base/java.lang.Thread.run(Thread.java:1570) ~[na:na]
+
+2024-05-08T12:20:11.175+02:00  INFO 77663 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 22 with PID 77663 (/Users/swanhtetmac/intern/Dev01/eduverse/target/classes started by swanhtetmac in /Users/swanhtetmac/intern/Dev01)
+2024-05-08T12:20:11.176+02:00 DEBUG 77663 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-08T12:20:11.176+02:00  INFO 77663 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-08T12:20:15.300+02:00  INFO 77663 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 4.391 seconds (process running for 5.13)
+2024-05-08T12:20:48.524+02:00  INFO 77663 --- [EduVerse] [http-nio-8080-exec-3] d.b.eduverse.Services.UserServicesImpl   : Enter the read process
+2024-05-08T12:20:48.666+02:00  INFO 77663 --- [EduVerse] [http-nio-8080-exec-3] d.b.eduverse.Services.UserServicesImpl   : Exit the read Process
+2024-05-08T12:24:15.510+02:00  INFO 77663 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 22 with PID 77663 (/Users/swanhtetmac/intern/Dev01/eduverse/target/classes started by swanhtetmac in /Users/swanhtetmac/intern/Dev01)
+2024-05-08T12:24:15.511+02:00 DEBUG 77663 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-08T12:24:15.511+02:00  INFO 77663 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-08T12:24:17.345+02:00  INFO 77663 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 1.868 seconds (process running for 247.187)
+2024-05-08T12:24:18.770+02:00  INFO 77663 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 22 with PID 77663 (/Users/swanhtetmac/intern/Dev01/eduverse/target/classes started by swanhtetmac in /Users/swanhtetmac/intern/Dev01)
+2024-05-08T12:24:18.771+02:00 DEBUG 77663 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-08T12:24:18.771+02:00  INFO 77663 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-08T12:24:19.726+02:00  INFO 77663 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 0.97 seconds (process running for 249.569)
+2024-05-08T12:26:48.979+02:00  INFO 77663 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 22 with PID 77663 (/Users/swanhtetmac/intern/Dev01/eduverse/target/classes started by swanhtetmac in /Users/swanhtetmac/intern/Dev01)
+2024-05-08T12:26:48.980+02:00 DEBUG 77663 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-08T12:26:48.980+02:00  INFO 77663 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-08T12:26:50.096+02:00 ERROR 77663 --- [EduVerse] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userController': Resolution of declared constructors on bean Class [dev.backend.eduverse.controller.UserController] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@855ea17] failed
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:383) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineConstructorsFromBeanPostProcessors(AbstractAutowireCapableBeanFactory.java:1294) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1189) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:962) ~[spring-context-6.1.6.jar:6.1.6]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624) ~[spring-context-6.1.6.jar:6.1.6]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343) ~[spring-boot-3.2.5.jar:3.2.5]
+	at dev.backend.eduverse.EduverseApplication.main(EduverseApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.2.5.jar:3.2.5]
+Caused by: java.lang.NoClassDefFoundError: dev/backend/eduverse/Services/UserServicesImpl
+	at java.base/java.lang.Class.getDeclaredConstructors0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.privateGetDeclaredConstructors(Class.java:3572) ~[na:na]
+	at java.base/java.lang.Class.getDeclaredConstructors(Class.java:2737) ~[na:na]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:378) ~[spring-beans-6.1.6.jar:6.1.6]
+	... 21 common frames omitted
+Caused by: java.lang.ClassNotFoundException: dev.backend.eduverse.service.UserServicesImpl
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641) ~[na:na]
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525) ~[na:na]
+	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:529) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:508) ~[na:na]
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:121) ~[spring-boot-devtools-3.2.5.jar:3.2.5]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525) ~[na:na]
+	... 25 common frames omitted
+
+2024-05-08T12:33:15.395+02:00  INFO 77663 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 22 with PID 77663 (/Users/swanhtetmac/intern/Dev01/eduverse/target/classes started by swanhtetmac in /Users/swanhtetmac/intern/Dev01)
+2024-05-08T12:33:15.395+02:00 DEBUG 77663 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-08T12:33:15.395+02:00  INFO 77663 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-08T12:33:16.609+02:00  INFO 77663 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 1.239 seconds (process running for 786.459)
+2024-05-08T12:33:18.072+02:00  INFO 77663 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 22 with PID 77663 (/Users/swanhtetmac/intern/Dev01/eduverse/target/classes started by swanhtetmac in /Users/swanhtetmac/intern/Dev01)
+2024-05-08T12:33:18.073+02:00 DEBUG 77663 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-08T12:33:18.073+02:00  INFO 77663 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-08T12:33:18.990+02:00  INFO 77663 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 0.932 seconds (process running for 788.84)
+2024-05-08T12:35:48.428+02:00  INFO 77858 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 22 with PID 77858 (/Users/swanhtetmac/intern/Dev01/eduverse/target/classes started by swanhtetmac in /Users/swanhtetmac/intern/Dev01)
+2024-05-08T12:35:48.430+02:00 DEBUG 77858 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-08T12:35:48.431+02:00  INFO 77858 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-08T12:35:52.713+02:00  INFO 77858 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 4.71 seconds (process running for 5.54)
+2024-05-08T12:36:02.727+02:00  INFO 77858 --- [EduVerse] [http-nio-8080-exec-5] d.b.eduverse.Services.UserServiceImpl    : Entering the read process
+2024-05-08T12:36:02.841+02:00  INFO 77858 --- [EduVerse] [http-nio-8080-exec-5] d.b.eduverse.Services.UserServiceImpl    : Exiting the read process
+2024-05-08T12:45:10.613+02:00  INFO 77990 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 22 with PID 77990 (/Users/swanhtetmac/intern/Dev01/eduverse/target/classes started by swanhtetmac in /Users/swanhtetmac/intern/Dev01)
+2024-05-08T12:45:10.614+02:00 DEBUG 77990 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-08T12:45:10.615+02:00  INFO 77990 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-08T12:45:14.469+02:00  INFO 77990 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 4.092 seconds (process running for 4.791)
+2024-05-08T12:46:11.731+02:00  INFO 77990 --- [EduVerse] [http-nio-8080-exec-4] d.b.eduverse.Services.UserServiceImpl    : Entering the Bulk creation process
+2024-05-08T12:46:11.774+02:00 ERROR 77990 --- [EduVerse] [http-nio-8080-exec-4] d.b.eduverse.Services.UserServiceImpl    : Error creating user: Could not commit JPA transaction
+2024-05-08T12:46:12.876+02:00  INFO 77990 --- [EduVerse] [http-nio-8080-exec-5] d.b.eduverse.Services.UserServiceImpl    : Entering the Bulk creation process
+2024-05-08T12:46:12.879+02:00 ERROR 77990 --- [EduVerse] [http-nio-8080-exec-5] d.b.eduverse.Services.UserServiceImpl    : Error creating user: Could not commit JPA transaction
+2024-05-08T12:47:33.619+02:00  INFO 77990 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 22 with PID 77990 (/Users/swanhtetmac/intern/Dev01/eduverse/target/classes started by swanhtetmac in /Users/swanhtetmac/intern/Dev01)
+2024-05-08T12:47:33.620+02:00 DEBUG 77990 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-08T12:47:33.620+02:00  INFO 77990 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-08T12:47:35.337+02:00  INFO 77990 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 1.773 seconds (process running for 145.666)
+2024-05-08T12:47:36.773+02:00  INFO 77990 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 22 with PID 77990 (/Users/swanhtetmac/intern/Dev01/eduverse/target/classes started by swanhtetmac in /Users/swanhtetmac/intern/Dev01)
+2024-05-08T12:47:36.773+02:00 DEBUG 77990 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-08T12:47:36.773+02:00  INFO 77990 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-08T12:47:37.724+02:00  INFO 77990 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 0.967 seconds (process running for 148.053)
+2024-05-08T12:47:46.550+02:00  INFO 77990 --- [EduVerse] [http-nio-8080-exec-1] d.b.eduverse.Services.UserServiceImpl    : Entering the Bulk creation process
+2024-05-08T12:47:46.560+02:00 ERROR 77990 --- [EduVerse] [http-nio-8080-exec-1] d.b.eduverse.Services.UserServiceImpl    : Error creating user: Could not commit JPA transaction
+2024-05-08T12:47:55.229+02:00  INFO 77990 --- [EduVerse] [http-nio-8080-exec-2] d.b.eduverse.Services.UserServiceImpl    : Entering the Bulk creation process
+2024-05-08T12:47:55.232+02:00 ERROR 77990 --- [EduVerse] [http-nio-8080-exec-2] d.b.eduverse.Services.UserServiceImpl    : Error creating user: Could not commit JPA transaction
+2024-05-08T12:49:00.804+02:00  INFO 78060 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 22 with PID 78060 (/Users/swanhtetmac/intern/Dev01/eduverse/target/classes started by swanhtetmac in /Users/swanhtetmac/intern/Dev01)
+2024-05-08T12:49:00.805+02:00 DEBUG 78060 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-08T12:49:00.806+02:00  INFO 78060 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-08T12:49:05.337+02:00  INFO 78060 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 4.807 seconds (process running for 5.55)
+2024-05-08T12:49:15.154+02:00  INFO 78060 --- [EduVerse] [http-nio-8080-exec-5] d.b.eduverse.Services.UserServiceImpl    : Entering the Bulk creation process
+2024-05-08T12:49:15.207+02:00  INFO 78060 --- [EduVerse] [http-nio-8080-exec-5] d.b.eduverse.Services.UserServiceImpl    : Successful Bulk user Creation
+2024-05-08T12:49:24.335+02:00  INFO 78060 --- [EduVerse] [http-nio-8080-exec-6] d.b.eduverse.Services.UserServiceImpl    : Entering the read process
+2024-05-08T12:49:24.428+02:00  INFO 78060 --- [EduVerse] [http-nio-8080-exec-6] d.b.eduverse.Services.UserServiceImpl    : Exiting the read process
+2024-05-08T12:51:07.241+02:00  INFO 78060 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 22 with PID 78060 (/Users/swanhtetmac/intern/Dev01/eduverse/target/classes started by swanhtetmac in /Users/swanhtetmac/intern/Dev01)
+2024-05-08T12:51:07.242+02:00 DEBUG 78060 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-08T12:51:07.242+02:00  INFO 78060 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-08T12:51:09.077+02:00  INFO 78060 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 1.873 seconds (process running for 129.297)
+2024-05-08T12:51:10.527+02:00  INFO 78060 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 22 with PID 78060 (/Users/swanhtetmac/intern/Dev01/eduverse/target/classes started by swanhtetmac in /Users/swanhtetmac/intern/Dev01)
+2024-05-08T12:51:10.527+02:00 DEBUG 78060 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-08T12:51:10.527+02:00  INFO 78060 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-08T12:51:11.523+02:00  INFO 78060 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 1.01 seconds (process running for 131.743)
+2024-05-08T12:51:21.080+02:00  INFO 78060 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 22 with PID 78060 (/Users/swanhtetmac/intern/Dev01/eduverse/target/classes started by swanhtetmac in /Users/swanhtetmac/intern/Dev01)
+2024-05-08T12:51:21.080+02:00 DEBUG 78060 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-08T12:51:21.080+02:00  INFO 78060 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-08T12:51:22.087+02:00  INFO 78060 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 1.023 seconds (process running for 142.307)
+2024-05-08T12:56:08.765+02:00  INFO 78583 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 22 with PID 78583 (/Users/swanhtetmac/intern/Dev01/eduverse/target/classes started by swanhtetmac in /Users/swanhtetmac/intern/Dev01)
+2024-05-08T12:56:08.766+02:00 DEBUG 78583 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-08T12:56:08.767+02:00  INFO 78583 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-08T12:56:13.444+02:00  INFO 78583 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 4.944 seconds (process running for 5.668)
+2024-05-08T12:57:15.399+02:00  INFO 78609 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 22 with PID 78609 (/Users/swanhtetmac/intern/Dev01/eduverse/target/classes started by swanhtetmac in /Users/swanhtetmac/intern/Dev01)
+2024-05-08T12:57:15.400+02:00 DEBUG 78609 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-08T12:57:15.400+02:00  INFO 78609 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-08T12:57:19.784+02:00  INFO 78609 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 4.642 seconds (process running for 5.083)
+2024-05-08T12:57:59.184+02:00  INFO 78627 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 22 with PID 78627 (/Users/swanhtetmac/intern/Dev01/eduverse/target/classes started by swanhtetmac in /Users/swanhtetmac/intern/Dev01)
+2024-05-08T12:57:59.185+02:00 DEBUG 78627 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-08T12:57:59.186+02:00  INFO 78627 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-08T12:58:03.508+02:00  INFO 78627 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 4.665 seconds (process running for 5.39)
+2024-05-08T12:59:19.863+02:00  INFO 78627 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 22 with PID 78627 (/Users/swanhtetmac/intern/Dev01/eduverse/target/classes started by swanhtetmac in /Users/swanhtetmac/intern/Dev01)
+2024-05-08T12:59:19.864+02:00 DEBUG 78627 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-08T12:59:19.864+02:00  INFO 78627 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-08T12:59:21.133+02:00  INFO 78627 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 1.287 seconds (process running for 83.018)
+2024-05-08T12:59:48.317+02:00  INFO 78682 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 22 with PID 78682 (/Users/swanhtetmac/intern/Dev01/eduverse/target/classes started by swanhtetmac in /Users/swanhtetmac/intern/Dev01)
+2024-05-08T12:59:48.318+02:00 DEBUG 78682 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-08T12:59:48.318+02:00  INFO 78682 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-08T12:59:52.483+02:00  INFO 78682 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 4.486 seconds (process running for 4.942)
+2024-05-08T13:00:39.819+02:00  INFO 78714 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 22 with PID 78714 (/Users/swanhtetmac/intern/Dev01/eduverse/target/classes started by swanhtetmac in /Users/swanhtetmac/intern/Dev01)
+2024-05-08T13:00:39.820+02:00 DEBUG 78714 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-08T13:00:39.821+02:00  INFO 78714 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-08T13:00:44.055+02:00  INFO 78714 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 4.536 seconds (process running for 5.189)
+2024-05-08T15:37:31.978+02:00  INFO 79141 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 22 with PID 79141 (/Users/swanhtetmac/intern/Dev01/eduverse/target/classes started by swanhtetmac in /Users/swanhtetmac/intern/Dev01)
+2024-05-08T15:37:31.979+02:00 DEBUG 79141 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-08T15:37:31.979+02:00  INFO 79141 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-08T15:37:35.857+02:00  INFO 79141 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 4.164 seconds (process running for 4.908)
+2024-05-08T15:38:28.583+02:00  INFO 79141 --- [EduVerse] [http-nio-8080-exec-4] d.b.eduverse.Services.UserServiceImpl    : Entering the read process
+2024-05-08T15:38:28.721+02:00  INFO 79141 --- [EduVerse] [http-nio-8080-exec-4] d.b.eduverse.Services.UserServiceImpl    : Exiting the read process
+2024-05-08T15:49:15.344+02:00  INFO 79624 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 22 with PID 79624 (/Users/swanhtetmac/intern/Dev01/eduverse/target/classes started by swanhtetmac in /Users/swanhtetmac/intern/Dev01)
+2024-05-08T15:49:15.345+02:00 DEBUG 79624 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-08T15:49:15.346+02:00  INFO 79624 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-08T15:49:19.736+02:00  INFO 79624 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 4.889 seconds (process running for 5.765)
+2024-05-08T15:51:19.321+02:00  INFO 79776 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 22 with PID 79776 (/Users/swanhtetmac/intern/Dev01/eduverse/target/classes started by swanhtetmac in /Users/swanhtetmac/intern/Dev01)
+2024-05-08T15:51:19.322+02:00 DEBUG 79776 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-08T15:51:19.322+02:00  INFO 79776 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-08T15:51:23.437+02:00  INFO 79776 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 4.556 seconds (process running for 5.281)
+2024-05-08T15:52:24.574+02:00  INFO 79776 --- [EduVerse] [http-nio-8080-exec-7] d.b.eduverse.Services.UserServiceImpl    : Entering the creation process
+2024-05-08T15:52:24.630+02:00 ERROR 79776 --- [EduVerse] [http-nio-8080-exec-7] d.b.eduverse.Services.UserServiceImpl    : Error creating user: Could not commit JPA transaction
+2024-05-08T15:52:25.614+02:00  INFO 79776 --- [EduVerse] [http-nio-8080-exec-8] d.b.eduverse.Services.UserServiceImpl    : Entering the creation process
+2024-05-08T15:52:25.618+02:00 ERROR 79776 --- [EduVerse] [http-nio-8080-exec-8] d.b.eduverse.Services.UserServiceImpl    : Error creating user: Could not commit JPA transaction
+2024-05-08T15:52:44.559+02:00  INFO 79776 --- [EduVerse] [http-nio-8080-exec-9] d.b.eduverse.Services.UserServiceImpl    : Entering the creation process
+2024-05-08T15:52:44.612+02:00  INFO 79776 --- [EduVerse] [http-nio-8080-exec-9] d.b.eduverse.Services.UserServiceImpl    : User created successfully
+2024-05-08T15:53:12.648+02:00  INFO 79776 --- [EduVerse] [http-nio-8080-exec-1] d.b.eduverse.Services.UserServiceImpl    : Entering the read process
+2024-05-08T15:53:12.744+02:00  INFO 79776 --- [EduVerse] [http-nio-8080-exec-1] d.b.eduverse.Services.UserServiceImpl    : Exiting the read process
+2024-05-08T15:53:13.720+02:00  INFO 79776 --- [EduVerse] [http-nio-8080-exec-3] d.b.eduverse.Services.UserServiceImpl    : Entering the read process
+2024-05-08T15:53:13.732+02:00  INFO 79776 --- [EduVerse] [http-nio-8080-exec-3] d.b.eduverse.Services.UserServiceImpl    : Exiting the read process
+2024-05-08T15:53:56.495+02:00  INFO 79776 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 22 with PID 79776 (/Users/swanhtetmac/intern/Dev01/eduverse/target/classes started by swanhtetmac in /Users/swanhtetmac/intern/Dev01)
+2024-05-08T15:53:56.495+02:00 DEBUG 79776 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-08T15:53:56.495+02:00  INFO 79776 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-08T15:53:57.657+02:00  INFO 79776 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 1.184 seconds (process running for 159.508)
+2024-05-08T15:53:59.125+02:00  INFO 79776 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 22 with PID 79776 (/Users/swanhtetmac/intern/Dev01/eduverse/target/classes started by swanhtetmac in /Users/swanhtetmac/intern/Dev01)
+2024-05-08T15:53:59.125+02:00 DEBUG 79776 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-08T15:53:59.125+02:00  INFO 79776 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-08T15:54:00.096+02:00  INFO 79776 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 0.985 seconds (process running for 161.946)
+2024-05-08T16:01:13.619+02:00  INFO 79939 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 22 with PID 79939 (/Users/swanhtetmac/intern/Dev01/eduverse/target/classes started by swanhtetmac in /Users/swanhtetmac/intern/Dev01)
+2024-05-08T16:01:13.621+02:00 DEBUG 79939 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-08T16:01:13.622+02:00  INFO 79939 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-08T16:01:17.762+02:00  INFO 79939 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 4.529 seconds (process running for 5.36)
+2024-05-08T16:03:56.334+02:00  INFO 79939 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 22 with PID 79939 (/Users/swanhtetmac/intern/Dev01/eduverse/target/classes started by swanhtetmac in /Users/swanhtetmac/intern/Dev01)
+2024-05-08T16:03:56.335+02:00 DEBUG 79939 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-08T16:03:56.335+02:00  INFO 79939 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-08T16:03:57.615+02:00  INFO 79939 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 1.301 seconds (process running for 165.22)
+2024-05-08T16:04:20.035+02:00  INFO 79939 --- [EduVerse] [http-nio-8080-exec-1] d.b.eduverse.Services.UserServiceImpl    : Entering the creation process
+2024-05-08T16:04:20.096+02:00  INFO 79939 --- [EduVerse] [http-nio-8080-exec-1] d.b.eduverse.Services.UserServiceImpl    : User created successfully
+2024-05-08T16:06:30.194+02:00  INFO 79939 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 22 with PID 79939 (/Users/swanhtetmac/intern/Dev01/eduverse/target/classes started by swanhtetmac in /Users/swanhtetmac/intern/Dev01)
+2024-05-08T16:06:30.195+02:00 DEBUG 79939 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-08T16:06:30.195+02:00  INFO 79939 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-08T16:06:31.532+02:00  INFO 79939 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 1.377 seconds (process running for 319.144)
+2024-05-08T16:32:16.464+02:00  INFO 80501 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 22 with PID 80501 (/Users/swanhtetmac/intern/Dev01/eduverse/target/classes started by swanhtetmac in /Users/swanhtetmac/intern/Dev01)
+2024-05-08T16:32:16.465+02:00 DEBUG 80501 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-08T16:32:16.466+02:00  INFO 80501 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-08T16:32:20.488+02:00  INFO 80501 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 4.308 seconds (process running for 5.111)
