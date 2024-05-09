@@ -2,6 +2,8 @@ package dev.backend.eduverse.model;
 
 import dev.backend.eduverse.util.Level;
 import jakarta.persistence.*;
+
+import java.security.SecureRandom;
 import java.time.LocalDate;
 import java.util.List;
 import lombok.*;
@@ -51,4 +53,12 @@ public class Course {
   @OneToMany
   @JoinColumn(name = "course_details_id", referencedColumnName = "id")
   private List<CourseDetail> details;
+
+  @PrePersist
+  private void setCourseId(){
+    SecureRandom secureRandom = new SecureRandom();
+    Long numberOne = secureRandom.nextLong(10, 99) + 1;
+    Long numberTwo = secureRandom.nextLong(10, 99) + 1;
+    id = numberOne * 100 + numberTwo;
+  }
 }

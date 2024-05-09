@@ -24,4 +24,7 @@ public class AdminRole {
   @ManyToOne
   @JoinColumn(name = "admin_id", referencedColumnName = "id")
   private Admin admin;
+
+
+
 }

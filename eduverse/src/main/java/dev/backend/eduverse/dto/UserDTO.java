@@ -3,13 +3,14 @@ package dev.backend.eduverse.dto;
 import dev.backend.eduverse.util.Gender;
 import jakarta.validation.constraints.*;
 import java.time.LocalDate;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
+
+import lombok.*;
 
 @Getter
 @Setter
+@ToString
 @AllArgsConstructor
+@NoArgsConstructor
 public class UserDTO {
 
   @NotNull(message = "Name is required")

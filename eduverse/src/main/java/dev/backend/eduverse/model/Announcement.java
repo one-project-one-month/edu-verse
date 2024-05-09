@@ -38,4 +38,10 @@ public class Announcement {
 
   @OneToMany(mappedBy = "announcement")
   private List<Course> course;
+
+  @PrePersist
+  private void setCreateAt() {
+    createAt = LocalDate.now();
+  }
+
 }

@@ -7,11 +7,11 @@ import java.util.List;
 import org.springframework.http.ResponseEntity;
 
 public interface UserServices {
-  ResponseEntity<ApiResponse<String>> createUser(UserDTO userDTO);
-  ResponseEntity<ApiResponse<String>> bulkCreateUser(List<UserDTO> userDTO);
-  ResponseEntity<ApiResponse<List<User>>> readUser();
-  ResponseEntity<ApiResponse<User>> readUserById(Long userId);
-  ResponseEntity<ApiResponse<List<User>>> searchByUserEmail(String keyWord);
-  ResponseEntity<ApiResponse<String>> updateUser(Long userId, UserDTO userDTO);
-  ResponseEntity<ApiResponse<String>> deleteUser(Long userId);
+  void createUser(UserDTO userDTO);
+  void bulkCreateUser(List<UserDTO> userDTO);
+  List<UserDTO> readUser();
+  UserDTO readUserById(Long userId);
+  List<UserDTO> searchByUserEmail(String keyWord);
+  void updateUser(Long userId, UserDTO userDTO);
+  void deleteUser(Long userId);
 }

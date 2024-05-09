@@ -43,10 +43,17 @@ public class User {
   private String address;
 
   @PrePersist
-  public void generateUserId() {
+  private void generateUserId() {
     Random random = new Random();
     int r1 = random.nextInt(10, 99) + 1;
     int r2 = random.nextInt(10, 99) + 1;
     id = r1 * 100 + r2;
+  }
+
+  @PreUpdate
+  private void  updateAge(){
+    LocalDate now = LocalDate.now();
+    int year = now.getYear() - dob.getYear();
+    age +=year;
   }
 }
