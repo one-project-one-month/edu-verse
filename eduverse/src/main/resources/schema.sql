@@ -24,7 +24,7 @@ create table if not exists admin(
 create table if not exists user(
 	id int primary key ,
 	name varchar(20) not null,
-	email varchar(50) not null,
+	email varchar(50) not null unique ,
 	password varchar(68) not null,
 	phone_number varchar(12),
 	age int check(age > 0),

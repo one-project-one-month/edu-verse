@@ -1,11 +1,13 @@
 package dev.backend.eduverse.service.impl;
 
 import dev.backend.eduverse.dto.UserDTO;
+import dev.backend.eduverse.repository.UserRepository;
 import dev.backend.eduverse.service.UserServices;
 import dev.backend.eduverse.model.User;
 import dev.backend.eduverse.util.ResponeTemplate.EntityMapper;
 import jakarta.persistence.EntityNotFoundException;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
@@ -14,6 +16,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
+
 import org.springframework.stereotype.Service;
 
 
@@ -30,16 +33,16 @@ public class UserServiceImpl implements UserServices {
   private final UserRepository userRepository;
 
   private final EntityMapper entityMapper;
-  @Autowired
-  private ModelMapper modelMapper;
+  private final ModelMapper modelMapper;
 
-  /**
+	/**
    * Constructor Injection
    */
   @Autowired
-  public UserServiceImpl(UserRepository userRepository, EntityMapper entityMapper) {
+  public UserServiceImpl(UserRepository userRepository, EntityMapper entityMapper, ModelMapper modelMapper) {
     this.userRepository = userRepository;
     this.entityMapper = entityMapper;
+    this.modelMapper = modelMapper;
   }
 
   /**
@@ -75,14 +78,12 @@ public class UserServiceImpl implements UserServices {
     logger.info("Entering the read process");
     List<User> users = userRepository.findAll();
     logger.info("Retrieved users: " + users);
-    List<UserDTO> userDTOs = users.stream()
+	  return users.stream()
             .map(user -> entityMapper.mapDTOtoEntity(user, new UserDTO()))
             .peek(userDTO -> {
-                    userDTO.setPassword("Private Credential");
+                    userDTO.setPassword("Private Credential Cannot be accessed");
                     logger.info("Mapped UserDTO: " + userDTO);})
             .collect(Collectors.toList());
-
-    return userDTOs;
   }
   /**
    *Single Reader
@@ -92,6 +93,7 @@ public class UserServiceImpl implements UserServices {
     logger.info("Retrieving user by ID: {}", userId);
     Optional<User> userOptional =  userRepository.findById(userId);
     User user = userOptional.orElseThrow(() -> new EntityNotFoundException("Entity is not found with this id" + userId));
+    user.setPassword("Private Credential Cannot be accessed");
     return entityMapper.mapDTOtoEntity(user,new UserDTO());
   }
 
@@ -105,6 +107,18 @@ public class UserServiceImpl implements UserServices {
               .map(user -> modelMapper.map(user, UserDTO.class)).collect(Collectors.toList());
   }
 
+
+  /**
+   *
+   * @return  In Some Senarios, We need id only
+   * @throws NoSuchElementException
+   */
+  @Override
+  public Long searchIDByUserEmail(String email) throws NoSuchElementException {
+        return  userRepository.searchIdByEmail(email);
+  }
+
+
   /** Update User
    */
 
@@ -113,14 +127,14 @@ public class UserServiceImpl implements UserServices {
     logger.info("Updating user with ID: {}", userId);
     Optional<User> existingUserOptional = userRepository.findById(userId);
     User existingUser = existingUserOptional.orElseThrow(() -> new EntityNotFoundException("User not found with ID: " + userId));
-    modelMapper.map(existingUser, userDTO);
+    modelMapper.map(userDTO,existingUser);
     userRepository.save(existingUser);
     logger.info("User updated successfully");
   }
 
   /**
    *
-   * DeletebyID
+   * deleteByID
    */
   @Override
   public void deleteUser(Long userId) {
@@ -134,4 +148,4 @@ public class UserServiceImpl implements UserServices {
     }
   }
 
-}
+ }

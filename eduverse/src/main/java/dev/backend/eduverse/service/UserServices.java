@@ -14,4 +14,7 @@ public interface UserServices {
   List<UserDTO> searchByUserEmail(String keyWord);
   void updateUser(Long userId, UserDTO userDTO);
   void deleteUser(Long userId);
+
+  Long searchIDByUserEmail(String email);
+
 }

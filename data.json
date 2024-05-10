@@ -1,8 +1,8 @@
 {
   "name": "John Doe",
   "email": "john@example.com",
-  "password": "password123",
-  "phoneNumber": "1234567890",
+  "password": "Password123@",
+  "phoneNumber": "123 456 7890",
   "age": 30,
   "dob": "1994-05-25",
   "gender": "Male",
