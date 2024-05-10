@@ -1,12 +1,8 @@
 package dev.backend.eduverse.model;
 
-
 import jakarta.persistence.*;
-import lombok.*;
-
 import java.time.LocalDate;
-import java.util.List;
-
+import lombok.*;
 
 @Entity
 @Getter
@@ -15,16 +11,14 @@ import java.util.List;
 @NoArgsConstructor
 @Builder
 public class UserCourse {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private long id;
 
-    @Temporal(TemporalType.DATE)
-    private LocalDate createdDate;
+  @Temporal(TemporalType.DATE)
+  private LocalDate createdDate;
 
-    @ManyToOne
-    private User user;
+  @ManyToOne private User user;
 
-    @ManyToOne
-    private Course course;
+  @ManyToOne private Course course;
 }

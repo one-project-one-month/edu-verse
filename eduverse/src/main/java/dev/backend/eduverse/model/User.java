@@ -1,6 +1,5 @@
 package dev.backend.eduverse.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import dev.backend.eduverse.util.Gender;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Positive;
@@ -9,7 +8,6 @@ import org.hibernate.annotations.Check;
 import org.springframework.beans.factory.annotation.Value;
 
 import java.time.LocalDate;
-import java.util.List;
 import java.util.Random;
 
 @Entity

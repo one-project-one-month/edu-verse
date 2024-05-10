@@ -1,6 +1,5 @@
 package dev.backend.eduverse.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import dev.backend.eduverse.util.NotificationType;
 import jakarta.persistence.*;
 import lombok.*;
@@ -14,7 +13,6 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Table(name = "announcement")
 public class Announcement {
     // Suggestion : Decide whether we should add a new column with value 'System Level' and 'Course Level'.
     @Id
@@ -32,13 +30,13 @@ public class Announcement {
     @Column(name = "created_at")
     private LocalDate createdAt;
 
-    @Enumerated(EnumType.STRING)
-    @Column(name = "noti_type")
-    private NotificationType notificationType;
+  @Enumerated(EnumType.STRING)
+  @Column(name = "noti_type")
+  private NotificationType notificationType;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name = "admin_id", referencedColumnName = "id")
-    private Admin admin;
+  @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+  @JoinColumn(name = "admin_id", referencedColumnName = "id")
+  private Admin admin;
 
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "course_id", referencedColumnName = "id")

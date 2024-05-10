@@ -1,0 +1,407 @@
+2024-05-08T01:05:20.824+06:30  INFO 81512 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 21.0.2 with PID 81512 (/Users/kyawzinthant/Documents/Java Project/EduVerse/eduverse/target/classes started by kyawzinthant in /Users/kyawzinthant/Documents/Java Project/EduVerse)
+2024-05-08T01:05:20.825+06:30 DEBUG 81512 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-08T01:05:20.826+06:30  INFO 81512 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-08T01:05:24.536+06:30  INFO 81512 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 4.05 seconds (process running for 4.398)
+2024-05-08T01:05:54.365+06:30 DEBUG 81512 --- [EduVerse] [http-nio-8080-exec-1] d.b.e.controller.WelcomeController       : Debug level - Hello Log back
+2024-05-08T01:05:54.365+06:30  INFO 81512 --- [EduVerse] [http-nio-8080-exec-1] d.b.e.controller.WelcomeController       : Info level - Hello Log back
+2024-05-08T01:05:54.365+06:30 ERROR 81512 --- [EduVerse] [http-nio-8080-exec-1] d.b.e.controller.WelcomeController       : Error level - Hello Log back
+2024-05-07T22:29:10.697+02:00  INFO 67475 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 22 with PID 67475 (/Users/swanhtetmac/intern/Dev01/eduverse/target/classes started by swanhtetmac in /Users/swanhtetmac/intern/Dev01)
+2024-05-07T22:29:10.698+02:00 DEBUG 67475 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-07T22:29:10.699+02:00  INFO 67475 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-07T22:29:18.786+02:00  INFO 67475 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 8.907 seconds (process running for 10.017)
+2024-05-07T22:30:09.212+02:00  INFO 67538 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 22 with PID 67538 (/Users/swanhtetmac/intern/Dev01/eduverse/target/classes started by swanhtetmac in /Users/swanhtetmac/intern/Dev01)
+2024-05-07T22:30:09.213+02:00 DEBUG 67538 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-07T22:30:09.213+02:00  INFO 67538 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-07T22:30:13.475+02:00  INFO 67538 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 4.514 seconds (process running for 5.314)
+2024-05-07T22:30:19.204+02:00  INFO 67538 --- [EduVerse] [http-nio-8080-exec-5] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:30:19.276+02:00 ERROR 67538 --- [EduVerse] [http-nio-8080-exec-5] o.h.engine.jdbc.spi.SqlExceptionHelper   : Check constraint 'user_chk_1' is violated.
+2024-05-07T22:30:19.285+02:00 ERROR 67538 --- [EduVerse] [http-nio-8080-exec-5] d.b.eduverse.Services.UserServicesImpl   : could not execute statement [Check constraint 'user_chk_1' is violated.] [insert into user (address,age,dob,email,gender,name,password,phone_number) values (?,?,?,?,?,?,?,?)]
+2024-05-07T22:30:20.109+02:00  INFO 67538 --- [EduVerse] [http-nio-8080-exec-6] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:30:20.113+02:00 ERROR 67538 --- [EduVerse] [http-nio-8080-exec-6] o.h.engine.jdbc.spi.SqlExceptionHelper   : Check constraint 'user_chk_1' is violated.
+2024-05-07T22:30:20.114+02:00 ERROR 67538 --- [EduVerse] [http-nio-8080-exec-6] d.b.eduverse.Services.UserServicesImpl   : could not execute statement [Check constraint 'user_chk_1' is violated.] [insert into user (address,age,dob,email,gender,name,password,phone_number) values (?,?,?,?,?,?,?,?)]
+2024-05-07T22:30:49.687+02:00  INFO 67538 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 22 with PID 67538 (/Users/swanhtetmac/intern/Dev01/eduverse/target/classes started by swanhtetmac in /Users/swanhtetmac/intern/Dev01)
+2024-05-07T22:30:49.687+02:00 DEBUG 67538 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-07T22:30:49.687+02:00  INFO 67538 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-07T22:30:50.892+02:00  INFO 67538 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 1.224 seconds (process running for 42.733)
+2024-05-07T22:30:52.178+02:00  INFO 67538 --- [EduVerse] [http-nio-8080-exec-1] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:30:52.190+02:00 ERROR 67538 --- [EduVerse] [http-nio-8080-exec-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : Check constraint 'user_chk_1' is violated.
+2024-05-07T22:30:52.195+02:00 ERROR 67538 --- [EduVerse] [http-nio-8080-exec-1] d.b.eduverse.Services.UserServicesImpl   : could not execute statement [Check constraint 'user_chk_1' is violated.] [insert into user (address,age,dob,email,gender,name,password,phone_number) values (?,?,?,?,?,?,?,?)]
+2024-05-07T22:30:52.986+02:00  INFO 67538 --- [EduVerse] [http-nio-8080-exec-2] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:30:52.990+02:00 ERROR 67538 --- [EduVerse] [http-nio-8080-exec-2] o.h.engine.jdbc.spi.SqlExceptionHelper   : Check constraint 'user_chk_1' is violated.
+2024-05-07T22:30:52.992+02:00 ERROR 67538 --- [EduVerse] [http-nio-8080-exec-2] d.b.eduverse.Services.UserServicesImpl   : could not execute statement [Check constraint 'user_chk_1' is violated.] [insert into user (address,age,dob,email,gender,name,password,phone_number) values (?,?,?,?,?,?,?,?)]
+2024-05-07T22:32:43.097+02:00  INFO 70057 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 22 with PID 70057 (/Users/swanhtetmac/intern/Dev01/eduverse/target/classes started by swanhtetmac in /Users/swanhtetmac/intern/Dev01)
+2024-05-07T22:32:43.099+02:00 DEBUG 70057 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-07T22:32:43.100+02:00  INFO 70057 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-07T22:32:47.733+02:00  INFO 70057 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 5.128 seconds (process running for 5.98)
+2024-05-07T22:33:20.280+02:00  INFO 70088 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 22 with PID 70088 (/Users/swanhtetmac/intern/Dev01/eduverse/target/classes started by swanhtetmac in /Users/swanhtetmac/intern/Dev01)
+2024-05-07T22:33:20.281+02:00 DEBUG 70088 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-07T22:33:20.282+02:00  INFO 70088 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-07T22:33:22.133+02:00 ERROR 70088 --- [EduVerse] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Failed to execute SQL script statement #8 of file [/Users/swanhtetmac/intern/Dev01/eduverse/target/classes/schema.sql]: create table if not exists category( id long primary key auto_increment, name varchar(20), pathway_id int, foreign key (pathway_id) references pathway(id) )
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1786) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:313) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1234) ~[spring-context-6.1.6.jar:6.1.6]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:952) ~[spring-context-6.1.6.jar:6.1.6]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624) ~[spring-context-6.1.6.jar:6.1.6]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343) ~[spring-boot-3.2.5.jar:3.2.5]
+	at dev.backend.eduverse.EduverseApplication.main(EduverseApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.2.5.jar:3.2.5]
+Caused by: org.springframework.jdbc.datasource.init.ScriptStatementFailedException: Failed to execute SQL script statement #8 of file [/Users/swanhtetmac/intern/Dev01/eduverse/target/classes/schema.sql]: create table if not exists category( id long primary key auto_increment, name varchar(20), pathway_id int, foreign key (pathway_id) references pathway(id) )
+	at org.springframework.jdbc.datasource.init.ScriptUtils.executeSqlScript(ScriptUtils.java:282) ~[spring-jdbc-6.1.6.jar:6.1.6]
+	at org.springframework.jdbc.datasource.init.ResourceDatabasePopulator.populate(ResourceDatabasePopulator.java:254) ~[spring-jdbc-6.1.6.jar:6.1.6]
+	at org.springframework.jdbc.datasource.init.DatabasePopulatorUtils.execute(DatabasePopulatorUtils.java:54) ~[spring-jdbc-6.1.6.jar:6.1.6]
+	at org.springframework.boot.jdbc.init.DataSourceScriptDatabaseInitializer.runScripts(DataSourceScriptDatabaseInitializer.java:87) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.runScripts(AbstractScriptDatabaseInitializer.java:146) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.applyScripts(AbstractScriptDatabaseInitializer.java:108) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.applySchemaScripts(AbstractScriptDatabaseInitializer.java:98) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.initializeDatabase(AbstractScriptDatabaseInitializer.java:76) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.afterPropertiesSet(AbstractScriptDatabaseInitializer.java:66) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1833) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782) ~[spring-beans-6.1.6.jar:6.1.6]
+	... 21 common frames omitted
+Caused by: java.sql.SQLSyntaxErrorException: Incorrect column specifier for column 'id'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121) ~[mysql-connector-j-8.3.0.jar:8.3.0]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-j-8.3.0.jar:8.3.0]
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:770) ~[mysql-connector-j-8.3.0.jar:8.3.0]
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:653) ~[mysql-connector-j-8.3.0.jar:8.3.0]
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94) ~[HikariCP-5.0.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-5.0.1.jar:na]
+	at org.springframework.jdbc.datasource.init.ScriptUtils.executeSqlScript(ScriptUtils.java:261) ~[spring-jdbc-6.1.6.jar:6.1.6]
+	... 31 common frames omitted
+
+2024-05-07T22:33:39.102+02:00  INFO 70103 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 22 with PID 70103 (/Users/swanhtetmac/intern/Dev01/eduverse/target/classes started by swanhtetmac in /Users/swanhtetmac/intern/Dev01)
+2024-05-07T22:33:39.104+02:00 DEBUG 70103 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-07T22:33:39.104+02:00  INFO 70103 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-07T22:33:42.980+02:00  INFO 70103 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 4.222 seconds (process running for 4.902)
+2024-05-07T22:33:49.067+02:00  INFO 70103 --- [EduVerse] [http-nio-8080-exec-9] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:33:49.150+02:00 ERROR 70103 --- [EduVerse] [http-nio-8080-exec-9] o.h.engine.jdbc.spi.SqlExceptionHelper   : Data truncation: Out of range value for column 'id' at row 1
+2024-05-07T22:33:49.157+02:00 ERROR 70103 --- [EduVerse] [http-nio-8080-exec-9] d.b.eduverse.Services.UserServicesImpl   : could not execute statement [Data truncation: Out of range value for column 'id' at row 1] [insert into user (address,age,dob,email,gender,name,password,phone_number,id) values (?,?,?,?,?,?,?,?,?)]; SQL [insert into user (address,age,dob,email,gender,name,password,phone_number,id) values (?,?,?,?,?,?,?,?,?)]
+2024-05-07T22:34:41.370+02:00  INFO 70158 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 22 with PID 70158 (/Users/swanhtetmac/intern/Dev01/eduverse/target/classes started by swanhtetmac in /Users/swanhtetmac/intern/Dev01)
+2024-05-07T22:34:41.371+02:00 DEBUG 70158 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-07T22:34:41.372+02:00  INFO 70158 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-07T22:34:45.729+02:00  INFO 70158 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 4.672 seconds (process running for 5.254)
+2024-05-07T22:34:50.086+02:00  INFO 70158 --- [EduVerse] [http-nio-8080-exec-5] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:34:50.172+02:00 ERROR 70158 --- [EduVerse] [http-nio-8080-exec-5] o.h.engine.jdbc.spi.SqlExceptionHelper   : Check constraint 'user_chk_1' is violated.
+2024-05-07T22:34:50.178+02:00 ERROR 70158 --- [EduVerse] [http-nio-8080-exec-5] d.b.eduverse.Services.UserServicesImpl   : could not execute statement [Check constraint 'user_chk_1' is violated.] [insert into user (address,age,dob,email,gender,name,password,phone_number,id) values (?,?,?,?,?,?,?,?,?)]
+2024-05-07T22:34:50.920+02:00  INFO 70158 --- [EduVerse] [http-nio-8080-exec-6] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:34:50.925+02:00 ERROR 70158 --- [EduVerse] [http-nio-8080-exec-6] o.h.engine.jdbc.spi.SqlExceptionHelper   : Check constraint 'user_chk_1' is violated.
+2024-05-07T22:34:50.926+02:00 ERROR 70158 --- [EduVerse] [http-nio-8080-exec-6] d.b.eduverse.Services.UserServicesImpl   : could not execute statement [Check constraint 'user_chk_1' is violated.] [insert into user (address,age,dob,email,gender,name,password,phone_number,id) values (?,?,?,?,?,?,?,?,?)]
+2024-05-07T22:35:30.440+02:00  INFO 70158 --- [EduVerse] [http-nio-8080-exec-7] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:35:59.286+02:00  INFO 70158 --- [EduVerse] [http-nio-8080-exec-8] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:39:06.092+02:00  INFO 70336 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 22 with PID 70336 (/Users/swanhtetmac/intern/Dev01/eduverse/target/classes started by swanhtetmac in /Users/swanhtetmac/intern/Dev01)
+2024-05-07T22:39:06.093+02:00 DEBUG 70336 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-07T22:39:06.093+02:00  INFO 70336 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-07T22:39:10.079+02:00  INFO 70336 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 4.265 seconds (process running for 5.07)
+2024-05-07T22:39:35.396+02:00  INFO 70336 --- [EduVerse] [http-nio-8080-exec-5] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:39:36.746+02:00  INFO 70336 --- [EduVerse] [http-nio-8080-exec-6] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:39:36.803+02:00 ERROR 70336 --- [EduVerse] [http-nio-8080-exec-6] o.h.engine.jdbc.spi.SqlExceptionHelper   : Duplicate entry '1000' for key 'user.PRIMARY'
+2024-05-07T22:39:36.812+02:00 ERROR 70336 --- [EduVerse] [http-nio-8080-exec-6] d.b.eduverse.Services.UserServicesImpl   : could not execute statement [Duplicate entry '1000' for key 'user.PRIMARY'] [insert into user (address,age,dob,email,gender,name,password,phone_number,id) values (?,?,?,?,?,?,?,?,?)]; SQL [insert into user (address,age,dob,email,gender,name,password,phone_number,id) values (?,?,?,?,?,?,?,?,?)]; constraint [user.PRIMARY]
+2024-05-07T22:41:40.480+02:00  INFO 70336 --- [EduVerse] [http-nio-8080-exec-8] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:41:40.543+02:00 ERROR 70336 --- [EduVerse] [http-nio-8080-exec-8] o.h.engine.jdbc.spi.SqlExceptionHelper   : Duplicate entry '1000' for key 'user.PRIMARY'
+2024-05-07T22:41:40.547+02:00 ERROR 70336 --- [EduVerse] [http-nio-8080-exec-8] d.b.eduverse.Services.UserServicesImpl   : could not execute statement [Duplicate entry '1000' for key 'user.PRIMARY'] [insert into user (address,age,dob,email,gender,name,password,phone_number,id) values (?,?,?,?,?,?,?,?,?)]; SQL [insert into user (address,age,dob,email,gender,name,password,phone_number,id) values (?,?,?,?,?,?,?,?,?)]; constraint [user.PRIMARY]
+2024-05-07T22:43:13.384+02:00  INFO 70553 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 22 with PID 70553 (/Users/swanhtetmac/intern/Dev01/eduverse/target/classes started by swanhtetmac in /Users/swanhtetmac/intern/Dev01)
+2024-05-07T22:43:13.385+02:00 DEBUG 70553 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-07T22:43:13.386+02:00  INFO 70553 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-07T22:43:18.516+02:00  INFO 70553 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 5.478 seconds (process running for 6.359)
+2024-05-07T22:43:30.392+02:00  INFO 70553 --- [EduVerse] [http-nio-8080-exec-5] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:43:40.567+02:00  INFO 70553 --- [EduVerse] [http-nio-8080-exec-6] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:43:45.225+02:00  INFO 70553 --- [EduVerse] [http-nio-8080-exec-8] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:43:50.186+02:00  INFO 70553 --- [EduVerse] [http-nio-8080-exec-7] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:43:54.606+02:00  INFO 70553 --- [EduVerse] [http-nio-8080-exec-9] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:44:01.666+02:00  INFO 70553 --- [EduVerse] [http-nio-8080-exec-10] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:44:01.967+02:00  INFO 70553 --- [EduVerse] [http-nio-8080-exec-1] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:44:02.185+02:00  INFO 70553 --- [EduVerse] [http-nio-8080-exec-2] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:44:02.416+02:00  INFO 70553 --- [EduVerse] [http-nio-8080-exec-3] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:44:02.668+02:00  INFO 70553 --- [EduVerse] [http-nio-8080-exec-4] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:44:02.889+02:00  INFO 70553 --- [EduVerse] [http-nio-8080-exec-5] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:44:03.092+02:00  INFO 70553 --- [EduVerse] [http-nio-8080-exec-6] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:44:03.308+02:00  INFO 70553 --- [EduVerse] [http-nio-8080-exec-8] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:44:03.508+02:00  INFO 70553 --- [EduVerse] [http-nio-8080-exec-7] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:44:03.723+02:00  INFO 70553 --- [EduVerse] [http-nio-8080-exec-9] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:44:03.939+02:00  INFO 70553 --- [EduVerse] [http-nio-8080-exec-10] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:44:04.156+02:00  INFO 70553 --- [EduVerse] [http-nio-8080-exec-1] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:44:04.346+02:00  INFO 70553 --- [EduVerse] [http-nio-8080-exec-2] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:44:04.573+02:00  INFO 70553 --- [EduVerse] [http-nio-8080-exec-3] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:44:04.792+02:00  INFO 70553 --- [EduVerse] [http-nio-8080-exec-4] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:44:04.992+02:00  INFO 70553 --- [EduVerse] [http-nio-8080-exec-5] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:44:05.189+02:00  INFO 70553 --- [EduVerse] [http-nio-8080-exec-6] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:44:05.396+02:00  INFO 70553 --- [EduVerse] [http-nio-8080-exec-8] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:44:05.606+02:00  INFO 70553 --- [EduVerse] [http-nio-8080-exec-7] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:44:05.823+02:00  INFO 70553 --- [EduVerse] [http-nio-8080-exec-9] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:44:06.025+02:00  INFO 70553 --- [EduVerse] [http-nio-8080-exec-10] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:44:06.220+02:00  INFO 70553 --- [EduVerse] [http-nio-8080-exec-1] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:44:06.438+02:00  INFO 70553 --- [EduVerse] [http-nio-8080-exec-2] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:44:06.640+02:00  INFO 70553 --- [EduVerse] [http-nio-8080-exec-3] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:44:06.842+02:00  INFO 70553 --- [EduVerse] [http-nio-8080-exec-4] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:44:07.057+02:00  INFO 70553 --- [EduVerse] [http-nio-8080-exec-5] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:44:07.243+02:00  INFO 70553 --- [EduVerse] [http-nio-8080-exec-6] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:44:07.445+02:00  INFO 70553 --- [EduVerse] [http-nio-8080-exec-8] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:44:07.655+02:00  INFO 70553 --- [EduVerse] [http-nio-8080-exec-7] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:44:07.838+02:00  INFO 70553 --- [EduVerse] [http-nio-8080-exec-9] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:44:08.041+02:00  INFO 70553 --- [EduVerse] [http-nio-8080-exec-10] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:44:08.261+02:00  INFO 70553 --- [EduVerse] [http-nio-8080-exec-1] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:44:08.456+02:00  INFO 70553 --- [EduVerse] [http-nio-8080-exec-2] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:44:08.674+02:00  INFO 70553 --- [EduVerse] [http-nio-8080-exec-3] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:44:08.873+02:00  INFO 70553 --- [EduVerse] [http-nio-8080-exec-4] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:44:09.074+02:00  INFO 70553 --- [EduVerse] [http-nio-8080-exec-5] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:44:09.273+02:00  INFO 70553 --- [EduVerse] [http-nio-8080-exec-6] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:44:09.470+02:00  INFO 70553 --- [EduVerse] [http-nio-8080-exec-8] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:44:09.658+02:00  INFO 70553 --- [EduVerse] [http-nio-8080-exec-7] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:44:09.873+02:00  INFO 70553 --- [EduVerse] [http-nio-8080-exec-9] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:44:10.072+02:00  INFO 70553 --- [EduVerse] [http-nio-8080-exec-10] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:44:10.270+02:00  INFO 70553 --- [EduVerse] [http-nio-8080-exec-1] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:44:10.490+02:00  INFO 70553 --- [EduVerse] [http-nio-8080-exec-2] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:44:10.671+02:00  INFO 70553 --- [EduVerse] [http-nio-8080-exec-3] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:44:10.840+02:00  INFO 70553 --- [EduVerse] [http-nio-8080-exec-4] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:45:03.381+02:00  INFO 70608 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 22 with PID 70608 (/Users/swanhtetmac/intern/Dev01/eduverse/target/classes started by swanhtetmac in /Users/swanhtetmac/intern/Dev01)
+2024-05-07T22:45:03.384+02:00 DEBUG 70608 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-07T22:45:03.384+02:00  INFO 70608 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-07T22:45:07.526+02:00  INFO 70608 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 4.625 seconds (process running for 5.391)
+2024-05-07T22:45:18.884+02:00  INFO 70608 --- [EduVerse] [http-nio-8080-exec-1] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:45:27.883+02:00  INFO 70608 --- [EduVerse] [http-nio-8080-exec-2] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:45:28.069+02:00  INFO 70608 --- [EduVerse] [http-nio-8080-exec-3] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:45:28.273+02:00  INFO 70608 --- [EduVerse] [http-nio-8080-exec-4] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:45:28.485+02:00  INFO 70608 --- [EduVerse] [http-nio-8080-exec-5] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:45:28.683+02:00  INFO 70608 --- [EduVerse] [http-nio-8080-exec-6] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:45:28.899+02:00  INFO 70608 --- [EduVerse] [http-nio-8080-exec-7] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:45:29.108+02:00  INFO 70608 --- [EduVerse] [http-nio-8080-exec-8] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:45:29.324+02:00  INFO 70608 --- [EduVerse] [http-nio-8080-exec-9] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:45:29.525+02:00  INFO 70608 --- [EduVerse] [http-nio-8080-exec-10] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:45:29.707+02:00  INFO 70608 --- [EduVerse] [http-nio-8080-exec-1] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:45:29.891+02:00  INFO 70608 --- [EduVerse] [http-nio-8080-exec-2] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:45:30.075+02:00  INFO 70608 --- [EduVerse] [http-nio-8080-exec-3] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:45:30.273+02:00  INFO 70608 --- [EduVerse] [http-nio-8080-exec-4] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:45:30.477+02:00  INFO 70608 --- [EduVerse] [http-nio-8080-exec-5] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:45:30.655+02:00  INFO 70608 --- [EduVerse] [http-nio-8080-exec-6] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:45:30.874+02:00  INFO 70608 --- [EduVerse] [http-nio-8080-exec-7] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:45:31.075+02:00  INFO 70608 --- [EduVerse] [http-nio-8080-exec-8] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:45:31.277+02:00  INFO 70608 --- [EduVerse] [http-nio-8080-exec-9] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:45:31.473+02:00  INFO 70608 --- [EduVerse] [http-nio-8080-exec-10] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:45:31.655+02:00  INFO 70608 --- [EduVerse] [http-nio-8080-exec-1] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:45:31.858+02:00  INFO 70608 --- [EduVerse] [http-nio-8080-exec-2] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:45:32.042+02:00  INFO 70608 --- [EduVerse] [http-nio-8080-exec-3] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:45:32.257+02:00  INFO 70608 --- [EduVerse] [http-nio-8080-exec-4] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:45:32.456+02:00  INFO 70608 --- [EduVerse] [http-nio-8080-exec-5] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:45:32.675+02:00  INFO 70608 --- [EduVerse] [http-nio-8080-exec-6] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:45:32.875+02:00  INFO 70608 --- [EduVerse] [http-nio-8080-exec-7] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:45:33.074+02:00  INFO 70608 --- [EduVerse] [http-nio-8080-exec-8] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:45:33.274+02:00  INFO 70608 --- [EduVerse] [http-nio-8080-exec-9] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:45:33.493+02:00  INFO 70608 --- [EduVerse] [http-nio-8080-exec-10] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:45:33.679+02:00  INFO 70608 --- [EduVerse] [http-nio-8080-exec-1] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:45:34.090+02:00  INFO 70608 --- [EduVerse] [http-nio-8080-exec-2] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:45:34.307+02:00  INFO 70608 --- [EduVerse] [http-nio-8080-exec-3] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:45:34.508+02:00  INFO 70608 --- [EduVerse] [http-nio-8080-exec-4] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:45:34.692+02:00  INFO 70608 --- [EduVerse] [http-nio-8080-exec-5] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:45:34.890+02:00  INFO 70608 --- [EduVerse] [http-nio-8080-exec-6] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:45:35.090+02:00  INFO 70608 --- [EduVerse] [http-nio-8080-exec-7] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:45:35.290+02:00  INFO 70608 --- [EduVerse] [http-nio-8080-exec-8] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:45:35.473+02:00  INFO 70608 --- [EduVerse] [http-nio-8080-exec-9] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:45:35.659+02:00  INFO 70608 --- [EduVerse] [http-nio-8080-exec-10] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:45:35.839+02:00  INFO 70608 --- [EduVerse] [http-nio-8080-exec-1] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:45:45.751+02:00  INFO 70608 --- [EduVerse] [http-nio-8080-exec-2] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:45:46.000+02:00  INFO 70608 --- [EduVerse] [http-nio-8080-exec-3] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:45:46.217+02:00  INFO 70608 --- [EduVerse] [http-nio-8080-exec-4] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:45:46.434+02:00  INFO 70608 --- [EduVerse] [http-nio-8080-exec-5] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:45:46.649+02:00  INFO 70608 --- [EduVerse] [http-nio-8080-exec-6] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:45:46.860+02:00  INFO 70608 --- [EduVerse] [http-nio-8080-exec-7] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:45:47.058+02:00  INFO 70608 --- [EduVerse] [http-nio-8080-exec-8] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:45:47.257+02:00  INFO 70608 --- [EduVerse] [http-nio-8080-exec-9] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:45:47.459+02:00  INFO 70608 --- [EduVerse] [http-nio-8080-exec-10] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:45:47.659+02:00  INFO 70608 --- [EduVerse] [http-nio-8080-exec-1] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:45:47.855+02:00  INFO 70608 --- [EduVerse] [http-nio-8080-exec-2] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:45:48.058+02:00  INFO 70608 --- [EduVerse] [http-nio-8080-exec-3] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:45:48.257+02:00  INFO 70608 --- [EduVerse] [http-nio-8080-exec-4] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:45:48.459+02:00  INFO 70608 --- [EduVerse] [http-nio-8080-exec-5] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:45:48.657+02:00  INFO 70608 --- [EduVerse] [http-nio-8080-exec-6] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:45:48.855+02:00  INFO 70608 --- [EduVerse] [http-nio-8080-exec-7] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:45:49.060+02:00  INFO 70608 --- [EduVerse] [http-nio-8080-exec-8] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:45:49.259+02:00  INFO 70608 --- [EduVerse] [http-nio-8080-exec-9] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:45:49.441+02:00  INFO 70608 --- [EduVerse] [http-nio-8080-exec-10] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:45:49.641+02:00  INFO 70608 --- [EduVerse] [http-nio-8080-exec-1] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:45:49.801+02:00  INFO 70608 --- [EduVerse] [http-nio-8080-exec-2] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:45:50.242+02:00  INFO 70608 --- [EduVerse] [http-nio-8080-exec-3] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:45:50.441+02:00  INFO 70608 --- [EduVerse] [http-nio-8080-exec-4] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:45:50.640+02:00  INFO 70608 --- [EduVerse] [http-nio-8080-exec-5] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:45:50.841+02:00  INFO 70608 --- [EduVerse] [http-nio-8080-exec-6] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:45:51.125+02:00  INFO 70608 --- [EduVerse] [http-nio-8080-exec-7] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:45:51.325+02:00  INFO 70608 --- [EduVerse] [http-nio-8080-exec-8] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:45:51.509+02:00  INFO 70608 --- [EduVerse] [http-nio-8080-exec-9] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:45:51.707+02:00  INFO 70608 --- [EduVerse] [http-nio-8080-exec-10] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:45:51.891+02:00  INFO 70608 --- [EduVerse] [http-nio-8080-exec-1] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:45:52.106+02:00  INFO 70608 --- [EduVerse] [http-nio-8080-exec-2] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:45:52.309+02:00  INFO 70608 --- [EduVerse] [http-nio-8080-exec-3] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:45:52.511+02:00  INFO 70608 --- [EduVerse] [http-nio-8080-exec-4] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:45:52.708+02:00  INFO 70608 --- [EduVerse] [http-nio-8080-exec-5] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:45:52.909+02:00  INFO 70608 --- [EduVerse] [http-nio-8080-exec-6] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:45:53.109+02:00  INFO 70608 --- [EduVerse] [http-nio-8080-exec-7] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:45:53.289+02:00  INFO 70608 --- [EduVerse] [http-nio-8080-exec-8] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:45:53.476+02:00  INFO 70608 --- [EduVerse] [http-nio-8080-exec-9] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:45:53.691+02:00  INFO 70608 --- [EduVerse] [http-nio-8080-exec-10] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:45:53.872+02:00  INFO 70608 --- [EduVerse] [http-nio-8080-exec-1] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:45:54.059+02:00  INFO 70608 --- [EduVerse] [http-nio-8080-exec-2] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:45:54.458+02:00  INFO 70608 --- [EduVerse] [http-nio-8080-exec-3] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:45:59.519+02:00  INFO 70608 --- [EduVerse] [http-nio-8080-exec-4] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:45:59.733+02:00  INFO 70608 --- [EduVerse] [http-nio-8080-exec-5] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:45:59.934+02:00  INFO 70608 --- [EduVerse] [http-nio-8080-exec-6] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:46:00.115+02:00  INFO 70608 --- [EduVerse] [http-nio-8080-exec-7] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:46:00.333+02:00  INFO 70608 --- [EduVerse] [http-nio-8080-exec-8] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:46:00.501+02:00  INFO 70608 --- [EduVerse] [http-nio-8080-exec-9] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:46:00.959+02:00  INFO 70608 --- [EduVerse] [http-nio-8080-exec-10] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:46:01.158+02:00  INFO 70608 --- [EduVerse] [http-nio-8080-exec-1] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:46:01.408+02:00  INFO 70608 --- [EduVerse] [http-nio-8080-exec-2] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:46:01.624+02:00  INFO 70608 --- [EduVerse] [http-nio-8080-exec-3] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:46:01.824+02:00  INFO 70608 --- [EduVerse] [http-nio-8080-exec-4] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:46:02.024+02:00  INFO 70608 --- [EduVerse] [http-nio-8080-exec-5] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:46:02.208+02:00  INFO 70608 --- [EduVerse] [http-nio-8080-exec-6] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:46:02.391+02:00  INFO 70608 --- [EduVerse] [http-nio-8080-exec-7] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:46:02.825+02:00  INFO 70608 --- [EduVerse] [http-nio-8080-exec-8] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T22:48:32.110+02:00  INFO 70859 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 22 with PID 70859 (/Users/swanhtetmac/intern/Dev01/eduverse/target/classes started by swanhtetmac in /Users/swanhtetmac/intern/Dev01)
+2024-05-07T22:48:32.111+02:00 DEBUG 70859 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-07T22:48:32.112+02:00  INFO 70859 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-07T22:48:37.419+02:00  INFO 70859 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 5.933 seconds (process running for 7.104)
+2024-05-07T22:49:19.400+02:00  INFO 70859 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 22 with PID 70859 (/Users/swanhtetmac/intern/Dev01/eduverse/target/classes started by swanhtetmac in /Users/swanhtetmac/intern/Dev01)
+2024-05-07T22:49:19.401+02:00 DEBUG 70859 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-07T22:49:19.401+02:00  INFO 70859 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-07T22:49:21.160+02:00  INFO 70859 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 1.787 seconds (process running for 50.848)
+2024-05-07T22:49:22.634+02:00  INFO 70859 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 22 with PID 70859 (/Users/swanhtetmac/intern/Dev01/eduverse/target/classes started by swanhtetmac in /Users/swanhtetmac/intern/Dev01)
+2024-05-07T22:49:22.634+02:00 DEBUG 70859 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-07T22:49:22.634+02:00  INFO 70859 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-07T22:49:23.740+02:00  INFO 70859 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 1.122 seconds (process running for 53.428)
+2024-05-07T22:49:39.788+02:00  INFO 70859 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 22 with PID 70859 (/Users/swanhtetmac/intern/Dev01/eduverse/target/classes started by swanhtetmac in /Users/swanhtetmac/intern/Dev01)
+2024-05-07T22:49:39.788+02:00 DEBUG 70859 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-07T22:49:39.788+02:00  INFO 70859 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-07T22:49:40.888+02:00  INFO 70859 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 1.115 seconds (process running for 70.577)
+2024-05-07T22:51:33.797+02:00  INFO 70932 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 22 with PID 70932 (/Users/swanhtetmac/intern/Dev01/eduverse/target/classes started by swanhtetmac in /Users/swanhtetmac/intern/Dev01)
+2024-05-07T22:51:33.798+02:00 DEBUG 70932 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-07T22:51:33.798+02:00  INFO 70932 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-07T22:51:38.127+02:00  INFO 70932 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 4.588 seconds (process running for 5.359)
+2024-05-07T22:52:57.146+02:00  INFO 70979 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 22 with PID 70979 (/Users/swanhtetmac/intern/Dev01/eduverse/target/classes started by swanhtetmac in /Users/swanhtetmac/intern/Dev01)
+2024-05-07T22:52:57.148+02:00 DEBUG 70979 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-07T22:52:57.149+02:00  INFO 70979 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-07T22:53:01.178+02:00  INFO 70979 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 4.332 seconds (process running for 4.957)
+2024-05-07T22:53:41.567+02:00  INFO 70979 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 22 with PID 70979 (/Users/swanhtetmac/intern/Dev01/eduverse/target/classes started by swanhtetmac in /Users/swanhtetmac/intern/Dev01)
+2024-05-07T22:53:41.567+02:00 DEBUG 70979 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-07T22:53:41.567+02:00  INFO 70979 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-07T22:53:42.996+02:00  INFO 70979 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 1.459 seconds (process running for 46.778)
+2024-05-07T22:53:59.282+02:00  INFO 70997 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 22 with PID 70997 (/Users/swanhtetmac/intern/Dev01/eduverse/target/classes started by swanhtetmac in /Users/swanhtetmac/intern/Dev01)
+2024-05-07T22:53:59.284+02:00 DEBUG 70997 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-07T22:53:59.285+02:00  INFO 70997 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-07T22:54:00.221+02:00  INFO 71000 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 22 with PID 71000 (/Users/swanhtetmac/intern/Dev01/eduverse/target/classes started by swanhtetmac in /Users/swanhtetmac/intern/Dev01)
+2024-05-07T22:54:00.230+02:00 DEBUG 71000 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-07T22:54:00.232+02:00  INFO 71000 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-07T22:54:04.747+02:00  INFO 70997 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 6.132 seconds (process running for 7.71)
+2024-05-07T22:54:04.809+02:00 ERROR 71000 --- [EduVerse] [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2024-05-07T22:55:14.224+02:00  INFO 71198 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 22 with PID 71198 (/Users/swanhtetmac/intern/Dev01/eduverse/target/classes started by swanhtetmac in /Users/swanhtetmac/intern/Dev01)
+2024-05-07T22:55:14.225+02:00 DEBUG 71198 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-07T22:55:14.226+02:00  INFO 71198 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-07T22:55:19.245+02:00  INFO 71198 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 5.463 seconds (process running for 6.316)
+2024-05-07T22:57:17.043+02:00  INFO 71365 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 22 with PID 71365 (/Users/swanhtetmac/intern/Dev01/eduverse/target/classes started by swanhtetmac in /Users/swanhtetmac/intern/Dev01)
+2024-05-07T22:57:17.045+02:00 DEBUG 71365 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-07T22:57:17.047+02:00  INFO 71365 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-07T22:57:21.835+02:00  INFO 71365 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 5.46 seconds (process running for 7.033)
+2024-05-07T22:58:08.815+02:00  INFO 71365 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 22 with PID 71365 (/Users/swanhtetmac/intern/Dev01/eduverse/target/classes started by swanhtetmac in /Users/swanhtetmac/intern/Dev01)
+2024-05-07T22:58:08.816+02:00 DEBUG 71365 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-07T22:58:08.816+02:00  INFO 71365 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-07T22:58:11.132+02:00  INFO 71365 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 2.353 seconds (process running for 56.332)
+2024-05-07T22:58:12.614+02:00  INFO 71365 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 22 with PID 71365 (/Users/swanhtetmac/intern/Dev01/eduverse/target/classes started by swanhtetmac in /Users/swanhtetmac/intern/Dev01)
+2024-05-07T22:58:12.614+02:00 DEBUG 71365 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-07T22:58:12.614+02:00  INFO 71365 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-07T22:58:13.735+02:00  INFO 71365 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 1.137 seconds (process running for 58.935)
+2024-05-07T22:58:20.970+02:00  INFO 71792 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 22 with PID 71792 (/Users/swanhtetmac/intern/Dev01/eduverse/target/classes started by swanhtetmac in /Users/swanhtetmac/intern/Dev01)
+2024-05-07T22:58:20.971+02:00 DEBUG 71792 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-07T22:58:20.972+02:00  INFO 71792 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-07T22:58:26.936+02:00  INFO 71792 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 6.272 seconds (process running for 6.775)
+2024-05-07T22:58:53.345+02:00  INFO 71792 --- [EduVerse] [http-nio-8080-exec-7] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T23:39:45.731+02:00  INFO 72447 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 22 with PID 72447 (/Users/swanhtetmac/intern/Dev01/eduverse/target/classes started by swanhtetmac in /Users/swanhtetmac/intern/Dev01)
+2024-05-07T23:39:45.732+02:00 DEBUG 72447 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-07T23:39:45.733+02:00  INFO 72447 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-07T23:39:49.931+02:00  INFO 72447 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 4.477 seconds (process running for 5.206)
+2024-05-07T23:42:07.392+02:00  INFO 72611 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 22 with PID 72611 (/Users/swanhtetmac/intern/Dev01/eduverse/target/classes started by swanhtetmac in /Users/swanhtetmac/intern/Dev01)
+2024-05-07T23:42:07.394+02:00 DEBUG 72611 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-07T23:42:07.395+02:00  INFO 72611 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-07T23:42:11.712+02:00  INFO 72611 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 4.874 seconds (process running for 5.95)
+2024-05-07T23:42:20.289+02:00  INFO 72611 --- [EduVerse] [http-nio-8080-exec-5] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T23:42:20.344+02:00  INFO 72611 --- [EduVerse] [http-nio-8080-exec-5] d.b.eduverse.Services.UserServicesImpl   : Exit the saving Process
+2024-05-07T23:42:21.404+02:00  INFO 72611 --- [EduVerse] [http-nio-8080-exec-6] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T23:42:21.411+02:00  INFO 72611 --- [EduVerse] [http-nio-8080-exec-6] d.b.eduverse.Services.UserServicesImpl   : Exit the saving Process
+2024-05-07T23:42:25.699+02:00  INFO 72611 --- [EduVerse] [http-nio-8080-exec-7] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T23:42:25.706+02:00  INFO 72611 --- [EduVerse] [http-nio-8080-exec-7] d.b.eduverse.Services.UserServicesImpl   : Exit the saving Process
+2024-05-07T23:42:49.665+02:00  INFO 72611 --- [EduVerse] [http-nio-8080-exec-8] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T23:42:49.807+02:00  INFO 72611 --- [EduVerse] [http-nio-8080-exec-8] d.b.eduverse.Services.UserServicesImpl   : Error in Creation
+2024-05-07T23:42:49.807+02:00 ERROR 72611 --- [EduVerse] [http-nio-8080-exec-8] d.b.eduverse.Services.UserServicesImpl   : No enum constant dev.backend.eduverse.util.Gender.Male
+2024-05-07T23:42:51.970+02:00  INFO 72611 --- [EduVerse] [http-nio-8080-exec-9] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T23:42:51.977+02:00  INFO 72611 --- [EduVerse] [http-nio-8080-exec-9] d.b.eduverse.Services.UserServicesImpl   : Error in Creation
+2024-05-07T23:42:51.977+02:00 ERROR 72611 --- [EduVerse] [http-nio-8080-exec-9] d.b.eduverse.Services.UserServicesImpl   : No enum constant dev.backend.eduverse.util.Gender.Male
+2024-05-07T23:43:35.866+02:00  INFO 72611 --- [EduVerse] [http-nio-8080-exec-10] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T23:43:35.878+02:00  INFO 72611 --- [EduVerse] [http-nio-8080-exec-10] d.b.eduverse.Services.UserServicesImpl   : Exit the saving Process
+2024-05-07T23:43:39.986+02:00  INFO 72611 --- [EduVerse] [http-nio-8080-exec-1] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T23:43:40.004+02:00  INFO 72611 --- [EduVerse] [http-nio-8080-exec-1] d.b.eduverse.Services.UserServicesImpl   : Error in Creation
+2024-05-07T23:43:40.004+02:00 ERROR 72611 --- [EduVerse] [http-nio-8080-exec-1] d.b.eduverse.Services.UserServicesImpl   : No enum constant dev.backend.eduverse.util.Gender.Male
+2024-05-07T23:44:58.462+02:00  INFO 72762 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 22 with PID 72762 (/Users/swanhtetmac/intern/Dev01/eduverse/target/classes started by swanhtetmac in /Users/swanhtetmac/intern/Dev01)
+2024-05-07T23:44:58.465+02:00 DEBUG 72762 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-07T23:44:58.470+02:00  INFO 72762 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-07T23:45:03.064+02:00  INFO 72762 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 4.949 seconds (process running for 5.584)
+2024-05-07T23:45:22.518+02:00  INFO 72762 --- [EduVerse] [http-nio-8080-exec-5] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T23:45:22.609+02:00 ERROR 72762 --- [EduVerse] [http-nio-8080-exec-5] o.h.engine.jdbc.spi.SqlExceptionHelper   : Data truncated for column 'gender' at row 1
+2024-05-07T23:45:22.616+02:00  INFO 72762 --- [EduVerse] [http-nio-8080-exec-5] d.b.eduverse.Services.UserServicesImpl   : Error in Creation
+2024-05-07T23:45:22.616+02:00 ERROR 72762 --- [EduVerse] [http-nio-8080-exec-5] d.b.eduverse.Services.UserServicesImpl   : could not execute statement [Data truncated for column 'gender' at row 1] [insert into user (address,age,dob,email,gender,name,password,phone_number,id) values (?,?,?,?,?,?,?,?,?)]
+2024-05-07T23:47:05.315+02:00  INFO 72843 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 22 with PID 72843 (/Users/swanhtetmac/intern/Dev01/eduverse/target/classes started by swanhtetmac in /Users/swanhtetmac/intern/Dev01)
+2024-05-07T23:47:05.315+02:00 DEBUG 72843 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-07T23:47:05.316+02:00  INFO 72843 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-07T23:47:09.566+02:00  INFO 72843 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 4.547 seconds (process running for 5.211)
+2024-05-07T23:47:27.010+02:00  INFO 72843 --- [EduVerse] [http-nio-8080-exec-5] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T23:47:27.104+02:00 ERROR 72843 --- [EduVerse] [http-nio-8080-exec-5] o.h.engine.jdbc.spi.SqlExceptionHelper   : Data truncated for column 'gender' at row 1
+2024-05-07T23:47:27.111+02:00  INFO 72843 --- [EduVerse] [http-nio-8080-exec-5] d.b.eduverse.Services.UserServicesImpl   : Error in Creation
+2024-05-07T23:47:27.111+02:00 ERROR 72843 --- [EduVerse] [http-nio-8080-exec-5] d.b.eduverse.Services.UserServicesImpl   : could not execute statement [Data truncated for column 'gender' at row 1] [insert into user (address,age,dob,email,gender,name,password,phone_number,id) values (?,?,?,?,?,?,?,?,?)]
+2024-05-07T23:47:28.180+02:00  INFO 72843 --- [EduVerse] [http-nio-8080-exec-6] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T23:47:28.184+02:00 ERROR 72843 --- [EduVerse] [http-nio-8080-exec-6] o.h.engine.jdbc.spi.SqlExceptionHelper   : Data truncated for column 'gender' at row 1
+2024-05-07T23:47:28.186+02:00  INFO 72843 --- [EduVerse] [http-nio-8080-exec-6] d.b.eduverse.Services.UserServicesImpl   : Error in Creation
+2024-05-07T23:47:28.186+02:00 ERROR 72843 --- [EduVerse] [http-nio-8080-exec-6] d.b.eduverse.Services.UserServicesImpl   : could not execute statement [Data truncated for column 'gender' at row 1] [insert into user (address,age,dob,email,gender,name,password,phone_number,id) values (?,?,?,?,?,?,?,?,?)]
+2024-05-07T23:48:16.402+02:00  INFO 72969 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 22 with PID 72969 (/Users/swanhtetmac/intern/Dev01/eduverse/target/classes started by swanhtetmac in /Users/swanhtetmac/intern/Dev01)
+2024-05-07T23:48:16.403+02:00 DEBUG 72969 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-07T23:48:16.403+02:00  INFO 72969 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-07T23:48:20.635+02:00  INFO 72969 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 4.496 seconds (process running for 4.948)
+2024-05-07T23:48:57.982+02:00  INFO 72969 --- [EduVerse] [http-nio-8080-exec-6] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T23:48:58.089+02:00 ERROR 72969 --- [EduVerse] [http-nio-8080-exec-6] o.h.engine.jdbc.spi.SqlExceptionHelper   : Data truncated for column 'gender' at row 1
+2024-05-07T23:48:58.097+02:00  INFO 72969 --- [EduVerse] [http-nio-8080-exec-6] d.b.eduverse.Services.UserServicesImpl   : Error in Creation
+2024-05-07T23:48:58.097+02:00 ERROR 72969 --- [EduVerse] [http-nio-8080-exec-6] d.b.eduverse.Services.UserServicesImpl   : could not execute statement [Data truncated for column 'gender' at row 1] [insert into user (address,age,dob,email,gender,name,password,phone_number,id) values (?,?,?,?,?,?,?,?,?)]
+2024-05-07T23:50:32.548+02:00  INFO 73033 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 22 with PID 73033 (/Users/swanhtetmac/intern/Dev01/eduverse/target/classes started by swanhtetmac in /Users/swanhtetmac/intern/Dev01)
+2024-05-07T23:50:32.549+02:00 DEBUG 73033 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-07T23:50:32.550+02:00  INFO 73033 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-07T23:50:36.744+02:00  INFO 73033 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 4.562 seconds (process running for 5.466)
+2024-05-07T23:50:53.233+02:00  INFO 73033 --- [EduVerse] [http-nio-8080-exec-5] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T23:50:53.305+02:00  INFO 73033 --- [EduVerse] [http-nio-8080-exec-5] d.b.eduverse.Services.UserServicesImpl   : Exit the saving Process
+2024-05-07T23:51:05.595+02:00  INFO 73033 --- [EduVerse] [http-nio-8080-exec-6] d.b.eduverse.Services.UserServicesImpl   : Enter the read process
+2024-05-07T23:51:05.701+02:00  INFO 73033 --- [EduVerse] [http-nio-8080-exec-6] d.b.eduverse.Services.UserServicesImpl   : Exit the read Process
+2024-05-07T23:51:44.684+02:00  INFO 73033 --- [EduVerse] [http-nio-8080-exec-8] d.b.eduverse.Services.UserServicesImpl   : Enter the creation process
+2024-05-07T23:51:44.699+02:00  INFO 73033 --- [EduVerse] [http-nio-8080-exec-8] d.b.eduverse.Services.UserServicesImpl   : Exit the saving Process
+2024-05-07T23:51:47.825+02:00  INFO 73033 --- [EduVerse] [http-nio-8080-exec-9] d.b.eduverse.Services.UserServicesImpl   : Enter the read process
+2024-05-07T23:51:47.842+02:00  INFO 73033 --- [EduVerse] [http-nio-8080-exec-9] d.b.eduverse.Services.UserServicesImpl   : Exit the read Process

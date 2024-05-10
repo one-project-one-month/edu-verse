@@ -1,11 +1,8 @@
 package dev.backend.eduverse.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
-
-import java.util.List;
 
 
 @Entity
@@ -26,5 +23,5 @@ public class Pathway {
 
     @Column(name = "description", length = 200, nullable = false)
     private String description;
-    
+
 }

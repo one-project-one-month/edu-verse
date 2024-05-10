@@ -1,6 +1,5 @@
 package dev.backend.eduverse.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -12,19 +11,18 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Table(name = "category")
 public class Category {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Column(name = "id")
     private Long id;
 
-    @Column(name = "name", length = 20, nullable = false)
-    private String name;
+  @Column(name = "name", length = 20, nullable = false)
+  private String name;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name = "pathway_id", referencedColumnName = "id")
-    private Pathway pathway;
+  @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+  @JoinColumn(name = "pathway_id", referencedColumnName = "id")
+  private Pathway pathway;
 
 //    @JsonIgnore
 //    @ManyToMany(
