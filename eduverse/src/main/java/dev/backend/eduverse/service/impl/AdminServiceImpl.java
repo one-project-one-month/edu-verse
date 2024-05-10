@@ -1,4 +1,4 @@
-package dev.backend.eduverse.service.Impl;
+package dev.backend.eduverse.service.impl;
 
 import dev.backend.eduverse.dto.AdminDto;
 import dev.backend.eduverse.exception.ResourceNotFoundException;

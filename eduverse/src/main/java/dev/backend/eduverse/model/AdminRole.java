@@ -16,15 +16,13 @@ import lombok.*;
 public class AdminRole {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private long id;
 
-    @Column(length= 4, nullable = false)
+    @Column(name = "code", length = 4, nullable = false)
     private String code;
 
-    @Column(length=20)
+    @Column(name = "role_name", length = 20)
     private String roleName;
-
-    @ManyToOne
-    @JoinColumn(name = "admin_id", referencedColumnName = "id")
-    private Admin admin;
+    
 }

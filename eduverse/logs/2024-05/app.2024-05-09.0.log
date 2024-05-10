@@ -700,7 +700,7 @@ Consider defining a bean of type 'dev.backend.eduverse.service.AdminService' in 
 2024-05-09T18:17:40.457+06:30 ERROR 100986 --- [EduVerse] [http-nio-8080-exec-8] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.RuntimeException: could not execute statement [Duplicate entry 'mgmg@gmail.com' for key 'admin.email'] [insert into admin (role_id,email,password,phone_number,status,user_name) values (?,?,?,?,?,?)]; SQL [insert into admin (role_id,email,password,phone_number,status,user_name) values (?,?,?,?,?,?)]; constraint [admin.email]] with root cause
 
 java.lang.RuntimeException: could not execute statement [Duplicate entry 'mgmg@gmail.com' for key 'admin.email'] [insert into admin (role_id,email,password,phone_number,status,user_name) values (?,?,?,?,?,?)]; SQL [insert into admin (role_id,email,password,phone_number,status,user_name) values (?,?,?,?,?,?)]; constraint [admin.email]
-	at dev.backend.eduverse.service.Impl.AdminServiceImpl.createAdmin(AdminServiceImpl.java:59) ~[classes/:na]
+	at dev.backend.eduverse.service.impl.AdminServiceImpl.createAdmin(AdminServiceImpl.java:59) ~[classes/:na]
 	at dev.backend.eduverse.controller.AdminController.createAdmin(AdminController.java:46) ~[classes/:na]
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
@@ -783,7 +783,7 @@ java.lang.RuntimeException: could not execute statement [Duplicate entry 'mgmg@g
 
 java.util.NoSuchElementException: No value present
 	at java.base/java.util.Optional.get(Optional.java:143) ~[na:na]
-	at dev.backend.eduverse.service.Impl.AdminServiceImpl.createAdmin(AdminServiceImpl.java:53) ~[classes/:na]
+	at dev.backend.eduverse.service.impl.AdminServiceImpl.createAdmin(AdminServiceImpl.java:53) ~[classes/:na]
 	at dev.backend.eduverse.controller.AdminController.createAdmin(AdminController.java:54) ~[classes/:na]
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
@@ -850,7 +850,7 @@ java.util.NoSuchElementException: No value present
 
 java.util.NoSuchElementException: No value present
 	at java.base/java.util.Optional.get(Optional.java:143) ~[na:na]
-	at dev.backend.eduverse.service.Impl.AdminServiceImpl.createAdmin(AdminServiceImpl.java:53) ~[classes/:na]
+	at dev.backend.eduverse.service.impl.AdminServiceImpl.createAdmin(AdminServiceImpl.java:53) ~[classes/:na]
 	at dev.backend.eduverse.controller.AdminController.createAdmin(AdminController.java:58) ~[classes/:na]
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
@@ -909,7 +909,7 @@ java.util.NoSuchElementException: No value present
 2024-05-09T18:28:17.899+06:30 ERROR 103166 --- [EduVerse] [http-nio-8080-exec-2] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.RuntimeException: could not execute statement [Duplicate entry 'jh' for key 'admin.email'] [insert into admin (role_id,email,password,phone_number,status,user_name) values (?,?,?,?,?,?)]; SQL [insert into admin (role_id,email,password,phone_number,status,user_name) values (?,?,?,?,?,?)]; constraint [admin.email]] with root cause
 
 java.lang.RuntimeException: could not execute statement [Duplicate entry 'jh' for key 'admin.email'] [insert into admin (role_id,email,password,phone_number,status,user_name) values (?,?,?,?,?,?)]; SQL [insert into admin (role_id,email,password,phone_number,status,user_name) values (?,?,?,?,?,?)]; constraint [admin.email]
-	at dev.backend.eduverse.service.Impl.AdminServiceImpl.createAdmin(AdminServiceImpl.java:59) ~[classes/:na]
+	at dev.backend.eduverse.service.impl.AdminServiceImpl.createAdmin(AdminServiceImpl.java:59) ~[classes/:na]
 	at dev.backend.eduverse.controller.AdminController.createAdmin(AdminController.java:58) ~[classes/:na]
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]

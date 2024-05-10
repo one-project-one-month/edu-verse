@@ -9,7 +9,7 @@ APPLICATION FAILED TO START
 
 Description:
 
-Parameter 2 of constructor in dev.backend.eduverse.service.Impl.AdminServiceImpl required a bean of type 'org.modelmapper.ModelMapper' that could not be found.
+Parameter 2 of constructor in dev.backend.eduverse.service.impl.AdminServiceImpl required a bean of type 'org.modelmapper.ModelMapper' that could not be found.
 
 
 Action:
@@ -627,7 +627,7 @@ Caused by: java.lang.ClassNotFoundException: dev.backend.eduverse.dto.AdminDto
 2024-05-10T11:59:29.937+06:30  INFO 131090 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
 2024-05-10T11:59:30.024+06:30 ERROR 131090 --- [EduVerse] [restartedMain] o.s.boot.SpringApplication               : Application run failed
 
-org.springframework.beans.factory.BeanDefinitionStoreException: I/O failure while processing configuration class [dev.backend.eduverse.service.Impl.AdminServiceImpl]
+org.springframework.beans.factory.BeanDefinitionStoreException: I/O failure while processing configuration class [dev.backend.eduverse.service.impl.AdminServiceImpl]
 	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:251) ~[spring-context-6.1.6.jar:6.1.6]
 	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:189) ~[spring-context-6.1.6.jar:6.1.6]
 	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:314) ~[spring-context-6.1.6.jar:6.1.6]
