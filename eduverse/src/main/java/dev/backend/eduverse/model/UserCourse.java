@@ -10,15 +10,21 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+@Table(name = "user_course")
 public class UserCourse {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private long id;
 
+  @Column(name = "created_at")
   @Temporal(TemporalType.DATE)
   private LocalDate createdDate;
 
-  @ManyToOne private User user;
+  @ManyToOne
+  @JoinColumn(name = "user_id", referencedColumnName = "id")
+  private User user;
 
-  @ManyToOne private Course course;
+  @ManyToOne
+  @JoinColumn(name = "course_id")
+  private Course course;
 }
