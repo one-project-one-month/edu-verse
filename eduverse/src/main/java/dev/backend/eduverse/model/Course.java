@@ -1,5 +1,7 @@
 package dev.backend.eduverse.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import dev.backend.eduverse.util.CourseStatus;
 import dev.backend.eduverse.util.Level;
 import jakarta.persistence.*;
 import lombok.*;
@@ -13,49 +15,50 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+@Table(name = "course")
 public class Course {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private long id;
 
-    @Column(length = 20, nullable = false)
+    @Column(name = "name", length = 20, nullable = false)
     private String name;
 
     @Enumerated(EnumType.STRING)
-    private Level  level;
+    @Column(name = "level")
+    private Level level;
 
-    @Column(length = 10, nullable = false)
+    @Column(name = "duration", length = 10, nullable = false)
     private String duration;
 
-    @Column(length = 100, nullable = false)
+    @Column(name = "short_description", length = 100, nullable = false)
     private String shortDescription;
 
-    @Column(length = 500)
+    @Column(name = "long_description", length = 500)
     private String longDescription;
 
     @Column(name = "created_at")
     private LocalDate createdAt;
 
-    private boolean status;
+    @Column(name = "status")
+    private CourseStatus status;
 
-
-    @ManyToMany
-    @JoinTable(
-            name = "course_category",
-            joinColumns = @JoinColumn(name = "category_id", referencedColumnName = "id"),
-            inverseJoinColumns = @JoinColumn(name = "course_id", referencedColumnName = "id")
-    )
-    private List<Category> category;
-
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "admin_id", referencedColumnName = "id")
     private Admin admin;
 
-    @ManyToOne
-    @JoinColumn(name = "announcement_id", referencedColumnName = "id")
-    private Announcement announcement;
-
-    @OneToMany
-    @JoinColumn(name = "course_details_id", referencedColumnName = "id")
-    private List<CourseDetail> details;
+//    @JsonIgnore
+//    @ManyToMany(
+//            cascade = CascadeType.ALL,
+//            fetch = FetchType.LAZY
+//    )
+//    @JoinTable(
+//            name = "user_course",
+//            joinColumns = @JoinColumn(name = "course_id"),
+//            inverseJoinColumns = @JoinColumn(name = "user_id")
+//    )
+//    private List<User> userList;
 }
 
 

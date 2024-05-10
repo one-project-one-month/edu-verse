@@ -1,5 +1,6 @@
 package dev.backend.eduverse.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import dev.backend.eduverse.util.Gender;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Positive;
@@ -8,6 +9,7 @@ import org.hibernate.annotations.Check;
 import org.springframework.beans.factory.annotation.Value;
 
 import java.time.LocalDate;
+import java.util.List;
 import java.util.Random;
 
 @Entity
@@ -16,38 +18,55 @@ import java.util.Random;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+@Table(name = "user")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    @Column(name = "id")
+    private Long id;
 
-    @Column(length = 20, nullable = false)
+    @Column(name = "name", length = 20, nullable = false)
     private String name;
 
-    @Column(length = 50, nullable = false, unique = true)
+    @Column(name = "email", length = 50, nullable = false, unique = true)
     private String email;
 
-    @Column(length = 50, nullable = false)
+    @Column(name = "password", length = 50, nullable = false)
     private String password;
 
-    @Column(length = 12, nullable = false, unique = true)
+    @Column(name = "phone_number", length = 12, nullable = false, unique = true)
     private String phoneNumber;
 
     @Positive
+    @Column(name = "age")
     private int age;
 
     @Temporal(TemporalType.DATE)
+    @Column(name = "dob")
     private LocalDate dob;
 
     @Enumerated(EnumType.STRING)
+    @Column(name = "gender")
     private Gender gender;
 
-    @Column(length = 80)
+    @Column(name = "address", length = 80)
     private String address;
+
+//    @JsonIgnore
+//    @ManyToMany(
+//            cascade = CascadeType.ALL,
+//            fetch = FetchType.LAZY
+//    )
+//    @JoinTable(
+//            name = "user_course",
+//            joinColumns = @JoinColumn(name = "user_id"),
+//            inverseJoinColumns = @JoinColumn(name = "course_id")
+//    )
+//    private List<Course> courseList;
 
     @PrePersist
     @PreUpdate
-    public void generateUserId(){
+    public void generateUserId() {
         Random random = new Random();
         int r1 = random.nextInt();
         int r2 = random.nextInt();

@@ -9,15 +9,17 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+@Table(name = "course_details")
 public class CourseDetail {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private long id;
 
-    @Column(length = 20, nullable = false)
-    private String  title;
+    @Column(name = "title", length = 20, nullable = false)
+    private String title;
 
-    @Column(length = 500)
+    @Column(name = "content", length = 500)
     private String content;
 
 
@@ -25,5 +27,6 @@ public class CourseDetail {
     private Course course;
 
     @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "admin_id", referencedColumnName = "id")
     private Admin admin;
 }

@@ -9,18 +9,20 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+@Table(name = "module")
 public class Module {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private long id;
 
-    @Column(length= 25,nullable = false)
+    @Column(name = "name", length = 25, nullable = false)
     private String name;
 
-    @Column(length= 500)
+    @Column(name = "content", length = 500)
     private String content;
 
-    @Column(length= 20)
+    @Column(name = "duration", length = 20)
     private String duration;
 
     @ManyToOne(fetch = FetchType.LAZY)
