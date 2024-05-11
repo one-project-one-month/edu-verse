@@ -1,0 +1,52 @@
+[
+  {
+    "name": "John Doe",
+    "email": "john.doe@example.com",
+    "password": "Password123@",
+    "phoneNumber": "987 654 3210",
+    "age": 30,
+    "dob": "1994-05-25",
+    "gender": "Male",
+    "address": "123 Main Street"
+  },
+  {
+    "name": "Jane Smith",
+    "email": "jane.smith@example.com",
+    "password": "Password456@",
+    "phoneNumber": "555 123 4567",
+    "age": 28,
+    "dob": "1996-09-15",
+    "gender": "Female",
+    "address": "456 Elm Street"
+  },
+  {
+    "name": "David Johnson",
+    "email": "david.johnson@example.com",
+    "password": "Password789@",
+    "phoneNumber": "123 456 7890",
+    "age": 35,
+    "dob": "1989-03-10",
+    "gender": "Male",
+    "address": "789 Oak Avenue"
+  },
+  {
+    "name": "Emily Brown",
+    "email": "emily.brown@example.com",
+    "password": "PasswordABC@",
+    "phoneNumber": "999 888 7777",
+    "age": 25,
+    "dob": "1999-11-20",
+    "gender": "Female",
+    "address": "567 Pine Street"
+  },
+  {
+    "name": "Michael Wilson",
+    "email": "michael.wilson@example.com",
+    "password": "PasswordXYZ@",
+    "phoneNumber": "111 222 3333",
+    "age": 40,
+    "dob": "1984-07-05",
+    "gender": "Male",
+    "address": "890 Maple Drive"
+  }
+]
