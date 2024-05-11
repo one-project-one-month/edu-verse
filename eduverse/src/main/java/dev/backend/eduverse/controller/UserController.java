@@ -51,7 +51,7 @@ public class UserController {
      */
 
     @PostMapping("/create")
-    @Operation(summary = "Create a new user", tags = {"User Creator"})
+    @Operation(summary = "Create a new user", tags = {"User Operation"})
     public ResponseEntity<ApiResponse<String>> createUser(@Valid @RequestBody UserDTO userDTO) {
       try {
         userService.createUser(userDTO);
@@ -70,7 +70,7 @@ public class UserController {
      * @return ResponseEntity containing ApiResponse with status and message.
      */
     @PostMapping("/create/bulk")
-    @Operation(summary = "Create multiple users in bulk mode", tags = {"User Bulk Creator"})
+    @Operation(summary = "Create multiple users in bulk mode", tags = {"User Operation"})
     public ResponseEntity<ApiResponse<String>> createUserBulkMode(@Valid @RequestBody List<UserDTO> userDTO) {
       try {
         userService.bulkCreateUser(userDTO);
@@ -88,7 +88,7 @@ public class UserController {
      * @return ResponseEntity containing ApiResponse with status and list of users.
      */
     @GetMapping("/read")
-    @Operation(summary = "Retrieve all users", tags = {"User Reader"})
+    @Operation(summary = "Retrieve all users", tags = {"User Operation"})
     public ResponseEntity<ApiResponse<List<UserDTO>>> readUsers() {
       try {
         List<UserDTO> users = userService.readUser();
@@ -106,7 +106,7 @@ public class UserController {
      * @return ResponseEntity containing ApiResponse with status and user data.
      */
     @GetMapping("/id/{userId}")
-    @Operation(summary = "Retrieve a user by ID", tags = {"User Reader By ID"})
+    @Operation(summary = "Retrieve a user by ID", tags = {"User Operation"})
     public ResponseEntity<ApiResponse<UserDTO>> readUserById(@PathVariable(name = "userId") Long userId) {
       try {
         UserDTO user = userService.readUserById(userId);
@@ -125,7 +125,7 @@ public class UserController {
      * @return ResponseEntity containing ApiResponse with status and list of users.
      */
     @GetMapping("/{email}")
-    @Operation(summary = "Retrieve users by email", tags = {"User Reader By Email"})
+    @Operation(summary = "Retrieve users by email", tags = {"User Operation"})
     public ResponseEntity<ApiResponse<List<UserDTO>>> readUserByEmail(@PathVariable String email) {
       try {
         List<UserDTO> users = userService.searchByUserEmail(email);
@@ -143,7 +143,7 @@ public class UserController {
      * @return ResponseEntity containing ApiResponse with status and message.
      */
     @PostMapping("/update/{userId}")
-    @Operation(summary = "Update a user's information", tags = {"Update User Body"})
+    @Operation(summary = "Update a user's information", tags = {"User Operation"})
     public ResponseEntity<ApiResponse<String>> updateUser(
             @PathVariable Long userId, @Valid @RequestBody UserDTO userDTO) {
       try {
@@ -155,7 +155,7 @@ public class UserController {
     }
 
   @GetMapping("/getId/{email}")
-  @Operation(summary = "Retrieve usersId by email", tags = {"UserID Reader By Email"})
+  @Operation(summary = "Retrieve usersId by email", tags = {"User Operation"})
   public ResponseEntity<ApiResponse<Long>> readUserIdByEmail(@PathVariable String email) {
     try {
       Long userId = userService.searchIDByUserEmail(email);
@@ -171,7 +171,7 @@ public class UserController {
      * @return ResponseEntity containing ApiResponse with status and message.
      */
     @DeleteMapping("/delete/{userId}")
-    @Operation(summary = "Delete a user by ID", tags = {"Delete User By Id"})
+    @Operation(summary = "Delete a user by ID", tags = {"User Operation"})
     public ResponseEntity<ApiResponse<String>> deleteUser(@PathVariable Long userId) {
       try {
         userService.deleteUser(userId);
