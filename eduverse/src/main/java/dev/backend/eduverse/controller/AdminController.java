@@ -1,7 +1,6 @@
 package dev.backend.eduverse.controller;
 
 import dev.backend.eduverse.dto.AdminDto;
-import dev.backend.eduverse.model.Admin;
 import dev.backend.eduverse.service.AdminService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
