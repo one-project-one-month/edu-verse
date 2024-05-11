@@ -8,6 +8,8 @@ import lombok.*;
 
 import java.time.LocalDate;
 
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
@@ -17,7 +19,7 @@ public class Course {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private long id;
+    private Long id;
 
     @Column(name = "name", length = 20, nullable = false)
     private String name;
