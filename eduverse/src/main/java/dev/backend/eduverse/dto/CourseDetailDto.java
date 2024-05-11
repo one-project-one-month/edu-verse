@@ -1,12 +1,13 @@
 /**
  * @Author : Kyaw Zaw Htet
- * @Date : 5/10/2024
- * @Time : 10:17 PM
+ * @Date : 5/11/2024
+ * @Time : 10:41 PM
  * @Project_Name : eduverse
  */
 package dev.backend.eduverse.dto;
 
-import dev.backend.eduverse.util.NotificationType;
+import dev.backend.eduverse.model.Admin;
+import dev.backend.eduverse.model.Course;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
@@ -15,31 +16,25 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.time.LocalDate;
-
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class AnnouncementDto {
+public class CourseDetailDto {
 
     private Long id;
 
     @NotEmpty(message = "Title should not be null or empty")
-    @Size(max = 30, message = "Title is too long")
+    @Size(max = 20, message = "Title is too long")
     private String title;
 
     @NotEmpty(message = "Content should not be null or empty")
-    @Size(max = 100, message = "Content is too long")
+    @Size(max = 500, message = "Content is too long")
     private String content;
 
-    private LocalDate createdAt;
-
-    private NotificationType notificationType;
-
-    @NotNull(message = "AdminId should not be null or empty")
-    private Long adminId;
-
-    @NotNull(message = "CourseId should not be null or empty")
+//    @NotNull(message = "CourseId should not be null or empty")
     private Long courseId;
+
+//    @NotNull(message = "AdminId should not be null or empty")
+    private Long adminId;
 }
