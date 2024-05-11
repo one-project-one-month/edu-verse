@@ -32,9 +32,9 @@ public class CourseDetailDto {
     @Size(max = 500, message = "Content is too long")
     private String content;
 
-//    @NotNull(message = "CourseId should not be null or empty")
+    @NotNull(message = "CourseId should not be null or empty")
     private Long courseId;
 
-//    @NotNull(message = "AdminId should not be null or empty")
+    @NotNull(message = "AdminId should not be null or empty")
     private Long adminId;
 }
