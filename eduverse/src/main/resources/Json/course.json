@@ -1,0 +1,28 @@
+[
+	{
+		"name": "Programming Basic",
+		"level": "Basic",
+		"duration": "4 weeks",
+		"shortDescription": "Learn the basics of programming",
+		"longDescription": "This course covers fundamental programming concepts such as variables, loops, and functions.",
+		"status": "AVAILABLE",
+		"adminId": 1
+	},{
+		"name": "Web Development",
+		"level": "Intermediate",
+		"duration": "8 weeks",
+		"shortDescription": "Explore advanced web development topics",
+		"longDescription": "This course delves into front-end and back-end development techniques, including HTML, CSS, JavaScript, and server-side scripting.",
+		"status": "AVAILABLE",
+		"adminId": 2
+	},
+	{
+	"name": "Machine Learning",
+	"level": "Advance",
+	"duration": "12 weeks",
+	"shortDescription": "Master machine learning algorithms and techniques",
+	"longDescription": "This comprehensive course covers advanced machine learning concepts, including supervised and unsupervised learning, neural networks, and deep learning.",
+	"status": "UNAVAILABLE",
+	"adminId": 98765
+	}	
+]

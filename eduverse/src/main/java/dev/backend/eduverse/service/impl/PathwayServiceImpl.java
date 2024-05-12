@@ -14,9 +14,11 @@ import org.modelmapper.ModelMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
 import dev.backend.eduverse.dto.PathwayDTO;
+import dev.backend.eduverse.exception.NameAlreadyExistException;
 import dev.backend.eduverse.model.Pathway;
 import dev.backend.eduverse.repository.PathwayRepository;
 import dev.backend.eduverse.service.PathwayService;
@@ -39,13 +41,25 @@ public class PathwayServiceImpl implements PathwayService {
 
 	@Override
 	public boolean createPathway(PathwayDTO pathwayDTO) {
-		logger.info("Entering the creation process");	
-		Pathway pathway = modelMapper.map(pathwayDTO, Pathway.class);
+		logger.info("Entering the creation process");			
         try {
-        	pathwayRepository.save(pathway);
-            logger.info("Pathway created successfully");
-			return true; // Creation successfully
-		} catch (Exception e) {
+        	if (pathwayRepository.existsByName(pathwayDTO.getName())) {
+        		String errorMessage = "Pathway with name '" + pathwayDTO.getName() + "' already exists";
+        	    logger.error(errorMessage);
+        		throw new NameAlreadyExistException(errorMessage);
+            } else {
+                Pathway pathway = modelMapper.map(pathwayDTO, Pathway.class);
+                pathwayRepository.save(pathway);                
+                logger.info("Pathway created successfully");
+                return true; // Creation successfully
+            }
+		} catch (DataIntegrityViolationException e) {
+	        logger.error("Failed to create pathway due to data integrity violation", e);
+	        throw e;
+		}
+	    catch (NameAlreadyExistException e) { // Catch NameAlreadyExistException first
+	            throw e; 
+	    } catch (Exception e) {
 			return false; // Creation failed
 		}
 	}
