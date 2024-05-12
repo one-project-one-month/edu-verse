@@ -30,7 +30,7 @@ public class AnnouncementDto {
     private String title;
 
     @NotEmpty(message = "Content should not be null or empty")
-    @Size(max = 100, message = "Title is too long")
+    @Size(max = 100, message = "Content is too long")
     private String content;
 
     private LocalDate createdAt;

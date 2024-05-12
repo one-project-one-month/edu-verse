@@ -14,14 +14,13 @@ public class CourseDetail {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private long id;
+    private Long id;
 
     @Column(name = "title", length = 20, nullable = false)
     private String title;
 
-    @Column(name = "content", length = 500)
+    @Column(name = "content", length = 500, nullable = false)
     private String content;
-
 
     @ManyToOne(fetch = FetchType.LAZY)
     private Course course;

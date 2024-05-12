@@ -1,0 +1,3 @@
+INSERT INTO `admin_role`(`id`, `code`, `role_name`) VALUES ('1','1111','ROLE_ADMIN')
+INSERT INTO `admin`(`id`, `user_name`, `password`, `email`, `phone_number`, `status`, `role_id`) VALUES ('1','admin','password','admin@gmail.com','09283473722','1','1')
+INSERT INTO `admin`(`id`, `user_name`, `password`, `email`, `phone_number`, `status`, `role_id`) VALUES ('2','admin2','password','admin2@gmail.com','0947264822','1','1')
