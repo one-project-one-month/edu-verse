@@ -1,8 +1,5 @@
 /**
- * @Author : Kyaw Zaw Htet
- * @Date : 5/11/2024
- * @Time : 10:45 PM
- * @Project_Name : eduverse
+ * @Author : Kyaw Zaw Htet @Date : 5/11/2024 @Time : 10:45 PM @Project_Name : eduverse
  */
 package dev.backend.eduverse.service.impl;
 
@@ -15,87 +12,97 @@ import dev.backend.eduverse.repository.AdminRepository;
 import dev.backend.eduverse.repository.CourseDetailRepository;
 import dev.backend.eduverse.repository.CourseRepository;
 import dev.backend.eduverse.service.CourseDetailService;
+import java.util.List;
+import java.util.stream.Collectors;
 import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 @AllArgsConstructor
 public class CourseDetailServiceImpl implements CourseDetailService {
 
-    private CourseDetailRepository courseDetailRepository;
+  private CourseDetailRepository courseDetailRepository;
 
-    private CourseRepository courseRepository;
+  private CourseRepository courseRepository;
 
-    private AdminRepository adminRepository;
+  private AdminRepository adminRepository;
 
-    private ModelMapper modelMapper;
+  private ModelMapper modelMapper;
 
-    @Override
-    public List<CourseDetailDto> getAllCourseDetails() {
+  @Override
+  public List<CourseDetailDto> getAllCourseDetails() {
 
-        List<CourseDetail> courseDetails = courseDetailRepository.findAll();
-        return courseDetails.stream().map((courseDetail -> modelMapper.map(courseDetail, CourseDetailDto.class))).collect(Collectors.toList());
-    }
+    List<CourseDetail> courseDetails = courseDetailRepository.findAll();
+    return courseDetails.stream()
+        .map((courseDetail -> modelMapper.map(courseDetail, CourseDetailDto.class)))
+        .collect(Collectors.toList());
+  }
 
-    @Override
-    public CourseDetailDto getCourseDetailById(Long id) {
+  @Override
+  public CourseDetailDto getCourseDetailById(Long id) {
 
-        CourseDetail courseDetail = courseDetailRepository.findById(id).orElseThrow(
-                () -> new ResourceNotFoundException("CourseDetail", "id", id)
-        );
-        return modelMapper.map(courseDetail, CourseDetailDto.class);
-    }
+    CourseDetail courseDetail =
+        courseDetailRepository
+            .findById(id)
+            .orElseThrow(() -> new ResourceNotFoundException("CourseDetail", "id", id));
+    return modelMapper.map(courseDetail, CourseDetailDto.class);
+  }
 
-    @Override
-    public CourseDetailDto createCourseDetail(CourseDetailDto courseDetailDto) {
+  @Override
+  public CourseDetailDto createCourseDetail(CourseDetailDto courseDetailDto) {
 
-        Course course = courseRepository.findById(courseDetailDto.getCourseId()).orElseThrow();
-        Admin admin = adminRepository.findById(courseDetailDto.getAdminId()).orElseThrow();
+    Course course = courseRepository.findById(courseDetailDto.getCourseId()).orElseThrow();
+    Admin admin = adminRepository.findById(courseDetailDto.getAdminId()).orElseThrow();
 
-        CourseDetail courseDetail = modelMapper.map(courseDetailDto, CourseDetail.class);
-        courseDetail.setCourse(course);
-        courseDetail.setAdmin(admin);
-        CourseDetail savedCourseDetail = courseDetailRepository.save(courseDetail);
-        CourseDetailDto savedCourseDetailDto = modelMapper.map(savedCourseDetail, CourseDetailDto.class);
-        return savedCourseDetailDto;
-    }
+    CourseDetail courseDetail = modelMapper.map(courseDetailDto, CourseDetail.class);
+    courseDetail.setCourse(course);
+    courseDetail.setAdmin(admin);
+    CourseDetail savedCourseDetail = courseDetailRepository.save(courseDetail);
+    CourseDetailDto savedCourseDetailDto =
+        modelMapper.map(savedCourseDetail, CourseDetailDto.class);
+    return savedCourseDetailDto;
+  }
 
-    @Override
-    public CourseDetailDto updateCourseDetail(CourseDetailDto courseDetailDto) {
+  @Override
+  public CourseDetailDto updateCourseDetail(CourseDetailDto courseDetailDto) {
 
-        CourseDetail exitingCourseDetail = courseDetailRepository.findById(courseDetailDto.getId()).orElseThrow(
-                () -> new ResourceNotFoundException("CourseDetail", "id", courseDetailDto.getId())
-        );
+    CourseDetail exitingCourseDetail =
+        courseDetailRepository
+            .findById(courseDetailDto.getId())
+            .orElseThrow(
+                () -> new ResourceNotFoundException("CourseDetail", "id", courseDetailDto.getId()));
 
-        Course exitingCourse = courseRepository.findById(courseDetailDto.getCourseId()).orElseThrow(
-                () -> new ResourceNotFoundException("Course", "id", courseDetailDto.getCourseId())
-        );
+    Course exitingCourse =
+        courseRepository
+            .findById(courseDetailDto.getCourseId())
+            .orElseThrow(
+                () -> new ResourceNotFoundException("Course", "id", courseDetailDto.getCourseId()));
 
-        Admin exitingAdmin = adminRepository.findById(courseDetailDto.getAdminId()).orElseThrow(
-                () -> new ResourceNotFoundException("Admin", "id", courseDetailDto.getAdminId())
-        );
+    Admin exitingAdmin =
+        adminRepository
+            .findById(courseDetailDto.getAdminId())
+            .orElseThrow(
+                () -> new ResourceNotFoundException("Admin", "id", courseDetailDto.getAdminId()));
 
-        exitingCourseDetail.setTitle(courseDetailDto.getTitle());
-        exitingCourseDetail.setContent(courseDetailDto.getContent());
-        exitingCourseDetail.setCourse(exitingCourse);
-        exitingCourseDetail.setAdmin(exitingAdmin);
+    exitingCourseDetail.setTitle(courseDetailDto.getTitle());
+    exitingCourseDetail.setContent(courseDetailDto.getContent());
+    exitingCourseDetail.setCourse(exitingCourse);
+    exitingCourseDetail.setAdmin(exitingAdmin);
 
-        CourseDetail updatedCourseDetail = courseDetailRepository.save(exitingCourseDetail);
+    CourseDetail updatedCourseDetail = courseDetailRepository.save(exitingCourseDetail);
 
-        return modelMapper.map(updatedCourseDetail, CourseDetailDto.class);
-    }
+    return modelMapper.map(updatedCourseDetail, CourseDetailDto.class);
+  }
 
-    @Override
-    public void deleteCourseDetail(Long id) {
+  @Override
+  public void deleteCourseDetail(Long id) {
 
-        CourseDetail exitingCourseDetail = courseDetailRepository.findById(id).orElseThrow(
-                () -> new ResourceNotFoundException("CourseDetail", "id", id)
-        );
+    CourseDetail exitingCourseDetail =
+        courseDetailRepository
+            .findById(id)
+            .orElseThrow(() -> new ResourceNotFoundException("CourseDetail", "id", id));
 
-        courseDetailRepository.deleteById(exitingCourseDetail.getId());
-    }
+    courseDetailRepository.deleteById(exitingCourseDetail.getId());
+  }
 }

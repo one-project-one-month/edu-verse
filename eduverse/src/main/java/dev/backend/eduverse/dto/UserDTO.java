@@ -3,7 +3,6 @@ package dev.backend.eduverse.dto;
 import dev.backend.eduverse.util.Gender;
 import jakarta.validation.constraints.*;
 import java.time.LocalDate;
-
 import lombok.*;
 
 @Getter

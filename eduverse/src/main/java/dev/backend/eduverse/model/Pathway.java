@@ -2,8 +2,6 @@ package dev.backend.eduverse.model;
 
 import jakarta.persistence.*;
 import lombok.*;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
-
 
 @Entity
 @Getter
@@ -13,15 +11,14 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 @Builder
 @Table(name = "pathway")
 public class Pathway {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    private Long id;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Column(name = "id")
+  private Long id;
 
-    @Column(name = "name", length = 20, nullable = false)
-    private String name;
+  @Column(name = "name", length = 20, nullable = false)
+  private String name;
 
-    @Column(name = "description", length = 200, nullable = false)
-    private String description;
-
+  @Column(name = "description", length = 200, nullable = false)
+  private String description;
 }

@@ -1,22 +1,20 @@
 package dev.backend.eduverse.service;
 
-import java.util.List;
-
-import org.springframework.http.ResponseEntity;
-
 import dev.backend.eduverse.dto.ModuleDto;
+import java.util.List;
+import org.springframework.http.ResponseEntity;
 
 public interface ModuleService {
 
-	ResponseEntity<ModuleDto> createModule(ModuleDto moduleDto);
+  ResponseEntity<ModuleDto> createModule(ModuleDto moduleDto);
 
-	ResponseEntity<ModuleDto> updateModule(ModuleDto moduleDto, Long id);
+  ResponseEntity<ModuleDto> updateModule(ModuleDto moduleDto, Long id);
 
-	void deleteModule(Long id);
+  void deleteModule(Long id);
 
-	ResponseEntity<List<ModuleDto>> getAllModules();
+  ResponseEntity<List<ModuleDto>> getAllModules();
 
-	ResponseEntity<ModuleDto> getById(Long id);
+  ResponseEntity<ModuleDto> getById(Long id);
 
-	ResponseEntity<List<ModuleDto>> getByCourseId(Long courseId);
+  ResponseEntity<List<ModuleDto>> getByCourseId(Long courseId);
 }

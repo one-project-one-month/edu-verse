@@ -3,24 +3,22 @@
  * @Date : 5/11/2024
  * @Time : 9:00 PM
  * @Project_Name : eduverse
-*/
+ */
 package dev.backend.eduverse.service;
 
-import java.util.List;
-
-import org.springframework.stereotype.Service;
-
 import dev.backend.eduverse.dto.PathwayDTO;
+import java.util.List;
+import org.springframework.stereotype.Service;
 
 @Service
 public interface PathwayService {
-	boolean createPathway(PathwayDTO pathwayDTO);
-	
-	List<PathwayDTO> getAllPathway();
+  boolean createPathway(PathwayDTO pathwayDTO);
 
-	PathwayDTO getPathwayByID(Long id);	
+  List<PathwayDTO> getAllPathway();
 
-	boolean updatePathway(PathwayDTO pathwayDTO, Long id);
+  PathwayDTO getPathwayByID(Long id);
 
-	boolean deletePathway(Long id);
+  boolean updatePathway(PathwayDTO pathwayDTO, Long id);
+
+  boolean deletePathway(Long id);
 }
