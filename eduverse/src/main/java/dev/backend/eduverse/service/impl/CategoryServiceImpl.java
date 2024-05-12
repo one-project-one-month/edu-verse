@@ -4,7 +4,9 @@ import dev.backend.eduverse.dto.CategoryDto;
 import dev.backend.eduverse.exception.NameAlreadyExistException;
 import dev.backend.eduverse.exception.ResourceNotFoundException;
 import dev.backend.eduverse.model.Category;
+import dev.backend.eduverse.model.Pathway;
 import dev.backend.eduverse.repository.CategoryRepository;
+import dev.backend.eduverse.repository.PathwayRepository;
 import dev.backend.eduverse.service.CategoryService;
 import jakarta.persistence.EntityNotFoundException;
 import org.modelmapper.ModelMapper;
@@ -26,14 +28,17 @@ public class CategoryServiceImpl implements CategoryService {
 
     private final ModelMapper modelMapper = new ModelMapper();
 
+    private final PathwayRepository pathwayRepository;
+
     private final Logger logger = LoggerFactory.getLogger(CategoryServiceImpl.class);
 
     /**
      * Constructor Injection
      */
     @Autowired
-    public CategoryServiceImpl(CategoryRepository categoryRepository){
+    public CategoryServiceImpl(CategoryRepository categoryRepository, PathwayRepository pathwayRepository){
         this.categoryRepository = categoryRepository;
+        this.pathwayRepository = pathwayRepository;
     }
 
 
@@ -56,12 +61,17 @@ public class CategoryServiceImpl implements CategoryService {
     @Override
     public CategoryDto createNewCategory(CategoryDto categoryDto) {
         logger.info("Creating Category");
+        Pathway pathway = pathwayRepository.findById(categoryDto.getPathwayId()).orElseThrow(
+                ()-> new ResourceNotFoundException("Pathway", "id", categoryDto.getPathwayId())
+        );
+
         Optional<Category> categoryOptional = categoryRepository.findByName(categoryDto.getName());
         if(categoryOptional.isPresent()) {
             throw new NameAlreadyExistException("Name already exit for that category");
         }
 
         Category category = modelMapper.map(categoryDto,Category.class);
+        category.setPathway(pathway);
         Category savedCategory = categoryRepository.save(category);
 
         logger.info("Success created category");
@@ -71,10 +81,18 @@ public class CategoryServiceImpl implements CategoryService {
     @Override
     public CategoryDto updateCategory(CategoryDto categoryDto, Long id) {
         logger.info("Updating category");
+
+        Pathway pathway = pathwayRepository.findById(categoryDto.getPathwayId()).orElseThrow(
+                ()-> new ResourceNotFoundException("Pathway", "id", categoryDto.getPathwayId())
+        );
+
         Optional<Category> existingCategoryOptional = categoryRepository.findById(id);
         Category existingCategory = existingCategoryOptional
                 .orElseThrow(() -> new EntityNotFoundException("Category not found with ID " + id));
-        modelMapper.map(categoryDto, existingCategory);
+
+        existingCategory.setName(categoryDto.getName());
+        existingCategory.setPathway(pathway);
+
         categoryRepository.save(existingCategory);
         logger.info("Category saved successfully");
 

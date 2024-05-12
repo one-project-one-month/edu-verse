@@ -1,0 +1,24 @@
+2024-05-12T12:07:10.043+06:30  INFO 42007 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 21.0.2 with PID 42007 (/Users/kyawzinthant/Documents/Java Project/EduVerse/eduverse/target/classes started by kyawzinthant in /Users/kyawzinthant/Documents/Java Project/EduVerse)
+2024-05-12T12:07:10.044+06:30 DEBUG 42007 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-12T12:07:10.044+06:30  INFO 42007 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-12T12:07:13.775+06:30  INFO 42007 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 4.022 seconds (process running for 4.353)
+2024-05-12T12:10:22.354+06:30  INFO 42007 --- [EduVerse] [http-nio-8080-exec-7] d.b.e.service.impl.CategoryServiceImpl   : Creating Category
+2024-05-12T12:10:22.400+06:30  INFO 42007 --- [EduVerse] [http-nio-8080-exec-7] d.b.e.service.impl.CategoryServiceImpl   : Success created category
+2024-05-12T12:10:45.140+06:30  INFO 42130 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 21.0.2 with PID 42130 (/Users/kyawzinthant/Documents/Java Project/EduVerse/eduverse/target/classes started by kyawzinthant in /Users/kyawzinthant/Documents/Java Project/EduVerse)
+2024-05-12T12:10:45.141+06:30 DEBUG 42130 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-12T12:10:45.142+06:30  INFO 42130 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-12T12:10:49.432+06:30  INFO 42130 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 4.859 seconds (process running for 5.335)
+2024-05-12T12:11:08.720+06:30  INFO 42130 --- [EduVerse] [http-nio-8080-exec-6] d.b.e.service.impl.CategoryServiceImpl   : Creating Category
+2024-05-12T12:16:40.509+06:30  INFO 42130 --- [EduVerse] [http-nio-8080-exec-9] d.b.e.service.impl.CategoryServiceImpl   : category ID to delete :
+2024-05-12T12:16:40.550+06:30  INFO 42130 --- [EduVerse] [http-nio-8080-exec-9] d.b.e.service.impl.CategoryServiceImpl   : Category Delete successfully
+2024-05-12T12:17:36.781+06:30  INFO 42130 --- [EduVerse] [http-nio-8080-exec-6] d.b.e.service.impl.CategoryServiceImpl   : Creating Category
+2024-05-12T12:18:09.403+06:30  INFO 42130 --- [EduVerse] [http-nio-8080-exec-7] d.b.e.service.impl.PathwayServiceImpl    : Entering the creation process
+2024-05-12T12:18:09.423+06:30  INFO 42130 --- [EduVerse] [http-nio-8080-exec-7] d.b.e.service.impl.PathwayServiceImpl    : Pathway created successfully
+2024-05-12T12:18:11.013+06:30  INFO 42130 --- [EduVerse] [http-nio-8080-exec-8] d.b.e.service.impl.PathwayServiceImpl    : Entering the creation process
+2024-05-12T12:18:11.018+06:30  INFO 42130 --- [EduVerse] [http-nio-8080-exec-8] d.b.e.service.impl.PathwayServiceImpl    : Pathway created successfully
+2024-05-12T12:19:01.205+06:30  INFO 42130 --- [EduVerse] [http-nio-8080-exec-9] d.b.e.service.impl.PathwayServiceImpl    : Entering the creation process
+2024-05-12T12:19:01.212+06:30  INFO 42130 --- [EduVerse] [http-nio-8080-exec-9] d.b.e.service.impl.PathwayServiceImpl    : Pathway created successfully
+2024-05-12T12:19:13.902+06:30  INFO 42130 --- [EduVerse] [http-nio-8080-exec-10] d.b.e.service.impl.CategoryServiceImpl   : Creating Category
+2024-05-12T12:19:13.945+06:30  INFO 42130 --- [EduVerse] [http-nio-8080-exec-10] d.b.e.service.impl.CategoryServiceImpl   : Success created category
+2024-05-12T12:19:27.149+06:30  INFO 42130 --- [EduVerse] [http-nio-8080-exec-1] d.b.e.service.impl.CategoryServiceImpl   : Creating Category
+2024-05-12T12:19:27.170+06:30  INFO 42130 --- [EduVerse] [http-nio-8080-exec-1] d.b.e.service.impl.CategoryServiceImpl   : Success created category
