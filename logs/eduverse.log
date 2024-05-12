@@ -22,3 +22,7 @@
 2024-05-12T12:19:13.945+06:30  INFO 42130 --- [EduVerse] [http-nio-8080-exec-10] d.b.e.service.impl.CategoryServiceImpl   : Success created category
 2024-05-12T12:19:27.149+06:30  INFO 42130 --- [EduVerse] [http-nio-8080-exec-1] d.b.e.service.impl.CategoryServiceImpl   : Creating Category
 2024-05-12T12:19:27.170+06:30  INFO 42130 --- [EduVerse] [http-nio-8080-exec-1] d.b.e.service.impl.CategoryServiceImpl   : Success created category
+2024-05-12T12:23:13.563+06:30  INFO 42733 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 21.0.2 with PID 42733 (/Users/kyawzinthant/Documents/Java Project/EduVerse/eduverse/target/classes started by kyawzinthant in /Users/kyawzinthant/Documents/Java Project/EduVerse)
+2024-05-12T12:23:13.564+06:30 DEBUG 42733 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-12T12:23:13.565+06:30  INFO 42733 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-12T12:23:17.345+06:30  INFO 42733 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 4.081 seconds (process running for 4.415)
