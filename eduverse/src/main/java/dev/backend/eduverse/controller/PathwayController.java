@@ -1,3 +1,9 @@
+/*
+ * @Author : Alvin
+ * @Date : 5/11/2024
+ * @Time : 9:00 PM
+ * @Project_Name : eduverse
+*/
 package dev.backend.eduverse.controller;
 
 import java.util.ArrayList;
@@ -22,6 +28,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import dev.backend.eduverse.dto.PathwayDTO;
+import dev.backend.eduverse.exception.NameAlreadyExistException;
 import dev.backend.eduverse.service.PathwayService;
 import dev.backend.eduverse.util.ResponeTemplate.ApiResponse;
 import dev.backend.eduverse.util.ResponeTemplate.ResponseUtil;
@@ -60,9 +67,13 @@ public class PathwayController {
 	            return ResponseUtil.createSuccessResponse(HttpStatus.OK, "Pathway created successfully", "created");
 	        } else {
 	            return ResponseUtil.createErrorResponse(HttpStatus.BAD_REQUEST, "Failed to create pathway", "Creation failed due to unknown reasons");
-	        }
-	    } catch (DataIntegrityViolationException e) {
-	        return ResponseUtil.createErrorResponse(HttpStatus.BAD_REQUEST, "Failed to create pathway", e.getMessage());
+	        }	    	     	   
+	    } catch (NameAlreadyExistException e) {
+	        String errorMessage = "Pathway with name '" + pathwayDTO.getName() + "' already exists";
+	        return ResponseUtil.createErrorResponse(HttpStatus.BAD_REQUEST, "Failed to create pathway", errorMessage);
+	    } 	    
+	    catch (DataIntegrityViolationException e) {
+	        return ResponseUtil.createErrorResponse(HttpStatus.BAD_REQUEST, "Failed to create pathway", e.getMessage());	       
 	    } catch (Exception e) {
 	    	logger.error("Failed to create pathway", e);
 	        return ResponseUtil.createErrorResponse(HttpStatus.INTERNAL_SERVER_ERROR, "Failed to create pathway", e.getMessage());

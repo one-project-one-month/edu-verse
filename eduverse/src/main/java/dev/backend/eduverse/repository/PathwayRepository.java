@@ -12,4 +12,6 @@ import dev.backend.eduverse.model.Pathway;
 
 public interface PathwayRepository extends JpaRepository<Pathway,Long> {
 
+	boolean existsByName(String name);
+
 }
