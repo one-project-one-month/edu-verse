@@ -6,6 +6,7 @@ import dev.backend.eduverse.model.Admin;
 import java.util.List;
 
 public interface AdminService {
+	
     List<AdminDto> findAll();
 
     AdminDto findById(Long id);

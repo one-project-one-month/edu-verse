@@ -1,11 +1,9 @@
 package dev.backend.eduverse.controller;
 
 import dev.backend.eduverse.dto.AdminDto;
-import dev.backend.eduverse.model.Admin;
 import dev.backend.eduverse.service.AdminService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.StringTrimmerEditor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -25,7 +23,6 @@ public class AdminController {
 
     private final AdminService adminService;
 
-    @Autowired
     public AdminController(AdminService adminService) {
         this.adminService = adminService;
     }
