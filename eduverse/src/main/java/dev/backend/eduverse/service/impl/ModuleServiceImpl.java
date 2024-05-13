@@ -31,18 +31,17 @@ public class ModuleServiceImpl implements ModuleService {
 	}
 
 	@Override
-	public ResponseEntity<ModuleDto> createModule(ModuleDto moduleDto) {
+	public ModuleDto createModule(ModuleDto moduleDto) {
 		Course course = courseRepository.findById(moduleDto.getCourseId())
 				.orElseThrow(() -> new ResourceNotFoundException("Course", "Id", moduleDto.getCourseId()));
 		CourseModule courseModule = modelMapper.map(moduleDto, CourseModule.class);
 		courseModule.setCourse(course);
 		courseModule = moduleRepository.save(courseModule);
-		ModuleDto saveModuleDto = modelMapper.map(courseModule, ModuleDto.class);
-		return ResponseEntity.status(HttpStatus.CREATED).body(saveModuleDto);
+		return modelMapper.map(courseModule, ModuleDto.class);
 	}
 
 	@Override
-	public ResponseEntity<ModuleDto> updateModule(ModuleDto moduleDto, Long id) {
+	public ModuleDto updateModule(ModuleDto moduleDto, Long id) {
 		CourseModule existModule = moduleRepository.findById(id)
 				.orElseThrow(() -> new ResourceNotFoundException("CourseModule", "Id", id));
 		existModule.setName(moduleDto.getName());
@@ -54,8 +53,7 @@ public class ModuleServiceImpl implements ModuleService {
 		existModule.setCourse(course);
 
 		CourseModule saveModule = moduleRepository.save(existModule);
-		ModuleDto updateModuleDto = modelMapper.map(saveModule, ModuleDto.class);
-		return ResponseEntity.ok(updateModuleDto);
+		return modelMapper.map(saveModule, ModuleDto.class);
 	}
 
 	@Override
@@ -64,27 +62,25 @@ public class ModuleServiceImpl implements ModuleService {
 	}
 
 	@Override
-	public ResponseEntity<List<ModuleDto>> getAllModules() {
+	public List<ModuleDto> getAllModules() {
 		List<CourseModule> courseModules = moduleRepository.findAll();
-		List<ModuleDto> moduleDtos = courseModules.stream()
-				.map(courseModule -> modelMapper.map(courseModule, ModuleDto.class)).collect(Collectors.toList());
-		return ResponseEntity.ok(moduleDtos);
+		return courseModules.stream().map(courseModule -> modelMapper.map(courseModule, ModuleDto.class))
+				.collect(Collectors.toList());
 	}
 
 	@Override
-	public ResponseEntity<ModuleDto> getById(Long id) {
+	public ModuleDto getById(Long id) {
 		CourseModule courseModule = moduleRepository.findById(id)
 				.orElseThrow(() -> new ResourceNotFoundException("CourseModule", "Id", id));
-		ModuleDto moduleDto = modelMapper.map(courseModule, ModuleDto.class);
-		return ResponseEntity.ok(moduleDto);
+		return modelMapper.map(courseModule, ModuleDto.class);
 	}
 
 	@Override
-	public ResponseEntity<List<ModuleDto>> getByCourseId(Long courseId) {
+	public List<ModuleDto> getByCourseId(Long courseId) {
 		List<CourseModule> courseModules = moduleRepository.findByCourseId(courseId);
-		List<ModuleDto> moduleDtos = courseModules.stream()
-				.map(courseModule -> modelMapper.map(courseModules, ModuleDto.class)).collect(Collectors.toList());
-		return ResponseEntity.ok(moduleDtos);
+		return courseModules.stream().map(courseModule -> modelMapper.map(courseModules, ModuleDto.class))
+				.collect(Collectors.toList());
+
 	}
 
 }

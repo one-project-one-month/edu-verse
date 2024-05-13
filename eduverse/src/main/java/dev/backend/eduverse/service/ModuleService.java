@@ -8,15 +8,15 @@ import dev.backend.eduverse.dto.ModuleDto;
 
 public interface ModuleService {
 
-	ResponseEntity<ModuleDto> createModule(ModuleDto moduleDto);
+	ModuleDto createModule(ModuleDto moduleDto);
 
-	ResponseEntity<ModuleDto> updateModule(ModuleDto moduleDto, Long id);
+	ModuleDto updateModule(ModuleDto moduleDto, Long id);
 
 	void deleteModule(Long id);
 
-	ResponseEntity<List<ModuleDto>> getAllModules();
+	List<ModuleDto> getAllModules();
 
-	ResponseEntity<ModuleDto> getById(Long id);
+	ModuleDto getById(Long id);
 
-	ResponseEntity<List<ModuleDto>> getByCourseId(Long courseId);
+	List<ModuleDto> getByCourseId(Long courseId);
 }
