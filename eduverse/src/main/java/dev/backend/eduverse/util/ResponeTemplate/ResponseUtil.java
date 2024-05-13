@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 public class ResponseUtil {
 
   public static <T> ResponseEntity<ApiResponse<T>> createSuccessResponse(
-          HttpStatus httpStatus, String message, T data) {
+      HttpStatus httpStatus, String message, T data) {
     ApiResponse<T> response = new ApiResponse<>(httpStatus, message, data);
     return ResponseEntity.status(httpStatus).body(response);
   }

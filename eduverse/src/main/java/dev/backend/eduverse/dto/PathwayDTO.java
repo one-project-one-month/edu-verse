@@ -3,7 +3,7 @@
  * @Date : 5/11/2024
  * @Time : 9:00 PM
  * @Project_Name : eduverse
-*/
+ */
 package dev.backend.eduverse.dto;
 
 import jakarta.validation.constraints.NotNull;
@@ -20,13 +20,12 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 public class PathwayDTO {
-	
-	@NotNull(message = "Name is required")
-    @Size(min = 1, max = 20, message = "Name must be between 1 and 20 characters")
-	private String name;
-		
-	@NotNull(message = "Long description is required")
-	@Size(min = 1, max = 200, message = "Short description must be between 1 and 200 characters")
-	private String description;
-		
+
+  @NotNull(message = "Name is required")
+  @Size(min = 1, max = 20, message = "Name must be between 1 and 20 characters")
+  private String name;
+
+  @NotNull(message = "Long description is required")
+  @Size(min = 1, max = 200, message = "Short description must be between 1 and 200 characters")
+  private String description;
 }

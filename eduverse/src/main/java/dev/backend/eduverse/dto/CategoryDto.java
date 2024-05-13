@@ -13,10 +13,10 @@ import lombok.Setter;
 @NoArgsConstructor
 public class CategoryDto {
 
-    @NotNull(message = "Category name is required")
-    @Size(max = 20, message = "Category name is too long")
-    private String name;
+  @NotNull(message = "Category name is required")
+  @Size(max = 20, message = "Category name is too long")
+  private String name;
 
-    @NotNull(message = "Pathway id is required")
-    private Long pathwayId;
+  @NotNull(message = "Pathway id is required")
+  private Long pathwayId;
 }

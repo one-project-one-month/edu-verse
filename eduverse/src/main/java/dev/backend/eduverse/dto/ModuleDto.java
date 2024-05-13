@@ -11,17 +11,16 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ModuleDto {
-	
-	@NotNull(message = "Module name is required.")
-	private String name;
-	
-	@NotBlank(message = "Module content can't be empty.")
-	@Size(max = 1000, message = "Content's Length can't exceed 1000 characters.")
-	private String content;
-	 
-	private String duration;
-	
-	@NotNull(message = "Module must be related with Course.")
-	private Long courseId;
 
+  @NotNull(message = "Module name is required.")
+  private String name;
+
+  @NotBlank(message = "Module content can't be empty.")
+  @Size(max = 1000, message = "Content's Length can't exceed 1000 characters.")
+  private String content;
+
+  private String duration;
+
+  @NotNull(message = "Module must be related with Course.")
+  private Long courseId;
 }
