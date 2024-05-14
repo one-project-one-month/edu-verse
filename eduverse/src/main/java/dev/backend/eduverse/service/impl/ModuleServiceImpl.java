@@ -30,11 +30,18 @@ public class ModuleServiceImpl implements ModuleService {
 
 	@Override
 	public ModuleDto createModule(ModuleDto moduleDto) {
+
 		Course course = courseRepository.findById(moduleDto.getCourseId())
 				.orElseThrow(() -> new ResourceNotFoundException("Course", "Id", moduleDto.getCourseId()));
-		CourseModule courseModule = modelMapper.map(moduleDto, CourseModule.class);
+
+		CourseModule courseModule = new CourseModule();
+		courseModule.setName(moduleDto.getName());
+		courseModule.setContent(moduleDto.getContent());
+		courseModule.setDuration(moduleDto.getDuration());
 		courseModule.setCourse(course);
+
 		courseModule = moduleRepository.save(courseModule);
+
 		return modelMapper.map(courseModule, ModuleDto.class);
 	}
 
@@ -76,7 +83,7 @@ public class ModuleServiceImpl implements ModuleService {
 	@Override
 	public List<ModuleDto> getByCourseId(Long courseId) {
 		List<CourseModule> courseModules = moduleRepository.findByCourseId(courseId);
-		return courseModules.stream().map(courseModule -> modelMapper.map(courseModules, ModuleDto.class))
+		return courseModules.stream().map(courseModule -> modelMapper.map(courseModule, ModuleDto.class))
 				.collect(Collectors.toList());
 
 	}

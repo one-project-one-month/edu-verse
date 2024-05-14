@@ -18,8 +18,11 @@ import dev.backend.eduverse.dto.ModuleDto;
 import dev.backend.eduverse.service.ModuleService;
 import dev.backend.eduverse.util.ResponeTemplate.ApiResponse;
 import dev.backend.eduverse.util.ResponeTemplate.ResponseUtil;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 
+@Tag(name = "CRUD REST APIs For Module")
 @RestController
 @RequestMapping("api/module")
 public class ModuleController {
@@ -30,6 +33,7 @@ public class ModuleController {
 		this.moduleService = moduleService;
 	}
 
+	@Operation(summary = "Create Module For Course")
 	@PostMapping("/")
 	public ResponseEntity<ApiResponse<String>> createModule(@Valid @RequestBody ModuleDto moduleDto) {
 		try {
@@ -45,6 +49,7 @@ public class ModuleController {
 
 	}
 
+	@Operation(summary = "Update Module's Information")
 	@PutMapping("/{id}")
 	public ResponseEntity<ApiResponse<ModuleDto>> updateModule(@Valid @RequestBody ModuleDto moduleDto,
 			@PathVariable Long id) {
@@ -56,6 +61,7 @@ public class ModuleController {
 		}
 	}
 
+	@Operation(summary = "Delete Module By Id")
 	@DeleteMapping("/{id}")
 	public ResponseEntity<ApiResponse<String>> deleteModule(@PathVariable Long id) {
 		try {
@@ -70,6 +76,7 @@ public class ModuleController {
 		}
 	}
 
+	@Operation(summary = "Find All Modules")
 	@GetMapping
 	public ResponseEntity<ApiResponse<List<ModuleDto>>> getAllModules() {
 		try {
@@ -82,6 +89,7 @@ public class ModuleController {
 
 	}
 
+	@Operation(summary = "Find Module By Id")
 	@GetMapping("/{id}")
 	public ResponseEntity<ApiResponse<ModuleDto>> getById(@PathVariable Long id) {
 		try {
@@ -94,7 +102,8 @@ public class ModuleController {
 
 	}
 
-	@GetMapping("{courseId}/modules")
+	@Operation(summary = "Find Module By CourseId")
+	@GetMapping("course/{courseId}")
 	public ResponseEntity<ApiResponse<List<ModuleDto>>> getByCourseId(@PathVariable Long courseId) {
 		try {
 			List<ModuleDto> moduleDtos = moduleService.getByCourseId(courseId);

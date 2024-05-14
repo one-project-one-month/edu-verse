@@ -1,0 +1,32 @@
+[
+        {
+            "name": "Chapter 1",
+            "content": "Intro to variable",
+            "duration": "12min",
+            "courseId": 1
+        },
+        {
+            "name": "Chapter 2",
+            "content": "Data types and operators",
+            "duration": "15min",
+            "courseId": 1
+        },
+        {
+            "name": "Chapter 3",
+            "content": "Control flow statements",
+            "duration": "20min",
+            "courseId": 1
+        },
+        {
+            "name": "Chapter 4",
+            "content": "Arrays and Strings",
+            "duration": "18min",
+            "courseId": 4
+        },
+        {
+            "name": "Chapter 5",
+            "content": "Functions and Scope",
+            "duration": "22min",
+            "courseId": 1
+        }
+]
