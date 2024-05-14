@@ -8,7 +8,7 @@ public interface UserServices {
 
   void bulkCreateUser(List<UserDTO> userDTO);
 
-  List<UserDTO> readUser();
+/*  List<UserDTO> readUser();*/
 
   UserDTO readUserById(Long userId);
 
@@ -19,4 +19,7 @@ public interface UserServices {
   void deleteUser(Long userId);
 
   Long searchIDByUserEmail(String email);
+
+	List<UserDTO> readUserByPagniation(int page, int offset) throws IllegalAccessException;
+
 }

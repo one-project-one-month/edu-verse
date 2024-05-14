@@ -66,7 +66,7 @@ public class UserServiceImpl implements UserServices {
   /**
    * @return BulkReader
    */
-  @Override
+/*  @Override
   public List<UserDTO> readUser() {
     logger.info("Entering the read process");
     List<User> users = userRepository.findAll();
@@ -79,7 +79,7 @@ public class UserServiceImpl implements UserServices {
               logger.info("Mapped UserDTO: " + userDTO);
             })
         .collect(Collectors.toList());
-  }
+  }*/
 
   /** Single Reader */
   @Override
@@ -112,6 +112,26 @@ public class UserServiceImpl implements UserServices {
   @Override
   public Long searchIDByUserEmail(String email) throws NoSuchElementException {
     return userRepository.searchIdByEmail(email);
+  }
+
+  @Override
+  public List<UserDTO> readUserByPagniation(int pageNumber, int pageSize)throws IllegalAccessException {
+    if(pageNumber < 1 || pageSize < 1 ) {
+      throw  new IllegalAccessException("Cannot access the page number less than one");
+    }
+
+    int offset = (pageNumber - 1) * pageSize;
+    try {
+      List<User> usersList = userRepository.readUserByPagination(pageSize, offset);
+      for(User user : usersList) {
+        System.out.println(user.getId());
+      }
+      return usersList.stream()
+              .map(element -> entityMapper.mapDTOtoEntity(element, new UserDTO()))
+              .toList();
+    } catch (Exception e) {
+      throw e;
+    }
   }
 
   /** Update User */

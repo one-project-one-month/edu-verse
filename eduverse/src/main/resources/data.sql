@@ -1,3 +1,4 @@
+use EduVerse_db;
 ## adminROle table insertion
 INSERT INTO `admin_role`(`id`, `code`, `role_name`) VALUES ('1','1111','ROLE_ADMIN');
 INSERT INTO `admin_role`(`id`, `code`, `role_name`) VALUES ('2','1222','ROLE_INSTRUCTOR');
