@@ -56,7 +56,7 @@ public class CourseController {
         this.courseService = courseService;
     }
 
-    @PostMapping("/create")
+    @PostMapping("/")
     @Operation(
             summary = "Create a new course",
             tags = {"Course Creator"})
@@ -82,7 +82,7 @@ public class CourseController {
         }
     }
 
-    @GetMapping("/read")
+    @GetMapping("")
     @Operation(
             summary = "Retrieve all courses",
             tags = {"Course Reader"})
@@ -103,7 +103,7 @@ public class CourseController {
         }
     }
 
-    @PutMapping("/update/{courseId}")
+    @PutMapping("/{courseId}")
     @Operation(
             summary = "Update a course's information",
             tags = {"Update Course"})
@@ -127,7 +127,7 @@ public class CourseController {
         }
     }
 
-    @DeleteMapping("/delete/{courseId}")
+    @DeleteMapping("/{courseId}")
     @Operation(
             summary = "Delete a course by ID",
             tags = {"Delete Course By Id"})

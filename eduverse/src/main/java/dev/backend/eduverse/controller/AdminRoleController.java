@@ -58,7 +58,7 @@ public class AdminRoleController {
         this.adminRoleService = adminRoleService;
     }
 
-    @PostMapping("/create")
+    @PostMapping("/")
     @Operation(
             summary = "Create a new ADMIN role",
             tags = {"ADMIN role Creator"})
@@ -85,7 +85,7 @@ public class AdminRoleController {
         }
     }
 
-    @GetMapping("/read")
+    @GetMapping("")
     @Operation(
             summary = "Retrieve all adminRoles",
             tags = {"ADMIN role Reader"})
@@ -106,7 +106,7 @@ public class AdminRoleController {
         }
     }
 
-    @PutMapping("/update/{adminRoleId}")
+    @PutMapping("/{adminRoleId}")
     @Operation(
             summary = "Update a adminRole's information",
             tags = {"Update ADMIN role"})
@@ -130,7 +130,7 @@ public class AdminRoleController {
         }
     }
 
-    @DeleteMapping("/delete/{adminRoleId}")
+    @DeleteMapping("/{adminRoleId}")
     @Operation(
             summary = "Delete a ADMIN role by ID",
             tags = {"Delete ADMIN role By Id"})

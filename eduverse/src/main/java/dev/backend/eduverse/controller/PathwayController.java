@@ -58,7 +58,7 @@ public class PathwayController {
         this.pathwayService = pathwayService;
     }
 
-    @PostMapping("/create")
+    @PostMapping("/")
     @Operation(
             summary = "Create a new pathway",
             tags = {"Pathway Creator"})
@@ -89,7 +89,7 @@ public class PathwayController {
         }
     }
 
-    @GetMapping("/read")
+    @GetMapping("")
     @Operation(
             summary = "Retrieve all pathways",
             tags = {"Pathway Reader"})
@@ -110,7 +110,7 @@ public class PathwayController {
         }
     }
 
-    @PutMapping("/update/{pathwayId}")
+    @PutMapping("/{pathwayId}")
     @Operation(
             summary = "Update a pathway's information",
             tags = {"Update Pathway"})
@@ -134,7 +134,7 @@ public class PathwayController {
         }
     }
 
-    @DeleteMapping("/delete/{pathwayId}")
+    @DeleteMapping("/{pathwayId}")
     @Operation(
             summary = "Delete a pathway by ID",
             tags = {"Delete Pathway By Id"})
