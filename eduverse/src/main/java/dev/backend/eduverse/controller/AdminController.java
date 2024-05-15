@@ -2,12 +2,15 @@ package dev.backend.eduverse.controller;
 
 import dev.backend.eduverse.dto.AdminDto;
 import dev.backend.eduverse.service.AdminService;
+import dev.backend.eduverse.util.response_template.PageNumberResponse;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.propertyeditors.StringTrimmerEditor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,6 +21,8 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/admins")
 @Tag(name = "Admin Operation", description = "REST API CRUD operation for Admin Entity")
 public class AdminController {
+
+    private Logger logger = LoggerFactory.getLogger(AdminController.class);
 
     @InitBinder
     public void initBinder(WebDataBinder dataBinder) {
@@ -33,10 +38,17 @@ public class AdminController {
     // Get All
     @Operation(summary = "Get All Admins")
     @GetMapping("")
-    public ResponseEntity<List<AdminDto>> getAllAdmins() {
-        List<AdminDto> admins = adminService.findAll();
+    public ResponseEntity<PageNumberResponse<AdminDto>> getAllAdmins(
+            @RequestParam(value = "page", required = false, defaultValue = "1") int pageNo,
+            @RequestParam(value = "limit", required = false, defaultValue = "10") int limit
+    ) {
 
-        return new ResponseEntity<>(admins, HttpStatus.OK);
+        List<AdminDto> admins = adminService.paginate(pageNo, limit);
+
+        return new ResponseEntity<>(
+                new PageNumberResponse(pageNo, limit, admins),
+                HttpStatus.OK
+        );
     }
 
     // Get By Id
