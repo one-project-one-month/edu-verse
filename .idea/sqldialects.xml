@@ -2,6 +2,8 @@
 <project version="4">
   <component name="SqlDialectMappings">
     <file url="file://$PROJECT_DIR$/EduVerse_db.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/eduverse/src/main/resources/Sql/data.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/eduverse/src/main/resources/data.sql" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/eduverse/src/main/resources/schema.sql" dialect="MySQL" />
   </component>
 </project>

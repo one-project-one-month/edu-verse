@@ -1,3 +1,4 @@
+use EduVerse_db;
 ## adminROle table insertion
 INSERT INTO `admin_role`(`id`, `code`, `role_name`) VALUES ('1','1111','ROLE_ADMIN');
 INSERT INTO `admin_role`(`id`, `code`, `role_name`) VALUES ('2','1222','ROLE_INSTRUCTOR');
@@ -7,6 +8,13 @@ INSERT INTO `admin_role`(id, code, role_name) VALUES ('3', '2333', 'ROLE_MANAGER
 INSERT INTO `admin`(`id`, `user_name`, `password`, `email`, `phone_number`, `status`, `role_id`) VALUES ('1','admin','password','admin@gmail.com','09283473722','1','1');
 INSERT INTO `admin`(`id`, `user_name`, `password`, `email`, `phone_number`, `status`, `role_id`) VALUES ('2','admin2','password','admin2@gmail.com','0947264822','1','2');
 INSERT INTO `admin`(`id`, `user_name`, `password`, `email`, `phone_number`, `status`, `role_id`) VALUES ('3','admin3','password','admin3@gmail.com','094720822','1','3');
+INSERT INTO `admin`(`id`, `user_name`, `password`, `email`, `phone_number`, `status`, `role_id`) VALUES ('4','admin4','password','admin4@gmail.com','094720822','1','2');
+INSERT INTO `admin`(`id`, `user_name`, `password`, `email`, `phone_number`, `status`, `role_id`) VALUES ('5','admin5','password','admin5@gmail.com','094720822','1','2');
+INSERT INTO `admin`(`id`, `user_name`, `password`, `email`, `phone_number`, `status`, `role_id`) VALUES ('6','admin6','password','admin6@gmail.com','094720822','1','3');
+INSERT INTO `admin`(`id`, `user_name`, `password`, `email`, `phone_number`, `status`, `role_id`) VALUES ('7','admin7','password','admin7@gmail.com','094720822','1','2');
+INSERT INTO `admin`(`id`, `user_name`, `password`, `email`, `phone_number`, `status`, `role_id`) VALUES ('8','admin8','password','admin8@gmail.com','094720822','1','2');
+INSERT INTO `admin`(`id`, `user_name`, `password`, `email`, `phone_number`, `status`, `role_id`) VALUES ('9','admin9','password','admin9@gmail.com','094720822','1','3');
+INSERT INTO `admin`(`id`, `user_name`, `password`, `email`, `phone_number`, `status`, `role_id`) VALUES ('10','admin10','password','admin10@gmail.com','094720822','1','2');
 
 
 #User table insertion
@@ -47,8 +55,6 @@ INSERT INTO  module (id,name, content, duration, course_id) values (1,"Chapter 1
 INSERT INTO module (id,name, content, duration, course_id)VALUES (2,"Chapter 2", "Data types and operators", "15min", "2");
 INSERT INTO module (id,name, content, duration, course_id)VALUES (3,"Chapter 3", "Control flow statements", "20min", "3");
 INSERT INTO module (id,name, content, duration, course_id)VALUES (4,"Chapter 4", "Arrays and Strings", "18min", "4");
---INSERT INTO module (id,name, content, duration, course_id)VALUES (5,"Chapter 5", "Functions and Scope", "22min", "1");
-
 
 #user_course
 INSERT INTO user_course (id,created_at, user_id, course_id) VALUES (1,'2024-05-12', 1, 1);

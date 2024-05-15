@@ -15,4 +15,7 @@ public interface UserRepository extends JpaRepository<User, Long> {
 
   @Query(value = "select id from User where email = :email", nativeQuery = true)
   Long searchIdByEmail(@Param("email") String email);
+
+  @Query(value = "SELECT * FROM user ORDER BY id LIMIT :limit OFFSET :offset", nativeQuery = true)
+  List<User> readUserByPagination(@Param("limit") int limit, @Param("offset") int offset);
 }

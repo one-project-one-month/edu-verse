@@ -12,6 +12,7 @@ import dev.backend.eduverse.model.Course;
 import dev.backend.eduverse.model.CourseModule;
 import dev.backend.eduverse.repository.CourseRepository;
 import dev.backend.eduverse.repository.ModuleRepository;
+import dev.backend.eduverse.repository.UserRepository;
 import dev.backend.eduverse.service.ModuleService;
 
 @Service
@@ -66,11 +67,25 @@ public class ModuleServiceImpl implements ModuleService {
 		moduleRepository.deleteById(id);
 	}
 
+
 	@Override
-	public List<ModuleDto> getAllModules() {
-		List<CourseModule> courseModules = moduleRepository.findAll();
-		return courseModules.stream().map(courseModule -> modelMapper.map(courseModule, ModuleDto.class))
-				.collect(Collectors.toList());
+	public List<ModuleDto> getAllModulesByPagination(int pageNumber, int pageSize) throws IllegalAccessException {
+		if (pageNumber < 1 || pageSize < 1) {
+			throw new IllegalAccessException("Can't access the page number less than one.");
+		}
+
+		int offset = (pageNumber - 1) * pageSize;
+		try {
+			List<CourseModule> courseModules = moduleRepository.getAllModulesByPagination(pageSize, offset);
+			for (CourseModule courseModule : courseModules) {
+				System.out.println(courseModule.getId());
+			}
+			return courseModules.stream().map(courseModule -> modelMapper.map(courseModule, ModuleDto.class))
+					.collect(Collectors.toList());
+		} catch (Exception e) {
+			throw e;
+		}
+
 	}
 
 	@Override
