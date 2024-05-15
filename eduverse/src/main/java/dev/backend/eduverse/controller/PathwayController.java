@@ -53,6 +53,8 @@ public class PathwayController {
 
     @Autowired
     private final PathwayService pathwayService;
+    
+    private final int PageSize = 10;
 
     public PathwayController(PathwayService pathwayService) {
         this.pathwayService = pathwayService;
@@ -89,13 +91,13 @@ public class PathwayController {
         }
     }
 
-    @GetMapping("")
+    @GetMapping("/page/{pageNumber}")
     @Operation(
             summary = "Retrieve all pathways",
             tags = {"Pathway Reader"})
-    public ResponseEntity<ApiResponse<List<PathwayDTO>>> readPathways() {
+    public ResponseEntity<?> readPathways(@PathVariable int pageNumber) {
         try {
-            List<PathwayDTO> pathwayList = pathwayService.getAllPathway();
+        	List<PathwayDTO> pathwayList = pathwayService.readPathwayByPagniation(pageNumber, PageSize);
             if (pathwayList.isEmpty()) {
                 return ResponseUtil.createSuccessResponse(
                         HttpStatus.OK, "No pathways found", new ArrayList<>());

@@ -21,4 +21,6 @@ public interface CourseService {
   boolean updateCourse(CourseDTO courseDTO, Long id);
 
   boolean deleteCourse(Long id);
+
+  List<CourseDTO> readCourseByPagniation(int pageNumber, int pageSize) throws IllegalAccessException;
 }

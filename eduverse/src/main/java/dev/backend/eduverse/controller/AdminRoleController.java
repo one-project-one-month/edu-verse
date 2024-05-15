@@ -9,6 +9,7 @@ package dev.backend.eduverse.controller;
 import dev.backend.eduverse.dto.AdminRoleDTO;
 import dev.backend.eduverse.service.AdminRoleService;
 import dev.backend.eduverse.util.response_template.ApiResponse;
+import dev.backend.eduverse.util.response_template.PageNumberResponse;
 import dev.backend.eduverse.util.response_template.ResponseUtil;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -53,6 +54,8 @@ public class AdminRoleController {
 
     @Autowired
     private final AdminRoleService adminRoleService;
+    
+    private final int PageSize = 10;
 
     public AdminRoleController(AdminRoleService adminRoleService) {
         this.adminRoleService = adminRoleService;
@@ -85,19 +88,19 @@ public class AdminRoleController {
         }
     }
 
-    @GetMapping("")
+    @GetMapping("/page/{pageNumber}")
     @Operation(
             summary = "Retrieve all adminRoles",
             tags = {"ADMIN role Reader"})
-    public ResponseEntity<ApiResponse<List<AdminRoleDTO>>> readAdminRoles() {
+    public ResponseEntity<?> readAdminRoles(@PathVariable int pageNumber) {
         try {
-            List<AdminRoleDTO> adminRoleList = adminRoleService.getAllAdminRole();
-            if (adminRoleList.isEmpty()) {
+            List<AdminRoleDTO> adminRoleList = adminRoleService.readAdminRoleByPagniation(pageNumber, PageSize);
+            if (adminRoleList.isEmpty()) {            	
                 return ResponseUtil.createSuccessResponse(
                         HttpStatus.OK, "No ADMIN role found", new ArrayList<>());
             } else {
-                return ResponseUtil.createSuccessResponse(
-                        HttpStatus.OK, "ADMIN role list retrieved successfully", adminRoleList);
+            	PageNumberResponse<List<AdminRoleDTO>> response = new PageNumberResponse<>(pageNumber, PageSize, adminRoleList);
+                return ResponseEntity.ok().body(response);                
             }
         } catch (Exception e) {
             logger.error("Failed to retrieve adminRoles", e);
