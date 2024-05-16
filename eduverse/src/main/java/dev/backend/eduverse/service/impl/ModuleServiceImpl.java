@@ -1,6 +1,7 @@
 package dev.backend.eduverse.service.impl;
 
 import java.util.List;
+import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 import org.modelmapper.ModelMapper;
@@ -67,25 +68,19 @@ public class ModuleServiceImpl implements ModuleService {
 		moduleRepository.deleteById(id);
 	}
 
-
 	@Override
-	public List<ModuleDto> getAllModulesByPagination(int pageNumber, int pageSize) throws IllegalAccessException {
-		if (pageNumber < 1 || pageSize < 1) {
-			throw new IllegalAccessException("Can't access the page number less than one.");
-		}
+	public List<ModuleDto> getAllModulesByPagination(int pageNo, int limit) {
 
-		int offset = (pageNumber - 1) * pageSize;
-		try {
-			List<CourseModule> courseModules = moduleRepository.getAllModulesByPagination(pageSize, offset);
-			for (CourseModule courseModule : courseModules) {
-				System.out.println(courseModule.getId());
-			}
-			return courseModules.stream().map(courseModule -> modelMapper.map(courseModule, ModuleDto.class))
-					.collect(Collectors.toList());
-		} catch (Exception e) {
-			throw e;
-		}
+		pageNo = Math.max(pageNo, 1);
 
+		limit = (limit <= 1) ? 10 : limit;
+
+		int offset = (pageNo - 1) * limit;
+
+		List<CourseModule> courseModules = moduleRepository.getAllModulesByPagination(limit, offset);
+
+		return courseModules.stream().map(courseModule -> modelMapper.map(courseModule, ModuleDto.class))
+				.collect(Collectors.toList());
 	}
 
 	@Override
@@ -100,7 +95,6 @@ public class ModuleServiceImpl implements ModuleService {
 		List<CourseModule> courseModules = moduleRepository.findByCourseId(courseId);
 		return courseModules.stream().map(courseModule -> modelMapper.map(courseModule, ModuleDto.class))
 				.collect(Collectors.toList());
-
 	}
 
 }

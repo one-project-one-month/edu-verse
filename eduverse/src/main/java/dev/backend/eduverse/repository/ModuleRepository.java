@@ -12,9 +12,9 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ModuleRepository extends JpaRepository<CourseModule, Long> {
 
-  List<CourseModule> findByCourseId(Long courseId);
+	List<CourseModule> findByCourseId(Long courseId);
 
-	@Query(value = "SELECT * FROM module ORDER BY id LIMIT :pageSize OFFSET :offset", nativeQuery = true)
-	List<CourseModule> getAllModulesByPagination(@Param(value = "pageSize") int pageSize,
+	@Query(value = "SELECT * FROM module ORDER BY id LIMIT :limit OFFSET :offset", nativeQuery = true)
+	List<CourseModule> getAllModulesByPagination(@Param(value = "limit") int limit,
 			@Param(value = "offset") int offset);
 }
