@@ -3,6 +3,7 @@
  */
 package dev.backend.eduverse.service;
 
+import dev.backend.eduverse.dto.AdminDto;
 import dev.backend.eduverse.dto.AnnouncementDto;
 import java.util.List;
 
@@ -17,4 +18,6 @@ public interface AnnouncementService {
   AnnouncementDto updateAnnouncement(AnnouncementDto announcementDto);
 
   void deleteAnnouncement(Long id);
+
+  List<AnnouncementDto> paginate(int pageNo, int limit);
 }

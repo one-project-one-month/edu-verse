@@ -3,9 +3,11 @@
  */
 package dev.backend.eduverse.service.impl;
 
+import dev.backend.eduverse.dto.AnnouncementDto;
 import dev.backend.eduverse.dto.CourseDetailDto;
 import dev.backend.eduverse.exception.ResourceNotFoundException;
 import dev.backend.eduverse.model.Admin;
+import dev.backend.eduverse.model.Announcement;
 import dev.backend.eduverse.model.Course;
 import dev.backend.eduverse.model.CourseDetail;
 import dev.backend.eduverse.repository.AdminRepository;
@@ -104,5 +106,22 @@ public class CourseDetailServiceImpl implements CourseDetailService {
             .orElseThrow(() -> new ResourceNotFoundException("CourseDetail", "id", id));
 
     courseDetailRepository.deleteById(exitingCourseDetail.getId());
+  }
+
+  @Override
+  public List<CourseDetailDto> paginate(int pageNo, int limit) {
+    //if provided page number is less than 1, 1 will be the default pageNO
+    pageNo = Math.max(pageNo, 1);
+
+    //if provided size limit is less than 1, 10 will be the default size limit
+    limit = (limit < 1) ? 10 : limit;
+
+    int offset = (pageNo - 1) * limit;
+
+    List<CourseDetail> courseDetailList = courseDetailRepository.paginate(limit, offset);
+
+    return courseDetailList.stream()
+            .map(courseDetail -> modelMapper.map(courseDetail, CourseDetailDto.class))
+            .collect(Collectors.toList());
   }
 }

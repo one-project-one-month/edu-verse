@@ -3,6 +3,7 @@
  */
 package dev.backend.eduverse.service.impl;
 
+import dev.backend.eduverse.dto.AdminDto;
 import dev.backend.eduverse.dto.AnnouncementDto;
 import dev.backend.eduverse.exception.ResourceNotFoundException;
 import dev.backend.eduverse.model.Admin;
@@ -105,5 +106,22 @@ public class AnnouncementServiceImpl implements AnnouncementService {
             .findById(id)
             .orElseThrow(() -> new ResourceNotFoundException("Announcement", "id", id));
     announcementRepository.deleteById(exitingAnnouncement.getId());
+  }
+
+  @Override
+  public List<AnnouncementDto> paginate(int pageNo, int limit) {
+    //if provided page number is less than 1, 1 will be the default pageNO
+    pageNo = Math.max(pageNo, 1);
+
+    //if provided size limit is less than 1, 10 will be the default size limit
+    limit = (limit < 1) ? 10 : limit;
+
+    int offset = (pageNo - 1) * limit;
+
+    List<Announcement> announcementList = announcementRepository.paginate(limit, offset);
+
+    return announcementList.stream()
+            .map(announcement -> modelMapper.map(announcement, AnnouncementDto.class))
+            .collect(Collectors.toList());
   }
 }
