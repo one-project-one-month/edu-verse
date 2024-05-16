@@ -21,4 +21,6 @@ public interface AdminRoleService {
   boolean updateAdminRole(AdminRoleDTO adminRoleDTO, Long id);
 
   boolean deleteAdminRole(Long id);
+
+  List<AdminRoleDTO> readAdminRoleByPagniation(int pageNumber, int pageSize) throws IllegalAccessException;
 }

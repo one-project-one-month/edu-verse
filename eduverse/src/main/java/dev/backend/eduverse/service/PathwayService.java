@@ -21,4 +21,6 @@ public interface PathwayService {
   boolean updatePathway(PathwayDTO pathwayDTO, Long id);
 
   boolean deletePathway(Long id);
+ 
+  List<PathwayDTO> readPathwayByPagniation(int pageNumber, int pageSize) throws IllegalAccessException;
 }

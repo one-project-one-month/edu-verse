@@ -53,12 +53,14 @@ public class PathwayController {
 
     @Autowired
     private final PathwayService pathwayService;
+    
+    private final int PageSize = 10;
 
     public PathwayController(PathwayService pathwayService) {
         this.pathwayService = pathwayService;
     }
 
-    @PostMapping("/create")
+    @PostMapping("/")
     @Operation(
             summary = "Create a new pathway",
             tags = {"Pathway Creator"})
@@ -89,13 +91,13 @@ public class PathwayController {
         }
     }
 
-    @GetMapping("/read")
+    @GetMapping("/page/{pageNumber}")
     @Operation(
             summary = "Retrieve all pathways",
             tags = {"Pathway Reader"})
-    public ResponseEntity<ApiResponse<List<PathwayDTO>>> readPathways() {
+    public ResponseEntity<?> readPathways(@PathVariable int pageNumber) {
         try {
-            List<PathwayDTO> pathwayList = pathwayService.getAllPathway();
+        	List<PathwayDTO> pathwayList = pathwayService.readPathwayByPagniation(pageNumber, PageSize);
             if (pathwayList.isEmpty()) {
                 return ResponseUtil.createSuccessResponse(
                         HttpStatus.OK, "No pathways found", new ArrayList<>());
@@ -110,7 +112,7 @@ public class PathwayController {
         }
     }
 
-    @PutMapping("/update/{pathwayId}")
+    @PutMapping("/{pathwayId}")
     @Operation(
             summary = "Update a pathway's information",
             tags = {"Update Pathway"})
@@ -134,7 +136,7 @@ public class PathwayController {
         }
     }
 
-    @DeleteMapping("/delete/{pathwayId}")
+    @DeleteMapping("/{pathwayId}")
     @Operation(
             summary = "Delete a pathway by ID",
             tags = {"Delete Pathway By Id"})

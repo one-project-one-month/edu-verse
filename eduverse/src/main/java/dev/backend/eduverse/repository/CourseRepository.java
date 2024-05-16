@@ -1,9 +1,20 @@
-/**
- * @Author : Kyaw Zaw Htet @Date : 5/10/2024 @Time : 10:42 PM @Project_Name : eduverse
+/*
+ * @Author : Alvin
+ * @Date : 5/11/2024
+ * @Time : 9:00 PM
+ * @Project_Name : eduverse
  */
 package dev.backend.eduverse.repository;
 
 import dev.backend.eduverse.model.Course;
-import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface CourseRepository extends JpaRepository<Course, Long> {}
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+
+public interface CourseRepository extends JpaRepository<Course, Long> {
+	@Query(value = "SELECT * FROM course ORDER BY id LIMIT :limit OFFSET :offset", nativeQuery = true)
+    List<Course> paginate(@Param("limit") int limit, @Param("offset") int offset);
+}

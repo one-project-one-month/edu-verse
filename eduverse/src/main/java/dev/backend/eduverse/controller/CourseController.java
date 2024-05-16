@@ -9,6 +9,7 @@ package dev.backend.eduverse.controller;
 import dev.backend.eduverse.dto.CourseDTO;
 import dev.backend.eduverse.service.CourseService;
 import dev.backend.eduverse.util.response_template.ApiResponse;
+import dev.backend.eduverse.util.response_template.PageNumberResponse;
 import dev.backend.eduverse.util.response_template.ResponseUtil;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -51,12 +52,14 @@ public class CourseController {
 
     @Autowired
     private final CourseService courseService;
+    
+    private final int PageSize = 10;
 
     public CourseController(CourseService courseService) {
         this.courseService = courseService;
     }
 
-    @PostMapping("/create")
+    @PostMapping("/")
     @Operation(
             summary = "Create a new course",
             tags = {"Course Creator"})
@@ -82,19 +85,19 @@ public class CourseController {
         }
     }
 
-    @GetMapping("/read")
+    @GetMapping("/page/{pageNumber}")
     @Operation(
             summary = "Retrieve all courses",
             tags = {"Course Reader"})
-    public ResponseEntity<ApiResponse<List<CourseDTO>>> readCourses() {
+    public ResponseEntity<?> readCourses(@PathVariable int pageNumber) {
         try {
-            List<CourseDTO> courseList = courseService.getAllCourse();
+            List<CourseDTO> courseList = courseService.readCourseByPagniation(pageNumber, PageSize);
             if (courseList.isEmpty()) {
                 return ResponseUtil.createSuccessResponse(
                         HttpStatus.OK, "No courses found", new ArrayList<>());
             } else {
-                return ResponseUtil.createSuccessResponse(
-                        HttpStatus.OK, "Courses retrieved successfully", courseList);
+            	PageNumberResponse<List<CourseDTO>> response = new PageNumberResponse<>(pageNumber, PageSize, courseList);
+                return ResponseEntity.ok().body(response);                
             }
         } catch (Exception e) {
             logger.error("Failed to retrieve courses", e);
@@ -103,7 +106,7 @@ public class CourseController {
         }
     }
 
-    @PutMapping("/update/{courseId}")
+    @PutMapping("/{courseId}")
     @Operation(
             summary = "Update a course's information",
             tags = {"Update Course"})
@@ -127,7 +130,7 @@ public class CourseController {
         }
     }
 
-    @DeleteMapping("/delete/{courseId}")
+    @DeleteMapping("/{courseId}")
     @Operation(
             summary = "Delete a course by ID",
             tags = {"Delete Course By Id"})
