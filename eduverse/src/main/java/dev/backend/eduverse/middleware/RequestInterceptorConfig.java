@@ -13,10 +13,14 @@ public class RequestInterceptorConfig implements WebMvcConfigurer {
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-
+        //register user requests interceptor
         registry.addInterceptor(new RequestInterceptor(tokenService))
                 .addPathPatterns("/api/**")// Intercept only requests to paths under /api/
                 .excludePathPatterns("/api/auth/**");// Exclude auth routes
 
+        //register admin requests interceptor
+        registry.addInterceptor(new AdminRequestInterceptor(tokenService))
+                .addPathPatterns("/api/admins/**")
+                .excludePathPatterns("/api/auth/**");
     }
 }

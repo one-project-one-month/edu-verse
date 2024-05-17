@@ -1,9 +1,9 @@
 package dev.backend.eduverse.service;
 
-import dev.backend.eduverse.dto.AuthUserDto;
-import dev.backend.eduverse.dto.ResponseAuthUserDto;
-import dev.backend.eduverse.dto.UserDTO;
+import dev.backend.eduverse.dto.*;
 
 public interface AuthService {
-    ResponseAuthUserDto processUserLogin(AuthUserDto authUserDto);
+    ResponseAuthDto<UserDTO> processUserLogin(AuthDto authDto);
+
+    ResponseAuthDto<AdminDto> processAdminLogin(AuthDto authDto);
 }

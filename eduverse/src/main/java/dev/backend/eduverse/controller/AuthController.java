@@ -1,7 +1,9 @@
 package dev.backend.eduverse.controller;
 
-import dev.backend.eduverse.dto.AuthUserDto;
-import dev.backend.eduverse.dto.ResponseAuthUserDto;
+import dev.backend.eduverse.dto.AdminDto;
+import dev.backend.eduverse.dto.AuthDto;
+import dev.backend.eduverse.dto.ResponseAuthDto;
+import dev.backend.eduverse.dto.UserDTO;
 import dev.backend.eduverse.service.AuthService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,10 +25,18 @@ public class AuthController {
     }
 
     @PostMapping("/user/login")
-    public ResponseEntity<ResponseAuthUserDto> processUserLogin(@Valid @RequestBody AuthUserDto authUserDto) {
+    public ResponseEntity<ResponseAuthDto<UserDTO>> processUserLogin(@Valid @RequestBody AuthDto authDto) {
 
-        ResponseAuthUserDto responseAuthUserDto = authService.processUserLogin(authUserDto);
+        ResponseAuthDto<UserDTO> responseAuthUserDto = authService.processUserLogin(authDto);
 
         return new ResponseEntity<>(responseAuthUserDto, HttpStatus.OK);
+    }
+
+    @PostMapping("/admin/login")
+    public ResponseEntity<ResponseAuthDto<AdminDto>> processAdminLogin(@Valid @RequestBody AuthDto authDto) {
+
+        ResponseAuthDto<AdminDto> responseAuthAdminDto = authService.processAdminLogin(authDto);
+
+        return new ResponseEntity<>(responseAuthAdminDto, HttpStatus.OK);
     }
 }

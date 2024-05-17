@@ -26,8 +26,12 @@ public class Token {
     @Column(name = "created_at")
     private Date createdAt;
 
-    public Token(String token) {
+    @Column(name = "is_admin")
+    private boolean isAdmin;
+
+    public Token(String token, boolean isAdmin) {
         this.token = token;
+        this.isAdmin = isAdmin;
     }
 
     @PrePersist
