@@ -54,12 +54,12 @@ public class AuthServiceImpl implements AuthService {
         //generate token
         String token = UUID.randomUUID().toString() + UUID.randomUUID().toString();
         //save token in Token table
-        tokenRepository.save(new Token(token, false));
+        tokenRepository.save(new Token(token, false, userExists.getId()));
 
         UserDTO userDTO = modelMapper.map(userExists, UserDTO.class);
         userDTO.setPassword(null);
 
-        logger.info("Successfully finish Login process");
+        logger.info("Successfully finish user Login process");
         return new ResponseAuthDto<>(userDTO, token);
     }
 
@@ -80,12 +80,29 @@ public class AuthServiceImpl implements AuthService {
         //generate token
         String token = UUID.randomUUID().toString() + UUID.randomUUID().toString();
         //save token in Token table
-        tokenRepository.save(new Token(token, true));
+        tokenRepository.save(new Token(token, true, adminExists.getId()));
 
         AdminDto adminDto = modelMapper.map(adminExists, AdminDto.class);
         adminDto.setPassword(null);
 
         logger.info("Successfully finish admin Login process");
         return new ResponseAuthDto<>(adminDto, token);
+    }
+
+    @Override
+    public boolean logout(String token) {
+        logger.info("Processing Logout");
+
+        Token tokenObj = tokenRepository.findByToken(token.replaceFirst("Bearer ", ""));
+
+        if (tokenObj == null) {
+            logger.info("Logout Failed");
+            return false;
+        }
+
+        logger.info("Logout Success");
+        tokenRepository.delete(tokenObj);
+
+        return true;
     }
 }

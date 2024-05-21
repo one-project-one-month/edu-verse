@@ -6,4 +6,6 @@ public interface AuthService {
     ResponseAuthDto<UserDTO> processUserLogin(AuthDto authDto);
 
     ResponseAuthDto<AdminDto> processAdminLogin(AuthDto authDto);
+
+    boolean logout(String token);
 }

@@ -29,9 +29,13 @@ public class Token {
     @Column(name = "is_admin")
     private boolean isAdmin;
 
-    public Token(String token, boolean isAdmin) {
+    @Column(name = "user_id")
+    private Long user_id;
+
+    public Token(String token, boolean isAdmin, Long user_id) {
         this.token = token;
         this.isAdmin = isAdmin;
+        this.user_id = user_id;
     }
 
     @PrePersist
