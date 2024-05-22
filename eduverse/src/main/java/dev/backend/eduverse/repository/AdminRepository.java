@@ -13,5 +13,7 @@ public interface AdminRepository extends JpaRepository<Admin, Long> {
 
     @Query(value = "SELECT * FROM admin ORDER BY id LIMIT :limit OFFSET :offset", nativeQuery = true)
     List<Admin> paginate(@Param("limit") int limit, @Param("offset") int offset);
-    
+
+    @Query(value = "SELECT * FROM admin WHERE email=:email", nativeQuery = true)
+    Admin processLogin(@Param("email") String email);
 }
