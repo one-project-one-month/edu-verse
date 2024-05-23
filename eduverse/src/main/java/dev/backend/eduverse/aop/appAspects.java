@@ -5,6 +5,7 @@ import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.AfterThrowing;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
+import org.aspectj.lang.annotation.Pointcut;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Configuration;
@@ -14,10 +15,14 @@ import org.springframework.context.annotation.Configuration;
 public class appAspects {
 
 	public static final Logger logger = LoggerFactory.getLogger(appAspects.class);
-	
-//  AdminRoleAspects
-	@Before("execution(* dev.backend.*.*.*.AdminServiceImpl.*(..))")
-	public void beforeMethod(JoinPoint joinPoint) {
+
+	// AdminRoleAspects
+	@Pointcut("execution(* dev.backend.*.*.*.AdminServiceImpl.*(..))")
+	public void AdminRoleServiceMethods() {
+	}
+
+	@Before("AdminRoleServiceMethods()")
+	public void beforeAdminRoleMethod(JoinPoint joinPoint) {
 		String methodName = joinPoint.getSignature().getName();
 		logger.info("Enter Method : {} ", methodName);
 
@@ -33,8 +38,8 @@ public class appAspects {
 		}
 	}
 
-	@AfterReturning(pointcut = "execution(* dev.backend.*.*.*.AdminServiceImpl.*(..))", returning = "result")
-	public void afterReturningMethod(JoinPoint joinPoint, boolean result) {
+	@AfterReturning(pointcut = "AdminRoleServiceMethods()", returning = "result")
+	public void afterReturningAdminRoleMethod(JoinPoint joinPoint, boolean result) {
 		Long id = (Long) joinPoint.getArgs()[0];
 
 		if (result) {
@@ -44,10 +49,69 @@ public class appAspects {
 		}
 	}
 
-	@AfterThrowing(pointcut = "execution(* dev.backend.*.*.*.AdminServiceImpl.*(..))", throwing = "error")
-	public void afterThrowingMethod(JoinPoint joinPoint, Throwable error) {
+	@AfterThrowing(pointcut = "AdminRoleServiceMethods()", throwing = "error")
+	public void afterThrowingAdminRoleMethod(JoinPoint joinPoint, Throwable error) {
 		String methodName = joinPoint.getSignature().getName();
 		logger.info("Exception in method : {} with cuase : {}", methodName, error.getMessage());
+	}
+
+	// AuthServiceAspects
+	@Pointcut("execution(* dev.backend..AuthServiceImpl.*(..))")
+	public void AuthServiceMethods() {
+	}
+
+	@Before("AuthServiceMethods()")
+	public void beforeAuthMethod(JoinPoint joinPoint) {
+		String methodName = joinPoint.getSignature().getName();
+		switch (methodName) {
+		case "processUserLogin":
+			logger.info("Processing User Login");
+			break;
+		case "processAdminLogin":
+			logger.info("Processing Admin Login");
+			break;
+		case "logout":
+			logger.info("Processing Logout");
+			break;
+		default:
+			break;
+		}
+	}
+
+	@AfterReturning(pointcut = "AuthServiceMethods()", returning = "result")
+	public void afterReturningAuthMethod(JoinPoint joinPoint, Object result) {
+		String methodName = joinPoint.getSignature().getName();
+		switch (methodName) {
+		case "processUserLogin":
+			logger.info("Successfully finished user Login process");
+			break;
+		case "processAdminLogin":
+			logger.info("Successfully finished admin Login process");
+			break;
+		case "logout":
+			if ((boolean) result) {
+				logger.info("Logout Success");
+			} else {
+				logger.info("Logout Failed");
+			}
+			break;
+		default:
+			break;
+		}
+	}
+
+	@AfterThrowing(pointcut = "AuthServiceMethods()", throwing = "error")
+	public void afterThrowingAuthMethod(JoinPoint joinPoint, Throwable error) {
+		String methodName = joinPoint.getSignature().getName();
+
+		switch (methodName) {
+		case "processUserLogin":
+			logger.info("User Login Failed");
+			break;
+		case "processAdminLogin":
+			logger.info("Admin Login Failed");
+			break;
+		}
 	}
 
 }
