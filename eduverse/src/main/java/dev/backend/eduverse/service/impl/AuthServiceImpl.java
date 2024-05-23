@@ -1,5 +1,14 @@
 package dev.backend.eduverse.service.impl;
 
+import java.util.UUID;
+
+import org.mindrot.jbcrypt.BCrypt;
+import org.modelmapper.ModelMapper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import dev.backend.eduverse.dto.AdminDto;
 import dev.backend.eduverse.dto.AuthDto;
 import dev.backend.eduverse.dto.ResponseAuthDto;
@@ -12,14 +21,6 @@ import dev.backend.eduverse.repository.AdminRepository;
 import dev.backend.eduverse.repository.TokenRepository;
 import dev.backend.eduverse.repository.UserRepository;
 import dev.backend.eduverse.service.AuthService;
-import org.mindrot.jbcrypt.BCrypt;
-import org.modelmapper.ModelMapper;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
-import java.util.UUID;
 
 @Service
 public class AuthServiceImpl implements AuthService {

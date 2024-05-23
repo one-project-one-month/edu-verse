@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import dev.backend.eduverse.dto.ModuleDto;
-import dev.backend.eduverse.dto.UserDTO;
 import dev.backend.eduverse.service.ModuleService;
 import dev.backend.eduverse.util.response_template.ApiResponse;
 import dev.backend.eduverse.util.response_template.PageNumberResponse;
@@ -31,8 +30,6 @@ import jakarta.validation.Valid;
 public class ModuleController {
 
 	private ModuleService moduleService;
-
-	private int pageSize = 10;
 
 	public ModuleController(ModuleService moduleService) {
 		this.moduleService = moduleService;

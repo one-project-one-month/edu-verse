@@ -1,22 +1,17 @@
-2024-05-16T09:43:44.346+06:30  INFO 92416 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 17.0.6 with PID 92416 (/Users/htunaunghlaing/Desktop/Eclipse 2023-12/workspace/EduVerse/eduverse/target/classes started by htunaunghlaing in /Users/htunaunghlaing/Desktop/Eclipse 2023-12/workspace/EduVerse/eduverse)
-2024-05-16T09:43:44.348+06:30 DEBUG 92416 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
-2024-05-16T09:43:44.348+06:30  INFO 92416 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
-2024-05-16T09:43:45.092+06:30 ERROR 92416 --- [EduVerse] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+2024-05-23T12:10:40.194+06:30  INFO 29399 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 17.0.6 with PID 29399 (/Users/htunaunghlaing/Desktop/Eclipse 2023-12/workspace/EduVerse/eduverse/target/classes started by htunaunghlaing in /Users/htunaunghlaing/Desktop/Eclipse 2023-12/workspace/EduVerse/eduverse)
+2024-05-23T12:10:40.197+06:30 DEBUG 29399 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-23T12:10:40.197+06:30  INFO 29399 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-23T12:10:40.589+06:30 ERROR 29399 --- [EduVerse] [restartedMain] o.s.boot.SpringApplication               : Application run failed
 
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'moduleController' defined in file [/Users/htunaunghlaing/Desktop/Eclipse 2023-12/workspace/EduVerse/eduverse/target/classes/dev/backend/eduverse/controller/ModuleController.class]: Failed to instantiate [dev.backend.eduverse.controller.ModuleController]: Constructor threw exception
-	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:318) ~[spring-beans-6.1.6.jar:6.1.6]
-	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:306) ~[spring-beans-6.1.6.jar:6.1.6]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1355) ~[spring-beans-6.1.6.jar:6.1.6]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1192) ~[spring-beans-6.1.6.jar:6.1.6]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562) ~[spring-beans-6.1.6.jar:6.1.6]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522) ~[spring-beans-6.1.6.jar:6.1.6]
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'healthEndpointGroupsBeanPostProcessor' defined in class path resource [org/springframework/boot/actuate/autoconfigure/health/HealthEndpointConfiguration.class]: BeanPostProcessor before instantiation of bean failed
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517) ~[spring-beans-6.1.6.jar:6.1.6]
 	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326) ~[spring-beans-6.1.6.jar:6.1.6]
 	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.6.jar:6.1.6]
 	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324) ~[spring-beans-6.1.6.jar:6.1.6]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.1.6.jar:6.1.6]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975) ~[spring-beans-6.1.6.jar:6.1.6]
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:962) ~[spring-context-6.1.6.jar:6.1.6]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624) ~[spring-context-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:205) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.registerBeanPostProcessors(PostProcessorRegistrationDelegate.java:277) ~[spring-context-6.1.6.jar:6.1.6]
+	at org.springframework.context.support.AbstractApplicationContext.registerBeanPostProcessors(AbstractApplicationContext.java:805) ~[spring-context-6.1.6.jar:6.1.6]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:608) ~[spring-context-6.1.6.jar:6.1.6]
 	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.2.5.jar:3.2.5]
 	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-3.2.5.jar:3.2.5]
 	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) ~[spring-boot-3.2.5.jar:3.2.5]
@@ -29,42 +24,70 @@ org.springframework.beans.factory.BeanCreationException: Error creating bean wit
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
 	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
 	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.2.5.jar:3.2.5]
-Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [dev.backend.eduverse.controller.ModuleController]: Constructor threw exception
-	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:221) ~[spring-beans-6.1.6.jar:6.1.6]
-	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:111) ~[spring-beans-6.1.6.jar:6.1.6]
-	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:315) ~[spring-beans-6.1.6.jar:6.1.6]
-	... 24 common frames omitted
-Caused by: java.lang.Error: Unresolved compilation problem: 
-	Syntax error, insert "... VariableDeclaratorId" to complete FormalParameter
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration': Pointcut is not well-formed: expecting ')' at character position 0
+execution(* dev.backend..update*(..)
+^
 
-	at dev.backend.eduverse.controller.ModuleController.<init>(ModuleController.java:88) ~[classes/:na]
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:na]
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499) ~[na:na]
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480) ~[na:na]
-	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:208) ~[spring-beans-6.1.6.jar:6.1.6]
-	... 26 common frames omitted
-
-2024-05-16T09:43:50.620+06:30  INFO 92416 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 17.0.6 with PID 92416 (/Users/htunaunghlaing/Desktop/Eclipse 2023-12/workspace/EduVerse/eduverse/target/classes started by htunaunghlaing in /Users/htunaunghlaing/Desktop/Eclipse 2023-12/workspace/EduVerse/eduverse)
-2024-05-16T09:43:50.620+06:30 DEBUG 92416 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
-2024-05-16T09:43:50.620+06:30  INFO 92416 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
-2024-05-16T09:43:51.474+06:30 ERROR 92416 --- [EduVerse] [restartedMain] o.s.boot.SpringApplication               : Application run failed
-
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'moduleController' defined in file [/Users/htunaunghlaing/Desktop/Eclipse 2023-12/workspace/EduVerse/eduverse/target/classes/dev/backend/eduverse/controller/ModuleController.class]: Failed to instantiate [dev.backend.eduverse.controller.ModuleController]: Constructor threw exception
-	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:318) ~[spring-beans-6.1.6.jar:6.1.6]
-	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:306) ~[spring-beans-6.1.6.jar:6.1.6]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1355) ~[spring-beans-6.1.6.jar:6.1.6]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1192) ~[spring-beans-6.1.6.jar:6.1.6]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607) ~[spring-beans-6.1.6.jar:6.1.6]
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522) ~[spring-beans-6.1.6.jar:6.1.6]
 	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326) ~[spring-beans-6.1.6.jar:6.1.6]
 	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.6.jar:6.1.6]
 	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324) ~[spring-beans-6.1.6.jar:6.1.6]
 	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.1.6.jar:6.1.6]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975) ~[spring-beans-6.1.6.jar:6.1.6]
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:962) ~[spring-context-6.1.6.jar:6.1.6]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624) ~[spring-context-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:409) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1335) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1165) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:205) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.aop.framework.autoproxy.BeanFactoryAdvisorRetrievalHelper.findAdvisorBeans(BeanFactoryAdvisorRetrievalHelper.java:91) ~[spring-aop-6.1.6.jar:6.1.6]
+	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.findCandidateAdvisors(AbstractAdvisorAutoProxyCreator.java:111) ~[spring-aop-6.1.6.jar:6.1.6]
+	at org.springframework.aop.aspectj.annotation.AnnotationAwareAspectJAutoProxyCreator.findCandidateAdvisors(AnnotationAwareAspectJAutoProxyCreator.java:92) ~[spring-aop-6.1.6.jar:6.1.6]
+	at org.springframework.aop.aspectj.autoproxy.AspectJAwareAdvisorAutoProxyCreator.shouldSkip(AspectJAwareAdvisorAutoProxyCreator.java:101) ~[spring-aop-6.1.6.jar:6.1.6]
+	at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.postProcessBeforeInstantiation(AbstractAutoProxyCreator.java:281) ~[spring-aop-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInstantiation(AbstractAutowireCapableBeanFactory.java:1130) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.resolveBeforeInstantiation(AbstractAutowireCapableBeanFactory.java:1105) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:511) ~[spring-beans-6.1.6.jar:6.1.6]
+	... 19 common frames omitted
+Caused by: java.lang.IllegalArgumentException: Pointcut is not well-formed: expecting ')' at character position 0
+execution(* dev.backend..update*(..)
+^
+
+	at org.aspectj.weaver.tools.PointcutParser.resolvePointcutExpression(PointcutParser.java:334) ~[aspectjweaver-1.9.22.jar:na]
+	at org.aspectj.weaver.tools.PointcutParser.parsePointcutExpression(PointcutParser.java:312) ~[aspectjweaver-1.9.22.jar:na]
+	at org.springframework.aop.aspectj.AspectJExpressionPointcut.buildPointcutExpression(AspectJExpressionPointcut.java:223) ~[spring-aop-6.1.6.jar:6.1.6]
+	at org.springframework.aop.aspectj.AspectJExpressionPointcut.obtainPointcutExpression(AspectJExpressionPointcut.java:194) ~[spring-aop-6.1.6.jar:6.1.6]
+	at org.springframework.aop.aspectj.AspectJExpressionPointcut.getClassFilter(AspectJExpressionPointcut.java:173) ~[spring-aop-6.1.6.jar:6.1.6]
+	at org.springframework.aop.support.AopUtils.canApply(AopUtils.java:236) ~[spring-aop-6.1.6.jar:6.1.6]
+	at org.springframework.aop.support.AopUtils.canApply(AopUtils.java:298) ~[spring-aop-6.1.6.jar:6.1.6]
+	at org.springframework.aop.support.AopUtils.findAdvisorsThatCanApply(AopUtils.java:330) ~[spring-aop-6.1.6.jar:6.1.6]
+	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.findAdvisorsThatCanApply(AbstractAdvisorAutoProxyCreator.java:128) ~[spring-aop-6.1.6.jar:6.1.6]
+	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.findEligibleAdvisors(AbstractAdvisorAutoProxyCreator.java:97) ~[spring-aop-6.1.6.jar:6.1.6]
+	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.getAdvicesAndAdvisorsForBean(AbstractAdvisorAutoProxyCreator.java:78) ~[spring-aop-6.1.6.jar:6.1.6]
+	at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.wrapIfNecessary(AbstractAutoProxyCreator.java:368) ~[spring-aop-6.1.6.jar:6.1.6]
+	at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.postProcessAfterInitialization(AbstractAutoProxyCreator.java:320) ~[spring-aop-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsAfterInitialization(AbstractAutowireCapableBeanFactory.java:438) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1789) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600) ~[spring-beans-6.1.6.jar:6.1.6]
+	... 41 common frames omitted
+
+2024-05-23T12:12:19.584+06:30  INFO 29399 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 17.0.6 with PID 29399 (/Users/htunaunghlaing/Desktop/Eclipse 2023-12/workspace/EduVerse/eduverse/target/classes started by htunaunghlaing in /Users/htunaunghlaing/Desktop/Eclipse 2023-12/workspace/EduVerse/eduverse)
+2024-05-23T12:12:19.584+06:30 DEBUG 29399 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-23T12:12:19.585+06:30  INFO 29399 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-23T12:12:19.880+06:30 ERROR 29399 --- [EduVerse] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'healthEndpointGroupsBeanPostProcessor' defined in class path resource [org/springframework/boot/actuate/autoconfigure/health/HealthEndpointConfiguration.class]: BeanPostProcessor before instantiation of bean failed
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:205) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.registerBeanPostProcessors(PostProcessorRegistrationDelegate.java:277) ~[spring-context-6.1.6.jar:6.1.6]
+	at org.springframework.context.support.AbstractApplicationContext.registerBeanPostProcessors(AbstractApplicationContext.java:805) ~[spring-context-6.1.6.jar:6.1.6]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:608) ~[spring-context-6.1.6.jar:6.1.6]
 	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.2.5.jar:3.2.5]
 	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-3.2.5.jar:3.2.5]
 	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) ~[spring-boot-3.2.5.jar:3.2.5]
@@ -77,141 +100,357 @@ org.springframework.beans.factory.BeanCreationException: Error creating bean wit
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
 	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
 	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.2.5.jar:3.2.5]
-Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [dev.backend.eduverse.controller.ModuleController]: Constructor threw exception
-	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:221) ~[spring-beans-6.1.6.jar:6.1.6]
-	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:111) ~[spring-beans-6.1.6.jar:6.1.6]
-	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:315) ~[spring-beans-6.1.6.jar:6.1.6]
-	... 24 common frames omitted
-Caused by: java.lang.Error: Unresolved compilation problem: 
-	Syntax error, insert "... VariableDeclaratorId" to complete FormalParameter
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration': Pointcut is not well-formed: expecting ')' at character position 0
+execution(* dev.backend..update*(..)
+^
 
-	at dev.backend.eduverse.controller.ModuleController.<init>(ModuleController.java:88) ~[classes/:na]
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:na]
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499) ~[na:na]
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480) ~[na:na]
-	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:208) ~[spring-beans-6.1.6.jar:6.1.6]
-	... 26 common frames omitted
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:409) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1335) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1165) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:205) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.aop.framework.autoproxy.BeanFactoryAdvisorRetrievalHelper.findAdvisorBeans(BeanFactoryAdvisorRetrievalHelper.java:91) ~[spring-aop-6.1.6.jar:6.1.6]
+	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.findCandidateAdvisors(AbstractAdvisorAutoProxyCreator.java:111) ~[spring-aop-6.1.6.jar:6.1.6]
+	at org.springframework.aop.aspectj.annotation.AnnotationAwareAspectJAutoProxyCreator.findCandidateAdvisors(AnnotationAwareAspectJAutoProxyCreator.java:92) ~[spring-aop-6.1.6.jar:6.1.6]
+	at org.springframework.aop.aspectj.autoproxy.AspectJAwareAdvisorAutoProxyCreator.shouldSkip(AspectJAwareAdvisorAutoProxyCreator.java:101) ~[spring-aop-6.1.6.jar:6.1.6]
+	at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.postProcessBeforeInstantiation(AbstractAutoProxyCreator.java:281) ~[spring-aop-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInstantiation(AbstractAutowireCapableBeanFactory.java:1130) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.resolveBeforeInstantiation(AbstractAutowireCapableBeanFactory.java:1105) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:511) ~[spring-beans-6.1.6.jar:6.1.6]
+	... 19 common frames omitted
+Caused by: java.lang.IllegalArgumentException: Pointcut is not well-formed: expecting ')' at character position 0
+execution(* dev.backend..update*(..)
+^
 
-2024-05-16T09:46:25.093+06:30  INFO 92416 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 17.0.6 with PID 92416 (/Users/htunaunghlaing/Desktop/Eclipse 2023-12/workspace/EduVerse/eduverse/target/classes started by htunaunghlaing in /Users/htunaunghlaing/Desktop/Eclipse 2023-12/workspace/EduVerse/eduverse)
-2024-05-16T09:46:25.095+06:30 DEBUG 92416 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
-2024-05-16T09:46:25.095+06:30  INFO 92416 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
-2024-05-16T09:46:26.103+06:30  INFO 92416 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 1.032 seconds (process running for 22957.523)
-2024-05-16T09:46:55.775+06:30  INFO 92416 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 17.0.6 with PID 92416 (/Users/htunaunghlaing/Desktop/Eclipse 2023-12/workspace/EduVerse/eduverse/target/classes started by htunaunghlaing in /Users/htunaunghlaing/Desktop/Eclipse 2023-12/workspace/EduVerse/eduverse)
-2024-05-16T09:46:55.776+06:30 DEBUG 92416 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
-2024-05-16T09:46:55.776+06:30  INFO 92416 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
-2024-05-16T09:46:56.664+06:30  INFO 92416 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 0.899 seconds (process running for 22988.083)
-2024-05-16T09:47:14.250+06:30  INFO 92416 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 17.0.6 with PID 92416 (/Users/htunaunghlaing/Desktop/Eclipse 2023-12/workspace/EduVerse/eduverse/target/classes started by htunaunghlaing in /Users/htunaunghlaing/Desktop/Eclipse 2023-12/workspace/EduVerse/eduverse)
-2024-05-16T09:47:14.253+06:30 DEBUG 92416 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
-2024-05-16T09:47:14.253+06:30  INFO 92416 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
-2024-05-16T09:47:15.234+06:30  INFO 92416 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 1.004 seconds (process running for 23006.654)
-2024-05-16T09:47:29.768+06:30  INFO 92416 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 17.0.6 with PID 92416 (/Users/htunaunghlaing/Desktop/Eclipse 2023-12/workspace/EduVerse/eduverse/target/classes started by htunaunghlaing in /Users/htunaunghlaing/Desktop/Eclipse 2023-12/workspace/EduVerse/eduverse)
-2024-05-16T09:47:29.768+06:30 DEBUG 92416 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
-2024-05-16T09:47:29.768+06:30  INFO 92416 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
-2024-05-16T09:47:30.652+06:30  INFO 92416 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 0.895 seconds (process running for 23022.071)
-2024-05-16T09:49:26.612+06:30  INFO 92416 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 17.0.6 with PID 92416 (/Users/htunaunghlaing/Desktop/Eclipse 2023-12/workspace/EduVerse/eduverse/target/classes started by htunaunghlaing in /Users/htunaunghlaing/Desktop/Eclipse 2023-12/workspace/EduVerse/eduverse)
-2024-05-16T09:49:26.613+06:30 DEBUG 92416 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
-2024-05-16T09:49:26.613+06:30  INFO 92416 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
-2024-05-16T09:49:27.497+06:30  INFO 92416 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 0.897 seconds (process running for 23138.915)
-2024-05-16T09:52:29.288+06:30  INFO 92416 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 17.0.6 with PID 92416 (/Users/htunaunghlaing/Desktop/Eclipse 2023-12/workspace/EduVerse/eduverse/target/classes started by htunaunghlaing in /Users/htunaunghlaing/Desktop/Eclipse 2023-12/workspace/EduVerse/eduverse)
-2024-05-16T09:52:29.288+06:30 DEBUG 92416 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
-2024-05-16T09:52:29.288+06:30  INFO 92416 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
-2024-05-16T09:52:30.186+06:30  INFO 92416 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 0.906 seconds (process running for 23321.602)
-2024-05-16T12:53:25.256+06:30  INFO 92416 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 17.0.6 with PID 92416 (/Users/htunaunghlaing/Desktop/Eclipse 2023-12/workspace/EduVerse/eduverse/target/classes started by htunaunghlaing in /Users/htunaunghlaing/Desktop/Eclipse 2023-12/workspace/EduVerse/eduverse)
-2024-05-16T12:53:25.257+06:30 DEBUG 92416 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
-2024-05-16T12:53:25.257+06:30  INFO 92416 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
-2024-05-16T12:53:26.385+06:30  INFO 92416 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 1.144 seconds (process running for 24497.83)
-2024-05-16T12:54:34.677+06:30  INFO 92416 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 17.0.6 with PID 92416 (/Users/htunaunghlaing/Desktop/Eclipse 2023-12/workspace/EduVerse/eduverse/target/classes started by htunaunghlaing in /Users/htunaunghlaing/Desktop/Eclipse 2023-12/workspace/EduVerse/eduverse)
-2024-05-16T12:54:34.678+06:30 DEBUG 92416 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
-2024-05-16T12:54:34.678+06:30  INFO 92416 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
-2024-05-16T12:54:35.664+06:30  INFO 92416 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 0.996 seconds (process running for 24567.109)
-2024-05-16T12:58:50.524+06:30  INFO 92416 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 17.0.6 with PID 92416 (/Users/htunaunghlaing/Desktop/Eclipse 2023-12/workspace/EduVerse/eduverse/target/classes started by htunaunghlaing in /Users/htunaunghlaing/Desktop/Eclipse 2023-12/workspace/EduVerse/eduverse)
-2024-05-16T12:58:50.524+06:30 DEBUG 92416 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
-2024-05-16T12:58:50.524+06:30  INFO 92416 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
-2024-05-16T12:58:51.487+06:30  INFO 92416 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 0.976 seconds (process running for 24822.93)
-2024-05-16T13:00:29.152+06:30  INFO 92416 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 17.0.6 with PID 92416 (/Users/htunaunghlaing/Desktop/Eclipse 2023-12/workspace/EduVerse/eduverse/target/classes started by htunaunghlaing in /Users/htunaunghlaing/Desktop/Eclipse 2023-12/workspace/EduVerse/eduverse)
-2024-05-16T13:00:29.152+06:30 DEBUG 92416 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
-2024-05-16T13:00:29.152+06:30  INFO 92416 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
-2024-05-16T13:00:30.049+06:30  INFO 92416 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 0.917 seconds (process running for 24921.492)
-2024-05-16T13:01:00.724+06:30  INFO 92416 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 17.0.6 with PID 92416 (/Users/htunaunghlaing/Desktop/Eclipse 2023-12/workspace/EduVerse/eduverse/target/classes started by htunaunghlaing in /Users/htunaunghlaing/Desktop/Eclipse 2023-12/workspace/EduVerse/eduverse)
-2024-05-16T13:01:00.724+06:30 DEBUG 92416 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
-2024-05-16T13:01:00.724+06:30  INFO 92416 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
-2024-05-16T13:01:01.618+06:30  INFO 92416 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 0.903 seconds (process running for 24953.06)
-2024-05-16T13:02:10.864+06:30  INFO 92416 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 17.0.6 with PID 92416 (/Users/htunaunghlaing/Desktop/Eclipse 2023-12/workspace/EduVerse/eduverse/target/classes started by htunaunghlaing in /Users/htunaunghlaing/Desktop/Eclipse 2023-12/workspace/EduVerse/eduverse)
-2024-05-16T13:02:10.865+06:30 DEBUG 92416 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
-2024-05-16T13:02:10.865+06:30  INFO 92416 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
-2024-05-16T13:02:11.717+06:30  INFO 92416 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 0.863 seconds (process running for 25023.159)
-2024-05-16T13:06:53.822+06:30  INFO 92416 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 17.0.6 with PID 92416 (/Users/htunaunghlaing/Desktop/Eclipse 2023-12/workspace/EduVerse/eduverse/target/classes started by htunaunghlaing in /Users/htunaunghlaing/Desktop/Eclipse 2023-12/workspace/EduVerse/eduverse)
-2024-05-16T13:06:53.823+06:30 DEBUG 92416 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
-2024-05-16T13:06:53.823+06:30  INFO 92416 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
-2024-05-16T13:06:54.771+06:30  INFO 92416 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 0.959 seconds (process running for 25306.219)
-2024-05-16T13:07:27.497+06:30  INFO 92416 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 17.0.6 with PID 92416 (/Users/htunaunghlaing/Desktop/Eclipse 2023-12/workspace/EduVerse/eduverse/target/classes started by htunaunghlaing in /Users/htunaunghlaing/Desktop/Eclipse 2023-12/workspace/EduVerse/eduverse)
-2024-05-16T13:07:27.497+06:30 DEBUG 92416 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
-2024-05-16T13:07:27.497+06:30  INFO 92416 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
-2024-05-16T13:07:28.367+06:30  INFO 92416 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 0.879 seconds (process running for 25339.815)
-2024-05-16T13:08:08.237+06:30  INFO 92416 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 17.0.6 with PID 92416 (/Users/htunaunghlaing/Desktop/Eclipse 2023-12/workspace/EduVerse/eduverse/target/classes started by htunaunghlaing in /Users/htunaunghlaing/Desktop/Eclipse 2023-12/workspace/EduVerse/eduverse)
-2024-05-16T13:08:08.238+06:30 DEBUG 92416 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
-2024-05-16T13:08:08.238+06:30  INFO 92416 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
-2024-05-16T13:08:09.083+06:30  INFO 92416 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 0.855 seconds (process running for 25380.531)
-2024-05-16T13:08:25.914+06:30  INFO 60113 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 17.0.6 with PID 60113 (/Users/htunaunghlaing/Desktop/Eclipse 2023-12/workspace/EduVerse/eduverse/target/classes started by htunaunghlaing in /Users/htunaunghlaing/Desktop/Eclipse 2023-12/workspace/EduVerse/eduverse)
-2024-05-16T13:08:25.915+06:30 DEBUG 60113 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
-2024-05-16T13:08:25.915+06:30  INFO 60113 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
-2024-05-16T13:08:28.441+06:30  INFO 60113 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 2.667 seconds (process running for 2.984)
-2024-05-16T13:12:22.058+06:30  INFO 60113 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 17.0.6 with PID 60113 (/Users/htunaunghlaing/Desktop/Eclipse 2023-12/workspace/EduVerse/eduverse/target/classes started by htunaunghlaing in /Users/htunaunghlaing/Desktop/Eclipse 2023-12/workspace/EduVerse/eduverse)
-2024-05-16T13:12:22.058+06:30 DEBUG 60113 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
-2024-05-16T13:12:22.058+06:30  INFO 60113 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
-2024-05-16T13:12:23.003+06:30  INFO 60113 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 0.958 seconds (process running for 237.544)
-2024-05-16T16:13:12.314+06:30  INFO 4360 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 17.0.1 with PID 4360 (C:\Users\DELL\Desktop\KZHELEARNING\EduVerse\eduverse\target\classes started by DELL in C:\Users\DELL\Desktop\KZHELEARNING\EduVerse\eduverse)
-2024-05-16T16:13:12.318+06:30 DEBUG 4360 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
-2024-05-16T16:13:12.319+06:30  INFO 4360 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
-2024-05-16T16:13:29.064+06:30  INFO 4360 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 17.651 seconds (process running for 19.103)
-2024-05-16T16:16:33.548+06:30  INFO 11812 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 17.0.1 with PID 11812 (C:\Users\DELL\Desktop\KZHELEARNING\EduVerse\eduverse\target\classes started by DELL in C:\Users\DELL\Desktop\KZHELEARNING\EduVerse\eduverse)
-2024-05-16T16:16:33.552+06:30 DEBUG 11812 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
-2024-05-16T16:16:33.554+06:30  INFO 11812 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
-2024-05-16T16:16:46.137+06:30  INFO 11812 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 13.386 seconds (process running for 14.74)
-2024-05-16T16:18:15.538+06:30  INFO 7680 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 17.0.1 with PID 7680 (C:\Users\DELL\Desktop\KZHELEARNING\EduVerse\eduverse\target\classes started by DELL in C:\Users\DELL\Desktop\KZHELEARNING\EduVerse\eduverse)
-2024-05-16T16:18:15.553+06:30 DEBUG 7680 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
-2024-05-16T16:18:15.556+06:30  INFO 7680 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
-2024-05-16T16:18:29.461+06:30  INFO 7680 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 14.754 seconds (process running for 16.08)
-2024-05-16T16:23:17.704+06:30  INFO 9820 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 17.0.1 with PID 9820 (C:\Users\DELL\Desktop\KZHELEARNING\EduVerse\eduverse\target\classes started by DELL in C:\Users\DELL\Desktop\KZHELEARNING\EduVerse\eduverse)
-2024-05-16T16:23:17.710+06:30 DEBUG 9820 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
-2024-05-16T16:23:17.712+06:30  INFO 9820 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
-2024-05-16T16:23:34.926+06:30  INFO 9820 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 18.489 seconds (process running for 20.502)
-2024-05-16T16:26:09.367+06:30  INFO 11236 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 17.0.1 with PID 11236 (C:\Users\DELL\Desktop\KZHELEARNING\EduVerse\eduverse\target\classes started by DELL in C:\Users\DELL\Desktop\KZHELEARNING\EduVerse\eduverse)
-2024-05-16T16:26:09.371+06:30 DEBUG 11236 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
-2024-05-16T16:26:09.374+06:30  INFO 11236 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
-2024-05-16T16:26:24.014+06:30  INFO 11236 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 15.417 seconds (process running for 16.649)
-2024-05-16T16:27:33.542+06:30  INFO 13628 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 17.0.1 with PID 13628 (C:\Users\DELL\Desktop\KZHELEARNING\EduVerse\eduverse\target\classes started by DELL in C:\Users\DELL\Desktop\KZHELEARNING\EduVerse\eduverse)
-2024-05-16T16:27:33.545+06:30 DEBUG 13628 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
-2024-05-16T16:27:33.546+06:30  INFO 13628 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
-2024-05-16T16:27:44.517+06:30  INFO 13628 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 11.665 seconds (process running for 12.879)
-2024-05-16T16:34:25.510+06:30  INFO 5360 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 17.0.1 with PID 5360 (C:\Users\DELL\Desktop\KZHELEARNING\EduVerse\eduverse\target\classes started by DELL in C:\Users\DELL\Desktop\KZHELEARNING\EduVerse\eduverse)
-2024-05-16T16:34:25.513+06:30 DEBUG 5360 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
-2024-05-16T16:34:25.552+06:30  INFO 5360 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
-2024-05-16T16:34:41.162+06:30  INFO 5360 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 16.528 seconds (process running for 18.694)
-2024-05-16T16:41:47.471+06:30  INFO 8548 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 17.0.1 with PID 8548 (C:\Users\DELL\Desktop\KZHELEARNING\EduVerse\eduverse\target\classes started by DELL in C:\Users\DELL\Desktop\KZHELEARNING\EduVerse\eduverse)
-2024-05-16T16:41:47.474+06:30 DEBUG 8548 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
-2024-05-16T16:41:47.475+06:30  INFO 8548 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
-2024-05-16T16:41:57.521+06:30  INFO 8548 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 10.74 seconds (process running for 11.878)
-2024-05-16T16:50:09.302+06:30  INFO 15764 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 17.0.1 with PID 15764 (C:\Users\DELL\Desktop\KZHELEARNING\EduVerse\eduverse\target\classes started by DELL in C:\Users\DELL\Desktop\KZHELEARNING\EduVerse\eduverse)
-2024-05-16T16:50:09.305+06:30 DEBUG 15764 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
-2024-05-16T16:50:09.307+06:30  INFO 15764 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
-2024-05-16T16:50:18.538+06:30  INFO 15764 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 9.935 seconds (process running for 11.128)
-2024-05-16T16:51:05.641+06:30 ERROR 15764 --- [EduVerse] [http-nio-8080-exec-5] o.h.engine.jdbc.spi.SqlExceptionHelper   : Table 'eduverse_db.coursedetail' doesn't exist
-2024-05-16T16:51:41.402+06:30  INFO 8272 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 17.0.1 with PID 8272 (C:\Users\DELL\Desktop\KZHELEARNING\EduVerse\eduverse\target\classes started by DELL in C:\Users\DELL\Desktop\KZHELEARNING\EduVerse\eduverse)
-2024-05-16T16:51:41.405+06:30 DEBUG 8272 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
-2024-05-16T16:51:41.406+06:30  INFO 8272 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
-2024-05-16T16:51:51.615+06:30  INFO 8272 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 10.906 seconds (process running for 12.076)
-2024-05-16T16:55:03.059+06:30  INFO 4500 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 17.0.1 with PID 4500 (C:\Users\DELL\Desktop\KZHELEARNING\EduVerse\eduverse\target\classes started by DELL in C:\Users\DELL\Desktop\KZHELEARNING\EduVerse\eduverse)
-2024-05-16T16:55:03.062+06:30 DEBUG 4500 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
-2024-05-16T16:55:03.064+06:30  INFO 4500 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
-2024-05-16T16:55:13.142+06:30  INFO 4500 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 10.861 seconds (process running for 12.093)
-2024-05-16T17:05:44.660+06:30  INFO 6196 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 17.0.1 with PID 6196 (C:\Users\DELL\Desktop\KZHELEARNING\EduVerse\eduverse\target\classes started by DELL in C:\Users\DELL\Desktop\KZHELEARNING\EduVerse\eduverse)
-2024-05-16T17:05:44.663+06:30 DEBUG 6196 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
-2024-05-16T17:05:44.664+06:30  INFO 6196 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
-2024-05-16T17:05:54.829+06:30  INFO 6196 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 10.879 seconds (process running for 12.049)
-2024-05-16T17:09:06.623+06:30  INFO 13328 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 17.0.1 with PID 13328 (C:\Users\DELL\Desktop\KZHELEARNING\EduVerse\eduverse\target\classes started by DELL in C:\Users\DELL\Desktop\KZHELEARNING\EduVerse\eduverse)
-2024-05-16T17:09:06.625+06:30 DEBUG 13328 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
-2024-05-16T17:09:06.627+06:30  INFO 13328 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
-2024-05-16T17:09:16.363+06:30  INFO 13328 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 10.408 seconds (process running for 11.555)
+	at org.aspectj.weaver.tools.PointcutParser.resolvePointcutExpression(PointcutParser.java:334) ~[aspectjweaver-1.9.22.jar:na]
+	at org.aspectj.weaver.tools.PointcutParser.parsePointcutExpression(PointcutParser.java:312) ~[aspectjweaver-1.9.22.jar:na]
+	at org.springframework.aop.aspectj.AspectJExpressionPointcut.buildPointcutExpression(AspectJExpressionPointcut.java:223) ~[spring-aop-6.1.6.jar:6.1.6]
+	at org.springframework.aop.aspectj.AspectJExpressionPointcut.obtainPointcutExpression(AspectJExpressionPointcut.java:194) ~[spring-aop-6.1.6.jar:6.1.6]
+	at org.springframework.aop.aspectj.AspectJExpressionPointcut.getClassFilter(AspectJExpressionPointcut.java:173) ~[spring-aop-6.1.6.jar:6.1.6]
+	at org.springframework.aop.support.AopUtils.canApply(AopUtils.java:236) ~[spring-aop-6.1.6.jar:6.1.6]
+	at org.springframework.aop.support.AopUtils.canApply(AopUtils.java:298) ~[spring-aop-6.1.6.jar:6.1.6]
+	at org.springframework.aop.support.AopUtils.findAdvisorsThatCanApply(AopUtils.java:330) ~[spring-aop-6.1.6.jar:6.1.6]
+	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.findAdvisorsThatCanApply(AbstractAdvisorAutoProxyCreator.java:128) ~[spring-aop-6.1.6.jar:6.1.6]
+	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.findEligibleAdvisors(AbstractAdvisorAutoProxyCreator.java:97) ~[spring-aop-6.1.6.jar:6.1.6]
+	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.getAdvicesAndAdvisorsForBean(AbstractAdvisorAutoProxyCreator.java:78) ~[spring-aop-6.1.6.jar:6.1.6]
+	at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.wrapIfNecessary(AbstractAutoProxyCreator.java:368) ~[spring-aop-6.1.6.jar:6.1.6]
+	at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.postProcessAfterInitialization(AbstractAutoProxyCreator.java:320) ~[spring-aop-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsAfterInitialization(AbstractAutowireCapableBeanFactory.java:438) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1789) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600) ~[spring-beans-6.1.6.jar:6.1.6]
+	... 41 common frames omitted
+
+2024-05-23T12:14:03.732+06:30  INFO 29399 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 17.0.6 with PID 29399 (/Users/htunaunghlaing/Desktop/Eclipse 2023-12/workspace/EduVerse/eduverse/target/classes started by htunaunghlaing in /Users/htunaunghlaing/Desktop/Eclipse 2023-12/workspace/EduVerse/eduverse)
+2024-05-23T12:14:03.732+06:30 DEBUG 29399 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-23T12:14:03.733+06:30  INFO 29399 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-23T12:14:05.360+06:30  INFO 29399 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 1.654 seconds (process running for 12494.754)
+2024-05-23T12:14:18.856+06:30  INFO 29399 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 17.0.6 with PID 29399 (/Users/htunaunghlaing/Desktop/Eclipse 2023-12/workspace/EduVerse/eduverse/target/classes started by htunaunghlaing in /Users/htunaunghlaing/Desktop/Eclipse 2023-12/workspace/EduVerse/eduverse)
+2024-05-23T12:14:18.856+06:30 DEBUG 29399 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-23T12:14:18.857+06:30  INFO 29399 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-23T12:14:20.099+06:30  INFO 29399 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 1.252 seconds (process running for 12509.492)
+2024-05-23T12:22:08.277+06:30  INFO 29399 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 17.0.6 with PID 29399 (/Users/htunaunghlaing/Desktop/Eclipse 2023-12/workspace/EduVerse/eduverse/target/classes started by htunaunghlaing in /Users/htunaunghlaing/Desktop/Eclipse 2023-12/workspace/EduVerse/eduverse)
+2024-05-23T12:22:08.277+06:30 DEBUG 29399 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-23T12:22:08.277+06:30  INFO 29399 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-23T12:22:09.647+06:30  INFO 29399 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 1.382 seconds (process running for 12979.038)
+2024-05-23T12:22:44.460+06:30  INFO 29399 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 17.0.6 with PID 29399 (/Users/htunaunghlaing/Desktop/Eclipse 2023-12/workspace/EduVerse/eduverse/target/classes started by htunaunghlaing in /Users/htunaunghlaing/Desktop/Eclipse 2023-12/workspace/EduVerse/eduverse)
+2024-05-23T12:22:44.460+06:30 DEBUG 29399 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-23T12:22:44.460+06:30  INFO 29399 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-23T12:22:44.671+06:30 ERROR 29399 --- [EduVerse] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'healthEndpointGroupsBeanPostProcessor' defined in class path resource [org/springframework/boot/actuate/autoconfigure/health/HealthEndpointConfiguration.class]: BeanPostProcessor before instantiation of bean failed
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:205) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.registerBeanPostProcessors(PostProcessorRegistrationDelegate.java:277) ~[spring-context-6.1.6.jar:6.1.6]
+	at org.springframework.context.support.AbstractApplicationContext.registerBeanPostProcessors(AbstractApplicationContext.java:805) ~[spring-context-6.1.6.jar:6.1.6]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:608) ~[spring-context-6.1.6.jar:6.1.6]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343) ~[spring-boot-3.2.5.jar:3.2.5]
+	at dev.backend.eduverse.EduverseApplication.main(EduverseApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.2.5.jar:3.2.5]
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration': Pointcut is not well-formed: expecting ')' at character position 22
+execution(execution(* dev.backend.eduverse.service.impl.AdminRoleServiceImpl.*(..)) && args(adminRoleDTO,id)
+                      ^^^
+
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:409) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1335) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1165) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:205) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.aop.framework.autoproxy.BeanFactoryAdvisorRetrievalHelper.findAdvisorBeans(BeanFactoryAdvisorRetrievalHelper.java:91) ~[spring-aop-6.1.6.jar:6.1.6]
+	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.findCandidateAdvisors(AbstractAdvisorAutoProxyCreator.java:111) ~[spring-aop-6.1.6.jar:6.1.6]
+	at org.springframework.aop.aspectj.annotation.AnnotationAwareAspectJAutoProxyCreator.findCandidateAdvisors(AnnotationAwareAspectJAutoProxyCreator.java:92) ~[spring-aop-6.1.6.jar:6.1.6]
+	at org.springframework.aop.aspectj.autoproxy.AspectJAwareAdvisorAutoProxyCreator.shouldSkip(AspectJAwareAdvisorAutoProxyCreator.java:101) ~[spring-aop-6.1.6.jar:6.1.6]
+	at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.postProcessBeforeInstantiation(AbstractAutoProxyCreator.java:281) ~[spring-aop-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInstantiation(AbstractAutowireCapableBeanFactory.java:1130) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.resolveBeforeInstantiation(AbstractAutowireCapableBeanFactory.java:1105) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:511) ~[spring-beans-6.1.6.jar:6.1.6]
+	... 19 common frames omitted
+Caused by: java.lang.IllegalArgumentException: Pointcut is not well-formed: expecting ')' at character position 22
+execution(execution(* dev.backend.eduverse.service.impl.AdminRoleServiceImpl.*(..)) && args(adminRoleDTO,id)
+                      ^^^
+
+	at org.aspectj.weaver.tools.PointcutParser.resolvePointcutExpression(PointcutParser.java:334) ~[aspectjweaver-1.9.22.jar:na]
+	at org.aspectj.weaver.tools.PointcutParser.parsePointcutExpression(PointcutParser.java:312) ~[aspectjweaver-1.9.22.jar:na]
+	at org.springframework.aop.aspectj.AspectJExpressionPointcut.buildPointcutExpression(AspectJExpressionPointcut.java:223) ~[spring-aop-6.1.6.jar:6.1.6]
+	at org.springframework.aop.aspectj.AspectJExpressionPointcut.obtainPointcutExpression(AspectJExpressionPointcut.java:194) ~[spring-aop-6.1.6.jar:6.1.6]
+	at org.springframework.aop.aspectj.AspectJExpressionPointcut.getClassFilter(AspectJExpressionPointcut.java:173) ~[spring-aop-6.1.6.jar:6.1.6]
+	at org.springframework.aop.support.AopUtils.canApply(AopUtils.java:236) ~[spring-aop-6.1.6.jar:6.1.6]
+	at org.springframework.aop.support.AopUtils.canApply(AopUtils.java:298) ~[spring-aop-6.1.6.jar:6.1.6]
+	at org.springframework.aop.support.AopUtils.findAdvisorsThatCanApply(AopUtils.java:330) ~[spring-aop-6.1.6.jar:6.1.6]
+	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.findAdvisorsThatCanApply(AbstractAdvisorAutoProxyCreator.java:128) ~[spring-aop-6.1.6.jar:6.1.6]
+	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.findEligibleAdvisors(AbstractAdvisorAutoProxyCreator.java:97) ~[spring-aop-6.1.6.jar:6.1.6]
+	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.getAdvicesAndAdvisorsForBean(AbstractAdvisorAutoProxyCreator.java:78) ~[spring-aop-6.1.6.jar:6.1.6]
+	at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.wrapIfNecessary(AbstractAutoProxyCreator.java:368) ~[spring-aop-6.1.6.jar:6.1.6]
+	at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.postProcessAfterInitialization(AbstractAutoProxyCreator.java:320) ~[spring-aop-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsAfterInitialization(AbstractAutowireCapableBeanFactory.java:438) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1789) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600) ~[spring-beans-6.1.6.jar:6.1.6]
+	... 41 common frames omitted
+
+2024-05-23T12:24:09.289+06:30  INFO 29399 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 17.0.6 with PID 29399 (/Users/htunaunghlaing/Desktop/Eclipse 2023-12/workspace/EduVerse/eduverse/target/classes started by htunaunghlaing in /Users/htunaunghlaing/Desktop/Eclipse 2023-12/workspace/EduVerse/eduverse)
+2024-05-23T12:24:09.290+06:30 DEBUG 29399 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-23T12:24:09.290+06:30  INFO 29399 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-23T12:24:09.517+06:30 ERROR 29399 --- [EduVerse] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'healthEndpointGroupsBeanPostProcessor' defined in class path resource [org/springframework/boot/actuate/autoconfigure/health/HealthEndpointConfiguration.class]: BeanPostProcessor before instantiation of bean failed
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:205) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.registerBeanPostProcessors(PostProcessorRegistrationDelegate.java:277) ~[spring-context-6.1.6.jar:6.1.6]
+	at org.springframework.context.support.AbstractApplicationContext.registerBeanPostProcessors(AbstractApplicationContext.java:805) ~[spring-context-6.1.6.jar:6.1.6]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:608) ~[spring-context-6.1.6.jar:6.1.6]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343) ~[spring-boot-3.2.5.jar:3.2.5]
+	at dev.backend.eduverse.EduverseApplication.main(EduverseApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.2.5.jar:3.2.5]
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration': Pointcut is not well-formed: expecting ')' at character position 22
+execution(execution(* dev.backend.eduverse.service.impl.AdminRoleServiceImpl.*(..) && args(adminRoleDTO,id))
+                      ^^^
+
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:409) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1335) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1165) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:205) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.aop.framework.autoproxy.BeanFactoryAdvisorRetrievalHelper.findAdvisorBeans(BeanFactoryAdvisorRetrievalHelper.java:91) ~[spring-aop-6.1.6.jar:6.1.6]
+	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.findCandidateAdvisors(AbstractAdvisorAutoProxyCreator.java:111) ~[spring-aop-6.1.6.jar:6.1.6]
+	at org.springframework.aop.aspectj.annotation.AnnotationAwareAspectJAutoProxyCreator.findCandidateAdvisors(AnnotationAwareAspectJAutoProxyCreator.java:92) ~[spring-aop-6.1.6.jar:6.1.6]
+	at org.springframework.aop.aspectj.autoproxy.AspectJAwareAdvisorAutoProxyCreator.shouldSkip(AspectJAwareAdvisorAutoProxyCreator.java:101) ~[spring-aop-6.1.6.jar:6.1.6]
+	at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.postProcessBeforeInstantiation(AbstractAutoProxyCreator.java:281) ~[spring-aop-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInstantiation(AbstractAutowireCapableBeanFactory.java:1130) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.resolveBeforeInstantiation(AbstractAutowireCapableBeanFactory.java:1105) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:511) ~[spring-beans-6.1.6.jar:6.1.6]
+	... 19 common frames omitted
+Caused by: java.lang.IllegalArgumentException: Pointcut is not well-formed: expecting ')' at character position 22
+execution(execution(* dev.backend.eduverse.service.impl.AdminRoleServiceImpl.*(..) && args(adminRoleDTO,id))
+                      ^^^
+
+	at org.aspectj.weaver.tools.PointcutParser.resolvePointcutExpression(PointcutParser.java:334) ~[aspectjweaver-1.9.22.jar:na]
+	at org.aspectj.weaver.tools.PointcutParser.parsePointcutExpression(PointcutParser.java:312) ~[aspectjweaver-1.9.22.jar:na]
+	at org.springframework.aop.aspectj.AspectJExpressionPointcut.buildPointcutExpression(AspectJExpressionPointcut.java:223) ~[spring-aop-6.1.6.jar:6.1.6]
+	at org.springframework.aop.aspectj.AspectJExpressionPointcut.obtainPointcutExpression(AspectJExpressionPointcut.java:194) ~[spring-aop-6.1.6.jar:6.1.6]
+	at org.springframework.aop.aspectj.AspectJExpressionPointcut.getClassFilter(AspectJExpressionPointcut.java:173) ~[spring-aop-6.1.6.jar:6.1.6]
+	at org.springframework.aop.support.AopUtils.canApply(AopUtils.java:236) ~[spring-aop-6.1.6.jar:6.1.6]
+	at org.springframework.aop.support.AopUtils.canApply(AopUtils.java:298) ~[spring-aop-6.1.6.jar:6.1.6]
+	at org.springframework.aop.support.AopUtils.findAdvisorsThatCanApply(AopUtils.java:330) ~[spring-aop-6.1.6.jar:6.1.6]
+	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.findAdvisorsThatCanApply(AbstractAdvisorAutoProxyCreator.java:128) ~[spring-aop-6.1.6.jar:6.1.6]
+	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.findEligibleAdvisors(AbstractAdvisorAutoProxyCreator.java:97) ~[spring-aop-6.1.6.jar:6.1.6]
+	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.getAdvicesAndAdvisorsForBean(AbstractAdvisorAutoProxyCreator.java:78) ~[spring-aop-6.1.6.jar:6.1.6]
+	at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.wrapIfNecessary(AbstractAutoProxyCreator.java:368) ~[spring-aop-6.1.6.jar:6.1.6]
+	at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.postProcessAfterInitialization(AbstractAutoProxyCreator.java:320) ~[spring-aop-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsAfterInitialization(AbstractAutowireCapableBeanFactory.java:438) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1789) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600) ~[spring-beans-6.1.6.jar:6.1.6]
+	... 41 common frames omitted
+
+2024-05-23T12:24:35.304+06:30  INFO 29399 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 17.0.6 with PID 29399 (/Users/htunaunghlaing/Desktop/Eclipse 2023-12/workspace/EduVerse/eduverse/target/classes started by htunaunghlaing in /Users/htunaunghlaing/Desktop/Eclipse 2023-12/workspace/EduVerse/eduverse)
+2024-05-23T12:24:35.305+06:30 DEBUG 29399 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-23T12:24:35.305+06:30  INFO 29399 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-23T12:24:36.612+06:30  INFO 29399 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 1.333 seconds (process running for 13126.001)
+2024-05-23T12:25:39.804+06:30  INFO 29399 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 17.0.6 with PID 29399 (/Users/htunaunghlaing/Desktop/Eclipse 2023-12/workspace/EduVerse/eduverse/target/classes started by htunaunghlaing in /Users/htunaunghlaing/Desktop/Eclipse 2023-12/workspace/EduVerse/eduverse)
+2024-05-23T12:25:39.805+06:30 DEBUG 29399 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-23T12:25:39.805+06:30  INFO 29399 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-23T12:25:41.230+06:30  INFO 29399 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 1.434 seconds (process running for 13190.619)
+2024-05-23T12:46:19.375+06:30  INFO 29399 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 17.0.6 with PID 29399 (/Users/htunaunghlaing/Desktop/Eclipse 2023-12/workspace/EduVerse/eduverse/target/classes started by htunaunghlaing in /Users/htunaunghlaing/Desktop/Eclipse 2023-12/workspace/EduVerse/eduverse)
+2024-05-23T12:46:19.376+06:30 DEBUG 29399 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-23T12:46:19.376+06:30  INFO 29399 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-23T12:46:20.428+06:30  INFO 29399 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 1.066 seconds (process running for 14429.806)
+2024-05-23T12:49:01.056+06:30  INFO 29399 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 17.0.6 with PID 29399 (/Users/htunaunghlaing/Desktop/Eclipse 2023-12/workspace/EduVerse/eduverse/target/classes started by htunaunghlaing in /Users/htunaunghlaing/Desktop/Eclipse 2023-12/workspace/EduVerse/eduverse)
+2024-05-23T12:49:01.057+06:30 DEBUG 29399 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-23T12:49:01.057+06:30  INFO 29399 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-23T12:49:01.283+06:30 ERROR 29399 --- [EduVerse] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'healthEndpointGroupsBeanPostProcessor' defined in class path resource [org/springframework/boot/actuate/autoconfigure/health/HealthEndpointConfiguration.class]: BeanPostProcessor before instantiation of bean failed
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:205) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.registerBeanPostProcessors(PostProcessorRegistrationDelegate.java:277) ~[spring-context-6.1.6.jar:6.1.6]
+	at org.springframework.context.support.AbstractApplicationContext.registerBeanPostProcessors(AbstractApplicationContext.java:805) ~[spring-context-6.1.6.jar:6.1.6]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:608) ~[spring-context-6.1.6.jar:6.1.6]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343) ~[spring-boot-3.2.5.jar:3.2.5]
+	at dev.backend.eduverse.EduverseApplication.main(EduverseApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.2.5.jar:3.2.5]
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration': Pointcut is not well-formed: expecting 'name pattern' at character position 10
+execution()* dev.backend.*.*.*.AdminServiceImpl.*(..)
+          ^
+
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:409) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1335) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1165) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:205) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.aop.framework.autoproxy.BeanFactoryAdvisorRetrievalHelper.findAdvisorBeans(BeanFactoryAdvisorRetrievalHelper.java:91) ~[spring-aop-6.1.6.jar:6.1.6]
+	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.findCandidateAdvisors(AbstractAdvisorAutoProxyCreator.java:111) ~[spring-aop-6.1.6.jar:6.1.6]
+	at org.springframework.aop.aspectj.annotation.AnnotationAwareAspectJAutoProxyCreator.findCandidateAdvisors(AnnotationAwareAspectJAutoProxyCreator.java:92) ~[spring-aop-6.1.6.jar:6.1.6]
+	at org.springframework.aop.aspectj.autoproxy.AspectJAwareAdvisorAutoProxyCreator.shouldSkip(AspectJAwareAdvisorAutoProxyCreator.java:101) ~[spring-aop-6.1.6.jar:6.1.6]
+	at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.postProcessBeforeInstantiation(AbstractAutoProxyCreator.java:281) ~[spring-aop-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInstantiation(AbstractAutowireCapableBeanFactory.java:1130) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.resolveBeforeInstantiation(AbstractAutowireCapableBeanFactory.java:1105) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:511) ~[spring-beans-6.1.6.jar:6.1.6]
+	... 19 common frames omitted
+Caused by: java.lang.IllegalArgumentException: Pointcut is not well-formed: expecting 'name pattern' at character position 10
+execution()* dev.backend.*.*.*.AdminServiceImpl.*(..)
+          ^
+
+	at org.aspectj.weaver.tools.PointcutParser.resolvePointcutExpression(PointcutParser.java:334) ~[aspectjweaver-1.9.22.jar:na]
+	at org.aspectj.weaver.tools.PointcutParser.parsePointcutExpression(PointcutParser.java:312) ~[aspectjweaver-1.9.22.jar:na]
+	at org.springframework.aop.aspectj.AspectJExpressionPointcut.buildPointcutExpression(AspectJExpressionPointcut.java:223) ~[spring-aop-6.1.6.jar:6.1.6]
+	at org.springframework.aop.aspectj.AspectJExpressionPointcut.obtainPointcutExpression(AspectJExpressionPointcut.java:194) ~[spring-aop-6.1.6.jar:6.1.6]
+	at org.springframework.aop.aspectj.AspectJExpressionPointcut.getClassFilter(AspectJExpressionPointcut.java:173) ~[spring-aop-6.1.6.jar:6.1.6]
+	at org.springframework.aop.support.AopUtils.canApply(AopUtils.java:236) ~[spring-aop-6.1.6.jar:6.1.6]
+	at org.springframework.aop.support.AopUtils.canApply(AopUtils.java:298) ~[spring-aop-6.1.6.jar:6.1.6]
+	at org.springframework.aop.support.AopUtils.findAdvisorsThatCanApply(AopUtils.java:330) ~[spring-aop-6.1.6.jar:6.1.6]
+	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.findAdvisorsThatCanApply(AbstractAdvisorAutoProxyCreator.java:128) ~[spring-aop-6.1.6.jar:6.1.6]
+	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.findEligibleAdvisors(AbstractAdvisorAutoProxyCreator.java:97) ~[spring-aop-6.1.6.jar:6.1.6]
+	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.getAdvicesAndAdvisorsForBean(AbstractAdvisorAutoProxyCreator.java:78) ~[spring-aop-6.1.6.jar:6.1.6]
+	at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.wrapIfNecessary(AbstractAutoProxyCreator.java:368) ~[spring-aop-6.1.6.jar:6.1.6]
+	at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.postProcessAfterInitialization(AbstractAutoProxyCreator.java:320) ~[spring-aop-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsAfterInitialization(AbstractAutowireCapableBeanFactory.java:438) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1789) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600) ~[spring-beans-6.1.6.jar:6.1.6]
+	... 41 common frames omitted
+
+2024-05-23T12:49:20.299+06:30  INFO 82581 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 17.0.6 with PID 82581 (/Users/htunaunghlaing/Desktop/Eclipse 2023-12/workspace/EduVerse/eduverse/target/classes started by htunaunghlaing in /Users/htunaunghlaing/Desktop/Eclipse 2023-12/workspace/EduVerse/eduverse)
+2024-05-23T12:49:20.300+06:30 DEBUG 82581 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-23T12:49:20.300+06:30  INFO 82581 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-23T12:49:23.026+06:30  INFO 82581 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 2.876 seconds (process running for 3.215)
+2024-05-23T12:50:09.975+06:30  INFO 82581 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 17.0.6 with PID 82581 (/Users/htunaunghlaing/Desktop/Eclipse 2023-12/workspace/EduVerse/eduverse/target/classes started by htunaunghlaing in /Users/htunaunghlaing/Desktop/Eclipse 2023-12/workspace/EduVerse/eduverse)
+2024-05-23T12:50:09.975+06:30 DEBUG 82581 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-23T12:50:09.975+06:30  INFO 82581 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-23T12:50:11.074+06:30  INFO 82581 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 1.111 seconds (process running for 51.264)
+2024-05-23T12:50:51.931+06:30  INFO 82581 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 17.0.6 with PID 82581 (/Users/htunaunghlaing/Desktop/Eclipse 2023-12/workspace/EduVerse/eduverse/target/classes started by htunaunghlaing in /Users/htunaunghlaing/Desktop/Eclipse 2023-12/workspace/EduVerse/eduverse)
+2024-05-23T12:50:51.931+06:30 DEBUG 82581 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-23T12:50:51.931+06:30  INFO 82581 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-23T12:50:52.998+06:30  INFO 82581 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 1.079 seconds (process running for 93.188)
+2024-05-23T12:54:48.683+06:30  INFO 82581 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 17.0.6 with PID 82581 (/Users/htunaunghlaing/Desktop/Eclipse 2023-12/workspace/EduVerse/eduverse/target/classes started by htunaunghlaing in /Users/htunaunghlaing/Desktop/Eclipse 2023-12/workspace/EduVerse/eduverse)
+2024-05-23T12:54:48.683+06:30 DEBUG 82581 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-23T12:54:48.683+06:30  INFO 82581 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-23T12:54:49.724+06:30  INFO 82581 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 1.052 seconds (process running for 329.913)
+2024-05-23T12:56:39.675+06:30  INFO 82581 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 17.0.6 with PID 82581 (/Users/htunaunghlaing/Desktop/Eclipse 2023-12/workspace/EduVerse/eduverse/target/classes started by htunaunghlaing in /Users/htunaunghlaing/Desktop/Eclipse 2023-12/workspace/EduVerse/eduverse)
+2024-05-23T12:56:39.675+06:30 DEBUG 82581 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-23T12:56:39.675+06:30  INFO 82581 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-23T12:56:40.696+06:30  INFO 82581 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 1.031 seconds (process running for 440.885)
+2024-05-23T12:56:54.173+06:30  INFO 82581 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 17.0.6 with PID 82581 (/Users/htunaunghlaing/Desktop/Eclipse 2023-12/workspace/EduVerse/eduverse/target/classes started by htunaunghlaing in /Users/htunaunghlaing/Desktop/Eclipse 2023-12/workspace/EduVerse/eduverse)
+2024-05-23T12:56:54.173+06:30 DEBUG 82581 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-23T12:56:54.173+06:30  INFO 82581 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-23T12:56:55.216+06:30  INFO 82581 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 1.054 seconds (process running for 455.404)
+2024-05-23T12:57:45.249+06:30  INFO 82581 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 17.0.6 with PID 82581 (/Users/htunaunghlaing/Desktop/Eclipse 2023-12/workspace/EduVerse/eduverse/target/classes started by htunaunghlaing in /Users/htunaunghlaing/Desktop/Eclipse 2023-12/workspace/EduVerse/eduverse)
+2024-05-23T12:57:45.249+06:30 DEBUG 82581 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-23T12:57:45.249+06:30  INFO 82581 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-23T12:57:46.310+06:30  INFO 82581 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 1.07 seconds (process running for 506.498)
+2024-05-23T13:22:28.652+06:30  INFO 82581 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 17.0.6 with PID 82581 (/Users/htunaunghlaing/Desktop/Eclipse 2023-12/workspace/EduVerse/eduverse/target/classes started by htunaunghlaing in /Users/htunaunghlaing/Desktop/Eclipse 2023-12/workspace/EduVerse/eduverse)
+2024-05-23T13:22:28.653+06:30 DEBUG 82581 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-23T13:22:28.653+06:30  INFO 82581 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-23T13:22:29.840+06:30  INFO 82581 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 1.201 seconds (process running for 1975.78)
+2024-05-23T13:22:40.475+06:30  INFO 82581 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 17.0.6 with PID 82581 (/Users/htunaunghlaing/Desktop/Eclipse 2023-12/workspace/EduVerse/eduverse/target/classes started by htunaunghlaing in /Users/htunaunghlaing/Desktop/Eclipse 2023-12/workspace/EduVerse/eduverse)
+2024-05-23T13:22:40.475+06:30 DEBUG 82581 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-23T13:22:40.475+06:30  INFO 82581 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-23T13:22:41.480+06:30  INFO 82581 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 1.014 seconds (process running for 1987.42)
+2024-05-23T13:32:26.649+06:30  INFO 9794 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 17.0.6 with PID 9794 (/Users/htunaunghlaing/Desktop/Eclipse 2023-12/workspace/EduVerse/eduverse/target/classes started by htunaunghlaing in /Users/htunaunghlaing/Desktop/Eclipse 2023-12/workspace/EduVerse/eduverse)
+2024-05-23T13:32:26.650+06:30 DEBUG 9794 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-23T13:32:26.650+06:30  INFO 9794 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-23T13:32:29.564+06:30  INFO 9794 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 3.056 seconds (process running for 3.416)
+2024-05-23T13:35:56.053+06:30  INFO 9794 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 17.0.6 with PID 9794 (/Users/htunaunghlaing/Desktop/Eclipse 2023-12/workspace/EduVerse/eduverse/target/classes started by htunaunghlaing in /Users/htunaunghlaing/Desktop/Eclipse 2023-12/workspace/EduVerse/eduverse)
+2024-05-23T13:35:56.053+06:30 DEBUG 9794 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-23T13:35:56.053+06:30  INFO 9794 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-23T13:35:57.325+06:30  INFO 9794 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 1.285 seconds (process running for 211.177)
+2024-05-23T13:36:40.447+06:30  INFO 9794 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 17.0.6 with PID 9794 (/Users/htunaunghlaing/Desktop/Eclipse 2023-12/workspace/EduVerse/eduverse/target/classes started by htunaunghlaing in /Users/htunaunghlaing/Desktop/Eclipse 2023-12/workspace/EduVerse/eduverse)
+2024-05-23T13:36:40.448+06:30 DEBUG 9794 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-23T13:36:40.448+06:30  INFO 9794 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-23T13:36:41.925+06:30  INFO 9794 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 1.49 seconds (process running for 255.777)
+2024-05-23T13:37:31.140+06:30  INFO 9794 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 17.0.6 with PID 9794 (/Users/htunaunghlaing/Desktop/Eclipse 2023-12/workspace/EduVerse/eduverse/target/classes started by htunaunghlaing in /Users/htunaunghlaing/Desktop/Eclipse 2023-12/workspace/EduVerse/eduverse)
+2024-05-23T13:37:31.140+06:30 DEBUG 9794 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-23T13:37:31.140+06:30  INFO 9794 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-05-23T13:37:32.592+06:30  INFO 9794 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 1.462 seconds (process running for 306.444)
