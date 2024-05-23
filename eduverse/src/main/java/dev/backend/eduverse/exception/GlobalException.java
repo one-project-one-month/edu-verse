@@ -51,7 +51,7 @@ public class GlobalException extends ResponseEntityExceptionHandler {
                 "LOGIN FAILED"
         );
 
-        return new ResponseEntity<>(errorDetails, HttpStatus.BAD_REQUEST);
+        return new ResponseEntity<>(errorDetails, HttpStatus.UNAUTHORIZED);
     }
 
     @ExceptionHandler(InvalidTokenException.class)
@@ -63,7 +63,7 @@ public class GlobalException extends ResponseEntityExceptionHandler {
                 "AUTHENTICATION FAILED"
         );
 
-        return new ResponseEntity<>(errorDetails, HttpStatus.UNAUTHORIZED);
+        return new ResponseEntity<>(errorDetails, HttpStatus.FORBIDDEN);
     }
 
     @Override

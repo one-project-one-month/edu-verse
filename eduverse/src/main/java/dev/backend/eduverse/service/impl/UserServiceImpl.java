@@ -3,7 +3,7 @@ package dev.backend.eduverse.service.impl;
 import dev.backend.eduverse.dto.UserDTO;
 import dev.backend.eduverse.model.User;
 import dev.backend.eduverse.repository.UserRepository;
-import dev.backend.eduverse.service.UserServices;
+import dev.backend.eduverse.service.UserService;
 import dev.backend.eduverse.util.response_template.EntityMapper;
 import jakarta.persistence.EntityNotFoundException;
 
@@ -12,6 +12,7 @@ import java.util.NoSuchElementException;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+import org.mindrot.jbcrypt.BCrypt;
 import org.modelmapper.ModelMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,7 +24,7 @@ import org.springframework.stereotype.Service;
  * Service layer Updated according to the Ko Zay Mentoring
  */
 @Service
-public class UserServiceImpl implements UserServices {
+public class UserServiceImpl implements UserService {
 
     /**
      * @Field Logger, Dependency Injection with field Injection
@@ -53,6 +54,12 @@ public class UserServiceImpl implements UserServices {
     public void createUser(UserDTO userDTO) {
         logger.info("Entering the creation process");
         User user = modelMapper.map(userDTO, User.class);
+        user.setPassword(
+                BCrypt.hashpw(
+                        userDTO.getPassword(),
+                        BCrypt.gensalt(12)
+                )
+        );
         userRepository.save(user);
         logger.info("User created successfully");
     }
