@@ -1,9 +1,9 @@
-/*
- * @Author : Alvin
+/* * @Author : Alvin
  * @Date : 5/11/2024
  * @Time : 9:00 PM
  * @Project_Name : eduverse
  */
+
 package dev.backend.eduverse.controller.auth;
 
 import org.slf4j.Logger;

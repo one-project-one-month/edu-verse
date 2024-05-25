@@ -1,5 +1,6 @@
 package dev.backend.eduverse.service;
 
+import dev.backend.eduverse.dto.CourseDTO;
 import dev.backend.eduverse.dto.UserDTO;
 
 import java.util.List;
@@ -22,5 +23,7 @@ public interface UserService {
     Long searchIDByUserEmail(String email);
 
     List<UserDTO> readUserByPagniation(int page, int offset) throws IllegalAccessException;
+
+	List<Object[]> getAllRegisteredCourses(Long id);
 
 }
