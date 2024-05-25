@@ -42,7 +42,7 @@ import org.springframework.web.bind.annotation.RestController;
         name = "CRUD REST APIs for Course",
         description = "CRUD REST APIs - Create Course, Update Course, Get All Courses, Delete Course")
 @RestController
-@RequestMapping("/api/auth/course")
+@RequestMapping("/api/course")
 public class CourseController {
     private final Logger logger = LoggerFactory.getLogger(CourseController.class);
 
@@ -169,24 +169,6 @@ public class CourseController {
 //        }
 //    }
     
-    @GetMapping("")
-    @Operation(
-            summary = "Retrieve courses by name containing",
-            tags = {"Course Reader"})
-    public ResponseEntity<?> getCoursesByName(@RequestParam(value = "search") String name) {
-        try {
-            List<CourseDTO> courses = courseService.getCoursesByName(name);
-            if (courses.isEmpty()) {
-                return ResponseUtil.createSuccessResponse(
-                        HttpStatus.OK, "No courses found containing name: " + name, new ArrayList<>());
-            } else {
-                return ResponseEntity.ok().body(courses);
-            }
-        } catch (Exception e) {
-            logger.error("Failed to retrieve courses by name", e);
-            return ResponseUtil.createErrorResponse(
-                    HttpStatus.INTERNAL_SERVER_ERROR, "Failed to retrieve courses", e.getMessage());
-        }
-    }  
+   
     
 }

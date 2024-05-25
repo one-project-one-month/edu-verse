@@ -63,11 +63,11 @@ public class PublicController {
 	        }
 	    }
 	    
-	    @GetMapping("/course/search")
+	    @GetMapping("")
 	    @Operation(
 	            summary = "Retrieve courses by name containing",
 	            tags = {"Course Reader"})
-	    public ResponseEntity<?> getCoursesByName(@RequestParam String name) {
+	    public ResponseEntity<?> getCoursesByName(@RequestParam(value = "search") String name) {
 	        try {
 	            List<CourseDTO> courses = courseService.getCoursesByName(name);
 	            if (courses.isEmpty()) {
