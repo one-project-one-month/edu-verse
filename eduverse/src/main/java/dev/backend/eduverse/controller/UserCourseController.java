@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/userCourses")
-public class userCourseController {
+public class UserCourseController {
 
   @Autowired private userCourseServices userCourseService;
 
