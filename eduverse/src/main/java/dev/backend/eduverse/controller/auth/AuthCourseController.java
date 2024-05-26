@@ -1,23 +1,10 @@
-/*
- * @Author : Alvin
+/* * @Author : Alvin
  * @Date : 5/11/2024
  * @Time : 9:00 PM
  * @Project_Name : eduverse
  */
-package dev.backend.eduverse.controller;
 
-import dev.backend.eduverse.dto.CourseDTO;
-import dev.backend.eduverse.service.CourseService;
-import dev.backend.eduverse.util.response_template.ApiResponse;
-import dev.backend.eduverse.util.response_template.PageNumberResponse;
-import dev.backend.eduverse.util.response_template.ResponseUtil;
-import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.tags.Tag;
-import jakarta.persistence.EntityNotFoundException;
-import jakarta.validation.Valid;
-
-import java.util.ArrayList;
-import java.util.List;
+package dev.backend.eduverse.controller.auth;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,23 +15,30 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import dev.backend.eduverse.dto.CourseDTO;
+import dev.backend.eduverse.service.CourseService;
+import dev.backend.eduverse.util.response_template.ApiResponse;
+import dev.backend.eduverse.util.response_template.ResponseUtil;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.persistence.EntityNotFoundException;
+import jakarta.validation.Valid;
 
 @Tag(
         name = "CRUD REST APIs for Course",
         description = "CRUD REST APIs - Create Course, Update Course, Get All Courses, Delete Course")
 @RestController
-@RequestMapping("/api/course")
-public class CourseController {
-    private final Logger logger = LoggerFactory.getLogger(CourseController.class);
+@RequestMapping("/api/auth/course")
+public class AuthCourseController {
+    private final Logger logger = LoggerFactory.getLogger(AuthCourseController.class);
 
     @InitBinder
     public void initBinder(WebDataBinder dataBinder) {
@@ -56,7 +50,7 @@ public class CourseController {
     
     private final int PageSize = 10;
 
-    public CourseController(CourseService courseService) {
+    public AuthCourseController(CourseService courseService) {
         this.courseService = courseService;
     }
 
@@ -83,27 +77,6 @@ public class CourseController {
             logger.error("Failed to create course", e);
             return ResponseUtil.createErrorResponse(
                     HttpStatus.INTERNAL_SERVER_ERROR, "Failed to create course", e.getMessage());
-        }
-    }
-
-    @GetMapping("/page/{pageNumber}")
-    @Operation(
-            summary = "Retrieve all courses",
-            tags = {"Course Reader"})
-    public ResponseEntity<?> readCourses(@PathVariable int pageNumber) {
-        try {
-            List<CourseDTO> courseList = courseService.readCourseByPagniation(pageNumber, PageSize);
-            if (courseList.isEmpty()) {
-                return ResponseUtil.createSuccessResponse(
-                        HttpStatus.OK, "No courses found", new ArrayList<>());
-            } else {
-            	PageNumberResponse<List<CourseDTO>> response = new PageNumberResponse<>(pageNumber, PageSize, courseList);
-                return ResponseEntity.ok().body(response);                
-            }
-        } catch (Exception e) {
-            logger.error("Failed to retrieve courses", e);
-            return ResponseUtil.createErrorResponse(
-                    HttpStatus.INTERNAL_SERVER_ERROR, "Failed to retrieve courses", null);
         }
     }
 
@@ -150,25 +123,4 @@ public class CourseController {
                     HttpStatus.INTERNAL_SERVER_ERROR, "Failed to delete course", e.getMessage());
         }
     }
-    
-//    @GetMapping("/course")
-//    @Operation(
-//            summary = "Retrieve a course by name",
-//            tags = {"Course Reader"})
-//    public ResponseEntity<?> getCourseByName(@RequestParam String name) {
-//        try {
-//            CourseDTO course = courseService.getCourseByName(name);
-//            return ResponseEntity.ok().body(course);
-//        } catch (EntityNotFoundException e) {
-//            return ResponseUtil.createErrorResponse(
-//                    HttpStatus.NOT_FOUND, "Course not found with name: " + name, null);
-//        } catch (Exception e) {
-//            logger.error("Failed to retrieve course by name", e);
-//            return ResponseUtil.createErrorResponse(
-//                    HttpStatus.INTERNAL_SERVER_ERROR, "Failed to retrieve course", e.getMessage());
-//        }
-//    }
-    
-   
-    
 }

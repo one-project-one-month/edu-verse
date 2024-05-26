@@ -141,4 +141,21 @@ public class CourseServiceImpl implements CourseService {
 			throw e;
 		}
 	}
+
+	@Override
+	public CourseDTO getCourseByName(String name) {
+		logger.info("Retrieving course by name: {}", name);
+        Course course = courseRepository.findByName(name)
+                .orElseThrow(() -> new EntityNotFoundException("Course not found with name: " + name));
+        return modelMapper.map(course, CourseDTO.class);
+	}
+	
+	@Override
+    public List<CourseDTO> getCoursesByName(String name) {
+        logger.info("Retrieving courses by name containing: {}", name);
+        List<Course> courses = courseRepository.findByNameContaining(name);
+        return courses.stream()
+                .map(course -> modelMapper.map(course, CourseDTO.class))
+                .collect(Collectors.toList());
+    }
 }

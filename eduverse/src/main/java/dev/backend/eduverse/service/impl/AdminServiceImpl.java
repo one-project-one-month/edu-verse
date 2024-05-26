@@ -11,6 +11,7 @@ import dev.backend.eduverse.service.AdminService;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.mindrot.jbcrypt.BCrypt;
 import org.modelmapper.ModelMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -60,7 +61,12 @@ public class AdminServiceImpl implements AdminService {
                                 () -> new ResourceNotFoundException("Admin Role", "Id", adminDto.getRoleId()));
 
         Admin admin = modelMapper.map(adminDto, Admin.class);
-
+        admin.setPassword(
+                BCrypt.hashpw(
+                        adminDto.getPassword(),
+                        BCrypt.gensalt(12)
+                )
+        );
         admin.setStatus(true);
         admin.setAdminRole(adminRole);
 
@@ -83,7 +89,12 @@ public class AdminServiceImpl implements AdminService {
                                 () -> new ResourceNotFoundException("Admin Role", "Id", adminDto.getRoleId()));
 
         admin.setUsername(adminDto.getUsername());
-        admin.setPassword(adminDto.getPassword());
+        admin.setPassword(
+                BCrypt.hashpw(
+                        adminDto.getPassword(),
+                        BCrypt.gensalt(12)
+                )
+        );
         admin.setEmail(adminDto.getEmail());
         admin.setPhoneNumber(adminDto.getPhoneNumber());
         admin.setAdminRole(adminRole);

@@ -23,4 +23,8 @@ public interface CourseService {
   boolean deleteCourse(Long id);
 
   List<CourseDTO> readCourseByPagniation(int pageNumber, int pageSize) throws IllegalAccessException;
+
+  CourseDTO getCourseByName(String name);
+  
+  List<CourseDTO> getCoursesByName(String name);
 }
