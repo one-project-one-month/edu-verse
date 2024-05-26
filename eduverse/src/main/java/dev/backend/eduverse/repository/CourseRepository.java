@@ -23,7 +23,11 @@ public interface CourseRepository extends JpaRepository<Course, Long> {
 
     @Query("SELECT c FROM Course c WHERE c.name LIKE %:name%")
     List<Course> findByNameContaining(@Param("name") String name);
-
+    
     @Query("SELECT c FROM Course c LEFT JOIN FETCH c.courseDetails")
     List<Course> findAllWithDetails();
+
+
+    @Query(value = "SELECT c.* FROM course c LEFT JOIN course_details cd ON c.id = cd.course_id ORDER BY c.id LIMIT :limit OFFSET :offset", nativeQuery = true)
+    List<Course> findAllWithDetailsPaginated(@Param("limit") int limit, @Param("offset") int offset);
 }

@@ -134,7 +134,7 @@ public class CourseServiceImpl implements CourseService {
 
 		int offset = (pageNumber - 1) * pageSize;
 		try {
-			List<Course> courseList = courseRepository.paginate(pageSize, offset);
+			List<Course> courseList = courseRepository.findAllWithDetailsPaginated(pageSize, offset);
 			return courseList.stream().map(course -> modelMapper.map(course, CourseDTO.class))
 					.collect(Collectors.toList());
 		} catch (Exception e) {
