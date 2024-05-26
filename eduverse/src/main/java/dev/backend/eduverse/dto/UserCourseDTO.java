@@ -14,12 +14,12 @@ import java.time.LocalDate;
 @AllArgsConstructor
 public class UserCourseDTO {
     private Long id;
-
-    private LocalDate createdDate;
-
+    
     @NotNull(message = "Course Id is required")
     private Long userId;
 
     @NotNull(message = "Course Id is required")
     private Long courseId;
+
+    private LocalDate createdDate;
 }
