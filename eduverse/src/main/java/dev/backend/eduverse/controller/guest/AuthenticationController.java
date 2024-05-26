@@ -4,6 +4,7 @@ import dev.backend.eduverse.dto.AdminDto;
 import dev.backend.eduverse.dto.AuthDto;
 import dev.backend.eduverse.dto.ResponseAuthDto;
 import dev.backend.eduverse.dto.UserDTO;
+import dev.backend.eduverse.service.AdminService;
 import dev.backend.eduverse.service.AuthService;
 import dev.backend.eduverse.service.UserService;
 import dev.backend.eduverse.util.response_template.ApiResponse;
@@ -23,12 +24,15 @@ import org.springframework.web.bind.annotation.RestController;
 public class AuthenticationController {
     private final AuthService authService;
     private final UserService userService;
+    private final AdminService adminService;
 
     @Autowired
-    public AuthenticationController(AuthService authService, UserService userService) {
+    public AuthenticationController(AuthService authService, UserService userService, AdminService adminService) {
         this.authService = authService;
         this.userService = userService;
+        this.adminService = adminService;
     }
+
 
     @PostMapping("/user/login")
     public ResponseEntity<ResponseAuthDto<UserDTO>> processUserLogin(@Valid @RequestBody AuthDto authDto) {
@@ -47,6 +51,14 @@ public class AuthenticationController {
                 new ApiResponse<>(HttpStatus.OK, "Successfully registered.", null),
                 HttpStatus.OK
         );
+    }
+
+    @PostMapping("/admin/register")
+    public ResponseEntity<AdminDto> registerAdmin(@Valid @RequestBody AdminDto adminDto ){
+
+        AdminDto responseAutoRegister = adminService.createAdmin(adminDto);
+
+        return new ResponseEntity<>(responseAutoRegister,HttpStatus.OK);
     }
 
     @PostMapping("/admin/login")
