@@ -38,7 +38,7 @@ public class AdminController {
     // Get All
     @Operation(summary = "Get All Admins")
     @GetMapping("")
-    public ResponseEntity<PageNumberResponse<AdminDto>> getAllAdmins(
+    public ResponseEntity<PageNumberResponse<List<AdminDto>>> getAllAdmins(
             @RequestParam(value = "page", required = false, defaultValue = "1") int pageNo,
             @RequestParam(value = "limit", required = false, defaultValue = "10") int limit
     ) {
@@ -46,7 +46,7 @@ public class AdminController {
         List<AdminDto> admins = adminService.paginate(pageNo, limit);
 
         return new ResponseEntity<>(
-                new PageNumberResponse(pageNo, limit, admins),
+                new PageNumberResponse<List<AdminDto>>(pageNo, limit, admins),
                 HttpStatus.OK
         );
     }
