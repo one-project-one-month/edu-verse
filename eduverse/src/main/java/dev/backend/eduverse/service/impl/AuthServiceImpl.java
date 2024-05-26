@@ -69,6 +69,10 @@ public class AuthServiceImpl implements AuthService {
 
         Admin adminExists = adminRepository.processLogin(authDto.getEmail());
 
+//        logger.info("Admin password"  + " " + adminExists.getPassword() + " " + adminExists.getEmail());
+
+//        logger.info("Admindto password" + " " + BCrypt.checkpw(authDto.getPassword(), adminExists.getPassword()));
+
         if (adminExists == null || !BCrypt.checkpw(authDto.getPassword(), adminExists.getPassword())) {
             //login failed
             logger.info("Admin Login Failed");

@@ -3,6 +3,11 @@ package dev.backend.eduverse.controller.guest;
 import java.util.ArrayList;
 import java.util.List;
 
+import dev.backend.eduverse.dto.AnnouncementDto;
+import dev.backend.eduverse.dto.CategoryDto;
+import dev.backend.eduverse.service.AnnouncementService;
+import dev.backend.eduverse.service.impl.CategoryServiceImpl;
+import dev.backend.eduverse.util.response_template.ApiResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,14 +40,22 @@ public class PublicController {
 
 	    @Autowired
 	    private final CourseService courseService;
-	    
+
+		@Autowired
+		private final CategoryServiceImpl categoryService;
+
+		@Autowired
+		private final AnnouncementService announcementService;
+
 	    private final int PageSize = 10;
 
-	    public PublicController(CourseService courseService) {
-	        this.courseService = courseService;
-	    }
+	public PublicController(CourseService courseService, CategoryServiceImpl categoryService, AnnouncementService announcementService) {
+		this.courseService = courseService;
+		this.categoryService = categoryService;
+		this.announcementService = announcementService;
+	}
 
-	    @GetMapping("/course/page/{pageNumber}")
+	@GetMapping("/course/page/{pageNumber}")
 	    @Operation(
 	            summary = "Retrieve all courses",
 	            tags = {"Course Reader"})
@@ -63,7 +76,7 @@ public class PublicController {
 	        }
 	    }
 	    
-	    @GetMapping("")
+	    @GetMapping("/course/")
 	    @Operation(
 	            summary = "Retrieve courses by name containing",
 	            tags = {"Course Reader"})
@@ -81,5 +94,40 @@ public class PublicController {
 	            return ResponseUtil.createErrorResponse(
 	                    HttpStatus.INTERNAL_SERVER_ERROR, "Failed to retrieve courses", e.getMessage());
 	        }
-	    }  
+	    }
+
+
+	@GetMapping("/category/")
+	@Operation(
+			summary = "Get all category",
+			tags = {"Get all Category"})
+	public ResponseEntity<ApiResponse<List<CategoryDto>>> getAllCategory() {
+		try {
+			List<CategoryDto> categories = categoryService.getAllCategory();
+			return ResponseUtil.createSuccessResponse(
+					HttpStatus.OK, " Successfully get categoreis", categories);
+		} catch (Exception e) {
+			return ResponseUtil.createErrorResponse(
+					HttpStatus.INTERNAL_SERVER_ERROR, "Failed to fetch category", null);
+		}
+	}
+
+	@Operation(
+			summary = "Get All Announcement",
+			description =
+					"Get All Announcement REST API is used to get all the Announcements from the database")
+	@io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200", description = "HTTP Status 200 SUCCESS")
+	@GetMapping("/announcement/")
+	public ResponseEntity<PageNumberResponse<AnnouncementDto>> getAllAnnouncements(
+			@RequestParam(value = "page", required = false, defaultValue = "1") int pageNo,
+			@RequestParam(value = "limit", required = false, defaultValue = "10") int limit
+	) {
+
+		List<AnnouncementDto> announcements = announcementService.paginate(pageNo, limit);
+
+		return new ResponseEntity<>(
+				new PageNumberResponse(pageNo, limit, announcements),
+				HttpStatus.OK
+		);
+	}
 }
