@@ -16,15 +16,14 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 public interface CourseRepository extends JpaRepository<Course, Long> {
-	@Query(value = "SELECT * FROM course ORDER BY id LIMIT :limit OFFSET :offset", nativeQuery = true)
+    @Query(value = "SELECT * FROM course ORDER BY id LIMIT :limit OFFSET :offset", nativeQuery = true)
     List<Course> paginate(@Param("limit") int limit, @Param("offset") int offset);
 
-	Optional<Course> findByName(String name);
-	
-	@Query("SELECT c FROM Course c WHERE c.name LIKE %:name%")
+    Optional<Course> findByName(String name);
+
+    @Query("SELECT c FROM Course c WHERE c.name LIKE %:name%")
     List<Course> findByNameContaining(@Param("name") String name);
 
-
-
-
+    @Query("SELECT c FROM Course c LEFT JOIN FETCH c.courseDetails")
+    List<Course> findAllWithDetails();
 }

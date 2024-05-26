@@ -1,12 +1,9 @@
 package dev.backend.eduverse.service.impl;
 
-import dev.backend.eduverse.dto.CourseDTO;
 import dev.backend.eduverse.dto.UserDTO;
-import dev.backend.eduverse.model.Course;
 import dev.backend.eduverse.model.User;
-import dev.backend.eduverse.repository.CourseRepository;
 import dev.backend.eduverse.repository.UserRepository;
-import dev.backend.eduverse.repository.userCourseRepository;
+import dev.backend.eduverse.repository.UserCourseRepository;
 import dev.backend.eduverse.service.UserService;
 import dev.backend.eduverse.util.response_template.EntityMapper;
 import jakarta.persistence.EntityNotFoundException;
@@ -21,7 +18,6 @@ import org.mindrot.jbcrypt.BCrypt;
 import org.modelmapper.ModelMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
 
@@ -36,7 +32,7 @@ public class UserServiceImpl implements UserService {
      * @Field Logger, Dependency Injection with field Injection
      */
     private final Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
-    private final userCourseRepository  userCourseRepository;
+    private final UserCourseRepository userCourseRepository;
     private final UserRepository userRepository;
 
     private final EntityMapper entityMapper;
@@ -45,7 +41,7 @@ public class UserServiceImpl implements UserService {
     /**
      * Constructor Injection
      */
-        /**
+    /**
      * @Method Creation User
      */
     @Override
@@ -154,7 +150,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public List<Object[]> getAllRegisteredCourses(Long id) {
 
-		return userCourseRepository.findCoursesAndEnrollmentDateByUserId(id);
+        return userCourseRepository.findCoursesAndEnrollmentDateByUserId(id);
     }
 
     /**
