@@ -22,5 +22,6 @@ public interface UserCourseRepository extends JpaRepository<UserCourse, Long> {
             "WHERE u.id = :userId")
     List<Object[]> findCoursesAndEnrollmentDateByUserId(@Param("userId") Long userId);
 
+    //
     UserCourse findByUserIdAndCourseId(Long user_id, Long course_id);
 }

@@ -26,7 +26,7 @@ public class UserCourseServiceImpl implements UserCourseService {
     private final ModelMapper modelMapper;
     private final UserCourseRepository userCourseRepository;
 
-    // presentation>data>map>save
+    // presentation>data>map>save/
     @Override
     public UserCourseDTO createUserCourse(UserCourseDTO userCourseDTO) {
         User user = userRepository
