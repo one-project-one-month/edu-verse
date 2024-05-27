@@ -8,6 +8,7 @@ package dev.backend.eduverse.service.impl;
 
 import dev.backend.eduverse.dto.PathwayDTO;
 import dev.backend.eduverse.exception.NameAlreadyExistException;
+import dev.backend.eduverse.exception.ServiceException;
 import dev.backend.eduverse.model.Pathway;
 import dev.backend.eduverse.repository.PathwayRepository;
 import dev.backend.eduverse.service.PathwayService;
@@ -129,17 +130,18 @@ public class PathwayServiceImpl implements PathwayService {
 
 	@Override
 	public List<PathwayDTO> readPathwayByPagniation(int pageNumber, int pageSize) throws IllegalAccessException {
-		if (pageNumber < 1 || pageSize < 1) {
-			throw new IllegalAccessException("Cannot access the page number less than one");
-		}
-
-		int offset = (pageNumber - 1) * pageSize;
+		pageNumber = Math.max(pageNumber, 1);
+	    pageSize = (pageSize < 1) ? 10 : pageSize;
+	    
+	    int offset = (pageNumber - 1) * pageSize;
 		try {
 			List<Pathway> courseList = pathwayRepository.paginate(pageSize, offset);
-			return courseList.stream().map(pathway -> modelMapper.map(pathway, PathwayDTO.class))
+			return courseList.stream()
+					.map(pathway -> modelMapper.map(pathway, PathwayDTO.class))
 					.collect(Collectors.toList());
 		} catch (Exception e) {
-			throw e;
+			logger.error("Failed to retrieve pathways with pagination", e);
+	        throw new ServiceException("An error occurred while retrieving pathways", e);
 		}
 	}
 }
