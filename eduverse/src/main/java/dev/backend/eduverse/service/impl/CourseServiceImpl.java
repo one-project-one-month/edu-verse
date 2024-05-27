@@ -17,6 +17,8 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
+
+import dev.backend.eduverse.exception.ServiceException;
 import org.modelmapper.ModelMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -127,20 +129,24 @@ public class CourseServiceImpl implements CourseService {
 	}
 
 	@Override
-	public List<CourseDTO> readCourseByPagniation(int pageNumber, int pageSize) throws IllegalAccessException {
-		if (pageNumber < 1 || pageSize < 1) {
-			throw new IllegalAccessException("Cannot access the page number less than one");
-		}
+	public List<CourseDTO> readCourseByPagniation(int pageNumber, int pageSize) {
+	    // Set default values and validate inputs
+	    pageNumber = Math.max(pageNumber, 1);
+	    pageSize = (pageSize < 1) ? 10 : pageSize;
 
-		int offset = (pageNumber - 1) * pageSize;
-		try {
-			List<Course> courseList = courseRepository.findAllWithDetailsPaginated(pageSize, offset);
-			return courseList.stream().map(course -> modelMapper.map(course, CourseDTO.class))
-					.collect(Collectors.toList());
-		} catch (Exception e) {
-			throw e;
-		}
+	    int offset = (pageNumber - 1) * pageSize;
+	    try {
+	        List<Course> courseList = courseRepository.findAllWithDetailsPaginated(pageSize, offset);
+	        return courseList.stream()
+	                .map(course -> modelMapper.map(course, CourseDTO.class))
+	                .collect(Collectors.toList());
+	    } catch (Exception e) {
+	        // Log the exception and rethrow or wrap in a custom exception
+	        logger.error("Failed to retrieve courses with pagination", e);
+	        throw new ServiceException("An error occurred while retrieving courses", e);
+	    }
 	}
+
 
 	@Override
 	public CourseDTO getCourseByName(String name) {

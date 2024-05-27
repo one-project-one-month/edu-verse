@@ -7,19 +7,16 @@ import dev.backend.eduverse.dto.AnnouncementDto;
 import dev.backend.eduverse.dto.CategoryDto;
 import dev.backend.eduverse.service.AnnouncementService;
 import dev.backend.eduverse.service.CategoryService;
-import dev.backend.eduverse.service.impl.CategoryServiceImpl;
 import dev.backend.eduverse.util.response_template.ApiResponse;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.StringTrimmerEditor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.InitBinder;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -52,25 +49,36 @@ public class PublicController {
 
     private final AnnouncementService announcementService;
 
-    private final int PageSize = 10;
-
-
-    @GetMapping("/course/page/{pageNumber}")
-    @Operation(summary = "Retrieve all courses", tags = {"Course Reader"})
-    public ResponseEntity<?> readCourses(@PathVariable int pageNumber) {
+    @GetMapping("/courses")
+    @Operation(
+            summary = "Retrieve all courses",
+            tags = {"Course Reader"})
+    public ResponseEntity<ApiResponse<PageNumberResponse<List<CourseDTO>>>> readCourses(
+            @RequestParam(value = "page", required = false, defaultValue = "1") int pageNo,
+            @RequestParam(value = "limit", required = false, defaultValue = "10") int limit
+        ) {
         try {
-            List<CourseDTO> courseList = courseService.readCourseByPagniation(pageNumber, PageSize);
+            List<CourseDTO> courseList = courseService.readCourseByPagniation(pageNo, limit);
             if (courseList.isEmpty()) {
-                return ResponseUtil.createSuccessResponse(HttpStatus.OK, "No courses found", new ArrayList<>());
+                return ResponseUtil.createSuccessResponse(
+                    HttpStatus.OK,
+                    "No courses found",
+                    new PageNumberResponse<>(pageNo, limit, courseList)
+                );
             } else {
-                PageNumberResponse<List<CourseDTO>> response = new PageNumberResponse<>(pageNumber, PageSize,
-                        courseList);
-                return ResponseEntity.ok().body(response);
+                return ResponseUtil.createSuccessResponse(
+                    HttpStatus.OK,
+                    "Courses retrieved successfully",
+                    new PageNumberResponse<>(pageNo, limit, courseList)
+                );
             }
         } catch (Exception e) {
             logger.error("Failed to retrieve courses", e);
-            return ResponseUtil.createErrorResponse(HttpStatus.INTERNAL_SERVER_ERROR, "Failed to retrieve courses",
-                    null);
+            return ResponseUtil.createErrorResponse(
+                    HttpStatus.INTERNAL_SERVER_ERROR,
+                    "Failed to retrieve courses",
+                    null
+            );
         }
     }
 
@@ -113,23 +121,36 @@ public class PublicController {
         List<AnnouncementDto> announcements = announcementService.paginate(pageNo, limit);
 
         return new ResponseEntity<>(new PageNumberResponse(pageNo, limit, announcements), HttpStatus.OK);
-    }
+    }   
 
-    @GetMapping("pathway/page/{pageNumber}")
+    @GetMapping("/pathways")
     @Operation(summary = "Retrieve all pathways", tags = {"Pathway Reader"})
-    public ResponseEntity<?> readPathways(@PathVariable int pageNumber) {
+    public ResponseEntity<ApiResponse<PageNumberResponse<List<PathwayDTO>>>> readPathways(
+    		@RequestParam(value = "page", required = false, defaultValue = "1") int pageNo,
+    		@RequestParam(value = "limit", required = false, defaultValue = "10") int limit
+    	) {
         try {
-            List<PathwayDTO> pathwayList = pathwayService.readPathwayByPagniation(pageNumber, PageSize);
+            List<PathwayDTO> pathwayList = pathwayService.readPathwayByPagniation(pageNo, limit);
             if (pathwayList.isEmpty()) {
-                return ResponseUtil.createSuccessResponse(HttpStatus.OK, "No pathways found", new ArrayList<>());
+            	return ResponseUtil.createSuccessResponse(
+                      HttpStatus.OK,
+                      "No pathways found",
+                      new PageNumberResponse<>(pageNo, limit, pathwayList)
+                  );
             } else {
-                return ResponseUtil.createSuccessResponse(HttpStatus.OK, "Pathways retrieved successfully",
-                        pathwayList);
+            	return ResponseUtil.createSuccessResponse(
+                      HttpStatus.OK,
+                      "Pathways retrieved successfully",
+                      new PageNumberResponse<>(pageNo, limit, pathwayList)
+                  );
             }
         } catch (Exception e) {
             logger.error("Failed to retrieve pathways", e);
-            return ResponseUtil.createErrorResponse(HttpStatus.INTERNAL_SERVER_ERROR, "Failed to retrieve pathways",
-                    null);
+            return ResponseUtil.createErrorResponse(
+                  HttpStatus.INTERNAL_SERVER_ERROR,
+                  "Failed to retrieve pathways",
+                  null
+          );
         }
     }
 }
