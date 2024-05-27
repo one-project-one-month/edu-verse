@@ -77,7 +77,7 @@ public class AdminRoleController {
 		}
 	}
 
-	@GetMapping("/page/{pageNumber}")
+	@GetMapping("")
 	@Operation(summary = "Retrieve all adminRoles", tags = { "ADMIN role Reader" })
 	public ResponseEntity<ApiResponse<PageNumberResponse<List<AdminRoleDTO>>>> readAdminRoles(
 			@RequestParam(value = "page", required = false, defaultValue = "1") int pageNo,
