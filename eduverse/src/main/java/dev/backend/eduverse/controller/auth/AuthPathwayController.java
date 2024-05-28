@@ -29,72 +29,72 @@ import jakarta.validation.Valid;
 @RequestMapping("/api/auth")
 public class AuthPathwayController {
 
-	private final Logger logger = LoggerFactory.getLogger(PathwayController.class);
+    private final Logger logger = LoggerFactory.getLogger(PathwayController.class);
 
-	private final PathwayService pathwayService;
+    private final PathwayService pathwayService;
 
-	public AuthPathwayController(PathwayService pathwayService) {
-		this.pathwayService = pathwayService;
-	}
+    public AuthPathwayController(PathwayService pathwayService) {
+        this.pathwayService = pathwayService;
+    }
 
-	@PostMapping("/pathway/pathway/")
-	@Operation(summary = "Create a new pathway", tags = { "Pathway Creator" })
-	public ResponseEntity<ApiResponse<String>> createPathway(@Valid @RequestBody PathwayDTO pathwayDTO) {
-		try {
-			boolean created = pathwayService.createPathway(pathwayDTO);
-			if (created) {
-				return ResponseUtil.createSuccessResponse(HttpStatus.OK, "Pathway created successfully", "created");
-			} else {
-				return ResponseUtil.createErrorResponse(HttpStatus.BAD_REQUEST, "Failed to create pathway",
-						"Creation failed due to unknown reasons");
-			}
-		} catch (NameAlreadyExistException e) {
-			String errorMessage = "Pathway with name '" + pathwayDTO.getName() + "' already exists";
-			return ResponseUtil.createErrorResponse(HttpStatus.BAD_REQUEST, "Failed to create pathway", errorMessage);
-		} catch (DataIntegrityViolationException e) {
-			return ResponseUtil.createErrorResponse(HttpStatus.BAD_REQUEST, "Failed to create pathway", e.getMessage());
-		} catch (Exception e) {
-			logger.error("Failed to create pathway", e);
-			return ResponseUtil.createErrorResponse(HttpStatus.INTERNAL_SERVER_ERROR, "Failed to create pathway",
-					e.getMessage());
-		}
-	}
+    @PostMapping("/admin/pathway")
+    @Operation(summary = "Create a new pathway", tags = {"Pathway Creator"})
+    public ResponseEntity<ApiResponse<String>> createPathway(@Valid @RequestBody PathwayDTO pathwayDTO) {
+        try {
+            boolean created = pathwayService.createPathway(pathwayDTO);
+            if (created) {
+                return ResponseUtil.createSuccessResponse(HttpStatus.OK, "Pathway created successfully", "created");
+            } else {
+                return ResponseUtil.createErrorResponse(HttpStatus.BAD_REQUEST, "Failed to create pathway",
+                        "Creation failed due to unknown reasons");
+            }
+        } catch (NameAlreadyExistException e) {
+            String errorMessage = "Pathway with name '" + pathwayDTO.getName() + "' already exists";
+            return ResponseUtil.createErrorResponse(HttpStatus.BAD_REQUEST, "Failed to create pathway", errorMessage);
+        } catch (DataIntegrityViolationException e) {
+            return ResponseUtil.createErrorResponse(HttpStatus.BAD_REQUEST, "Failed to create pathway", e.getMessage());
+        } catch (Exception e) {
+            logger.error("Failed to create pathway", e);
+            return ResponseUtil.createErrorResponse(HttpStatus.INTERNAL_SERVER_ERROR, "Failed to create pathway",
+                    e.getMessage());
+        }
+    }
 
-	@PutMapping("/pathway/{pathwayId}")
-	@Operation(summary = "Update a pathway's information", tags = { "Update Pathway" })
-	public ResponseEntity<ApiResponse<String>> updatePathway(@PathVariable Long pathwayId,
-			@Valid @RequestBody PathwayDTO pathwayDTO) {
-		try {
-			boolean updated = pathwayService.updatePathway(pathwayDTO, pathwayId);
-			if (updated) {
-				return ResponseUtil.createSuccessResponse(HttpStatus.OK, "Pathway updated successfully", "updated");
-			} else {
-				return ResponseUtil.createErrorResponse(HttpStatus.NOT_FOUND, "Pathway not found with ID: " + pathwayId,
-						null);
-			}
-		} catch (EntityNotFoundException e) {
-			return ResponseUtil.createErrorResponse(HttpStatus.NOT_FOUND, "Pathway not found with ID: " + pathwayId,
-					e.getMessage());
-		} catch (Exception e) {
-			return ResponseUtil.createErrorResponse(HttpStatus.INTERNAL_SERVER_ERROR, "Failed to update pathway",
-					e.getMessage());
-		}
-	}
+    @PutMapping("/admin/pathway/{pathwayId}")
+    @Operation(summary = "Update a pathway's information", tags = {"Update Pathway"})
+    public ResponseEntity<ApiResponse<String>> updatePathway(@PathVariable Long pathwayId,
+                                                             @Valid @RequestBody PathwayDTO pathwayDTO) {
+        try {
+            boolean updated = pathwayService.updatePathway(pathwayDTO, pathwayId);
+            if (updated) {
+                return ResponseUtil.createSuccessResponse(HttpStatus.OK, "Pathway updated successfully", "updated");
+            } else {
+                return ResponseUtil.createErrorResponse(HttpStatus.NOT_FOUND, "Pathway not found with ID: " + pathwayId,
+                        null);
+            }
+        } catch (EntityNotFoundException e) {
+            return ResponseUtil.createErrorResponse(HttpStatus.NOT_FOUND, "Pathway not found with ID: " + pathwayId,
+                    e.getMessage());
+        } catch (Exception e) {
+            return ResponseUtil.createErrorResponse(HttpStatus.INTERNAL_SERVER_ERROR, "Failed to update pathway",
+                    e.getMessage());
+        }
+    }
 
-	@DeleteMapping("/pathway/{pathwayId}")
-	@Operation(summary = "Delete a pathway by ID", tags = { "Delete Pathway By Id" })
-	public ResponseEntity<ApiResponse<String>> deletePathway(@PathVariable Long pathwayId) {
-		try {
-			boolean deleted = pathwayService.deletePathway(pathwayId);
-			if (deleted) {
-				return ResponseUtil.createSuccessResponse(HttpStatus.OK, "Pathway deleted successfully", "deleted");
-			} else {
-				return ResponseUtil.createErrorResponse(HttpStatus.NOT_FOUND, "Pathway not found with ID: " + pathwayId,
-						null);
-			}
-		} catch (Exception e) {
-			return ResponseUtil.createErrorResponse(HttpStatus.INTERNAL_SERVER_ERROR, "Failed to delete pathway",
-					e.getMessage());
-		}
-	}
+    @DeleteMapping("/admin/pathway/{pathwayId}")
+    @Operation(summary = "Delete a pathway by ID", tags = {"Delete Pathway By Id"})
+    public ResponseEntity<ApiResponse<String>> deletePathway(@PathVariable Long pathwayId) {
+        try {
+            boolean deleted = pathwayService.deletePathway(pathwayId);
+            if (deleted) {
+                return ResponseUtil.createSuccessResponse(HttpStatus.OK, "Pathway deleted successfully", "deleted");
+            } else {
+                return ResponseUtil.createErrorResponse(HttpStatus.NOT_FOUND, "Pathway not found with ID: " + pathwayId,
+                        null);
+            }
+        } catch (Exception e) {
+            return ResponseUtil.createErrorResponse(HttpStatus.INTERNAL_SERVER_ERROR, "Failed to delete pathway",
+                    e.getMessage());
+        }
+    }
 }

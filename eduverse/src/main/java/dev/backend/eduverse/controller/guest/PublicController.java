@@ -15,11 +15,7 @@ import org.springframework.beans.propertyeditors.StringTrimmerEditor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.WebDataBinder;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.InitBinder;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import dev.backend.eduverse.dto.CourseDTO;
 import dev.backend.eduverse.dto.PathwayDTO;
@@ -56,20 +52,20 @@ public class PublicController {
     public ResponseEntity<ApiResponse<PageNumberResponse<List<CourseDTO>>>> readCourses(
             @RequestParam(value = "page", required = false, defaultValue = "1") int pageNo,
             @RequestParam(value = "limit", required = false, defaultValue = "10") int limit
-        ) {
+    ) {
         try {
             List<CourseDTO> courseList = courseService.readCourseByPagniation(pageNo, limit);
             if (courseList.isEmpty()) {
                 return ResponseUtil.createSuccessResponse(
-                    HttpStatus.OK,
-                    "No courses found",
-                    new PageNumberResponse<>(pageNo, limit, courseList)
+                        HttpStatus.OK,
+                        "No courses found",
+                        new PageNumberResponse<>(pageNo, limit, courseList)
                 );
             } else {
                 return ResponseUtil.createSuccessResponse(
-                    HttpStatus.OK,
-                    "Courses retrieved successfully",
-                    new PageNumberResponse<>(pageNo, limit, courseList)
+                        HttpStatus.OK,
+                        "Courses retrieved successfully",
+                        new PageNumberResponse<>(pageNo, limit, courseList)
                 );
             }
         } catch (Exception e) {
@@ -111,6 +107,17 @@ public class PublicController {
         }
     }
 
+    @GetMapping("/category/{categoryId}")
+    @Operation(summary = "Get  category", tags = {"Get Category"})
+    public ResponseEntity<ApiResponse<CategoryDto>> getCategory(@PathVariable Long categoryId) {
+        try {
+            CategoryDto categoryDto = categoryService.getCategory(categoryId);
+            return ResponseUtil.createSuccessResponse(HttpStatus.OK, "Get Category with ID" + categoryId, categoryDto);
+        } catch (Exception e) {
+            return ResponseUtil.createErrorResponse(HttpStatus.INTERNAL_SERVER_ERROR, "Failed to fetch category", null);
+        }
+    }
+
     @Operation(summary = "Get All Announcement", description = "Get All Announcement REST API is used to get all the Announcements from the database")
     @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200", description = "HTTP Status 200 SUCCESS")
     @GetMapping("/announcement/")
@@ -121,36 +128,36 @@ public class PublicController {
         List<AnnouncementDto> announcements = announcementService.paginate(pageNo, limit);
 
         return new ResponseEntity<>(new PageNumberResponse(pageNo, limit, announcements), HttpStatus.OK);
-    }   
+    }
 
     @GetMapping("/pathways")
     @Operation(summary = "Retrieve all pathways", tags = {"Pathway Reader"})
     public ResponseEntity<ApiResponse<PageNumberResponse<List<PathwayDTO>>>> readPathways(
-    		@RequestParam(value = "page", required = false, defaultValue = "1") int pageNo,
-    		@RequestParam(value = "limit", required = false, defaultValue = "10") int limit
-    	) {
+            @RequestParam(value = "page", required = false, defaultValue = "1") int pageNo,
+            @RequestParam(value = "limit", required = false, defaultValue = "10") int limit
+    ) {
         try {
             List<PathwayDTO> pathwayList = pathwayService.readPathwayByPagniation(pageNo, limit);
             if (pathwayList.isEmpty()) {
-            	return ResponseUtil.createSuccessResponse(
-                      HttpStatus.OK,
-                      "No pathways found",
-                      new PageNumberResponse<>(pageNo, limit, pathwayList)
-                  );
+                return ResponseUtil.createSuccessResponse(
+                        HttpStatus.OK,
+                        "No pathways found",
+                        new PageNumberResponse<>(pageNo, limit, pathwayList)
+                );
             } else {
-            	return ResponseUtil.createSuccessResponse(
-                      HttpStatus.OK,
-                      "Pathways retrieved successfully",
-                      new PageNumberResponse<>(pageNo, limit, pathwayList)
-                  );
+                return ResponseUtil.createSuccessResponse(
+                        HttpStatus.OK,
+                        "Pathways retrieved successfully",
+                        new PageNumberResponse<>(pageNo, limit, pathwayList)
+                );
             }
         } catch (Exception e) {
             logger.error("Failed to retrieve pathways", e);
             return ResponseUtil.createErrorResponse(
-                  HttpStatus.INTERNAL_SERVER_ERROR,
-                  "Failed to retrieve pathways",
-                  null
-          );
+                    HttpStatus.INTERNAL_SERVER_ERROR,
+                    "Failed to retrieve pathways",
+                    null
+            );
         }
     }
 }
