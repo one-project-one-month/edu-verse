@@ -1,4 +1,4 @@
-package dev.backend.eduverse.controller;
+package dev.backend.eduverse.controller.auth;
 
 import dev.backend.eduverse.dto.AdminDto;
 import dev.backend.eduverse.service.AdminService;
@@ -9,6 +9,7 @@ import jakarta.validation.Valid;
 
 import java.util.List;
 
+import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.propertyeditors.StringTrimmerEditor;
@@ -18,11 +19,12 @@ import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/admins")
+@RequestMapping("/api/auth/admin/admins")
 @Tag(name = "Admin Operation", description = "REST API CRUD operation for Admin Entity")
-public class AdminController {
+@RequiredArgsConstructor
+public class AuthAdminController {
 
-    private Logger logger = LoggerFactory.getLogger(AdminController.class);
+    private final Logger logger = LoggerFactory.getLogger(AuthAdminController.class);
 
     @InitBinder
     public void initBinder(WebDataBinder dataBinder) {
@@ -31,19 +33,16 @@ public class AdminController {
 
     private final AdminService adminService;
 
-    public AdminController(AdminService adminService) {
-        this.adminService = adminService;
-    }
-
     // Get All
     @Operation(summary = "Get All Admins")
     @GetMapping("")
     public ResponseEntity<PageNumberResponse<List<AdminDto>>> getAllAdmins(
+            @RequestParam(value = "search", required = false, defaultValue = "") String searchKeyword,
             @RequestParam(value = "page", required = false, defaultValue = "1") int pageNo,
             @RequestParam(value = "limit", required = false, defaultValue = "10") int limit
     ) {
 
-        List<AdminDto> admins = adminService.paginate(pageNo, limit);
+        List<AdminDto> admins = adminService.paginate(searchKeyword, pageNo, limit);
 
         return new ResponseEntity<>(
                 new PageNumberResponse<List<AdminDto>>(pageNo, limit, admins),

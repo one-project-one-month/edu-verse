@@ -16,5 +16,5 @@ public interface AdminService {
 
     void deleteById(Long id);
 
-    List<AdminDto> paginate(int pageNo, int limit);
+    List<AdminDto> paginate(String searchKeyword, int pageNo, int limit);
 }

@@ -116,7 +116,9 @@ public class AdminServiceImpl implements AdminService {
     }
 
     @Override
-    public List<AdminDto> paginate(int pageNo, int limit) {
+    public List<AdminDto> paginate(String searchKeyword, int pageNo, int limit) {
+        // if search key word is null, replace it with empty string ""
+        if (searchKeyword == null) searchKeyword = "";
 
         //if provided page number is less than 1, 1 will be the default pageNO
         pageNo = Math.max(pageNo, 1);
@@ -125,8 +127,8 @@ public class AdminServiceImpl implements AdminService {
         limit = (limit < 1) ? 10 : limit;
 
         int offset = (pageNo - 1) * limit;
-
-        List<Admin> adminList = adminRepository.paginate(limit, offset);
+        
+        List<Admin> adminList = adminRepository.paginate(searchKeyword, limit, offset);
 
         return adminList.stream()
                 .map(admin -> modelMapper.map(admin, AdminDto.class))
