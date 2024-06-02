@@ -46,36 +46,21 @@ public class PublicController {
     private final AnnouncementService announcementService;
 
     @GetMapping("/courses")
-    @Operation(
-            summary = "Retrieve all courses",
-            tags = {"Course Reader"})
+    @Operation(summary = "Retrieve all courses", tags = { "Course Reader" })
     public ResponseEntity<ApiResponse<PageNumberResponse<List<CourseDTO>>>> readCourses(
             @RequestParam(value = "page", required = false, defaultValue = "1") int pageNo,
-            @RequestParam(value = "limit", required = false, defaultValue = "10") int limit
-    ) {
-        try {
-            List<CourseDTO> courseList = courseService.readCourseByPagniation(pageNo, limit);
-            if (courseList.isEmpty()) {
-                return ResponseUtil.createSuccessResponse(
-                        HttpStatus.OK,
-                        "No courses found",
-                        new PageNumberResponse<>(pageNo, limit, courseList)
-                );
-            } else {
-                return ResponseUtil.createSuccessResponse(
-                        HttpStatus.OK,
-                        "Courses retrieved successfully",
-                        new PageNumberResponse<>(pageNo, limit, courseList)
-                );
-            }
-        } catch (Exception e) {
-            logger.error("Failed to retrieve courses", e);
-            return ResponseUtil.createErrorResponse(
-                    HttpStatus.INTERNAL_SERVER_ERROR,
-                    "Failed to retrieve courses",
-                    null
-            );
-        }
+            @RequestParam(value = "limit", required = false, defaultValue = "10") int limit) {
+        return ResponseUtil.getApiResponseResponseEntity(pageNo, limit,
+                paginationParams -> {
+                    try {
+                        return courseService.readCourseByPagniation(paginationParams.pageNo(), paginationParams.limit());
+                    } catch (IllegalAccessException e) {
+                        throw new RuntimeException(e);
+                    }
+                },
+                logger,
+                "No courses found",
+                "Courses retrieved successfully");
     }
 
     @GetMapping("/course/")

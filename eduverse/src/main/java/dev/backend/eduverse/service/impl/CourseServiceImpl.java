@@ -130,7 +130,6 @@ public class CourseServiceImpl implements CourseService {
 
 	@Override
 	public List<CourseDTO> readCourseByPagniation(int pageNumber, int pageSize) {
-	    // Set default values and validate inputs
 	    pageNumber = Math.max(pageNumber, 1);
 	    pageSize = (pageSize < 1) ? 10 : pageSize;
 
@@ -141,7 +140,6 @@ public class CourseServiceImpl implements CourseService {
 	                .map(course -> modelMapper.map(course, CourseDTO.class))
 	                .collect(Collectors.toList());
 	    } catch (Exception e) {
-	        // Log the exception and rethrow or wrap in a custom exception
 	        logger.error("Failed to retrieve courses with pagination", e);
 	        throw new ServiceException("An error occurred while retrieving courses", e);
 	    }
