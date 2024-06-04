@@ -4,6 +4,7 @@ import dev.backend.eduverse.util.Gender;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Positive;
 import java.time.LocalDate;
+import java.util.List;
 import java.util.Random;
 import lombok.*;
 
@@ -58,6 +59,17 @@ public class User {
   //            inverseJoinColumns = @JoinColumn(name = "course_id")
   //    )
   //    private List<Course> courseList;
+
+  //  @ManyToMany(
+  //          cascade = CascadeType.ALL,
+  //          fetch = FetchType.LAZY
+  //  )
+  //  @JoinTable(
+  //          name = "user_exam",
+  //          joinColumns = @JoinColumn(name = "user_id"),
+  //          inverseJoinColumns = @JoinColumn(name = "exam_id")
+  //  )
+  //  private List<Exam> exams;
 
   @PrePersist
   @PreUpdate

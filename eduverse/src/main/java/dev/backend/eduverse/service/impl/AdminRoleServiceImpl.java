@@ -7,6 +7,7 @@
 package dev.backend.eduverse.service.impl;
 
 import dev.backend.eduverse.dto.AdminRoleDTO;
+import dev.backend.eduverse.exception.ServiceException;
 import dev.backend.eduverse.model.AdminRole;
 import dev.backend.eduverse.repository.AdminRoleRepository;
 import dev.backend.eduverse.service.AdminRoleService;
@@ -116,20 +117,18 @@ public class AdminRoleServiceImpl implements AdminRoleService {
 
 	@Override
 	public List<AdminRoleDTO> readAdminRoleByPagniation(int pageNumber, int pageSize) throws IllegalAccessException {
-		if (pageNumber < 1 || pageSize < 1) {
-			throw new IllegalAccessException("Cannot access the page number less than one");
-		}
-
-		int offset = (pageNumber - 1) * pageSize;
+		pageNumber = Math.max(pageNumber, 1);
+	    pageSize = (pageSize < 1) ? 10 : pageSize;
+	    
+	    int offset = (pageNumber - 1) * pageSize;	
 		try {
-			List<AdminRole> adminRoleList = adminRoleRepository.paginate(pageSize, offset);
-			for (AdminRole adminRole : adminRoleList) {
-				System.out.println(adminRole.getId());
-			}
-			return adminRoleList.stream().map(adminRole -> modelMapper.map(adminRole, AdminRoleDTO.class))
+			List<AdminRole> adminRoleList = adminRoleRepository.paginate(pageSize, offset);			
+			return adminRoleList.stream()
+					.map(adminRole -> modelMapper.map(adminRole, AdminRoleDTO.class))
 					.collect(Collectors.toList());
 		} catch (Exception e) {
-			throw e;
+			logger.error("Failed to retrieve admin roles with pagination", e);
+	        throw new ServiceException("An error occurred while retrieving admin roles", e);
 		}
 	}
 }
