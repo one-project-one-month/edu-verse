@@ -69,7 +69,7 @@ public class QuestionController {
     @Operation(
             summary = "Update Question",
             description =
-                    "Update Announcement REST API is used to update a particular Question in the database"
+                    "Update Question REST API is used to update a particular Question in the database"
             )
     @PutMapping("{id}")
     @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200", description = "HTTP Status 200 SUCCESS")
