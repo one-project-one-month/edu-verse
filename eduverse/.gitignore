@@ -38,3 +38,6 @@ build/
 logs/
 ### VS Code ###
 .vscode/
+
+# Ignore all files in the resources/static/images directory
+/src/main/resources/static/images/
