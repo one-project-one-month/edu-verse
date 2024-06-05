@@ -47,7 +47,7 @@ public class AuthCourseController {
                 );
     }
 
-    @PostMapping("/admin/course/")
+    @PostMapping("/admin/course")
     @Operation(summary = "Create a new course", tags = {"Course Creator"})
     public ResponseEntity<ApiResponse<String>> createCourse(@Valid @RequestBody CourseDTO courseDTO) {
         try {
