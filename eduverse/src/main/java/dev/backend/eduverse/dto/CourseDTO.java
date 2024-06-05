@@ -9,6 +9,7 @@ package dev.backend.eduverse.dto;
 import dev.backend.eduverse.util.CourseStatus;
 import dev.backend.eduverse.util.Level;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 
 import java.time.LocalDate;
@@ -54,5 +55,9 @@ public class CourseDTO {
 
     //image
 //    @NotNull(message = "Image is required.")
+    @Pattern(
+            regexp = "^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$",
+            message = "Invalid Base64 string for image."
+    )
     private String image;
 }
