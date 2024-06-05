@@ -19,6 +19,9 @@ public class Exam {
     @Column(name = "id")
     private Long id;
 
+    @Column(name = "exam_name")
+    private String examName;
+
     @Temporal(TemporalType.DATE)
     @Column(name = "created_at", nullable = false)
     private LocalDate createdAt;
