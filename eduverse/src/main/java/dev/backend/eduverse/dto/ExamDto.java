@@ -21,6 +21,7 @@ import java.time.LocalDate;
 public class ExamDto {
 
     private Long id;
+    private String examName;
     private LocalDate createdAt;
     private Long courseId;
     private Long adminId;
