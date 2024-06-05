@@ -92,6 +92,7 @@ public class ExamServiceImpl implements ExamService {
                         .orElseThrow(
                                 () -> new ResourceNotFoundException("Admin", "id", examDto.getAdminId()));
 
+        exitingExam.setExamName(examDto.getExamName());
         exitingExam.setCreatedAt(examDto.getCreatedAt());
         exitingExam.setCourse(exitingCourse);
         exitingExam.setAdmin(exitingAdmin);
