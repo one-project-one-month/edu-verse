@@ -23,6 +23,9 @@ import org.modelmapper.ModelMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -63,6 +66,7 @@ public class CourseServiceImpl implements CourseService {
 	}
 
 	@Override
+	@Cacheable(value = "course")
 	public List<CourseDTO> getAllCourse() {
 		logger.info("Entering the get all course process");
 
@@ -80,6 +84,7 @@ public class CourseServiceImpl implements CourseService {
 	}
 
 	@Override
+	@Cacheable(value = "course",key = "#id")
 	public CourseDTO getCourseByID(Long id) {
 		logger.info("Retrieving course by ID: {}", id);
 		Optional<Course> courseOptional = courseRepository.findById(id);
@@ -89,6 +94,7 @@ public class CourseServiceImpl implements CourseService {
 	}
 
 	@Override
+	@CachePut(value = "course",key = "#course.id")
 	public boolean updateCourse(CourseDTO courseDTO, Long id) {
 		logger.info("Updating course with ID: {}", id);
 
@@ -109,6 +115,7 @@ public class CourseServiceImpl implements CourseService {
 	}
 
 	@Override
+	@CacheEvict(value = "course",allEntries = true)
 	public boolean deleteCourse(Long id) {
 		logger.info("Deleting course with ID: {}", id);
 
