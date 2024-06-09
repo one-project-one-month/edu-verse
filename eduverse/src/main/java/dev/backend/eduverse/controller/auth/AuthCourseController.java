@@ -1,25 +1,29 @@
 package dev.backend.eduverse.controller.auth;
 
-import dev.backend.eduverse.dto.CourseDTO;
-import dev.backend.eduverse.dto.UserCourseDTO;
+import dev.backend.eduverse.dto.CourseDto;
+import dev.backend.eduverse.dto.UserCourseDto;
 import dev.backend.eduverse.service.CourseService;
 import dev.backend.eduverse.service.UserCourseService;
 import dev.backend.eduverse.service.impl.UserServiceImpl;
 import dev.backend.eduverse.util.response_template.ApiResponse;
 import dev.backend.eduverse.util.response_template.ResponseUtil;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.propertyeditors.StringTrimmerEditor;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@Tag(name = "CRUD REST APIs for Course")
 @RestController
 @RequestMapping("/api/auth")
 @RequiredArgsConstructor
@@ -29,6 +33,11 @@ public class AuthCourseController {
     private final CourseService courseService;
     private final Logger logger = LoggerFactory.getLogger(AuthCourseController.class);
 
+    @InitBinder
+    public void initBinder(WebDataBinder dataBinder) {
+        dataBinder.registerCustomEditor(String.class, new StringTrimmerEditor(true));
+    }
+
     @GetMapping("/course/{user_id}/registered-courses")
     public ResponseEntity<?> getAllRegisterCourses(@PathVariable Long user_id) {
 
@@ -37,9 +46,9 @@ public class AuthCourseController {
     }
 
     @PostMapping("/course/enroll")
-    public ResponseEntity<ApiResponse<UserCourseDTO>> enroll(@Valid @RequestBody UserCourseDTO userCourseDTO) {
+    public ResponseEntity<ApiResponse<UserCourseDto>> enroll(@Valid @RequestBody UserCourseDto userCourseDTO) {
 
-        UserCourseDTO savedUserCourse = userCourseService.createUserCourse(userCourseDTO);
+        UserCourseDto savedUserCourse = userCourseService.createUserCourse(userCourseDTO);
 
         return ResponseEntity.ok()
                 .body(
@@ -49,7 +58,7 @@ public class AuthCourseController {
 
     @PostMapping("/admin/course")
     @Operation(summary = "Create a new course", tags = {"Course Creator"})
-    public ResponseEntity<ApiResponse<String>> createCourse(@Valid @RequestBody CourseDTO courseDTO) {
+    public ResponseEntity<ApiResponse<String>> createCourse(@Valid @RequestBody CourseDto courseDTO) {
         try {
             boolean created = courseService.createCourse(courseDTO);
             if (created) {
@@ -70,7 +79,7 @@ public class AuthCourseController {
     @PutMapping("/admin/course/{courseId}")
     @Operation(summary = "Update a course's information", tags = {"Update Course"})
     public ResponseEntity<ApiResponse<String>> updateCourse(@PathVariable Long courseId,
-                                                            @Valid @RequestBody CourseDTO courseDTO) {
+                                                            @Valid @RequestBody CourseDto courseDTO) {
         try {
             boolean updated = courseService.updateCourse(courseDTO, courseId);
             if (updated) {

@@ -3,7 +3,7 @@ package dev.backend.eduverse.service;
 import dev.backend.eduverse.dto.*;
 
 public interface AuthService {
-    ResponseAuthDto<UserDTO> processUserLogin(AuthDto authDto);
+    ResponseAuthDto<UserDto> processUserLogin(AuthDto authDto);
 
     ResponseAuthDto<AdminDto> processAdminLogin(AuthDto authDto);
 

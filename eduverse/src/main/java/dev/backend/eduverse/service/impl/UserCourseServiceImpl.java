@@ -1,6 +1,6 @@
 package dev.backend.eduverse.service.impl;
 
-import dev.backend.eduverse.dto.UserCourseDTO;
+import dev.backend.eduverse.dto.UserCourseDto;
 import dev.backend.eduverse.exception.ResourceNotFoundException;
 import dev.backend.eduverse.model.Course;
 import dev.backend.eduverse.model.User;
@@ -28,7 +28,7 @@ public class UserCourseServiceImpl implements UserCourseService {
 
     // presentation>data>map>save/
     @Override
-    public UserCourseDTO createUserCourse(UserCourseDTO userCourseDTO) {
+    public UserCourseDto createUserCourse(UserCourseDto userCourseDTO) {
         User user = userRepository
                 .findById(userCourseDTO.getUserId())
                 .orElseThrow(() -> new ResourceNotFoundException("User", "Id", userCourseDTO.getUserId()));
@@ -48,11 +48,11 @@ public class UserCourseServiceImpl implements UserCourseService {
                 modelMapper.map(userCourseDTO, UserCourse.class)
         );
 
-        return modelMapper.map(savedUserCourse, UserCourseDTO.class);
+        return modelMapper.map(savedUserCourse, UserCourseDto.class);
     }
 
     @Override
-    public UserCourseDTO getUserCourseById(long id) {
+    public UserCourseDto getUserCourseById(long id) {
         UserCourse userCourse = userCourseRepository.findById(id).orElse(null);
         if (userCourse != null) {
             return mapEntityToDto(userCourse);
@@ -61,25 +61,25 @@ public class UserCourseServiceImpl implements UserCourseService {
     }
 
     @Override
-    public List<UserCourseDTO> getAllUserCourses() {
+    public List<UserCourseDto> getAllUserCourses() {
         List<UserCourse> userCourses = userCourseRepository.findAll();
         return userCourses.stream().map(this::mapEntityToDto).collect(Collectors.toList());
     }
 
     @Override
-    public List<UserCourseDTO> getUserCoursesByUserId(long userId) {
+    public List<UserCourseDto> getUserCoursesByUserId(long userId) {
         List<UserCourse> userCourses = userCourseRepository.findByUserId(userId);
         return userCourses.stream().map(this::mapEntityToDto).collect(Collectors.toList());
     }
 
     @Override
-    public List<UserCourseDTO> getUserCoursesByCourseId(long courseId) {
+    public List<UserCourseDto> getUserCoursesByCourseId(long courseId) {
         List<UserCourse> userCourses = userCourseRepository.findByCourseId(courseId);
         return userCourses.stream().map(this::mapEntityToDto).collect(Collectors.toList());
     }
 
     @Override
-    public UserCourseDTO updateUserCourse(UserCourseDTO userCourseDTO) {
+    public UserCourseDto updateUserCourse(UserCourseDto userCourseDTO) {
         UserCourse userCourse = mapDtoToEntity(userCourseDTO);
         userCourse = userCourseRepository.save(userCourse);
         return mapEntityToDto(userCourse);
@@ -90,7 +90,7 @@ public class UserCourseServiceImpl implements UserCourseService {
         userCourseRepository.deleteById(id);
     }
 
-    private UserCourse mapDtoToEntity(UserCourseDTO userCourseDTO) {
+    private UserCourse mapDtoToEntity(UserCourseDto userCourseDTO) {
         UserCourse userCourse = new UserCourse();
         userCourse.setId(userCourseDTO.getId());
         userCourse.setCreatedDate(userCourseDTO.getCreatedDate());
@@ -98,8 +98,8 @@ public class UserCourseServiceImpl implements UserCourseService {
         return userCourse;
     }
 
-    private UserCourseDTO mapEntityToDto(UserCourse userCourse) {
-        UserCourseDTO userCourseDTO = new UserCourseDTO();
+    private UserCourseDto mapEntityToDto(UserCourse userCourse) {
+        UserCourseDto userCourseDTO = new UserCourseDto();
         userCourseDTO.setId(userCourse.getId());
         userCourseDTO.setCreatedDate(userCourse.getCreatedDate());
         // Similarly, set userId and courseId properties

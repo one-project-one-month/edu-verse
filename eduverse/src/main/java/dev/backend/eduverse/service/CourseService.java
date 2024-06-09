@@ -6,25 +6,25 @@
  */
 package dev.backend.eduverse.service;
 
-import dev.backend.eduverse.dto.CourseDTO;
+import dev.backend.eduverse.dto.CourseDto;
 import java.util.List;
 import org.springframework.stereotype.Service;
 
 @Service
 public interface CourseService {
-  boolean createCourse(CourseDTO courseDTO);
+  boolean createCourse(CourseDto courseDTO);
 
-  List<CourseDTO> getAllCourse();
+  List<CourseDto> getAllCourse();
 
-  CourseDTO getCourseByID(Long id);
+  CourseDto getCourseByID(Long id);
 
-  boolean updateCourse(CourseDTO courseDTO, Long id);
+  boolean updateCourse(CourseDto courseDTO, Long id);
 
   boolean deleteCourse(Long id);
 
-  List<CourseDTO> readCourseByPagniation(int pageNumber, int pageSize) throws IllegalAccessException;
+  List<CourseDto> readCourseByPagination(int pageNumber, int pageSize) throws IllegalAccessException;
 
-  CourseDTO getCourseByName(String name);
+  CourseDto getCourseByName(String name);
   
-  List<CourseDTO> getCoursesByName(String name);
+  List<CourseDto> getCoursesByName(String name);
 }

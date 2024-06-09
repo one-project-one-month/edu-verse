@@ -1,21 +1,21 @@
 package dev.backend.eduverse.service;
 
-import dev.backend.eduverse.dto.UserCourseDTO;
+import dev.backend.eduverse.dto.UserCourseDto;
 
 import java.util.List;
 
 public interface UserCourseService {
-    UserCourseDTO createUserCourse(UserCourseDTO userCourseDTO);
+    UserCourseDto createUserCourse(UserCourseDto userCourseDTO);
 
-    UserCourseDTO getUserCourseById(long id);
+    UserCourseDto getUserCourseById(long id);
 
-    List<UserCourseDTO> getAllUserCourses();
+    List<UserCourseDto> getAllUserCourses();
 
-    List<UserCourseDTO> getUserCoursesByUserId(long userId);
+    List<UserCourseDto> getUserCoursesByUserId(long userId);
 
-    List<UserCourseDTO> getUserCoursesByCourseId(long courseId);
+    List<UserCourseDto> getUserCoursesByCourseId(long courseId);
 
-    UserCourseDTO updateUserCourse(UserCourseDTO userCourseDTO);
+    UserCourseDto updateUserCourse(UserCourseDto userCourseDTO);
 
     void deleteUserCourse(long id);
 }

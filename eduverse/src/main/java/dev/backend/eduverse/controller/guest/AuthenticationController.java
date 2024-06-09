@@ -3,12 +3,11 @@ package dev.backend.eduverse.controller.guest;
 import dev.backend.eduverse.dto.AdminDto;
 import dev.backend.eduverse.dto.AuthDto;
 import dev.backend.eduverse.dto.ResponseAuthDto;
-import dev.backend.eduverse.dto.UserDTO;
+import dev.backend.eduverse.dto.UserDto;
 import dev.backend.eduverse.service.AdminService;
 import dev.backend.eduverse.service.AuthService;
 import dev.backend.eduverse.service.UserService;
 import dev.backend.eduverse.util.response_template.ApiResponse;
-import io.swagger.v3.oas.annotations.Operation;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,15 +34,15 @@ public class AuthenticationController {
 
 
     @PostMapping("/user/login")
-    public ResponseEntity<ResponseAuthDto<UserDTO>> processUserLogin(@Valid @RequestBody AuthDto authDto) {
+    public ResponseEntity<ResponseAuthDto<UserDto>> processUserLogin(@Valid @RequestBody AuthDto authDto) {
 
-        ResponseAuthDto<UserDTO> responseAuthUserDto = authService.processUserLogin(authDto);
+        ResponseAuthDto<UserDto> responseAuthUserDto = authService.processUserLogin(authDto);
 
         return new ResponseEntity<>(responseAuthUserDto, HttpStatus.OK);
     }
 
     @PostMapping("/user/register")
-    public ResponseEntity<ApiResponse<Object>> userRegister(@Valid @RequestBody UserDTO userDTO) {
+    public ResponseEntity<ApiResponse<Object>> userRegister(@Valid @RequestBody UserDto userDTO) {
 
         userService.createUser(userDTO);
 

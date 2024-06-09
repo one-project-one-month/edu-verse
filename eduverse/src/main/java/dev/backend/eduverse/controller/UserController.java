@@ -1,6 +1,6 @@
 package dev.backend.eduverse.controller;
 
-import dev.backend.eduverse.dto.UserDTO;
+import dev.backend.eduverse.dto.UserDto;
 import dev.backend.eduverse.service.impl.UserServiceImpl;
 import dev.backend.eduverse.util.response_template.PageNumberResponse;
 import io.swagger.v3.oas.annotations.Operation;
@@ -30,7 +30,7 @@ public class UserController {
     @Operation(
             summary = "Create a new user",
             tags = {"User Operation"})
-    public ResponseEntity<String> createUser(@Valid @RequestBody UserDTO userDTO) {
+    public ResponseEntity<String> createUser(@Valid @RequestBody UserDto userDTO) {
         try {
             userService.createUser(userDTO);
             return ResponseEntity.ok().body("User Created Successfully");
@@ -45,8 +45,8 @@ public class UserController {
             tags = {"User Operation"})
     public ResponseEntity<?> readUsers(@PathVariable int pageNumber) {
         try {
-            List<UserDTO> users = userService.readUserByPagniation(pageNumber, PageSize);
-            PageNumberResponse<List<UserDTO>> response = new PageNumberResponse<>(pageNumber, PageSize, users);
+            List<UserDto> users = userService.readUserByPagniation(pageNumber, PageSize);
+            PageNumberResponse<List<UserDto>> response = new PageNumberResponse<>(pageNumber, PageSize, users);
             return ResponseEntity.ok().body(response);
         } catch (IllegalAccessException e) {
             return ResponseEntity.badRequest().body("Failed to read the user");
@@ -60,7 +60,7 @@ public class UserController {
     )
     public ResponseEntity<?> readUserById(@PathVariable Long userId) {
         try {
-            UserDTO user = userService.readUserById(userId);
+            UserDto user = userService.readUserById(userId);
             return ResponseEntity.ok().body(user);
         } catch (Exception e) {
             return ResponseEntity.badRequest().body(e.getMessage());
@@ -74,7 +74,7 @@ public class UserController {
     )
     public ResponseEntity<?> readUserByEmail(@RequestParam String email) {
         try {
-            List<UserDTO> users = userService.searchByUserEmail(email);
+            List<UserDto> users = userService.searchByUserEmail(email);
             return ResponseEntity.ok().body(users);
         } catch (Exception e) {
             return ResponseEntity.badRequest().body("Failed to retrieve the user by email");
@@ -88,7 +88,7 @@ public class UserController {
     )
     public ResponseEntity<String> updateUser(
             @PathVariable Long userId,
-            @Valid @RequestBody UserDTO userDTO
+            @Valid @RequestBody UserDto userDTO
     ) {
         try {
             userService.updateUser(userId, userDTO);

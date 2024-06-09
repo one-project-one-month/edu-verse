@@ -1,6 +1,6 @@
 package dev.backend.eduverse.service.impl;
 
-import dev.backend.eduverse.dto.UserDTO;
+import dev.backend.eduverse.dto.UserDto;
 import dev.backend.eduverse.model.User;
 import dev.backend.eduverse.repository.UserRepository;
 import dev.backend.eduverse.repository.UserCourseRepository;
@@ -45,7 +45,7 @@ public class UserServiceImpl implements UserService {
      * @Method Creation User
      */
     @Override
-    public void createUser(UserDTO userDTO) {
+    public void createUser(UserDto userDTO) {
         logger.info("Entering the creation process");
         User user = modelMapper.map(userDTO, User.class);
         user.setPassword(
@@ -62,7 +62,7 @@ public class UserServiceImpl implements UserService {
      * Bulk Creator
      */
     @Override
-    public void bulkCreateUser(List<UserDTO> userDTO) {
+    public void bulkCreateUser(List<UserDto> userDTO) {
         logger.info("Entering the Bulk creation process");
         List<User> users =
                 userDTO.stream()
@@ -94,27 +94,27 @@ public class UserServiceImpl implements UserService {
      * Single Reader
      */
     @Override
-    public UserDTO readUserById(Long userId) {
+    public UserDto readUserById(Long userId) {
         logger.info("Retrieving user by ID: {}", userId);
         Optional<User> userOptional = userRepository.findById(userId);
         User user =
                 userOptional.orElseThrow(
                         () -> new EntityNotFoundException("Entity is not found with this id" + userId));
         user.setPassword("Private Credential Cannot be accessed");
-        return entityMapper.mapDTOtoEntity(user, new UserDTO());
+        return entityMapper.mapDTOtoEntity(user, new UserDto());
     }
 
     /**
      * Search By email
      */
     @Override
-    public List<UserDTO> searchByUserEmail(String keyWord) {
+    public List<UserDto> searchByUserEmail(String keyWord) {
         Optional<List<User>> usersOptional =
                 userRepository.findUserByEmailContainingIgnoreCase(keyWord);
         List<User> users =
                 usersOptional.orElseThrow(() -> new EntityNotFoundException("Entity not found"));
         return users.stream()
-                .map(user -> modelMapper.map(user, UserDTO.class))
+                .map(user -> modelMapper.map(user, UserDto.class))
                 .collect(Collectors.toList());
     }
 
@@ -128,7 +128,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public List<UserDTO> readUserByPagniation(int pageNumber, int pageSize) throws IllegalAccessException {
+    public List<UserDto> readUserByPagniation(int pageNumber, int pageSize) throws IllegalAccessException {
         if (pageNumber < 1 || pageSize < 1) {
             throw new IllegalAccessException("Cannot access the page number less than one");
         }
@@ -140,7 +140,7 @@ public class UserServiceImpl implements UserService {
                 System.out.println(user.getId());
             }
             return usersList.stream()
-                    .map(element -> entityMapper.mapDTOtoEntity(element, new UserDTO()))
+                    .map(element -> entityMapper.mapDTOtoEntity(element, new UserDto()))
                     .toList();
         } catch (Exception e) {
             throw e;
@@ -157,7 +157,7 @@ public class UserServiceImpl implements UserService {
      * Update User
      */
     @Override
-    public void updateUser(Long userId, UserDTO userDTO) {
+    public void updateUser(Long userId, UserDto userDTO) {
         logger.info("Updating user with ID: {}", userId);
         Optional<User> existingUserOptional = userRepository.findById(userId);
         User existingUser =

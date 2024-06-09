@@ -1,28 +1,27 @@
 package dev.backend.eduverse.service;
 
-import dev.backend.eduverse.dto.CourseDTO;
-import dev.backend.eduverse.dto.UserDTO;
+import dev.backend.eduverse.dto.UserDto;
 
 import java.util.List;
 
 public interface UserService {
-    void createUser(UserDTO userDTO);
+    void createUser(UserDto userDTO);
 
-    void bulkCreateUser(List<UserDTO> userDTO);
+    void bulkCreateUser(List<UserDto> userDTO);
 
     /*  List<UserDTO> readUser();*/
 
-    UserDTO readUserById(Long userId);
+    UserDto readUserById(Long userId);
 
-    List<UserDTO> searchByUserEmail(String keyWord);
+    List<UserDto> searchByUserEmail(String keyWord);
 
-    void updateUser(Long userId, UserDTO userDTO);
+    void updateUser(Long userId, UserDto userDTO);
 
     void deleteUser(Long userId);
 
     Long searchIDByUserEmail(String email);
 
-    List<UserDTO> readUserByPagniation(int page, int offset) throws IllegalAccessException;
+    List<UserDto> readUserByPagniation(int page, int offset) throws IllegalAccessException;
 
 	List<Object[]> getAllRegisteredCourses(Long id);
 

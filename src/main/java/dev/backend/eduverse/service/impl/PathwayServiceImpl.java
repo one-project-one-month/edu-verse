@@ -128,7 +128,7 @@ public class PathwayServiceImpl implements PathwayService {
 	}
 
 	@Override
-	public List<PathwayDTO> readPathwayByPagniation(int pageNumber, int pageSize) throws IllegalAccessException {
+	public List<PathwayDTO> readPathwayByPagination(int pageNumber, int pageSize) throws IllegalAccessException {
 		if (pageNumber < 1 || pageSize < 1) {
 			throw new IllegalAccessException("Cannot access the page number less than one");
 		}

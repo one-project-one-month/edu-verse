@@ -1,6 +1,6 @@
 package dev.backend.eduverse.controller;
 
-import dev.backend.eduverse.dto.UserCourseDTO;
+import dev.backend.eduverse.dto.UserCourseDto;
 import dev.backend.eduverse.service.UserCourseService;
 
 import java.util.List;
@@ -18,14 +18,14 @@ public class UserCourseController {
     private UserCourseService userCourseService;
 
     @PostMapping
-    public ResponseEntity<UserCourseDTO> createUserCourse(@RequestBody UserCourseDTO userCourseDTO) {
-        UserCourseDTO createdUserCourse = userCourseService.createUserCourse(userCourseDTO);
+    public ResponseEntity<UserCourseDto> createUserCourse(@RequestBody UserCourseDto userCourseDTO) {
+        UserCourseDto createdUserCourse = userCourseService.createUserCourse(userCourseDTO);
         return new ResponseEntity<>(createdUserCourse, HttpStatus.CREATED);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<UserCourseDTO> getUserCourseById(@PathVariable long id) {
-        UserCourseDTO userCourseDTO = userCourseService.getUserCourseById(id);
+    public ResponseEntity<UserCourseDto> getUserCourseById(@PathVariable long id) {
+        UserCourseDto userCourseDTO = userCourseService.getUserCourseById(id);
         if (userCourseDTO != null) {
             return new ResponseEntity<>(userCourseDTO, HttpStatus.OK);
         }
@@ -33,16 +33,16 @@ public class UserCourseController {
     }
 
     @GetMapping
-    public ResponseEntity<List<UserCourseDTO>> getAllUserCourses() {
-        List<UserCourseDTO> UserCourseDTOS = userCourseService.getAllUserCourses();
+    public ResponseEntity<List<UserCourseDto>> getAllUserCourses() {
+        List<UserCourseDto> UserCourseDTOS = userCourseService.getAllUserCourses();
         return new ResponseEntity<>(UserCourseDTOS, HttpStatus.OK);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<UserCourseDTO> updateUserCourse(
-            @PathVariable long id, @RequestBody UserCourseDTO userCourseDTO) {
+    public ResponseEntity<UserCourseDto> updateUserCourse(
+            @PathVariable long id, @RequestBody UserCourseDto userCourseDTO) {
         userCourseDTO.setId(id);
-        UserCourseDTO updatedUserCourse = userCourseService.updateUserCourse(userCourseDTO);
+        UserCourseDto updatedUserCourse = userCourseService.updateUserCourse(userCourseDTO);
         if (updatedUserCourse != null) {
             return new ResponseEntity<>(updatedUserCourse, HttpStatus.OK);
         }

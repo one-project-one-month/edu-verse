@@ -3,6 +3,8 @@ package dev.backend.eduverse.model;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
+
 @Getter
 @Setter
 @AllArgsConstructor
@@ -22,4 +24,8 @@ public class Question {
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "exam_id", referencedColumnName = "id")
     private Exam exam;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "question_id",referencedColumnName = "id")
+    private List<Answer> answers;
 }

@@ -3,7 +3,7 @@ package dev.backend.eduverse.service.impl;
 import dev.backend.eduverse.dto.AdminDto;
 import dev.backend.eduverse.dto.AuthDto;
 import dev.backend.eduverse.dto.ResponseAuthDto;
-import dev.backend.eduverse.dto.UserDTO;
+import dev.backend.eduverse.dto.UserDto;
 import dev.backend.eduverse.exception.LoginFailException;
 import dev.backend.eduverse.model.Admin;
 import dev.backend.eduverse.model.Token;
@@ -38,7 +38,7 @@ public class AuthServiceImpl implements AuthService {
     }
 
     @Override
-    public ResponseAuthDto<UserDTO> processUserLogin(AuthDto authDto) {
+    public ResponseAuthDto<UserDto> processUserLogin(AuthDto authDto) {
         logger.info("Processing User Login");
 
         User userExists = userRepository.processLogin(authDto.getEmail());
@@ -56,7 +56,7 @@ public class AuthServiceImpl implements AuthService {
         //save token in Token table
         tokenRepository.save(new Token(token, false, userExists.getId()));
 
-        UserDTO userDTO = modelMapper.map(userExists, UserDTO.class);
+        UserDto userDTO = modelMapper.map(userExists, UserDto.class);
         userDTO.setPassword(null);
 
         logger.info("Successfully finish user Login process");

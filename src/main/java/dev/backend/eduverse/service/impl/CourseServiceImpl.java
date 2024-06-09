@@ -127,7 +127,7 @@ public class CourseServiceImpl implements CourseService {
 	}
 
 	@Override
-	public List<CourseDTO> readCourseByPagniation(int pageNumber, int pageSize) throws IllegalAccessException {
+	public List<CourseDTO> readCourseByPagination(int pageNumber, int pageSize) throws IllegalAccessException {
 		if (pageNumber < 1 || pageSize < 1) {
 			throw new IllegalAccessException("Cannot access the page number less than one");
 		}

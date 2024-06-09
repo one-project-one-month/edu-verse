@@ -44,8 +44,8 @@ public class UserExamServiceImpl implements UserExamService {
     public UserExamDto createUserExam(UserExamDto userExamDto) {
         logger.info("Entering the creation process");
         UserExam userExam = modelMapper.map(userExamDto, UserExam.class);
-        User user = EntityUtil.getEntityById(userRepository, userExamDto.getUserId());
-        Exam exam = EntityUtil.getEntityById(examRepository, userExamDto.getExamId());
+        User user = EntityUtil.getEntityById(userRepository, userExamDto.getUserId(), "user");
+        Exam exam = EntityUtil.getEntityById(examRepository, userExamDto.getExamId(), "exam");
         userExam.setUser(user);
         userExam.setExam(exam);
         UserExam savedUserExam = EntityUtil.saveEntity(userExamRepository, userExam, "userExam");

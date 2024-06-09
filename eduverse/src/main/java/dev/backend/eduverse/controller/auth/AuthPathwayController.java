@@ -13,8 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import dev.backend.eduverse.controller.PathwayController;
-import dev.backend.eduverse.dto.PathwayDTO;
+import dev.backend.eduverse.dto.PathwayDto;
 import dev.backend.eduverse.exception.NameAlreadyExistException;
 import dev.backend.eduverse.service.PathwayService;
 import dev.backend.eduverse.util.response_template.ApiResponse;
@@ -24,12 +23,12 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.validation.Valid;
 
-@Tag(name = "CRUD REST APIs for Pathway", description = "CRUD REST APIs - Create Pathway, Update Pathway, Get All Pathways, Delete Pathway")
+@Tag(name = "CRUD REST APIs for Pathway")
 @RestController
 @RequestMapping("/api/auth")
 public class AuthPathwayController {
 
-    private final Logger logger = LoggerFactory.getLogger(PathwayController.class);
+    private final Logger logger = LoggerFactory.getLogger(AuthPathwayController.class);
 
     private final PathwayService pathwayService;
 
@@ -39,7 +38,7 @@ public class AuthPathwayController {
 
     @PostMapping("/admin/pathway")
     @Operation(summary = "Create a new pathway", tags = {"Pathway Creator"})
-    public ResponseEntity<ApiResponse<String>> createPathway(@Valid @RequestBody PathwayDTO pathwayDTO) {
+    public ResponseEntity<ApiResponse<String>> createPathway(@Valid @RequestBody PathwayDto pathwayDTO) {
         try {
             boolean created = pathwayService.createPathway(pathwayDTO);
             if (created) {
@@ -63,7 +62,7 @@ public class AuthPathwayController {
     @PutMapping("/admin/pathway/{pathwayId}")
     @Operation(summary = "Update a pathway's information", tags = {"Update Pathway"})
     public ResponseEntity<ApiResponse<String>> updatePathway(@PathVariable Long pathwayId,
-                                                             @Valid @RequestBody PathwayDTO pathwayDTO) {
+                                                             @Valid @RequestBody PathwayDto pathwayDTO) {
         try {
             boolean updated = pathwayService.updatePathway(pathwayDTO, pathwayId);
             if (updated) {

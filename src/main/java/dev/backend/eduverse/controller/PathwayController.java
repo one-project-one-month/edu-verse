@@ -97,7 +97,7 @@ public class PathwayController {
             tags = {"Pathway Reader"})
     public ResponseEntity<?> readPathways(@PathVariable int pageNumber) {
         try {
-        	List<PathwayDTO> pathwayList = pathwayService.readPathwayByPagniation(pageNumber, PageSize);
+        	List<PathwayDTO> pathwayList = pathwayService.readPathwayByPagination(pageNumber, PageSize);
             if (pathwayList.isEmpty()) {
                 return ResponseUtil.createSuccessResponse(
                         HttpStatus.OK, "No pathways found", new ArrayList<>());

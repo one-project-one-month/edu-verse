@@ -6,7 +6,7 @@
  */
 package dev.backend.eduverse.service.impl;
 
-import dev.backend.eduverse.dto.PathwayDTO;
+import dev.backend.eduverse.dto.PathwayDto;
 import dev.backend.eduverse.exception.NameAlreadyExistException;
 import dev.backend.eduverse.exception.ServiceException;
 import dev.backend.eduverse.model.Pathway;
@@ -39,7 +39,7 @@ public class PathwayServiceImpl implements PathwayService {
 	}
 
 	@Override
-	public boolean createPathway(PathwayDTO pathwayDTO) {
+	public boolean createPathway(PathwayDto pathwayDTO) {
 		logger.info("Entering the creation process");
 		try {
 			if (pathwayRepository.existsByName(pathwayDTO.getName())) {
@@ -63,14 +63,14 @@ public class PathwayServiceImpl implements PathwayService {
 	}
 
 	@Override
-	public List<PathwayDTO> getAllPathway() {
+	public List<PathwayDto> getAllPathway() {
 		logger.info("Entering the get all pathway process");
 
 		try {
 			List<Pathway> pathways = pathwayRepository.findAll();
 			int numberOfPathways = pathways.size(); // Get the number of retrieved pathway list
 			logger.info("Retrieved {} pathways", numberOfPathways);
-			List<PathwayDTO> pathwayDTOs = pathways.stream().map(pathway -> modelMapper.map(pathway, PathwayDTO.class))
+			List<PathwayDto> pathwayDTOs = pathways.stream().map(pathway -> modelMapper.map(pathway, PathwayDto.class))
 					.collect(Collectors.toList());
 			return pathwayDTOs;
 		} catch (Exception e) {
@@ -80,16 +80,16 @@ public class PathwayServiceImpl implements PathwayService {
 	}
 
 	@Override
-	public PathwayDTO getPathwayByID(Long id) {
+	public PathwayDto getPathwayByID(Long id) {
 		logger.info("Retrieving pathway by ID: {}", id);
 		Optional<Pathway> pathwayOptional = pathwayRepository.findById(id);
 		Pathway pathway = pathwayOptional
 				.orElseThrow(() -> new EntityNotFoundException("Entity is not found with this id" + id));
-		return modelMapper.map(pathway, PathwayDTO.class);
+		return modelMapper.map(pathway, PathwayDto.class);
 	}
 
 	@Override
-	public boolean updatePathway(PathwayDTO pathwayDTO, Long id) {
+	public boolean updatePathway(PathwayDto pathwayDTO, Long id) {
 		logger.info("Updating pathway with ID: {}", id);
 
 		// Retrieve existing pathway from the repository
@@ -129,7 +129,7 @@ public class PathwayServiceImpl implements PathwayService {
 	}
 
 	@Override
-	public List<PathwayDTO> readPathwayByPagniation(int pageNumber, int pageSize) throws IllegalAccessException {
+	public List<PathwayDto> readPathwayByPagination(int pageNumber, int pageSize) {
 		pageNumber = Math.max(pageNumber, 1);
 	    pageSize = (pageSize < 1) ? 10 : pageSize;
 	    
@@ -137,7 +137,7 @@ public class PathwayServiceImpl implements PathwayService {
 		try {
 			List<Pathway> courseList = pathwayRepository.paginate(pageSize, offset);
 			return courseList.stream()
-					.map(pathway -> modelMapper.map(pathway, PathwayDTO.class))
+					.map(pathway -> modelMapper.map(pathway, PathwayDto.class))
 					.collect(Collectors.toList());
 		} catch (Exception e) {
 			logger.error("Failed to retrieve pathways with pagination", e);

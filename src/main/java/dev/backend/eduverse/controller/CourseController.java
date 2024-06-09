@@ -91,7 +91,7 @@ public class CourseController {
             tags = {"Course Reader"})
     public ResponseEntity<?> readCourses(@PathVariable int pageNumber) {
         try {
-            List<CourseDTO> courseList = courseService.readCourseByPagniation(pageNumber, PageSize);
+            List<CourseDTO> courseList = courseService.readCourseByPagination(pageNumber, PageSize);
             if (courseList.isEmpty()) {
                 return ResponseUtil.createSuccessResponse(
                         HttpStatus.OK, "No courses found", new ArrayList<>());

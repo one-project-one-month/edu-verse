@@ -3,11 +3,11 @@ package dev.backend.eduverse.controller.guest;
 import java.util.ArrayList;
 import java.util.List;
 
-import dev.backend.eduverse.dto.AnnouncementDto;
-import dev.backend.eduverse.dto.CategoryDto;
-import dev.backend.eduverse.service.AnnouncementService;
-import dev.backend.eduverse.service.CategoryService;
+import dev.backend.eduverse.dto.*;
+import dev.backend.eduverse.exception.EntityNotFoundException;
+import dev.backend.eduverse.service.*;
 import dev.backend.eduverse.util.response_template.ApiResponse;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,14 +17,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 
-import dev.backend.eduverse.dto.CourseDTO;
-import dev.backend.eduverse.dto.PathwayDTO;
-import dev.backend.eduverse.service.CourseService;
-import dev.backend.eduverse.service.PathwayService;
 import dev.backend.eduverse.util.response_template.PageNumberResponse;
 import dev.backend.eduverse.util.response_template.ResponseUtil;
 import io.swagger.v3.oas.annotations.Operation;
 
+@Tag(name = "CRUD REST APIs for Public", description = "Public routes")
 @RestController
 @RequestMapping("/api/public/")
 @RequiredArgsConstructor
@@ -45,15 +42,19 @@ public class PublicController {
 
     private final AnnouncementService announcementService;
 
+    private final AnswerService answerService;
+
+    private final QuestionService questionService;
+
     @GetMapping("/courses")
     @Operation(summary = "Retrieve all courses", tags = { "Course Reader" })
-    public ResponseEntity<ApiResponse<PageNumberResponse<List<CourseDTO>>>> readCourses(
+    public ResponseEntity<ApiResponse<PageNumberResponse<List<CourseDto>>>> readCourses(
             @RequestParam(value = "page", required = false, defaultValue = "1") int pageNo,
             @RequestParam(value = "limit", required = false, defaultValue = "10") int limit) {
         return ResponseUtil.getApiResponseResponseEntity(pageNo, limit,
                 paginationParams -> {
                     try {
-                        return courseService.readCourseByPagniation(paginationParams.pageNo(), paginationParams.limit());
+                        return courseService.readCourseByPagination(paginationParams.pageNo(), paginationParams.limit());
                     } catch (IllegalAccessException e) {
                         throw new RuntimeException(e);
                     }
@@ -67,7 +68,7 @@ public class PublicController {
     @Operation(summary = "Retrieve courses by name containing", tags = {"Course Reader"})
     public ResponseEntity<?> getCoursesByName(@RequestParam(value = "search") String name) {
         try {
-            List<CourseDTO> courses = courseService.getCoursesByName(name);
+            List<CourseDto> courses = courseService.getCoursesByName(name);
             if (courses.isEmpty()) {
                 return ResponseUtil.createSuccessResponse(HttpStatus.OK, "No courses found containing name: " + name,
                         new ArrayList<>());
@@ -117,32 +118,96 @@ public class PublicController {
 
     @GetMapping("/pathways")
     @Operation(summary = "Retrieve all pathways", tags = {"Pathway Reader"})
-    public ResponseEntity<ApiResponse<PageNumberResponse<List<PathwayDTO>>>> readPathways(
+    public ResponseEntity<ApiResponse<PageNumberResponse<List<PathwayDto>>>> readPathways(
             @RequestParam(value = "page", required = false, defaultValue = "1") int pageNo,
             @RequestParam(value = "limit", required = false, defaultValue = "10") int limit
     ) {
-        try {
-            List<PathwayDTO> pathwayList = pathwayService.readPathwayByPagniation(pageNo, limit);
-            if (pathwayList.isEmpty()) {
-                return ResponseUtil.createSuccessResponse(
-                        HttpStatus.OK,
-                        "No pathways found",
-                        new PageNumberResponse<>(pageNo, limit, pathwayList)
-                );
-            } else {
-                return ResponseUtil.createSuccessResponse(
-                        HttpStatus.OK,
-                        "Pathways retrieved successfully",
-                        new PageNumberResponse<>(pageNo, limit, pathwayList)
-                );
-            }
-        } catch (Exception e) {
-            logger.error("Failed to retrieve pathways", e);
-            return ResponseUtil.createErrorResponse(
-                    HttpStatus.INTERNAL_SERVER_ERROR,
-                    "Failed to retrieve pathways",
-                    null
-            );
+//        try {
+//            List<PathwayDto> pathwayList = pathwayService.readPathwayByPagination(pageNo, limit);
+//            if (pathwayList.isEmpty()) {
+//                return ResponseUtil.createSuccessResponse(
+//                        HttpStatus.OK,
+//                        "No pathways found",
+//                        new PageNumberResponse<>(pageNo, limit, pathwayList)
+//                );
+//            } else {
+//                return ResponseUtil.createSuccessResponse(
+//                        HttpStatus.OK,
+//                        "Pathways retrieved successfully",
+//                        new PageNumberResponse<>(pageNo, limit, pathwayList)
+//                );
+//            }
+//        } catch (Exception e) {
+//            logger.error("Failed to retrieve pathways", e);
+//            return ResponseUtil.createErrorResponse(
+//                    HttpStatus.INTERNAL_SERVER_ERROR,
+//                    "Failed to retrieve pathways",
+//                    null
+//            );
+//        }
+        return ResponseUtil.getApiResponseResponseEntity(pageNo, limit,
+                paginationParams -> {
+                    try {
+                        return pathwayService.readPathwayByPagination(paginationParams.pageNo(), paginationParams.limit());
+                    } catch (IllegalAccessException e) {
+                        throw new RuntimeException(e);
+                    }
+                },
+                logger,
+                "No pathways found",
+                "Pathways retrieved successfully");
+    }
+
+    // Answer operations
+    @Operation(summary = "Get All Answers", description = "Get All Answers REST API is used to retrieve all answers from the database")
+    @GetMapping("/answer")
+    @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200", description = "HTTP Status 200 SUCCESS")
+    public ResponseEntity<?> getAllAnswers() {
+        List<AnswerDto> allAnswers = answerService.getAllAnswers();
+        if (allAnswers == null || allAnswers.isEmpty()) {
+            return ResponseUtil.createErrorResponse(HttpStatus.OK, "No Answers found", "No answers found");
         }
+        return ResponseUtil.createSuccessResponse(HttpStatus.OK, "All Answers retrieved successfully", allAnswers);
+    }
+
+    @Operation(summary = "Get Answer by ID", description = "Get Answer by ID REST API is used to retrieve a specific answer by its ID from the database")
+    @GetMapping("/answer/{id}")
+    @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200", description = "HTTP Status 200 SUCCESS")
+    public ResponseEntity<?> getAnswerById(@PathVariable("id") Long id) {
+        try {
+            AnswerDto answer = answerService.getAnswerById(id);
+            return ResponseUtil.createSuccessResponse(HttpStatus.OK, "Answer retrieved successfully", answer);
+        } catch (EntityNotFoundException e) {
+            logger.error("Failed to retrieve answer", e);
+            return ResponseUtil.createErrorResponse(HttpStatus.OK, "Failed to retrieve answer", e.getMessage());
+        } catch (Exception e) {
+            logger.error("Failed to retrieve answer", e);
+            return ResponseUtil.createErrorResponse(HttpStatus.INTERNAL_SERVER_ERROR, "Failed to retrieve answer", null);
+        }
+    }
+
+    // Question operations
+    @Operation(
+            summary = "Get All Question",
+            description =
+                    "Get All Question REST API is used to get all the Questions from the database"
+    )
+    @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200", description = "HTTP Status 200 SUCCESS")
+    @GetMapping("")
+    public ResponseEntity<ApiResponse<PageNumberResponse<List<QuestionDto>>>> getAllQuestions(
+            @RequestParam(value = "page", required = false, defaultValue = "1") int pageNo,
+            @RequestParam(value = "limit", required = false, defaultValue = "10") int limit
+    ) {
+        return ResponseUtil.getApiResponseResponseEntity(pageNo, limit,
+                paginationParams -> {
+                    try {
+                        return questionService.readQuestionByPagination(paginationParams.pageNo(), paginationParams.limit());
+                    } catch (IllegalAccessException e) {
+                        throw new RuntimeException(e);
+                    }
+                },
+                logger,
+                "No questions found",
+                "Questions retrieved successfully");
     }
 }
