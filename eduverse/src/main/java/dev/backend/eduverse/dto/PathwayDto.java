@@ -19,7 +19,7 @@ import lombok.ToString;
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
-public class PathwayDTO {
+public class PathwayDto {
 
   @NotNull(message = "Name is required")
   @Size(min = 1, max = 20, message = "Name must be between 1 and 20 characters")

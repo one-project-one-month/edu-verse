@@ -1,6 +1,5 @@
 package dev.backend.eduverse.service;
 
-import dev.backend.eduverse.dto.CourseDTO;
 import dev.backend.eduverse.dto.UserDTO;
 
 import java.util.List;

@@ -6,21 +6,21 @@
  */
 package dev.backend.eduverse.service;
 
-import dev.backend.eduverse.dto.PathwayDTO;
+import dev.backend.eduverse.dto.PathwayDto;
 import java.util.List;
 import org.springframework.stereotype.Service;
 
 @Service
 public interface PathwayService {
-  boolean createPathway(PathwayDTO pathwayDTO);
+  boolean createPathway(PathwayDto pathwayDTO);
 
-  List<PathwayDTO> getAllPathway();
+  List<PathwayDto> getAllPathway();
 
-  PathwayDTO getPathwayByID(Long id);
+  PathwayDto getPathwayByID(Long id);
 
-  boolean updatePathway(PathwayDTO pathwayDTO, Long id);
+  boolean updatePathway(PathwayDto pathwayDTO, Long id);
 
   boolean deletePathway(Long id);
  
-  List<PathwayDTO> readPathwayByPagniation(int pageNumber, int pageSize) throws IllegalAccessException;
+  List<PathwayDto> readPathwayByPagniation(int pageNumber, int pageSize) throws IllegalAccessException;
 }

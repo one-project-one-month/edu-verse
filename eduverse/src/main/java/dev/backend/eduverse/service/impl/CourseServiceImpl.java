@@ -6,7 +6,7 @@
  */
 package dev.backend.eduverse.service.impl;
 
-import dev.backend.eduverse.dto.CourseDTO;
+import dev.backend.eduverse.dto.CourseDto;
 import dev.backend.eduverse.model.Admin;
 import dev.backend.eduverse.model.Course;
 import dev.backend.eduverse.repository.AdminRepository;
@@ -61,7 +61,7 @@ public class CourseServiceImpl implements CourseService {
     }
 
     @Override
-    public boolean createCourse(CourseDTO courseDTO) {
+    public boolean createCourse(CourseDto courseDTO) {
         logger.info("Entering the creation process");
 
         courseDTO.setCreatedAt(LocalDate.now());
@@ -112,16 +112,15 @@ public class CourseServiceImpl implements CourseService {
 
     @Override
     @Cacheable(value = "course")
-    public List<CourseDTO> getAllCourse() {
+    public List<CourseDto> getAllCourse() {
         logger.info("Entering the get all course process");
 
         try {
             List<Course> courses = courseRepository.findAll();
             int numberOfCourses = courses.size(); // Get the number of retrieved course list
             logger.info("Retrieved {} courses", numberOfCourses);
-            List<CourseDTO> courseDTOs = courses.stream().map(course -> modelMapper.map(course, CourseDTO.class))
+            return courses.stream().map(course -> modelMapper.map(course, CourseDto.class))
                     .collect(Collectors.toList());
-            return courseDTOs;
         } catch (Exception e) {
             logger.error("Error occurred while retrieving course list", e);
             throw new RuntimeException("Failed to retrieve course list", e);
@@ -130,17 +129,17 @@ public class CourseServiceImpl implements CourseService {
 
     @Override
     @Cacheable(value = "course", key = "#id")
-    public CourseDTO getCourseByID(Long id) {
+    public CourseDto getCourseByID(Long id) {
         logger.info("Retrieving course by ID: {}", id);
         Optional<Course> courseOptional = courseRepository.findById(id);
         Course course = courseOptional
                 .orElseThrow(() -> new EntityNotFoundException("Entity is not found with this id" + id));
-        return modelMapper.map(course, CourseDTO.class);
+        return modelMapper.map(course, CourseDto.class);
     }
 
     @Override
     @CachePut(value = "course", key = "#course.id")
-    public boolean updateCourse(CourseDTO courseDTO, Long id) {
+    public boolean updateCourse(CourseDto courseDTO, Long id) {
         logger.info("Updating course with ID: {}", id);
 
         // Retrieve existing course from the repository
@@ -219,7 +218,7 @@ public class CourseServiceImpl implements CourseService {
     }
 
     @Override
-    public List<CourseDTO> readCourseByPagniation(int pageNumber, int pageSize) {
+    public List<CourseDto> readCourseByPagniation(int pageNumber, int pageSize) {
         pageNumber = Math.max(pageNumber, 1);
         pageSize = (pageSize < 1) ? 10 : pageSize;
 
@@ -227,7 +226,7 @@ public class CourseServiceImpl implements CourseService {
         try {
             List<Course> courseList = courseRepository.findAllWithDetailsPaginated(pageSize, offset);
             return courseList.stream()
-                    .map(course -> modelMapper.map(course, CourseDTO.class))
+                    .map(course -> modelMapper.map(course, CourseDto.class))
                     .collect(Collectors.toList());
         } catch (Exception e) {
             logger.error("Failed to retrieve courses with pagination", e);
@@ -235,21 +234,20 @@ public class CourseServiceImpl implements CourseService {
         }
     }
 
-
     @Override
-    public CourseDTO getCourseByName(String name) {
+    public CourseDto getCourseByName(String name) {
         logger.info("Retrieving course by name: {}", name);
         Course course = courseRepository.findByName(name)
                 .orElseThrow(() -> new EntityNotFoundException("Course not found with name: " + name));
-        return modelMapper.map(course, CourseDTO.class);
+        return modelMapper.map(course, CourseDto.class);
     }
 
     @Override
-    public List<CourseDTO> getCoursesByName(String name) {
+    public List<CourseDto> getCoursesByName(String name) {
         logger.info("Retrieving courses by name containing: {}", name);
         List<Course> courses = courseRepository.findByNameContaining(name);
         return courses.stream()
-                .map(course -> modelMapper.map(course, CourseDTO.class))
+                .map(course -> modelMapper.map(course, CourseDto.class))
                 .collect(Collectors.toList());
     }
 }

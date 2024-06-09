@@ -8,6 +8,7 @@ import dev.backend.eduverse.dto.CategoryDto;
 import dev.backend.eduverse.service.AnnouncementService;
 import dev.backend.eduverse.service.CategoryService;
 import dev.backend.eduverse.util.response_template.ApiResponse;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,14 +18,15 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 
-import dev.backend.eduverse.dto.CourseDTO;
-import dev.backend.eduverse.dto.PathwayDTO;
+import dev.backend.eduverse.dto.CourseDto;
+import dev.backend.eduverse.dto.PathwayDto;
 import dev.backend.eduverse.service.CourseService;
 import dev.backend.eduverse.service.PathwayService;
 import dev.backend.eduverse.util.response_template.PageNumberResponse;
 import dev.backend.eduverse.util.response_template.ResponseUtil;
 import io.swagger.v3.oas.annotations.Operation;
 
+@Tag(name = "CRUD REST APIs for Public", description = "Public routes")
 @RestController
 @RequestMapping("/api/public/")
 @RequiredArgsConstructor
@@ -47,7 +49,7 @@ public class PublicController {
 
     @GetMapping("/courses")
     @Operation(summary = "Retrieve all courses", tags = { "Course Reader" })
-    public ResponseEntity<ApiResponse<PageNumberResponse<List<CourseDTO>>>> readCourses(
+    public ResponseEntity<ApiResponse<PageNumberResponse<List<CourseDto>>>> readCourses(
             @RequestParam(value = "page", required = false, defaultValue = "1") int pageNo,
             @RequestParam(value = "limit", required = false, defaultValue = "10") int limit) {
         return ResponseUtil.getApiResponseResponseEntity(pageNo, limit,
@@ -67,7 +69,7 @@ public class PublicController {
     @Operation(summary = "Retrieve courses by name containing", tags = {"Course Reader"})
     public ResponseEntity<?> getCoursesByName(@RequestParam(value = "search") String name) {
         try {
-            List<CourseDTO> courses = courseService.getCoursesByName(name);
+            List<CourseDto> courses = courseService.getCoursesByName(name);
             if (courses.isEmpty()) {
                 return ResponseUtil.createSuccessResponse(HttpStatus.OK, "No courses found containing name: " + name,
                         new ArrayList<>());
@@ -117,12 +119,12 @@ public class PublicController {
 
     @GetMapping("/pathways")
     @Operation(summary = "Retrieve all pathways", tags = {"Pathway Reader"})
-    public ResponseEntity<ApiResponse<PageNumberResponse<List<PathwayDTO>>>> readPathways(
+    public ResponseEntity<ApiResponse<PageNumberResponse<List<PathwayDto>>>> readPathways(
             @RequestParam(value = "page", required = false, defaultValue = "1") int pageNo,
             @RequestParam(value = "limit", required = false, defaultValue = "10") int limit
     ) {
         try {
-            List<PathwayDTO> pathwayList = pathwayService.readPathwayByPagniation(pageNo, limit);
+            List<PathwayDto> pathwayList = pathwayService.readPathwayByPagniation(pageNo, limit);
             if (pathwayList.isEmpty()) {
                 return ResponseUtil.createSuccessResponse(
                         HttpStatus.OK,

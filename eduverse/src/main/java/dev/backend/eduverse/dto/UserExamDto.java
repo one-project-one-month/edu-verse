@@ -12,6 +12,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Getter
 @Setter
@@ -22,6 +23,7 @@ public class UserExamDto {
     private Long id;
     private Long userId;
     private Long examId;
+    private List<ExamSubmissionDto> answers;
     private Long totalMark;
     private LocalDate createdAt;
 }

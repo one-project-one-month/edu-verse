@@ -6,7 +6,7 @@
  */
 package dev.backend.eduverse.controller;
 
-import dev.backend.eduverse.dto.CourseDTO;
+import dev.backend.eduverse.dto.CourseDto;
 import dev.backend.eduverse.service.CourseService;
 import dev.backend.eduverse.util.response_template.ApiResponse;
 import dev.backend.eduverse.util.response_template.PageNumberResponse;
@@ -57,7 +57,7 @@ public class CourseController {
 
 	@PostMapping("/")
 	@Operation(summary = "Create a new course", tags = { "Course Creator" })
-	public ResponseEntity<ApiResponse<String>> createCourse(@Valid @RequestBody CourseDTO courseDTO) {
+	public ResponseEntity<ApiResponse<String>> createCourse(@Valid @RequestBody CourseDto courseDTO) {
 		try {
 			boolean created = courseService.createCourse(courseDTO);
 			if (created) {
@@ -77,7 +77,7 @@ public class CourseController {
 
 	@GetMapping("")
 	@Operation(summary = "Retrieve all courses", tags = { "Course Reader" })
-	public ResponseEntity<ApiResponse<PageNumberResponse<List<CourseDTO>>>> readCourses(
+	public ResponseEntity<ApiResponse<PageNumberResponse<List<CourseDto>>>> readCourses(
 			@RequestParam(value = "page", required = false, defaultValue = "1") int pageNo,
 			@RequestParam(value = "limit", required = false, defaultValue = "10") int limit
 	) {
@@ -99,7 +99,7 @@ public class CourseController {
 	@PutMapping("/{id}")
 	@Operation(summary = "Update a course's information", tags = { "Update Course" })
 	public ResponseEntity<ApiResponse<String>> updateCourse(
-			@PathVariable Long courseId, @Valid @RequestBody CourseDTO courseDTO) {
+			@PathVariable Long courseId, @Valid @RequestBody CourseDto courseDTO) {
 		try {
 			boolean updated = courseService.updateCourse(courseDTO, courseId);
 			if (updated) {

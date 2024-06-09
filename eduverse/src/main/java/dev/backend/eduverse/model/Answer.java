@@ -16,9 +16,13 @@ public class Answer {
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "name", nullable = false)
+    @Column(name = "name", nullable = false, updatable = false)
     private String name;
 
     @Column(name = "is_correct", nullable = false)
     private boolean correct;
+
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "question_id", referencedColumnName = "id")
+    private Question question;
 }

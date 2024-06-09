@@ -17,22 +17,14 @@ public class EntityUtil {
         return savedEntity;
     }
 
-    public static <T> List<T> getAllEntities(JpaRepository<T, Long> repository, Sort sort, String entityName) {
-        List<T> entities = repository.findAll(sort);
-        if (entities.isEmpty()) {
-            return null;
-        }
-        return entities;
+    public static <T> List<T> getAllEntities(JpaRepository<T, Long> repository) {
+        List<T> entities = repository.findAll();
+        return entities.isEmpty() ? List.of() : entities;
     }
 
-    public static <T> T getEntityById(JpaRepository<T, Long> repository, Long id) {
-        T entity = id > 0 ? repository.findById(id).orElse(null) : null;
-        if (entity == null) {
-            throw new EntityNotFoundException("Entity not found with ID: " + id);
-        }
-        return entity;
+    public static <T> T getEntityById(JpaRepository<T, Long> repository, Long id, String entityName) {
+        return id > 0 ? repository.findById(id).orElseThrow(() -> new EntityNotFoundException(entityName + " not found with ID: " + id)) : null;
     }
-
 
     public static <T> void deleteEntity(JpaRepository<T, Long> repository, Long id, String entityName) {
         if (!repository.existsById(id)) {

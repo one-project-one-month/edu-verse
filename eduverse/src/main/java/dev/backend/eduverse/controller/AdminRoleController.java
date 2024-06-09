@@ -6,7 +6,7 @@
  */
 package dev.backend.eduverse.controller;
 
-import dev.backend.eduverse.dto.AdminRoleDTO;
+import dev.backend.eduverse.dto.AdminRoleDto;
 import dev.backend.eduverse.service.AdminRoleService;
 import dev.backend.eduverse.util.response_template.ApiResponse;
 import dev.backend.eduverse.util.response_template.PageNumberResponse;
@@ -58,7 +58,7 @@ public class AdminRoleController {
 
 	@PostMapping("/")
 	@Operation(summary = "Create a new ADMIN role", tags = { "ADMIN role Creator" })
-	public ResponseEntity<ApiResponse<String>> createAdminRole(@Valid @RequestBody AdminRoleDTO adminRoleDTO) {
+	public ResponseEntity<ApiResponse<String>> createAdminRole(@Valid @RequestBody AdminRoleDto adminRoleDTO) {
 		try {
 			boolean created = adminRoleService.createAdminRole(adminRoleDTO);
 			if (created) {
@@ -79,11 +79,11 @@ public class AdminRoleController {
 
 	@GetMapping("")
 	@Operation(summary = "Retrieve all adminRoles", tags = { "ADMIN role Reader" })
-	public ResponseEntity<ApiResponse<PageNumberResponse<List<AdminRoleDTO>>>> readAdminRoles(
+	public ResponseEntity<ApiResponse<PageNumberResponse<List<AdminRoleDto>>>> readAdminRoles(
 			@RequestParam(value = "page", required = false, defaultValue = "1") int pageNo,
 			@RequestParam(value = "limit", required = false, defaultValue = "10") int limit) {
 		try {
-			List<AdminRoleDTO> adminRoleList = adminRoleService.readAdminRoleByPagniation(pageNo, limit);
+			List<AdminRoleDto> adminRoleList = adminRoleService.readAdminRoleByPagniation(pageNo, limit);
 			if (adminRoleList.isEmpty()) {
 				return ResponseUtil.createSuccessResponse(HttpStatus.OK, "No admin roles found",
 						new PageNumberResponse<>(pageNo, limit, adminRoleList));
@@ -101,7 +101,7 @@ public class AdminRoleController {
 	@PutMapping("/{adminRoleId}")
 	@Operation(summary = "Update a adminRole's information", tags = { "Update ADMIN role" })
 	public ResponseEntity<ApiResponse<String>> updateAdminRole(@PathVariable Long adminRoleId,
-			@Valid @RequestBody AdminRoleDTO adminRoleDTO) {
+			@Valid @RequestBody AdminRoleDto adminRoleDTO) {
 		try {
 			boolean updated = adminRoleService.updateAdminRole(adminRoleDTO, adminRoleId);
 			if (updated) {

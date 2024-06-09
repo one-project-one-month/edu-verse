@@ -1,6 +1,6 @@
 package dev.backend.eduverse.controller.auth;
 
-import dev.backend.eduverse.dto.CourseDTO;
+import dev.backend.eduverse.dto.CourseDto;
 import dev.backend.eduverse.dto.UserCourseDTO;
 import dev.backend.eduverse.service.CourseService;
 import dev.backend.eduverse.service.UserCourseService;
@@ -49,7 +49,7 @@ public class AuthCourseController {
 
     @PostMapping("/admin/course")
     @Operation(summary = "Create a new course", tags = {"Course Creator"})
-    public ResponseEntity<ApiResponse<String>> createCourse(@Valid @RequestBody CourseDTO courseDTO) {
+    public ResponseEntity<ApiResponse<String>> createCourse(@Valid @RequestBody CourseDto courseDTO) {
         try {
             boolean created = courseService.createCourse(courseDTO);
             if (created) {
@@ -70,7 +70,7 @@ public class AuthCourseController {
     @PutMapping("/admin/course/{courseId}")
     @Operation(summary = "Update a course's information", tags = {"Update Course"})
     public ResponseEntity<ApiResponse<String>> updateCourse(@PathVariable Long courseId,
-                                                            @Valid @RequestBody CourseDTO courseDTO) {
+                                                            @Valid @RequestBody CourseDto courseDTO) {
         try {
             boolean updated = courseService.updateCourse(courseDTO, courseId);
             if (updated) {

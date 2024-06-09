@@ -6,7 +6,7 @@
  */
 package dev.backend.eduverse.controller;
 
-import dev.backend.eduverse.dto.PathwayDTO;
+import dev.backend.eduverse.dto.PathwayDto;
 import dev.backend.eduverse.exception.NameAlreadyExistException;
 import dev.backend.eduverse.service.PathwayService;
 import dev.backend.eduverse.util.response_template.ApiResponse;
@@ -59,7 +59,7 @@ public class PathwayController {
 
 	@PostMapping("/")
 	@Operation(summary = "Create a new pathway", tags = { "Pathway Creator" })
-	public ResponseEntity<ApiResponse<String>> createPathway(@Valid @RequestBody PathwayDTO pathwayDTO) {
+	public ResponseEntity<ApiResponse<String>> createPathway(@Valid @RequestBody PathwayDto pathwayDTO) {
 		try {
 			boolean created = pathwayService.createPathway(pathwayDTO);
 			if (created) {
@@ -82,11 +82,11 @@ public class PathwayController {
 
 	@GetMapping("/pathways")
 	@Operation(summary = "Retrieve all pathways", tags = { "Pathway Reader" })
-	public ResponseEntity<ApiResponse<PageNumberResponse<List<PathwayDTO>>>> readPathways(
+	public ResponseEntity<ApiResponse<PageNumberResponse<List<PathwayDto>>>> readPathways(
 			@RequestParam(value = "page", required = false, defaultValue = "1") int pageNo,
 			@RequestParam(value = "limit", required = false, defaultValue = "10") int limit) {
 		try {
-			List<PathwayDTO> pathwayList = pathwayService.readPathwayByPagniation(pageNo, limit);
+			List<PathwayDto> pathwayList = pathwayService.readPathwayByPagniation(pageNo, limit);
 			if (pathwayList.isEmpty()) {
 				return ResponseUtil.createSuccessResponse(HttpStatus.OK, "No pathways found",
 						new PageNumberResponse<>(pageNo, limit, pathwayList));
@@ -104,7 +104,7 @@ public class PathwayController {
 	@PutMapping("/{pathwayId}")
 	@Operation(summary = "Update a pathway's information", tags = { "Update Pathway" })
 	public ResponseEntity<ApiResponse<String>> updatePathway(@PathVariable Long pathwayId,
-			@Valid @RequestBody PathwayDTO pathwayDTO) {
+			@Valid @RequestBody PathwayDto pathwayDTO) {
 		try {
 			boolean updated = pathwayService.updatePathway(pathwayDTO, pathwayId);
 			if (updated) {

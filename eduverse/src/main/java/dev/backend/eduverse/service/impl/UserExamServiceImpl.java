@@ -7,15 +7,18 @@
 package dev.backend.eduverse.service.impl;
 
 import dev.backend.eduverse.dto.AnnouncementDto;
+import dev.backend.eduverse.dto.ExamSubmissionDto;
 import dev.backend.eduverse.dto.QuestionDto;
 import dev.backend.eduverse.dto.UserExamDto;
 import dev.backend.eduverse.exception.ResourceNotFoundException;
 import dev.backend.eduverse.exception.ServiceException;
 import dev.backend.eduverse.model.*;
+import dev.backend.eduverse.repository.AnswerRepository;
 import dev.backend.eduverse.repository.ExamRepository;
 import dev.backend.eduverse.repository.UserExamRepository;
 import dev.backend.eduverse.repository.UserRepository;
 import dev.backend.eduverse.service.UserExamService;
+import dev.backend.eduverse.util.Helper;
 import dev.backend.eduverse.util.response_template.EntityUtil;
 import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
@@ -36,6 +39,8 @@ public class UserExamServiceImpl implements UserExamService {
 
     private ExamRepository examRepository;
 
+    private AnswerRepository answerRepository;
+
     private final Logger logger = LoggerFactory.getLogger(QuestionServiceImpl.class);
 
     private final ModelMapper modelMapper;
@@ -44,10 +49,12 @@ public class UserExamServiceImpl implements UserExamService {
     public UserExamDto createUserExam(UserExamDto userExamDto) {
         logger.info("Entering the creation process");
         UserExam userExam = modelMapper.map(userExamDto, UserExam.class);
-        User user = EntityUtil.getEntityById(userRepository, userExamDto.getUserId());
-        Exam exam = EntityUtil.getEntityById(examRepository, userExamDto.getExamId());
+        User user = EntityUtil.getEntityById(userRepository, userExamDto.getUserId(), "User");
+        Exam exam = EntityUtil.getEntityById(examRepository, userExamDto.getExamId(), "Exam");
         userExam.setUser(user);
         userExam.setExam(exam);
+        Long totalMark = Helper.calculateTotalMark(userExamDto.getAnswers(),answerRepository);
+        userExam.setTotalMark(totalMark);
         UserExam savedUserExam = EntityUtil.saveEntity(userExamRepository, userExam, "userExam");
         return modelMapper.map(savedUserExam, UserExamDto.class);
     }
@@ -90,7 +97,7 @@ public class UserExamServiceImpl implements UserExamService {
                                 () -> new ResourceNotFoundException("User", "id", userExamDto.getUserId()));
 
         exitingUserExam.setCreatedAt(userExamDto.getCreatedAt());
-        exitingUserExam.setTotalMark(userExamDto.getTotalMark());
+        //exitingUserExam.setTotalMark(userExamDto.getTotalMark());
         exitingUserExam.setUser(exitingUser);
         exitingUserExam.setExam(exitingExam);
 

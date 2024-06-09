@@ -6,7 +6,7 @@
  */
 package dev.backend.eduverse.service.impl;
 
-import dev.backend.eduverse.dto.AdminRoleDTO;
+import dev.backend.eduverse.dto.AdminRoleDto;
 import dev.backend.eduverse.exception.ServiceException;
 import dev.backend.eduverse.model.AdminRole;
 import dev.backend.eduverse.repository.AdminRoleRepository;
@@ -37,7 +37,7 @@ public class AdminRoleServiceImpl implements AdminRoleService {
 	}
 
 	@Override
-	public boolean createAdminRole(AdminRoleDTO adminRoleDTO) {
+	public boolean createAdminRole(AdminRoleDto adminRoleDTO) {
 		logger.info("Entering the creation process");
 		AdminRole adminRole = modelMapper.map(adminRoleDTO, AdminRole.class);
 		try {
@@ -50,15 +50,15 @@ public class AdminRoleServiceImpl implements AdminRoleService {
 	}
 
 	@Override
-	public List<AdminRoleDTO> getAllAdminRole() {
+	public List<AdminRoleDto> getAllAdminRole() {
 		logger.info("Entering the get all ADMIN role process");
 
 		try {
 			List<AdminRole> adminRoles = adminRoleRepository.findAll();
 			int numberOfAdminRoles = adminRoles.size(); // Get the number of retrieved ADMIN role list
 			logger.info("Retrieved {} ADMIN role list", numberOfAdminRoles);
-			List<AdminRoleDTO> adminRoleDTOs = adminRoles.stream()
-					.map(adminRole -> modelMapper.map(adminRole, AdminRoleDTO.class)).collect(Collectors.toList());
+			List<AdminRoleDto> adminRoleDTOs = adminRoles.stream()
+					.map(adminRole -> modelMapper.map(adminRole, AdminRoleDto.class)).collect(Collectors.toList());
 			return adminRoleDTOs;
 		} catch (Exception e) {
 			logger.error("Error occurred while retrieving ADMIN role list", e);
@@ -67,16 +67,16 @@ public class AdminRoleServiceImpl implements AdminRoleService {
 	}
 
 	@Override
-	public AdminRoleDTO getAdminRoleByID(Long id) {
+	public AdminRoleDto getAdminRoleByID(Long id) {
 		logger.info("Retrieving adminRole by ID: {}", id);
 		Optional<AdminRole> adminRoleOptional = adminRoleRepository.findById(id);
 		AdminRole adminRole = adminRoleOptional
 				.orElseThrow(() -> new EntityNotFoundException("Entity is not found with this id" + id));
-		return modelMapper.map(adminRole, AdminRoleDTO.class);
+		return modelMapper.map(adminRole, AdminRoleDto.class);
 	}
 
 	@Override
-	public boolean updateAdminRole(AdminRoleDTO adminRoleDTO, Long id) {
+	public boolean updateAdminRole(AdminRoleDto adminRoleDTO, Long id) {
 		logger.info("Updating adminRole with ID: {}", id);
 
 		// Retrieve existing ADMIN role from the repository
@@ -116,7 +116,7 @@ public class AdminRoleServiceImpl implements AdminRoleService {
 	}
 
 	@Override
-	public List<AdminRoleDTO> readAdminRoleByPagniation(int pageNumber, int pageSize) throws IllegalAccessException {
+	public List<AdminRoleDto> readAdminRoleByPagniation(int pageNumber, int pageSize) throws IllegalAccessException {
 		pageNumber = Math.max(pageNumber, 1);
 	    pageSize = (pageSize < 1) ? 10 : pageSize;
 	    
@@ -124,7 +124,7 @@ public class AdminRoleServiceImpl implements AdminRoleService {
 		try {
 			List<AdminRole> adminRoleList = adminRoleRepository.paginate(pageSize, offset);			
 			return adminRoleList.stream()
-					.map(adminRole -> modelMapper.map(adminRole, AdminRoleDTO.class))
+					.map(adminRole -> modelMapper.map(adminRole, AdminRoleDto.class))
 					.collect(Collectors.toList());
 		} catch (Exception e) {
 			logger.error("Failed to retrieve admin roles with pagination", e);

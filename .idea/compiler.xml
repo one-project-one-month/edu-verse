@@ -8,12 +8,14 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="eduverse" />
+        <module name="eduverse (1)" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="eduverse" options="-parameters" />
+      <module name="eduverse (1)" options="-parameters" />
     </option>
   </component>
 </project>
