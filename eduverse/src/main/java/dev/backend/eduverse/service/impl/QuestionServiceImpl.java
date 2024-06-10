@@ -7,9 +7,7 @@
 package dev.backend.eduverse.service.impl;
 
 import dev.backend.eduverse.dto.QuestionDto;
-import dev.backend.eduverse.exception.EntityNotFoundException;
 import dev.backend.eduverse.exception.ServiceException;
-import dev.backend.eduverse.model.Course;
 import dev.backend.eduverse.model.Exam;
 import dev.backend.eduverse.model.Question;
 import dev.backend.eduverse.repository.ExamRepository;
@@ -20,7 +18,6 @@ import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

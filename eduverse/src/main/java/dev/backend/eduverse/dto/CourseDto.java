@@ -6,14 +6,15 @@
  */
 package dev.backend.eduverse.dto;
 
-import dev.backend.eduverse.util.CourseStatus;
-import dev.backend.eduverse.util.Level;
+
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 
 import java.time.LocalDate;
 
+import dev.backend.eduverse.util.CourseStatus;
+import dev.backend.eduverse.util.Level;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

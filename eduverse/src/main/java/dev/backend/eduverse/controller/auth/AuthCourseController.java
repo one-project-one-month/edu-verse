@@ -4,7 +4,7 @@ import dev.backend.eduverse.dto.CourseDto;
 import dev.backend.eduverse.dto.UserCourseDto;
 import dev.backend.eduverse.service.CourseService;
 import dev.backend.eduverse.service.UserCourseService;
-import dev.backend.eduverse.service.impl.UserServiceImpl;
+import dev.backend.eduverse.service.UserService;
 import dev.backend.eduverse.util.response_template.ApiResponse;
 import dev.backend.eduverse.util.response_template.ResponseUtil;
 import io.swagger.v3.oas.annotations.Operation;
@@ -28,7 +28,7 @@ import java.util.List;
 @RequestMapping("/api/auth")
 @RequiredArgsConstructor
 public class AuthCourseController {
-    private final UserServiceImpl userService;
+    private final UserService userService;
     private final UserCourseService userCourseService;
     private final CourseService courseService;
     private final Logger logger = LoggerFactory.getLogger(AuthCourseController.class);
