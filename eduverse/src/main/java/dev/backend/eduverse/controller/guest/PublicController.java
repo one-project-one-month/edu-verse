@@ -229,7 +229,7 @@ public class PublicController {
                     "Get All Question REST API is used to get all the Questions from the database"
     )
     @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200", description = "HTTP Status 200 SUCCESS")
-    @GetMapping("")
+    @GetMapping("/question")
     public ResponseEntity<ApiResponse<PageNumberResponse<List<QuestionDto>>>> getAllQuestions(
             @RequestParam(value = "page", required = false, defaultValue = "1") int pageNo,
             @RequestParam(value = "limit", required = false, defaultValue = "10") int limit

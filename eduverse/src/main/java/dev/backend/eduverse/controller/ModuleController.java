@@ -84,7 +84,7 @@ public class ModuleController {
 	@GetMapping
 	public ResponseEntity<PageNumberResponse<List<ModuleDto>>> getAllModulesByPage(
 			@RequestParam(name = "page", required = false, defaultValue = "1") int pageNo,
-			@RequestParam(required = false, defaultValue = "10") int limit) {
+			@RequestParam(required = false, defaultValue = "10") int limit) throws IllegalAccessException {
 
 		List<ModuleDto> moduleDtos = moduleService.getAllModulesByPagination(pageNo, limit);
 		return new ResponseEntity<>(new PageNumberResponse(pageNo, limit, moduleDtos), HttpStatus.OK);
