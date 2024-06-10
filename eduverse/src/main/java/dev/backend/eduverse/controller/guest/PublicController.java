@@ -51,7 +51,7 @@ public class PublicController {
     private final ModuleService moduleService;
 
     @GetMapping("/courses")
-    @Operation(summary = "Retrieve all courses", tags = { "Course Reader" })
+    @Operation(summary = "Retrieve all courses")
     public ResponseEntity<ApiResponse<PageNumberResponse<List<CourseDto>>>> readCourses(
             @RequestParam(value = "page", required = false, defaultValue = "1") int pageNo,
             @RequestParam(value = "limit", required = false, defaultValue = "10") int limit) {
@@ -69,7 +69,7 @@ public class PublicController {
     }
 
     @GetMapping("/course/")
-    @Operation(summary = "Retrieve courses by name containing", tags = {"Course Reader"})
+    @Operation(summary = "Retrieve courses by name containing")
     public ResponseEntity<?> getCoursesByName(@RequestParam(value = "search") String name) {
         try {
             List<CourseDto> courses = courseService.getCoursesByName(name);
@@ -87,7 +87,7 @@ public class PublicController {
     }
 
     @GetMapping("/category/")
-    @Operation(summary = "Get all category", tags = {"Get all Category"})
+    @Operation(summary = "Get all category")
     public ResponseEntity<ApiResponse<List<CategoryDto>>> getAllCategory() {
         try {
             List<CategoryDto> categories = categoryService.getAllCategory();
@@ -98,7 +98,7 @@ public class PublicController {
     }
 
     @GetMapping("/category/{categoryId}")
-    @Operation(summary = "Get  category", tags = {"Get Category"})
+    @Operation(summary = "Get  category")
     public ResponseEntity<ApiResponse<CategoryDto>> getCategory(@PathVariable Long categoryId) {
         try {
             CategoryDto categoryDto = categoryService.getCategory(categoryId);
@@ -121,34 +121,11 @@ public class PublicController {
     }
 
     @GetMapping("/pathways")
-    @Operation(summary = "Retrieve all pathways", tags = {"Pathway Reader"})
+    @Operation(summary = "Retrieve all pathways")
     public ResponseEntity<ApiResponse<PageNumberResponse<List<PathwayDto>>>> readPathways(
             @RequestParam(value = "page", required = false, defaultValue = "1") int pageNo,
             @RequestParam(value = "limit", required = false, defaultValue = "10") int limit
     ) {
-//        try {
-//            List<PathwayDto> pathwayList = pathwayService.readPathwayByPagination(pageNo, limit);
-//            if (pathwayList.isEmpty()) {
-//                return ResponseUtil.createSuccessResponse(
-//                        HttpStatus.OK,
-//                        "No pathways found",
-//                        new PageNumberResponse<>(pageNo, limit, pathwayList)
-//                );
-//            } else {
-//                return ResponseUtil.createSuccessResponse(
-//                        HttpStatus.OK,
-//                        "Pathways retrieved successfully",
-//                        new PageNumberResponse<>(pageNo, limit, pathwayList)
-//                );
-//            }
-//        } catch (Exception e) {
-//            logger.error("Failed to retrieve pathways", e);
-//            return ResponseUtil.createErrorResponse(
-//                    HttpStatus.INTERNAL_SERVER_ERROR,
-//                    "Failed to retrieve pathways",
-//                    null
-//            );
-//        }
         return ResponseUtil.getApiResponseResponseEntity(pageNo, limit,
                 paginationParams -> {
                     try {

@@ -8,6 +8,7 @@ import dev.backend.eduverse.service.AdminService;
 import dev.backend.eduverse.service.AuthService;
 import dev.backend.eduverse.service.UserService;
 import dev.backend.eduverse.util.response_template.ApiResponse;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+@Tag(name = "REST APIs for Authentication")
 @RestController
 @RequestMapping("/api/public/")
 public class AuthenticationController {

@@ -21,7 +21,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-@Tag(name = "CRUD REST APIs for Question")
+@Tag(name = "CRUD REST APIs for Module")
 @RestController
 @RequestMapping("/api/auth/admin/module")
 @RequiredArgsConstructor
@@ -32,7 +32,7 @@ public class AuthModuleController {
 
     @Operation(summary = "Create Module", description = "Create Module REST API is used to save Module in a database")
     @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "201", description = "HTTP Status 201 CREATED")
-    @PostMapping("/")
+    @PostMapping("")
     public ResponseEntity<ApiResponse<ModuleDto>> createQuestion(@Valid @RequestBody ModuleDto module) {
         try {
             ModuleDto createdModule = moduleService.createModule(module);
@@ -46,7 +46,7 @@ public class AuthModuleController {
     }
 
     @Operation(summary = "Update Module", description = "Update Module REST API is used to update a particular Module in the database")
-    @PutMapping("{id}")
+    @PutMapping("/{id}")
     @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200", description = "HTTP Status 200 SUCCESS")
     public ResponseEntity<ApiResponse<ModuleDto>> updateModule(@PathVariable("id") Long id,
                                                                    @Valid @RequestBody ModuleDto module) {
@@ -62,7 +62,7 @@ public class AuthModuleController {
 
     @Operation(summary = "Delete Module", description = "Delete Module REST API is used to delete a particular Module from the database")
     @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200", description = "HTTP Status 200 SUCCESS")
-    @DeleteMapping("{id}")
+    @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteModule(@PathVariable("id") Long id) {
 
         moduleService.deleteModule(id);

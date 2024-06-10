@@ -57,7 +57,7 @@ public class AuthCourseController {
     }
 
     @PostMapping("/admin/course")
-    @Operation(summary = "Create a new course", tags = {"Course Creator"})
+    @Operation(summary = "Create a new course")
     public ResponseEntity<ApiResponse<String>> createCourse(@Valid @RequestBody CourseDto courseDTO) {
         try {
             boolean created = courseService.createCourse(courseDTO);
@@ -77,7 +77,7 @@ public class AuthCourseController {
     }
 
     @PutMapping("/admin/course/{courseId}")
-    @Operation(summary = "Update a course's information", tags = {"Update Course"})
+    @Operation(summary = "Update a course's information")
     public ResponseEntity<ApiResponse<String>> updateCourse(@PathVariable Long courseId,
                                                             @Valid @RequestBody CourseDto courseDTO) {
         try {
@@ -98,7 +98,7 @@ public class AuthCourseController {
     }
 
     @DeleteMapping("/admin/course/{courseId}")
-    @Operation(summary = "Delete a course by ID", tags = {"Delete Course By Id"})
+    @Operation(summary = "Delete a course by ID")
     public ResponseEntity<ApiResponse<String>> deleteCourse(@PathVariable Long courseId) {
         try {
             boolean deleted = courseService.deleteCourse(courseId);

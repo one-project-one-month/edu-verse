@@ -22,7 +22,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-@Tag(name = "CRUD REST APIs for Question")
+@Tag(name = "CRUD REST APIs for Exam")
 @RestController
 @RequestMapping("/api/auth/admin/exam")
 @RequiredArgsConstructor
@@ -33,7 +33,7 @@ public class AuthExamController {
 
     @Operation(summary = "Create Exam", description = "Create Exam REST API is used to save Exam in a database")
     @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "201", description = "HTTP Status 201 CREATED")
-    @PostMapping("/")
+    @PostMapping("")
     public ResponseEntity<ApiResponse<ExamDto>> createExam(@Valid @RequestBody ExamDto exam) {
         try {
             ExamDto createdExam = examService.createExam(exam);
@@ -47,7 +47,7 @@ public class AuthExamController {
     }
 
     @Operation(summary = "Update Exam", description = "Update Exam REST API is used to update a particular Exam in the database")
-    @PutMapping("{id}")
+    @PutMapping("/{id}")
     @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200", description = "HTTP Status 200 SUCCESS")
     public ResponseEntity<ApiResponse<ExamDto>> updateExam(@PathVariable("id") Long id,
                                                                    @Valid @RequestBody ExamDto exam) {
@@ -63,7 +63,7 @@ public class AuthExamController {
 
     @Operation(summary = "Delete Exam", description = "Delete Exam REST API is used to delete a particular Exam from the database")
     @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200", description = "HTTP Status 200 SUCCESS")
-    @DeleteMapping("{id}")
+    @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteExam(@PathVariable("id") Long id) {
 
         examService.deleteExam(id);

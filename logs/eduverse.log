@@ -2134,3 +2134,106 @@ Caused by: org.hibernate.HibernateException: identifier of an instance of dev.ba
 2024-06-09T23:18:17.093+06:30 DEBUG 26412 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
 2024-06-09T23:18:17.093+06:30  INFO 26412 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
 2024-06-09T23:18:18.638+06:30  INFO 26412 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 1.561 seconds (process running for 110.191)
+2024-06-10T18:37:40.114+06:30  INFO 13672 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 22 with PID 13672 (D:\GitHub\EduVerse\eduverse\target\classes started by Alvin in D:\GitHub\EduVerse)
+2024-06-10T18:37:40.114+06:30 DEBUG 13672 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-06-10T18:37:40.114+06:30  INFO 13672 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-06-10T18:37:44.836+06:30 ERROR 13672 --- [EduVerse] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Ambiguous mapping. Cannot map 'publicController' method 
+dev.backend.eduverse.controller.guest.PublicController#getAllQuestions(int, int)
+to {GET [/api/public/]}: There is already 'publicController' bean method
+dev.backend.eduverse.controller.guest.PublicController#getAllModules(int, int) mapped.
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1786) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:962) ~[spring-context-6.1.6.jar:6.1.6]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624) ~[spring-context-6.1.6.jar:6.1.6]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343) ~[spring-boot-3.2.5.jar:3.2.5]
+	at dev.backend.eduverse.EduverseApplication.main(EduverseApplication.java:14) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.2.5.jar:3.2.5]
+Caused by: java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'publicController' method 
+dev.backend.eduverse.controller.guest.PublicController#getAllQuestions(int, int)
+to {GET [/api/public/]}: There is already 'publicController' bean method
+dev.backend.eduverse.controller.guest.PublicController#getAllModules(int, int) mapped.
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.validateMethodMapping(AbstractHandlerMethodMapping.java:674) ~[spring-webmvc-6.1.6.jar:6.1.6]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:636) ~[spring-webmvc-6.1.6.jar:6.1.6]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(AbstractHandlerMethodMapping.java:331) ~[spring-webmvc-6.1.6.jar:6.1.6]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.registerHandlerMethod(RequestMappingHandlerMapping.java:508) ~[spring-webmvc-6.1.6.jar:6.1.6]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.registerHandlerMethod(RequestMappingHandlerMapping.java:84) ~[spring-webmvc-6.1.6.jar:6.1.6]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.lambda$detectHandlerMethods$2(AbstractHandlerMethodMapping.java:298) ~[spring-webmvc-6.1.6.jar:6.1.6]
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:986) ~[na:na]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.detectHandlerMethods(AbstractHandlerMethodMapping.java:296) ~[spring-webmvc-6.1.6.jar:6.1.6]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.processCandidateBean(AbstractHandlerMethodMapping.java:265) ~[spring-webmvc-6.1.6.jar:6.1.6]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.initHandlerMethods(AbstractHandlerMethodMapping.java:224) ~[spring-webmvc-6.1.6.jar:6.1.6]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.afterPropertiesSet(AbstractHandlerMethodMapping.java:212) ~[spring-webmvc-6.1.6.jar:6.1.6]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.afterPropertiesSet(RequestMappingHandlerMapping.java:239) ~[spring-webmvc-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1833) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782) ~[spring-beans-6.1.6.jar:6.1.6]
+	... 19 common frames omitted
+
+2024-06-10T18:40:55.573+06:30  INFO 7220 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 22 with PID 7220 (D:\GitHub\EduVerse\eduverse\target\classes started by Alvin in D:\GitHub\EduVerse)
+2024-06-10T18:40:55.575+06:30 DEBUG 7220 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-06-10T18:40:55.576+06:30  INFO 7220 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-06-10T18:41:00.590+06:30  INFO 7220 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 5.394 seconds (process running for 6.009)
+2024-06-10T18:41:08.313+06:30  INFO 7220 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 22 with PID 7220 (D:\GitHub\EduVerse\eduverse\target\classes started by Alvin in D:\GitHub\EduVerse)
+2024-06-10T18:41:08.314+06:30 DEBUG 7220 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-06-10T18:41:08.314+06:30  INFO 7220 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-06-10T18:41:09.372+06:30  INFO 7220 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 1.083 seconds (process running for 14.79)
+2024-06-10T18:46:14.689+06:30  INFO 11796 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 22 with PID 11796 (D:\GitHub\EduVerse\eduverse\target\classes started by Alvin in D:\GitHub\EduVerse)
+2024-06-10T18:46:14.689+06:30 DEBUG 11796 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-06-10T18:46:14.689+06:30  INFO 11796 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-06-10T18:46:19.381+06:30  INFO 11796 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 5.021 seconds (process running for 5.619)
+2024-06-10T18:46:24.425+06:30 DEBUG 11796 --- [EduVerse] [http-nio-8080-exec-1] d.b.e.controller.WelcomeController       : Debug level - Hello Log back
+2024-06-10T18:46:24.425+06:30  INFO 11796 --- [EduVerse] [http-nio-8080-exec-1] d.b.e.controller.WelcomeController       : Info level - Hello Log back
+2024-06-10T18:46:24.425+06:30 ERROR 11796 --- [EduVerse] [http-nio-8080-exec-1] d.b.e.controller.WelcomeController       : Error level - Hello Log back
+2024-06-10T19:10:48.494+06:30  INFO 6128 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 22 with PID 6128 (D:\GitHub\EduVerse\eduverse\target\classes started by Alvin in D:\GitHub\EduVerse)
+2024-06-10T19:10:48.495+06:30 DEBUG 6128 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-06-10T19:10:48.495+06:30  INFO 6128 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-06-10T19:10:54.963+06:30  INFO 6128 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 6.881 seconds (process running for 7.685)
+2024-06-10T19:11:28.601+06:30  INFO 11068 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 22 with PID 11068 (D:\GitHub\EduVerse\eduverse\target\classes started by Alvin in D:\GitHub\EduVerse)
+2024-06-10T19:11:28.602+06:30 DEBUG 11068 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-06-10T19:11:28.603+06:30  INFO 11068 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-06-10T19:11:38.913+06:30  INFO 11068 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 10.763 seconds (process running for 11.484)
+2024-06-10T19:11:43.529+06:30 DEBUG 11068 --- [EduVerse] [http-nio-8080-exec-1] d.b.e.controller.WelcomeController       : Debug level - Hello Log back
+2024-06-10T19:11:43.529+06:30  INFO 11068 --- [EduVerse] [http-nio-8080-exec-1] d.b.e.controller.WelcomeController       : Info level - Hello Log back
+2024-06-10T19:11:43.529+06:30 ERROR 11068 --- [EduVerse] [http-nio-8080-exec-1] d.b.e.controller.WelcomeController       : Error level - Hello Log back
+2024-06-10T19:13:01.368+06:30  INFO 17648 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 22 with PID 17648 (D:\GitHub\EduVerse\eduverse\target\classes started by Alvin in D:\GitHub\EduVerse)
+2024-06-10T19:13:01.368+06:30 DEBUG 17648 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-06-10T19:13:01.368+06:30  INFO 17648 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-06-10T19:13:06.815+06:30  INFO 17648 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 5.802 seconds (process running for 6.481)
+2024-06-10T19:16:22.320+06:30  INFO 17648 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 22 with PID 17648 (D:\GitHub\EduVerse\eduverse\target\classes started by Alvin in D:\GitHub\EduVerse)
+2024-06-10T19:16:22.320+06:30 DEBUG 17648 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-06-10T19:16:22.320+06:30  INFO 17648 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-06-10T19:16:24.992+06:30  INFO 17648 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 2.71 seconds (process running for 204.658)
+2024-06-10T19:16:26.667+06:30  INFO 17648 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 22 with PID 17648 (D:\GitHub\EduVerse\eduverse\target\classes started by Alvin in D:\GitHub\EduVerse)
+2024-06-10T19:16:26.668+06:30 DEBUG 17648 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-06-10T19:16:26.668+06:30  INFO 17648 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-06-10T19:16:31.370+06:30  INFO 17648 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 4.738 seconds (process running for 211.038)
+2024-06-10T19:17:07.195+06:30  INFO 17648 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 22 with PID 17648 (D:\GitHub\EduVerse\eduverse\target\classes started by Alvin in D:\GitHub\EduVerse)
+2024-06-10T19:17:07.195+06:30 DEBUG 17648 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-06-10T19:17:07.195+06:30  INFO 17648 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-06-10T19:17:09.460+06:30  INFO 17648 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 2.289 seconds (process running for 249.126)
+2024-06-10T19:17:11.147+06:30  INFO 17648 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 22 with PID 17648 (D:\GitHub\EduVerse\eduverse\target\classes started by Alvin in D:\GitHub\EduVerse)
+2024-06-10T19:17:11.147+06:30 DEBUG 17648 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-06-10T19:17:11.148+06:30  INFO 17648 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-06-10T19:17:20.071+06:30  INFO 17648 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 8.955 seconds (process running for 259.738)
+2024-06-10T19:20:52.413+06:30  INFO 17648 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 22 with PID 17648 (D:\GitHub\EduVerse\eduverse\target\classes started by Alvin in D:\GitHub\EduVerse)
+2024-06-10T19:20:52.413+06:30 DEBUG 17648 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-06-10T19:20:52.413+06:30  INFO 17648 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-06-10T19:20:54.844+06:30  INFO 17648 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 2.452 seconds (process running for 474.511)
+2024-06-10T19:20:56.365+06:30  INFO 17648 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Starting EduverseApplication using Java 22 with PID 17648 (D:\GitHub\EduVerse\eduverse\target\classes started by Alvin in D:\GitHub\EduVerse)
+2024-06-10T19:20:56.365+06:30 DEBUG 17648 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-06-10T19:20:56.365+06:30  INFO 17648 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : The following 1 profile is active: "dev"
+2024-06-10T19:20:58.393+06:30  INFO 17648 --- [EduVerse] [restartedMain] d.backend.eduverse.EduverseApplication   : Started EduverseApplication in 2.049 seconds (process running for 478.065)

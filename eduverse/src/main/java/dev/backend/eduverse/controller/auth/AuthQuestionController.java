@@ -37,7 +37,7 @@ public class AuthQuestionController {
 
 	@Operation(summary = "Create Question", description = "Create Question REST API is used to save Question in a database")
 	@io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "201", description = "HTTP Status 201 CREATED")
-	@PostMapping("/")
+	@PostMapping("")
 	public ResponseEntity<ApiResponse<QuestionDto>> createQuestion(@Valid @RequestBody QuestionDto question) {
 		try {
 			QuestionDto createdQuestion = questionService.createQuestion(question);
@@ -51,7 +51,7 @@ public class AuthQuestionController {
 	}
 
 	@Operation(summary = "Update Question", description = "Update Question REST API is used to update a particular Question in the database")
-	@PutMapping("{id}")
+	@PutMapping("/{id}")
 	@io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200", description = "HTTP Status 200 SUCCESS")
 	public ResponseEntity<ApiResponse<QuestionDto>> updateQuestion(@PathVariable("id") Long id,
 			@Valid @RequestBody QuestionDto question) {
@@ -67,7 +67,7 @@ public class AuthQuestionController {
 
 	@Operation(summary = "Delete Question", description = "Delete Question REST API is used to delete a particular Question from the database")
 	@io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200", description = "HTTP Status 200 SUCCESS")
-	@DeleteMapping("{id}")
+	@DeleteMapping("/{id}")
 	public ResponseEntity<String> deleteQuestion(@PathVariable("id") Long id) {
 
 		questionService.deleteQuestion(id);

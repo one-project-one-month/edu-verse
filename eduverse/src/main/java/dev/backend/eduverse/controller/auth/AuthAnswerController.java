@@ -30,7 +30,7 @@ public class AuthAnswerController {
 
 	// Create operation
 	@Operation(summary = "Create Answer", description = "Create Answer REST API is used to save Answer in a database")
-	@PostMapping("/")
+	@PostMapping("")
 	@io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "201", description = "HTTP Status 201 CREATED")
 	public ResponseEntity<?> createAnswer(@Valid @RequestBody AnswerDto answerDto) {
 		try {

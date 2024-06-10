@@ -25,7 +25,7 @@ import jakarta.validation.Valid;
 
 @Tag(name = "CRUD REST APIs for Pathway")
 @RestController
-@RequestMapping("/api/auth")
+@RequestMapping("/api/auth/admin/pathway")
 public class AuthPathwayController {
 
     private final Logger logger = LoggerFactory.getLogger(AuthPathwayController.class);
@@ -36,8 +36,8 @@ public class AuthPathwayController {
         this.pathwayService = pathwayService;
     }
 
-    @PostMapping("/admin/pathway")
-    @Operation(summary = "Create a new pathway", tags = {"Pathway Creator"})
+    @PostMapping("")
+    @Operation(summary = "Create a new pathway")
     public ResponseEntity<ApiResponse<String>> createPathway(@Valid @RequestBody PathwayDto pathwayDTO) {
         try {
             boolean created = pathwayService.createPathway(pathwayDTO);
@@ -59,8 +59,8 @@ public class AuthPathwayController {
         }
     }
 
-    @PutMapping("/admin/pathway/{pathwayId}")
-    @Operation(summary = "Update a pathway's information", tags = {"Update Pathway"})
+    @PutMapping("/{pathwayId}")
+    @Operation(summary = "Update a pathway's information")
     public ResponseEntity<ApiResponse<String>> updatePathway(@PathVariable Long pathwayId,
                                                              @Valid @RequestBody PathwayDto pathwayDTO) {
         try {
@@ -80,8 +80,8 @@ public class AuthPathwayController {
         }
     }
 
-    @DeleteMapping("/admin/pathway/{pathwayId}")
-    @Operation(summary = "Delete a pathway by ID", tags = {"Delete Pathway By Id"})
+    @DeleteMapping("/{pathwayId}")
+    @Operation(summary = "Delete a pathway by ID")
     public ResponseEntity<ApiResponse<String>> deletePathway(@PathVariable Long pathwayId) {
         try {
             boolean deleted = pathwayService.deletePathway(pathwayId);

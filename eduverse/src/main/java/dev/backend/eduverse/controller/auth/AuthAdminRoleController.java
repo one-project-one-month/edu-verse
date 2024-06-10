@@ -44,8 +44,8 @@ public class AuthAdminRoleController {
 		dataBinder.registerCustomEditor(String.class, new StringTrimmerEditor(true));
 	}
 
-	@PostMapping("/")
-	@Operation(summary = "Create a new ADMIN role", tags = { "Admin role Creator" })
+	@PostMapping("")
+	@Operation(summary = "Create a new ADMIN role")
 	public ResponseEntity<ApiResponse<String>> createAdminRole(@Valid @RequestBody AdminRoleDto adminRoleDTO) {
 		try {
 			boolean created = adminRoleService.createAdminRole(adminRoleDTO);
@@ -66,7 +66,7 @@ public class AuthAdminRoleController {
 	}
 
 	@GetMapping("")
-	@Operation(summary = "Retrieve all adminRoles", tags = { "Admin role Reader" })
+	@Operation(summary = "Retrieve all adminRoles")
 	public ResponseEntity<ApiResponse<PageNumberResponse<List<AdminRoleDto>>>> readAdminRoles(
 			@RequestParam(value = "page", required = false, defaultValue = "1") int pageNo,
 			@RequestParam(value = "limit", required = false, defaultValue = "10") int limit) {
@@ -87,7 +87,7 @@ public class AuthAdminRoleController {
 	}
 
 	@PutMapping("/{adminRoleId}")
-	@Operation(summary = "Update a adminRole's information", tags = { "Update Admin role" })
+	@Operation(summary = "Update a adminRole's information")
 	public ResponseEntity<ApiResponse<String>> updateAdminRole(@PathVariable Long adminRoleId,
 			@Valid @RequestBody AdminRoleDto adminRoleDTO) {
 		try {
@@ -108,7 +108,7 @@ public class AuthAdminRoleController {
 	}
 
 	@DeleteMapping("/{adminRoleId}")
-	@Operation(summary = "Delete a ADMIN role by ID", tags = { "Delete Admin role By Id" })
+	@Operation(summary = "Delete a ADMIN role by ID")
 	public ResponseEntity<ApiResponse<String>> deleteAdminRole(@PathVariable Long adminRoleId) {
 		try {
 			boolean deleted = adminRoleService.deleteAdminRole(adminRoleId);

@@ -18,9 +18,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 
+@Tag(name = "CRUD REST APIs for Admin")
 @RestController
 @RequestMapping("/api/auth/admin/admins")
-@Tag(name = "Admin Operation", description = "REST API CRUD operation for Admin Entity")
 @RequiredArgsConstructor
 public class AuthAdminController {
 
