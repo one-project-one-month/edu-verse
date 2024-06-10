@@ -83,7 +83,7 @@ public class ExamServiceImpl implements ExamService {
     }
 
     @Override
-    public ExamDto updateExam(ExamDto examDto) {
+    public ExamDto updateExam(Long id, ExamDto examDto) {
         Exam exitingExam =
                 examRepository
                         .findById(examDto.getId())
