@@ -56,6 +56,15 @@ public class ExamServiceImpl implements ExamService {
     }
 
     @Override
+    public ExamDto getExamById(Long id) {
+        Exam exam =
+                examRepository
+                        .findById(id)
+                        .orElseThrow(() -> new ResourceNotFoundException("Exam", "id", id));
+        return modelMapper.map(exam, ExamDto.class);
+    }
+
+    @Override
     public List<ExamDto> readExamByPagination(int pageNo, int limit) throws IllegalAccessException {
         logger.info("Entering the get all exam process with pagination");
         pageNo = Math.max(pageNo, 1);

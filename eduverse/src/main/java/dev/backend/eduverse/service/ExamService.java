@@ -8,6 +8,7 @@ package dev.backend.eduverse.service;
 
 import dev.backend.eduverse.dto.AnnouncementDto;
 import dev.backend.eduverse.dto.ExamDto;
+import dev.backend.eduverse.model.Exam;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -17,9 +18,11 @@ public interface ExamService {
 
     ExamDto createExam(ExamDto examDto);
 
+    ExamDto getExamById(Long id);
+
     List<ExamDto> readExamByPagination(int pageNo, int limit) throws IllegalAccessException;
 
-    ExamDto updateExam(ExamDto examDto);
+    ExamDto updateExam(Long id, ExamDto examDto);
 
     void deleteExam(Long id);
 }

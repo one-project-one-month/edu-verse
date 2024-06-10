@@ -46,6 +46,10 @@ public class PublicController {
 
     private final QuestionService questionService;
 
+    private final ExamService examService;
+
+    private final ModuleService moduleService;
+
     @GetMapping("/courses")
     @Operation(summary = "Retrieve all courses", tags = { "Course Reader" })
     public ResponseEntity<ApiResponse<PageNumberResponse<List<CourseDto>>>> readCourses(
@@ -186,6 +190,38 @@ public class PublicController {
         }
     }
 
+    @Operation(summary = "Get Exam by ID", description = "Get Exam by ID REST API is used to retrieve a specific exam by its ID from the database")
+    @GetMapping("/exam/{id}")
+    @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200", description = "HTTP Status 200 SUCCESS")
+    public ResponseEntity<?> getExamById(@PathVariable("id") Long id) {
+        try {
+            ExamDto exam = examService.getExamById(id);
+            return ResponseUtil.createSuccessResponse(HttpStatus.OK, "Exam retrieved successfully", exam);
+        } catch (EntityNotFoundException e) {
+            logger.error("Failed to retrieve exam", e);
+            return ResponseUtil.createErrorResponse(HttpStatus.OK, "Failed to retrieve exam", e.getMessage());
+        } catch (Exception e) {
+            logger.error("Failed to retrieve exam", e);
+            return ResponseUtil.createErrorResponse(HttpStatus.INTERNAL_SERVER_ERROR, "Failed to retrieve exam", null);
+        }
+    }
+
+    @Operation(summary = "Get Module by ID", description = "Get Module by ID REST API is used to retrieve a specific module by its ID from the database")
+    @GetMapping("/module/{id}")
+    @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200", description = "HTTP Status 200 SUCCESS")
+    public ResponseEntity<?> getModuleById(@PathVariable("id") Long id) {
+        try {
+            ModuleDto module = moduleService.getById(id);
+            return ResponseUtil.createSuccessResponse(HttpStatus.OK, "Module retrieved successfully", module);
+        } catch (EntityNotFoundException e) {
+            logger.error("Failed to retrieve module", e);
+            return ResponseUtil.createErrorResponse(HttpStatus.OK, "Failed to retrieve module", e.getMessage());
+        } catch (Exception e) {
+            logger.error("Failed to retrieve module", e);
+            return ResponseUtil.createErrorResponse(HttpStatus.INTERNAL_SERVER_ERROR, "Failed to retrieve module", null);
+        }
+    }
+
     // Question operations
     @Operation(
             summary = "Get All Question",
@@ -209,5 +245,30 @@ public class PublicController {
                 logger,
                 "No questions found",
                 "Questions retrieved successfully");
+    }
+
+    // Module
+    @Operation(
+            summary = "Get All Module",
+            description =
+                    "Get All Module REST API is used to get all the Modules from the database"
+    )
+    @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200", description = "HTTP Status 200 SUCCESS")
+    @GetMapping("")
+    public ResponseEntity<ApiResponse<PageNumberResponse<List<ModuleDto>>>> getAllModules(
+            @RequestParam(value = "page", required = false, defaultValue = "1") int pageNo,
+            @RequestParam(value = "limit", required = false, defaultValue = "10") int limit
+    ) {
+        return ResponseUtil.getApiResponseResponseEntity(pageNo, limit,
+                paginationParams -> {
+                    try {
+                        return moduleService.getAllModulesByPagination(paginationParams.pageNo(), paginationParams.limit());
+                    } catch (IllegalAccessException e) {
+                        throw new RuntimeException(e);
+                    }
+                },
+                logger,
+                "No modules found",
+                "Modules retrieved successfully");
     }
 }

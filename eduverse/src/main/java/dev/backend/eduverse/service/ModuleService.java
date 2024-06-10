@@ -12,7 +12,7 @@ public interface ModuleService {
 
 	void deleteModule(Long id);
 
-	List<ModuleDto> getAllModulesByPagination(int pageNo, int limit);
+	List<ModuleDto> getAllModulesByPagination(int pageNo, int limit) throws IllegalAccessException;
 
 	ModuleDto getById(Long id);
 

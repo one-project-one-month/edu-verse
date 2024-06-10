@@ -7,6 +7,7 @@
 package dev.backend.eduverse.controller;
 
 import dev.backend.eduverse.dto.ExamDto;
+import dev.backend.eduverse.model.Exam;
 import dev.backend.eduverse.service.ExamService;
 import dev.backend.eduverse.util.response_template.ApiResponse;
 import dev.backend.eduverse.util.response_template.PageNumberResponse;
@@ -59,6 +60,18 @@ public class ExamController {
     }
 
     @Operation(
+            summary = "Get Exam By Id",
+            description =
+                    "Get Exam By Id REST API is used to get a single Exam from the database")
+    @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200", description = "HTTP Status 200 SUCCESS")
+    @GetMapping("{id}")
+    public ResponseEntity<ExamDto> getExamById(@PathVariable("id") Long id) {
+
+        ExamDto exam = examService.getExamById(id);
+        return new ResponseEntity<>(exam, HttpStatus.OK);
+    }
+
+    @Operation(
             summary = "Update Exam",
             description =
                     "Update Exam REST API is used to update a particular Exam in the database")
@@ -68,7 +81,7 @@ public class ExamController {
             @PathVariable("id") Long id, @RequestBody @Valid ExamDto exam) {
 
         exam.setId(id);
-        ExamDto updatedExam = examService.updateExam(exam);
+        ExamDto updatedExam = examService.updateExam(id, exam);
         return new ResponseEntity<>(updatedExam, HttpStatus.OK);
     }
 

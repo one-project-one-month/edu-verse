@@ -73,5 +73,4 @@ public class AuthQuestionController {
 		questionService.deleteQuestion(id);
 		return new ResponseEntity<>("Question successfully deleted!", HttpStatus.OK);
 	}
-
 }
