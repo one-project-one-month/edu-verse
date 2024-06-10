@@ -218,6 +218,7 @@ public class CourseServiceImpl implements CourseService {
     }
 
     @Override
+    @Cacheable(value = "courseByPage", key = "#pageNumber")
     public List<CourseDto> readCourseByPagination(int pageNumber, int pageSize) {
         pageNumber = Math.max(pageNumber, 1);
         pageSize = (pageSize < 1) ? 10 : pageSize;
@@ -235,6 +236,7 @@ public class CourseServiceImpl implements CourseService {
     }
 
     @Override
+    @Cacheable(value = "courseByName", key = "#name")
     public CourseDto getCourseByName(String name) {
         logger.info("Retrieving course by name: {}", name);
         Course course = courseRepository.findByName(name)
@@ -243,6 +245,7 @@ public class CourseServiceImpl implements CourseService {
     }
 
     @Override
+    @Cacheable(value = "coursesByName", key = "#name")
     public List<CourseDto> getCoursesByName(String name) {
         logger.info("Retrieving courses by name containing: {}", name);
         List<Course> courses = courseRepository.findByNameContaining(name);
