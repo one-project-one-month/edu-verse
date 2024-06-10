@@ -40,7 +40,7 @@ public class AnswerServiceImpl implements AnswerService {
         Question question = EntityUtil.getEntityById(questionRepository, answerDto.getQuestionId(), "Question");
         Answer answer = DtoUtil.map(answerDto, Answer.class, modelMapper);
         answer.setQuestion(question);
-        Answer savedAnswer = EntityUtil.saveEntity(answerRepository, answer, "answer");
+        Answer savedAnswer = EntityUtil.saveEntity(answerRepository, answer, "Answer");
         logger.info("Answer created successfully with ID: {}", savedAnswer.getId());
         return DtoUtil.map(savedAnswer, AnswerDto.class, modelMapper);
     }

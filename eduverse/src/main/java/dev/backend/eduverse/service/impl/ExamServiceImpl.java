@@ -47,8 +47,8 @@ public class ExamServiceImpl implements ExamService {
     public ExamDto createExam(ExamDto examDto) {
         logger.info("Entering the creation process");
         Exam exam = modelMapper.map(examDto, Exam.class);
-        Course course = EntityUtil.getEntityById(courseRepository, examDto.getCourseId());
-        Admin admin = EntityUtil.getEntityById(adminRepository, examDto.getAdminId());
+        Course course = EntityUtil.getEntityById(courseRepository, examDto.getCourseId(), "Course");
+        Admin admin = EntityUtil.getEntityById(adminRepository, examDto.getAdminId(), "Admin");
         exam.setCourse(course);
         exam.setAdmin(admin);
         Exam savedExam = EntityUtil.saveEntity(examRepository, exam, "exam");

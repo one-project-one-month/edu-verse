@@ -20,7 +20,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-public class AdminRoleDTO {
+public class AdminRoleDto {
 
   @NotNull(message = "Code is required")
   @Pattern(regexp = "^\\w{4}$", message = "Code must be exactly 4 characters")

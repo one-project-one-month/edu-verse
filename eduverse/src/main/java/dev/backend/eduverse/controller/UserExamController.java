@@ -30,7 +30,7 @@ import java.util.List;
 @RequestMapping("/api/userexam")
 public class UserExamController {
 
-    private final Logger logger = LoggerFactory.getLogger(QuestionController.class);
+    private final Logger logger = LoggerFactory.getLogger(UserExamController.class);
 
     private UserExamService userExamService;
 

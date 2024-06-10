@@ -42,7 +42,7 @@ public class QuestionServiceImpl implements QuestionService {
     public QuestionDto createQuestion(QuestionDto questionDto) {
         logger.info("Entering the creation process");
         Question question = modelMapper.map(questionDto, Question.class);
-        Exam exam = EntityUtil.getEntityById(examRepository, questionDto.getExamId());
+        Exam exam = EntityUtil.getEntityById(examRepository, questionDto.getExamId(), "Question");
         question.setExam(exam);
         Question savedQuestion = EntityUtil.saveEntity(questionRepository, question, "question");
         return modelMapper.map(savedQuestion, QuestionDto.class);
@@ -69,7 +69,7 @@ public class QuestionServiceImpl implements QuestionService {
     @Override
     public QuestionDto updateQuestion(Long id, QuestionDto questionDto) {
         logger.info("Updating question with ID: {}", id);
-        Question existingQuestion = EntityUtil.getEntityById(questionRepository, id);
+        Question existingQuestion = EntityUtil.getEntityById(questionRepository, id, "Question");
         modelMapper.map(questionDto, existingQuestion);
         EntityUtil.saveEntity(questionRepository, existingQuestion, "question");
         return modelMapper.map(existingQuestion, QuestionDto.class);

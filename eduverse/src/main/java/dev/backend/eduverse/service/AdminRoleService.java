@@ -6,21 +6,21 @@
  */
 package dev.backend.eduverse.service;
 
-import dev.backend.eduverse.dto.AdminRoleDTO;
+import dev.backend.eduverse.dto.AdminRoleDto;
 import java.util.List;
 import org.springframework.stereotype.Service;
 
 @Service
 public interface AdminRoleService {
-  boolean createAdminRole(AdminRoleDTO adminRoleDTO);
+  boolean createAdminRole(AdminRoleDto adminRoleDTO);
 
-  List<AdminRoleDTO> getAllAdminRole();
+  List<AdminRoleDto> getAllAdminRole();
 
-  AdminRoleDTO getAdminRoleByID(Long id);
+  AdminRoleDto getAdminRoleByID(Long id);
 
-  boolean updateAdminRole(AdminRoleDTO adminRoleDTO, Long id);
+  boolean updateAdminRole(AdminRoleDto adminRoleDTO, Long id);
 
   boolean deleteAdminRole(Long id);
 
-  List<AdminRoleDTO> readAdminRoleByPagniation(int pageNumber, int pageSize) throws IllegalAccessException;
+  List<AdminRoleDto> readAdminRoleByPagniation(int pageNumber, int pageSize) throws IllegalAccessException;
 }

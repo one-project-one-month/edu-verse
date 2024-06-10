@@ -28,7 +28,7 @@ import java.util.List;
 @AllArgsConstructor
 @RequestMapping("/api/exam")
 public class ExamController {
-    private final Logger logger = LoggerFactory.getLogger(QuestionController.class);
+    private final Logger logger = LoggerFactory.getLogger(ExamController.class);
 
     private ExamService examService;
 

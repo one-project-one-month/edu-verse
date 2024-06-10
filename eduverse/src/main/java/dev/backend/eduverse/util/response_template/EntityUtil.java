@@ -6,9 +6,10 @@
  */
 package dev.backend.eduverse.util.response_template;
 
+import org.springframework.data.jpa.repository.JpaRepository;
+
 import dev.backend.eduverse.exception.EntityCreationException;
 import dev.backend.eduverse.exception.EntityNotFoundException;
-import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
@@ -22,18 +23,18 @@ public class EntityUtil {
         return savedEntity;
     }
 
-    public static <T> List<T> getAllEntities(JpaRepository<T, Long> repository, Sort sort, String entityName) {
-        List<T> entities = repository.findAll(sort);
+    public static <T> List<T> getAllEntities(JpaRepository<T, Long> repository) {
+        List<T> entities = repository.findAll();
         if (entities.isEmpty()) {
             return null;
         }
         return entities;
     }
 
-    public static <T> T getEntityById(JpaRepository<T, Long> repository, Long id) {
+    public static <T> T getEntityById(JpaRepository<T, Long> repository, Long id, String entityName) {
         T entity = id > 0 ? repository.findById(id).orElse(null) : null;
         if (entity == null) {
-            throw new EntityNotFoundException("Entity not found with ID: " + id);
+            throw new EntityNotFoundException(entityName + " not found with ID: " + id);
         }
         return entity;
     }

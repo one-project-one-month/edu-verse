@@ -19,6 +19,13 @@ target/
 *.iml
 *.ipr
 
+.classpath
+.project
+.setting/
+
+*.log
+
+
 ### NetBeans ###
 /nbproject/private/
 /nbbuild/
@@ -28,6 +35,17 @@ target/
 build/
 !**/src/main/**/build/
 !**/src/test/**/build/
-
+logs/
 ### VS Code ###
 .vscode/
+
+# Ignore all files in the resources/static/images directory
+/src/main/resources/static/images/
+/.DS_Store
+/.gitignore
+/.mvn/
+/README.md
+/mvnw
+/mvnw.cmd
+/pom.xml
+/src/
