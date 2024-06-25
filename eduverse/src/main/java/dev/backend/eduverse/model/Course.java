@@ -1,12 +1,14 @@
 package dev.backend.eduverse.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import dev.backend.eduverse.util.CourseStatus;
 import dev.backend.eduverse.util.Level;
 import jakarta.persistence.*;
-import lombok.*;
 
 import java.time.LocalDate;
+
+import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 @Getter
 @Setter
@@ -37,25 +39,29 @@ public class Course {
     @Column(name = "long_description", length = 500)
     private String longDescription;
 
+    @Column(name = "image")
+    private String image;
+
     @Column(name = "created_at")
     private LocalDate createdAt;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "status")
     private CourseStatus status;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
     @JoinColumn(name = "admin_id", referencedColumnName = "id")
     private Admin admin;
 
     //    @JsonIgnore
-//    @ManyToMany(
-//            cascade = CascadeType.ALL,
-//            fetch = FetchType.LAZY
-//    )
-//    @JoinTable(
-//            name = "user_course",
-//            joinColumns = @JoinColumn(name = "course_id"),
-//            inverseJoinColumns = @JoinColumn(name = "user_id")
-//    )
-//    private List<User> userList;
+    //    @ManyToMany(
+    //            cascade = CascadeType.ALL,
+    //            fetch = FetchType.LAZY
+    //    )
+    //    @JoinTable(
+    //            name = "user_course",
+    //            joinColumns = @JoinColumn(name = "course_id"),
+    //            inverseJoinColumns = @JoinColumn(name = "user_id")
+    //    )
+    //    private List<User> userList;
 }

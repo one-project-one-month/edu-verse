@@ -12,22 +12,21 @@ import lombok.*;
 @Table(name = "module")
 public class CourseModule {
 
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id")
-	private long id;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Column(name = "id")
+  private long id;
 
-	@Column(name = "name", length = 25, nullable = false)
-	private String name;
+  @Column(name = "name", length = 25, nullable = false)
+  private String name;
 
-	@Column(name = "content", length = 500)
-	private String content;
+  @Column(name = "content", length = 500)
+  private String content;
 
-	@Column(name = "duration", length = 20)
-	private String duration;
+  @Column(name = "duration", length = 20)
+  private String duration;
 
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "course_id", referencedColumnName = "id")
-	private Course course;
+  @ManyToOne(fetch = FetchType.LAZY)
+  @JoinColumn(name = "course_id", referencedColumnName = "id")
+  private Course course;
 }

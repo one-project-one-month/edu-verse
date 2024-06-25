@@ -1,0 +1,18 @@
+[
+    {
+        "code": "0001",
+        "roleName": "Moderator"
+    },
+    {
+        "code": "0002",
+        "roleName": "Master Administrator"
+    },
+    {
+        "code": "0003",
+        "roleName": "Administrator"
+    },
+    {
+        "code": "0004",
+        "roleName": "Superuser"
+    }
+]

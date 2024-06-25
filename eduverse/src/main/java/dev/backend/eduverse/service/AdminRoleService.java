@@ -3,24 +3,24 @@
  * @Date : 5/11/2024
  * @Time : 9:00 PM
  * @Project_Name : eduverse
-*/
+ */
 package dev.backend.eduverse.service;
 
+import dev.backend.eduverse.dto.AdminRoleDto;
 import java.util.List;
-
 import org.springframework.stereotype.Service;
-
-import dev.backend.eduverse.dto.AdminRoleDTO;
 
 @Service
 public interface AdminRoleService {
-boolean createAdminRole(AdminRoleDTO adminRoleDTO);
-	
-	List<AdminRoleDTO> getAllAdminRole();
+  boolean createAdminRole(AdminRoleDto adminRoleDTO);
 
-	AdminRoleDTO getAdminRoleByID(Long id);
+  List<AdminRoleDto> getAllAdminRole();
 
-	boolean updateAdminRole(AdminRoleDTO adminRoleDTO, Long id);
+  AdminRoleDto getAdminRoleByID(Long id);
 
-	boolean deleteAdminRole(Long id);
+  boolean updateAdminRole(AdminRoleDto adminRoleDTO, Long id);
+
+  boolean deleteAdminRole(Long id);
+
+  List<AdminRoleDto> readAdminRoleByPagniation(int pageNumber, int pageSize) throws IllegalAccessException;
 }

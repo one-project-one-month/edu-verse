@@ -11,7 +11,7 @@ import lombok.*;
 @Data
 public class AdminDto {
 
-//    private Long id;
+    private Long id;
 
     @NotNull(message = "Username is required.")
     @Size(max = 20, message = "Username is too long")
@@ -29,8 +29,7 @@ public class AdminDto {
     @NotNull(message = "Phone number is required")
     @Pattern(regexp = "\\d{3} \\d{3} \\d{3,4}")
     private String phoneNumber;
-    
+
     @NotNull(message = "Role Id is required")
     private Long roleId;
-
 }

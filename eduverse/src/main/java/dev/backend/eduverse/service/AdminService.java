@@ -1,12 +1,11 @@
 package dev.backend.eduverse.service;
 
 import dev.backend.eduverse.dto.AdminDto;
-import dev.backend.eduverse.model.Admin;
 
 import java.util.List;
 
 public interface AdminService {
-	
+
     List<AdminDto> findAll();
 
     AdminDto findById(Long id);
@@ -16,4 +15,6 @@ public interface AdminService {
     AdminDto updateAdmin(AdminDto adminDto, Long id);
 
     void deleteById(Long id);
+
+    List<AdminDto> paginate(String searchKeyword, int pageNo, int limit);
 }
